@@ -81,3 +81,22 @@ def test_prose_rules():
     sentences = [s for ln in body for s in re.split(r"(?<=[.])\s+(?=[A-Z])", re.sub(r"^\d+\.\s+", "", ln))]
     unkeyed = [s for s in sentences if re.search(r"\d", re.sub(r"\[[^\]]+\]", "", s)) and not re.search(r"\[[a-z0-9_]+", s)]
     assert not unkeyed, unkeyed
+
+
+# Plain-prose rule (2026-09-25): no semicolons, em dashes or en dashes in the written documents and captions.
+# Verbatim regulatory quotes in sources.md end before the semicolon that closes each CFR item.
+from reuse_ready.paths import ROOT as _ROOT  # noqa: E402
+
+PROSE_FILES = ["README.md", "results/results.md", "sources.md", "results/brief_numbers.md"]
+
+
+def _prose_files():
+    fs = [_ROOT / f for f in PROSE_FILES] + sorted((_ROOT / "figures").glob("*_caption.md"))
+    return [f for f in fs if f.exists()]
+
+
+@pytest.mark.parametrize("path", _prose_files(), ids=lambda p: p.relative_to(_ROOT).as_posix())
+def test_prose_no_semicolons_or_dashes(path):
+    bad = [(i, ln[:80]) for i, ln in enumerate(path.read_text().splitlines(), 1)
+           if ";" in ln or "\u2014" in ln or "\u2013" in ln]
+    assert not bad, bad

@@ -362,22 +362,24 @@ def _mc_common(m) -> str:
     ev, hy = wue["large_waterside_econ_wcc"], wue["large_airside_econ_adiabatic_wcc"]
     pool = m["distributions"]["it_load"]["pool_mw"]
     conv = m["conversion"]["model"]
-    return (f"Each of the {m['n_draws']:,} draws (random seed {m['seed']}) [peak_uncertainty.json] selects a cooling "
-            f"architecture with LBNL's 2023 hyperscale cooling-system shares grouped into evaporative tower "
-            f"({w['evaporative_tower']:.3f}), hybrid ({w['hybrid']:.3f}) and air-cooled chiller "
-            f"({w['air_cooled_chiller']:.3f}) [shehabi_2024, p. 39]; an annual site water usage effectiveness (WUE) "
-            f"from LBNL's large-scale simulation ranges, {_n(ev['lower_whisker'], 2)} to {_n(ev['upper_whisker'], 2)} "
-            f"liters per kilowatt-hour (median {_n(ev['median'], 2)}) for the evaporative tower and "
-            f"{_n(max(hy['lower_whisker'], 0), 2)} to {_n(hy['upper_whisker'], 2)} liters per kilowatt-hour (median "
-            f"{_n(hy['median'], 2)}) for the hybrid [shehabi_2024, p. 46], with zero makeup for the air-cooled chiller "
-            f"[reuse_ready_model]; and a power usage effectiveness uniform on 1.15 to 1.35 [shehabi_2024, p. 48]. "
-            f"Annual WUE is converted to peak-day makeup with the calibrated cooling model's ratio of maximum day to "
-            f"mean day on Trenton weather for 2005 to 2024, {_n(conv['evaporative_tower']['peak_to_average'], 1)} for "
-            f"the evaporative tower and {_n(conv['hybrid']['peak_to_average'], 1)} for the calibrated hybrid "
-            f"[reuse_ready_model; noaa_isd], and hybrid draws are capped at full evaporation of the day's heat, a cap "
-            f"that binds in {100 * p['hybrid_draws_capped_share']:.0f} percent of hybrid draws [reuse_ready_model]. "
-            f"Sites that state a capacity use it; the 16 sites that do not draw their IT load with equal probability "
-            f"from the {len(pool)} stated values, {_n(min(pool))} to {_n(max(pool))} MW [peak_uncertainty.json; "
+    return (f"Each of the {m['n_draws']:,} draws (random seed {m['seed']}) samples its inputs as follows "
+            f"[peak_uncertainty.json]. The cooling architecture is drawn with LBNL's 2023 hyperscale cooling-system "
+            f"shares, grouped into evaporative tower ({w['evaporative_tower']:.3f}), hybrid ({w['hybrid']:.3f}) and "
+            f"air-cooled chiller ({w['air_cooled_chiller']:.3f}) [shehabi_2024, p. 39]. The annual site water usage "
+            f"effectiveness (WUE) is drawn from LBNL's large-scale simulation ranges. These are "
+            f"{_n(ev['lower_whisker'], 2)} to {_n(ev['upper_whisker'], 2)} liters per kilowatt-hour (median "
+            f"{_n(ev['median'], 2)}) for the evaporative tower and {_n(max(hy['lower_whisker'], 0), 2)} to "
+            f"{_n(hy['upper_whisker'], 2)} liters per kilowatt-hour (median {_n(hy['median'], 2)}) for the hybrid "
+            f"[shehabi_2024, p. 46]. The air-cooled chiller has zero makeup [reuse_ready_model]. Power usage "
+            f"effectiveness is uniform on 1.15 to 1.35 [shehabi_2024, p. 48]. Annual WUE is converted to peak-day "
+            f"makeup with the calibrated cooling model's ratio of maximum day to mean day on Trenton weather for 2005 "
+            f"to 2024 [reuse_ready_model, noaa_isd]. The ratio is "
+            f"{_n(conv['evaporative_tower']['peak_to_average'], 1)} for the evaporative tower and "
+            f"{_n(conv['hybrid']['peak_to_average'], 1)} for the calibrated hybrid [peak_uncertainty.json]. Hybrid "
+            f"draws are capped at full evaporation of the day's heat, and the cap binds in "
+            f"{100 * p['hybrid_draws_capped_share']:.0f} percent of hybrid draws [reuse_ready_model]. Sites that "
+            f"state a capacity use it. The 16 sites that do not state one draw their IT load with equal probability "
+            f"from the {len(pool)} stated values, {_n(min(pool))} to {_n(max(pool))} MW [peak_uncertainty.json, "
             f"trackdatacenters_2026]. Plant flows are median monthly discharge reported from July 2023 to June 2026 "
             f"[epa_echo].")
 
@@ -388,35 +390,46 @@ def write_captions(rb: dict, rl: dict, fan: dict) -> None:
     common = _mc_common(m)
     assert (rb["n_notes_p90_exceeds"], rb["n_notes_plant_covers_p90"], rb["n_notes_no_plant"]) == \
         (p["n_p90_above_plant"], p["n_covers_p90"], p["n_no_eligible_plant"])
-    ch = ", ".join(f"{r['name']} ({r['site_id']})" for r in p["class_changes_at_p90"])
-    above = "; ".join(f"{r['name']} ({r['site_id']})" for r in p["sites_p90_above_plant"])
+    ch_list = [f"{r['name']} ({r['site_id']})" for r in p["class_changes_at_p90"]]
+    ch = ch_list[0] if len(ch_list) == 1 else ", ".join(ch_list[:-1]) + " and " + ch_list[-1]
     (FIGURES / "peak_uncertainty_caption.md").write_text(f"""# Figure X (peak_uncertainty)
 
-**Figure X.** Range chart showing the simulated peak-day cooling makeup of each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026] against the median effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. For each site the dot marks the 50th percentile (P50) of {m['n_draws']:,} Monte Carlo draws, the light bar spans P50 to the 90th percentile (P90), the tick marks P90 [reuse_ready_model], and the open square marks the plant's median monthly flow converted to gallons per day [epa_echo]. Rows are sorted by P50 and labelled with the site number of the map key [site_key.csv]; gray rows are the {p['n_no_eligible_plant']} sites with no eligible plant within 10 miles [supply_screen.csv]. The right-hand notes give each site's status: P90 exceeds the plant's median flow at {rb['n_notes_p90_exceeds']} sites, the plant's median flow covers P90 at {rb['n_notes_plant_covers_p90']} site, and {rb['n_notes_no_plant']} sites have no plant within 10 miles [peak_uncertainty.csv]. The horizontal axis is logarithmic.
+**Figure X.**
 
-{common} The median flow covers P90 at {p['n_covers_p90']} of 24 sites, against {p['n_deterministic_matchable']} of 24 matchable sites in the deterministic screen [peak_uncertainty.csv; supply_screen.csv]; the sites that change are {ch} [peak_uncertainty.csv]. These values are model-derived.
+The range chart compares the simulated peak-day cooling makeup of each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026] with the median effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. For each site, the dot marks the 50th percentile (P50) of {m['n_draws']:,} Monte Carlo draws [peak_uncertainty.json]. The light bar spans P50 to the 90th percentile (P90), and the tick marks P90 [reuse_ready_model]. The open square marks the plant's median monthly flow converted to gallons per day [epa_echo]. Rows are sorted by P50 and labelled with the site number of the map key [site_key.csv]. Gray rows are the {p['n_no_eligible_plant']} sites with no eligible plant within 10 miles [supply_screen.csv]. The right-hand notes give each site's status. P90 exceeds the plant's median flow at {rb['n_notes_p90_exceeds']} sites, and the plant's median flow covers P90 at {rb['n_notes_plant_covers_p90']} site [peak_uncertainty.csv]. The other {rb['n_notes_no_plant']} sites have no plant within 10 miles [peak_uncertainty.csv]. The horizontal axis is logarithmic.
 
-**Citation keys.** trackdatacenters_2026, epa_echo, reuse_ready_model, shehabi_2024, noaa_isd. Plotted values are in figures/peak_uncertainty_data.csv.
+{common} The median flow covers P90 at {p['n_covers_p90']} of 24 sites, against {p['n_deterministic_matchable']} of 24 matchable sites in the deterministic screen [peak_uncertainty.csv, supply_screen.csv]. The sites that change are {ch} [peak_uncertainty.csv]. These values are model-derived.
+
+The citation keys are trackdatacenters_2026, epa_echo, reuse_ready_model, shehabi_2024 and noaa_isd. Plotted values are in figures/peak_uncertainty_data.csv.
 """)
     zr, br = rl["zero_share_range"], rl["below_axis_share_range"]
     rng_txt = lambda a: f"{100 * a[0]:.1f} percent" if round(100 * a[0], 1) == round(100 * a[1], 1) else \
         f"{100 * a[0]:.1f} to {100 * a[1]:.1f} percent"
+    covered = ", ".join(pd.read_csv(RESULTS / "peak_uncertainty.csv").query("covers_p90").name)
     (FIGURES / "sites_mc_ridgeline_caption.md").write_text(f"""# Figure X (sites_mc_ridgeline)
 
-**Figure X.** Ridgeline chart showing, for each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026], a Gaussian kernel density of the base-10 logarithm of simulated peak-day cooling makeup from {m['n_draws']:,} Monte Carlo draws (Scott's bandwidth) [reuse_ready_model]. Each density is scaled to a common peak height, so the curves compare shape and position, not probability mass. The short colored tick marks each site's 90th percentile (P90) and the black bar marks the median monthly effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. Rows are sorted by the median of the draws and labelled with the site number of the map key [site_key.csv]; the {p['n_no_eligible_plant']} gray rows have no eligible plant within 10 miles [supply_screen.csv]. Draws with zero makeup (the air-cooled architecture), {rng_txt(zr)} of each site's draws, are excluded from the densities, and {rng_txt(br)} of each site's draws fall below the 100,000 gallon per day left edge of the axis [sites_mc_ridgeline_data.csv]. P90 exceeds the plant's median flow at {rl['n_p90_above_plant']} of the {24 - p['n_no_eligible_plant']} sites with a plant [peak_uncertainty.json]; only {', '.join(r['name'] for r in [dict(name=n) for n in pd.read_csv(RESULTS / 'peak_uncertainty.csv').query('covers_p90').name])} is covered at P90 [peak_uncertainty.csv]. The horizontal axis is logarithmic.
+**Figure X.**
+
+The ridgeline chart shows one density curve for each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026]. Each curve is a Gaussian kernel density (Scott's bandwidth) of the base-10 logarithm of simulated peak-day cooling makeup from {m['n_draws']:,} Monte Carlo draws [reuse_ready_model]. Each density is scaled to a common peak height, so the curves compare shape and position, not probability mass. The short colored tick marks each site's 90th percentile (P90) [sites_mc_ridgeline_data.csv]. The black bar marks the median monthly effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. Rows are sorted by the median of the draws and labelled with the site number of the map key [site_key.csv]. The {p['n_no_eligible_plant']} gray rows have no eligible plant within 10 miles [supply_screen.csv]. Draws with zero makeup (the air-cooled architecture) make up {rng_txt(zr)} of each site's draws and are excluded from the densities [sites_mc_ridgeline_data.csv]. Of each site's draws, {rng_txt(br)} fall below the 100,000 gallon per day left edge of the axis [sites_mc_ridgeline_data.csv]. P90 exceeds the plant's median flow at {rl['n_p90_above_plant']} of the {24 - p['n_no_eligible_plant']} sites with a plant [peak_uncertainty.json]. Only {covered} is covered at P90 [peak_uncertainty.csv]. The horizontal axis is logarithmic.
 
 {common} These values are model-derived.
 
-**Citation keys.** trackdatacenters_2026, reuse_ready_model, epa_echo, shehabi_2024, noaa_isd. Plotted values, including each density curve, are in figures/sites_mc_ridgeline_data.csv.
+The citation keys are trackdatacenters_2026, reuse_ready_model, epa_echo, shehabi_2024 and noaa_isd. Plotted values, including each density curve, are in figures/sites_mc_ridgeline_data.csv.
 """)
     f = json.loads((RESULTS / "falls_mc_fan.json").read_text())
     dd = f["distributions"]
     am = f["annual_max_day_gpd"]
     (FIGURES / "falls_mc_fan_caption.md").write_text(f"""# Figure X (falls_mc_fan)
 
-**Figure X.** Line chart showing modelled daily cooling makeup at the Falls Township (AWS Keystone) campus by day of year for the calibrated hybrid cooling architecture [reuse_ready_model; falls_levittown_2026]. Each thin trace is one parameter draw run over one weather year chosen at random from 2005 to 2024, using hourly Trenton (KTTN) wet-bulb temperature on local calendar days [noaa_isd; stull_2011]; {f['n_plotted_traces']} of {f['n_draws']:,} draws (seed {f['seed']}, traces selected with seed {f['plot_selection_seed']}) are drawn [falls_mc_fan.json]. The shaded band spans the 10th to the 90th percentile and the solid line is the 50th percentile across all {f['n_draws']:,} draws for each day of year [reuse_ready_model]. Parameters are drawn independently: IT load uniform on {_n(dd['p_it_mw']['low'])} to {_n(dd['p_it_mw']['high'], 1)} megawatts, from the unverified 253 megawatt figure [cleanview_keystone_2026] to the peak-day calibration's fitted load [reuse_ready_model]; power usage effectiveness uniform on 1.15 to 1.35 [shehabi_2024, p. 48]; and the part-load exponent uniform on {_n(dd['gamma']['low'], 3)} to {_n(dd['gamma']['high'], 3)}, the design-rate and peak-day calibration readings [reuse_ready_model]. The switchover wet-bulb temperature is fixed at {_n(dd['t_sw_c']['value'], 2)} degrees Celsius, the value shared by both readings, and cycles of concentration at 4 [reuse_ready_model]. Days with zero makeup cannot be shown on the logarithmic axis and are plotted at a floor of {_n(f['plot_floor_gpd'])} gallons per day; they are {100 * f['share_zero_makeup_trace_days_all_draws']:.1f} percent of all trace-days [falls_mc_fan.json], so the 50th percentile sits at the floor on all but {f['n_doy_p50_positive']} days of the year. Dashed reference lines mark the DRBC review trigger of 100,000 gallons per day [drbc_admin_manual] and the reported peak of 4.4 million gallons per day [falls_levittown_2026; falls_herald_2026]. The gray panel marks June to August. Across draws the largest day of the drawn year has a median of {_n(am['p50'])} gallons per day (10th to 90th percentile {_n(am['p10'])} to {_n(am['p90'])}) and exceeds the trigger in {100 * f['share_draws_max_day_over_trigger']:.0f} percent of draws [falls_mc_fan.json]. Day 366 exists only in leap years [noaa_isd]. These values are model-derived.
+**Figure X.**
 
-**Citation keys.** reuse_ready_model, falls_levittown_2026, falls_herald_2026, noaa_isd, stull_2011, cleanview_keystone_2026, shehabi_2024, drbc_admin_manual. Plotted values are in figures/falls_mc_fan_data.csv.
+The line chart shows modelled daily cooling makeup at the Falls Township (AWS Keystone) campus by day of year for the calibrated hybrid cooling architecture [reuse_ready_model, falls_levittown_2026]. Each thin trace is one parameter draw run over one weather year chosen at random from 2005 to 2024 [falls_mc_fan.json]. Each run uses hourly Trenton (KTTN) wet-bulb temperature on local calendar days [noaa_isd, stull_2011]. The chart draws {f['n_plotted_traces']} of {f['n_draws']:,} draws (seed {f['seed']}), and the drawn traces were selected with seed {f['plot_selection_seed']} [falls_mc_fan.json]. The shaded band spans the 10th to the 90th percentile, and the solid line is the 50th percentile across all {f['n_draws']:,} draws for each day of year [reuse_ready_model].
+
+Parameters are drawn independently. IT load is uniform on {_n(dd['p_it_mw']['low'])} to {_n(dd['p_it_mw']['high'], 1)} megawatts, from the unverified 253 megawatt figure [cleanview_keystone_2026] to the peak-day calibration's fitted load [reuse_ready_model]. Power usage effectiveness is uniform on 1.15 to 1.35 [shehabi_2024, p. 48]. The part-load exponent is uniform on {_n(dd['gamma']['low'], 3)} to {_n(dd['gamma']['high'], 3)}, the design-rate and peak-day calibration readings [reuse_ready_model]. The switchover wet-bulb temperature is fixed at {_n(dd['t_sw_c']['value'], 2)} degrees Celsius, the value shared by both readings [reuse_ready_model]. Cycles of concentration are fixed at 4 [falls_mc_fan.json].
+
+Days with zero makeup cannot be shown on the logarithmic axis and are plotted at a floor of {_n(f['plot_floor_gpd'])} gallons per day [falls_mc_fan.json]. They are {100 * f['share_zero_makeup_trace_days_all_draws']:.1f} percent of all trace-days, so the 50th percentile sits at the floor on all but {f['n_doy_p50_positive']} days of the year [falls_mc_fan.json]. Dashed reference lines mark the DRBC review trigger of 100,000 gallons per day [drbc_admin_manual] and the reported peak of 4.4 million gallons per day [falls_levittown_2026, falls_herald_2026]. The gray panel marks June to August. Across draws, the largest day of the drawn year has a median of {_n(am['p50'])} gallons per day (10th to 90th percentile {_n(am['p10'])} to {_n(am['p90'])}) [falls_mc_fan.json]. The largest day exceeds the trigger in {100 * f['share_draws_max_day_over_trigger']:.0f} percent of draws [falls_mc_fan.json]. Day 366 exists only in leap years [noaa_isd]. These values are model-derived.
+
+The citation keys are reuse_ready_model, falls_levittown_2026, falls_herald_2026, noaa_isd, stull_2011, cleanview_keystone_2026, shehabi_2024 and drbc_admin_manual. Plotted values are in figures/falls_mc_fan_data.csv.
 """)
 
 

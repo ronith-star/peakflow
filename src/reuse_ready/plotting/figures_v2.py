@@ -633,68 +633,75 @@ def write_captions(D, key, out_dir=None, include_map=True):
     table = ["| No. | Site | Municipality | Stated capacity (MW) | IT load covered (MW) | Verified |",
              "|---:|:--|:--|---:|---:|:-:|"]
     for r in key.itertuples():
-        table.append(f"| {r.number} | {r.name} | {r.municipality} | {_fmt_mw(r.stated_mw) or 'not published'} | "
+        # the source lists multi-municipality sites with "; " (site_key.csv keeps that form). Captions carry no
+        # semicolons, so the table joins the same names with " and ".
+        muni = str(r.municipality).replace("; ", " and ")
+        table.append(f"| {r.number} | {r.name} | {muni} | {_fmt_mw(r.stated_mw) or 'not published'} | "
                      f"{r.covered_it_mw:,.0f} | {r.verified} |")
     m = "\n".join([
         "# Figure 1 (supply_screen_map_v2)", "",
-        f"**Figure 1.** Map showing the {n} active planned data center sites in the Delaware River Basin and the "
+        f"**Figure 1.** The map shows the {n} active planned data center sites in the Delaware River Basin and the "
         f"municipal wastewater treatment plants whose effluent could supply their cooling water. Each site is shaded by "
         f"the largest information technology (IT) load whose modelled peak-day cooling makeup the median effluent flow "
         f"of the nearest eligible municipal plant within 10 miles could cover. {n_ge50} of {n} sites have such a plant "
-        f"able to cover at least 50 megawatts (MW) of IT load: {bins['over 200 MW']} sites over 200 MW (solid) and "
-        f"{bins['50 to 200 MW']} sites between 50 and 200 MW (half-tone). The remaining {bins['no eligible plant within 10 mi']} sites "
-        f"(open) have no eligible plant within 10 miles. Dashed outlines mark the {n_unv} sites whose location is "
-        f"approximate or uncertain or whose cited source could not be confirmed. Circle area is proportional to the "
-        f"median monthly effluent flow reported from July 2023 to June 2026 [epa_echo]. Dashed gray circles are "
-        f"10-mile radii around each site. Numbers identify sites in the key below.", "",
+        f"able to cover at least 50 megawatts (MW) of IT load. Of these, {bins['over 200 MW']} sites fall over 200 MW "
+        f"(solid) and {bins['50 to 200 MW']} sites fall between 50 and 200 MW (half-tone). The remaining "
+        f"{bins['no eligible plant within 10 mi']} sites (open) have no eligible plant within 10 miles. Dashed "
+        f"outlines mark the {n_unv} sites whose location is approximate or uncertain or whose cited source could not "
+        f"be confirmed. Circle area is proportional to the median monthly effluent flow reported from July 2023 to "
+        f"June 2026 [epa_echo]. Dashed gray circles are 10-mile radii around each site. Numbers identify sites in the "
+        f"key below.", "",
         f"Demand is the calibrated hybrid cooling model at {per_mw:,.0f} gallons per day of peak-day makeup per MW of "
-        f"IT load, driven by hourly Trenton weather for 2005 to 2024 [noaa_isd; stull_2011] and calibrated to the "
-        f"reported Falls Township average cooling demand of 135,000 gallons per day and peak of 4.4 million gallons "
-        f"per day [falls_levittown_2026]. These rates are model-derived. Covered IT load does not depend on each "
-        f"site's own capacity, which {hi['n_no_published_capacity']} of {n} sites do not publish. Eligible plants are "
-        f"municipal major dischargers with at least 12 months of flow reports; industrial dischargers are excluded. "
-        f"The basin boundary is the union of hydrologic units 020401 and 020402 [usgs_wbd]; rivers, reservoirs and "
-        f"Delaware Bay are from NHDPlus High Resolution [usgs_nhdplus_hr]; state and county lines are the Census "
-        f"cartographic boundary files and city locations are TIGERweb place interior points [census_tiger]; relief "
-        f"is Natural Earth shaded relief [natural_earth]; site locations and sources are from the Data Center "
-        f"Proposal Tracker [trackdatacenters_2026]. The source line lists DRBC because the basin framing and review "
-        f"thresholds come from the Commission [drbc_admin_manual]. Albers equal-area conic projection, North American "
-        f"Datum of 1983, standard parallels 39 and 42 degrees north, central meridian 75.3 degrees west.", "",
-        "**Site key** (also in figures/site_key.csv). Stated capacity is campus power as published; IT load covered "
+        f"IT load, driven by hourly Trenton weather for 2005 to 2024 [noaa_isd, stull_2011]. The model is calibrated "
+        f"to the reported Falls Township average cooling demand of 135,000 gallons per day and peak of 4.4 million "
+        f"gallons per day [falls_levittown_2026]. These rates are model-derived. Covered IT load does not depend on "
+        f"each site's own capacity, which {hi['n_no_published_capacity']} of {n} sites do not publish. Eligible "
+        f"plants are municipal major dischargers with at least 12 months of flow reports. Industrial dischargers are "
+        f"excluded. The basin boundary is the union of hydrologic units 020401 and 020402 [usgs_wbd]. Rivers, "
+        f"reservoirs and Delaware Bay are from NHDPlus High Resolution [usgs_nhdplus_hr]. State and county lines are "
+        f"the Census cartographic boundary files, and city locations are TIGERweb place interior points "
+        f"[census_tiger]. Relief is Natural Earth shaded relief [natural_earth]. Site locations and sources are from "
+        f"the Data Center Proposal Tracker [trackdatacenters_2026]. The source line lists DRBC because the basin "
+        f"framing and review thresholds come from the Commission [drbc_admin_manual]. The projection is Albers "
+        f"equal-area conic on the North American Datum of 1983. Its standard parallels are 39 and 42 degrees north, "
+        f"and its central meridian is 75.3 degrees west.", "",
+        "**Site key**", "",
+        "The site key is also in figures/site_key.csv. Stated capacity is campus power as published. IT load covered "
         "is the model value described above.", ""] + table + ["",
-        "**Citation keys.** epa_echo, noaa_isd, stull_2011, falls_levittown_2026, usgs_wbd, usgs_nhdplus_hr, "
-        "census_tiger, natural_earth, trackdatacenters_2026, drbc_admin_manual.", ""])
+        "The citation keys are epa_echo, noaa_isd, stull_2011, falls_levittown_2026, usgs_wbd, usgs_nhdplus_hr, "
+        "census_tiger, natural_earth, trackdatacenters_2026 and drbc_admin_manual.", ""])
     if include_map:  # the map caption text is the base for figures_v3; it is not written to figures/
         (out_dir / "supply_screen_map_v2_caption.md").write_text(m)
     bc = bar_counts(ss)
     b = "\n".join([
         "# Figure 2 (supply_screen_bar_v2)", "",
-        f"**Figure 2.** Bar chart showing the {n} active planned data center sites in the Delaware River Basin "
-        f"[trackdatacenters_2026] divided by the largest IT load whose modelled peak-day cooling makeup the nearest "
+        f"**Figure 2.** The bar chart divides the {n} active planned data center sites in the Delaware River Basin "
+        f"[trackdatacenters_2026] by the largest IT load whose modelled peak-day cooling makeup the nearest "
         f"eligible municipal plant within 10 miles could cover [epa_echo]. {bins['over 200 MW']} sites fall over "
-        f"200 MW (solid), {bins['50 to 200 MW']} between 50 and 200 MW (half-tone), and {bins['no eligible plant within 10 mi']} with "
-        f"no eligible plant within 10 miles (open). Fills and counts are identical to figure 1. Diagonal hatching marks the {n_unv} sites with an "
-        f"unverified location or source; the hatch is drawn in white on the solid segment so that it remains "
-        f"visible. The demand rate is the model value of figure 1 ({per_mw:,.0f} gallons per day per MW of IT load "
-        f"on the peak day) [noaa_isd; falls_levittown_2026].", "",
+        f"200 MW (solid), {bins['50 to 200 MW']} between 50 and 200 MW (half-tone), and "
+        f"{bins['no eligible plant within 10 mi']} with no eligible plant within 10 miles (open). Fills and counts "
+        f"are identical to figure 1. Diagonal hatching marks the {n_unv} sites with an unverified location or "
+        f"source. The hatch is drawn in white on the solid segment so that it remains visible. The demand rate is "
+        f"the model value of figure 1 ({per_mw:,.0f} gallons per day per MW of IT load on the peak day) "
+        f"[noaa_isd, falls_levittown_2026].", "",
         "| Class | Sites | Verified | Unverified |", "|:--|---:|---:|---:|"] +
         [f"| {r.covered_it_class} | {r.n_sites} | {r.n_verified} | {r.n_unverified} |" for r in bc.itertuples()] + ["",
-        "**Citation keys.** trackdatacenters_2026, epa_echo, noaa_isd, falls_levittown_2026.", ""])
+        "The citation keys are trackdatacenters_2026, epa_echo, noaa_isd and falls_levittown_2026.", ""])
     (out_dir / "supply_screen_bar_v2_caption.md").write_text(b)
     num = ss.set_index("site_id")["number"]
     d = "\n".join([
         "# Figure A1 (falls_plymouth_detail_v2), appendix and presentation only", "",
-        f"**Figure A1.** Maps showing two planned data center sites and the municipal treatment plants nearest to "
-        f"them. (A) Lower Bucks County, Pennsylvania: site {num['DRB12']} (AWS Keystone Trade Center, Falls Township) "
-        f"is matched to the Trenton Sewer Utility in New Jersey, {f.distance_mi:.3g} miles away, with a median flow "
-        f"of {f.plant_median_flow_mgd:.3g} million gallons per day that covers {f.covered_it_mw:,.0f} MW of IT load; "
-        f"the nearest eligible Pennsylvania plant, the Morrisville Borough STP, is {f.same_state_distance_mi:.3g} "
-        f"miles away with {f.same_state_median_flow_mgd:.3g} million gallons per day, covering "
-        f"{f.same_state_covered_it_mw:,.0f} MW. (B) Conshohocken, Plymouth Township, Pennsylvania: site "
-        f"{num['DRB31']} is matched to the Matsunk STP, {p.distance_mi:.3g} miles away, with "
-        f"{p.plant_median_flow_mgd:.3g} million gallons per day covering {p.covered_it_mw:,.0f} MW [epa_echo; "
-        f"trackdatacenters_2026]. Symbols, model and projection are as in figure 1.", "",
-        "**Citation keys.** epa_echo, trackdatacenters_2026, usgs_wbd, usgs_nhdplus_hr, census_tiger.", ""])
+        f"**Figure A1.** The maps show two planned data center sites and the municipal treatment plants nearest to "
+        f"them. Panel A covers Lower Bucks County, Pennsylvania. Site {num['DRB12']} (AWS Keystone Trade Center, "
+        f"Falls Township) is matched to the Trenton Sewer Utility in New Jersey, {f.distance_mi:.3g} miles away. "
+        f"That plant's median flow of {f.plant_median_flow_mgd:.3g} million gallons per day covers "
+        f"{f.covered_it_mw:,.0f} MW of IT load. The nearest eligible Pennsylvania plant, the Morrisville Borough "
+        f"STP, is {f.same_state_distance_mi:.3g} miles away. Its flow of {f.same_state_median_flow_mgd:.3g} million "
+        f"gallons per day covers {f.same_state_covered_it_mw:,.0f} MW. Panel B covers Conshohocken, Plymouth "
+        f"Township, Pennsylvania. Site {num['DRB31']} is matched to the Matsunk STP, {p.distance_mi:.3g} miles "
+        f"away, whose flow of {p.plant_median_flow_mgd:.3g} million gallons per day covers {p.covered_it_mw:,.0f} MW "
+        f"[epa_echo, trackdatacenters_2026]. Symbols, model and projection are as in figure 1.", "",
+        "The citation keys are epa_echo, trackdatacenters_2026, usgs_wbd, usgs_nhdplus_hr and census_tiger.", ""])
     (out_dir / "falls_plymouth_detail_v2_caption.md").write_text(d)
 
 

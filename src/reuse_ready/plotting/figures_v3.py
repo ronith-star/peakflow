@@ -684,9 +684,10 @@ def write_caption_v3(D, key, info):
     txt = txt.replace("Circle area is proportional to the median monthly effluent flow reported from July 2023 to "
                       "June 2026 [epa_echo].",
                       "Circle area is proportional to the median monthly effluent flow reported from July 2023 to "
-                      "June 2026 [epa_echo]; plants outside the basin are drawn at 40 percent opacity so that plants "
-                      "inside the basin read first. In the key, IT load coverable at peak is the largest IT load, in "
-                      "megawatts, whose peak-day makeup the nearest eligible plant's median flow covers.")
+                      "June 2026 [epa_echo], and plants outside the basin are drawn at 40 percent opacity so that "
+                      "plants inside the basin read first. In the key, IT load coverable at peak is the largest IT "
+                      "load, in megawatts, whose peak-day makeup the nearest eligible plant's median flow covers.")
+    assert "40 percent opacity" in txt, "map caption base text changed, so the v3 circle-area sentence was not applied"
     (FIGURES / "supply_screen_map_caption.md").write_text(txt)
 
 
@@ -705,9 +706,11 @@ def run():
     brief = render_brief(D)
     cap = (FIGURES / "supply_screen_map_caption.md").read_text()
     cap = cap.replace("# Figure 1 (supply_screen_map)", "# Figure 1, brief size (supply_screen_map_brief)")
-    cap += (f"\n\nBrief-size version: the same design and extent at {BRIEF_W_MM:.0f} mm wide, with symbols and line "
-            f"weights scaled by {brief['scale']:.3f} and all text at {brief['font_pt']:.1f} pt or larger. The kilometre "
-            "scale bar is divided at 25 km, and city labels displaced from their point carry a short leader line; city labels carry a white halo and may cross the outline of a plant circle. Plotted values are in figures/supply_screen_map_brief_data.csv.\n")
+    cap += (f"\n\nThe brief-size version has the same design and extent at {BRIEF_W_MM:.0f} mm wide. Its symbols and "
+            f"line weights are scaled by {brief['scale']:.3f}, and all text is set at {brief['font_pt']:.1f} pt or "
+            "larger. The kilometre scale bar is divided at 25 km. City labels displaced from their point carry a "
+            "short leader line. City labels carry a white halo and may cross the outline of a plant circle. Plotted "
+            "values are in figures/supply_screen_map_brief_data.csv.\n")
     (FIGURES / "supply_screen_map_brief_caption.md").write_text(cap)
     (RESULTS / "figures_v3_brief_check.json").write_text(json.dumps(brief, indent=1, default=str))
     info["brief"] = {"check": brief["check"], "min_font_pt": brief["min_font_pt"], "leaders": brief["n_leaders"]}

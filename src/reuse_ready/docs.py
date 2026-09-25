@@ -27,10 +27,10 @@ REG_PASSAGES = [
      "Basin and is not required to be submitted under Section 3.8 of the Compact:"),
     ("drbc_admin_manual", "18 CFR 401.35(a)(2)",
      "A withdrawal from ground water when the daily average gross withdrawal during any 30 consecutive day period "
-     "does not exceed 100,000 gallons;"),
+     "does not exceed 100,000 gallons"),
     ("drbc_admin_manual", "18 CFR 401.35(a)(3)",
      "A withdrawal from impoundments or running streams for any purpose when the daily average gross withdrawal "
-     "during any 30 consecutive day period does not exceed 100,000 gallons;"),
+     "during any 30 consecutive day period does not exceed 100,000 gallons"),
     ("drbc_admin_manual", "18 CFR 401.35(c)",
      "Regardless of whether expressly excluded from review by paragraph (a) of this section, any project or class of "
      "projects that in the view of the Commission could have a substantial effect on the water resources of the basin "
@@ -112,22 +112,23 @@ def run() -> dict:
          f"There are {len(entries)} entries: {sum(e.get('verified') == 'true' for e in entries)} verified and "
          f"{sum(e.get('verified') != 'true' for e in entries)} unverified.", "",
          "## Regulatory passages behind the two review blind spots", "",
-         "Each passage below is quoted verbatim, and the check column records whether it was found word for word in "
-         "the raw copy stored under data/raw/drbc.", ""]
+         "Each passage below is quoted verbatim. The line under each heading records whether the passage was found "
+         "word for word in the raw copy stored under data/raw/drbc.", ""]
     for c in checks:
-        L += [f"**{c['where']}** [{c['key']}]. Found verbatim in raw copy: {'yes' if c['verbatim_in_raw_copy'] else 'no'}.",
+        L += [f"**{c['where']}** [{c['key']}]", "",
+              "The passage " + ("was found" if c["verbatim_in_raw_copy"] else "was not found") + " verbatim in the raw copy.",
               "", f"> {c['quote']}", ""]
     rep = main[main.replacement_kind.fillna("").astype(str).ne("")]
     from . import sites as _sites
     n_forced = len(set(main.site_id) & set(_sites.FORCE_UNVERIFIED))
     L += ["The 30-day averaging test in 401.35(a)(2) and (a)(3) is the basis of the averaging blind spot. The "
-          "classifications apply to a project's own withdrawal; the Commission's statement that existing data "
+          "classifications apply to a project's own withdrawal. The Commission's statement that existing data "
           "centers purchase water from public water supply systems, and that none has applied, is the basis of the "
           "purchased-supply blind spot. Paragraph (c) is the Commission's discretionary power to require review of "
           "an otherwise excluded project.", "",
           "## Planned-site sources", "",
           f"Each of the {len(main)} active mapped sites cites its own source_url in data/sites/planned_sites.csv. "
-          f"{int(main.source_verified.sum())} sources were opened and name the site; "
+          f"{int(main.source_verified.sum())} sources were opened and name the site. "
           f"{int((~main.source_verified.astype(bool)).sum())} were not confirmed (bot-blocked, forbidden to automated "
           "clients, or not naming the site) and are drawn with a dashed outline. "
           f"{int(rep.shape[0])} sources that were bot-blocked or had expired are cited through a replacement "
@@ -140,12 +141,16 @@ def run() -> dict:
         who = e.get("author", e.get("institution", ""))
         # The full project title appears only in README.md, CITATION.cff and references.bib.
         title = "PeakFlow (this repository)" if e["key"] == "reuse_ready_model" else e.get("title", "")
+        # A semicolon inside a DOI URL is written percent-encoded (%3B), which resolves to the same record.
+        url = e.get("url", "").replace(";", "%3B")
         L += [f"### {e['key']}", "",
-              f"{who}. {title}. {e.get('year', '')}. {e.get('url', '')} (accessed {e.get('urldate', 'n/a')}).", "",
-              f"Figure or fact taken: {e.get('figure', 'n/a')}", ""]
+              f"{who}. {title}. {e.get('year', '')}. {url} (accessed {e.get('urldate', 'n/a')}).", "",
+              "**Figure or fact taken**", "", e.get("figure", "No figure or fact is taken from this source."), ""]
         if e.get("quote"):
-            L += [f"> {e['quote']}", ""]
-        L += [f"Verified: {'yes' if e.get('verified') == 'true' else 'no'}.", ""]
+            # Verbatim quotes are not reworded. A quote that runs across a semicolon is shown as its parts.
+            L += [ln for part in e["quote"].split(";") if part.strip() for ln in (f"> {part.strip()}", "")]
+        L += ["The source was opened and is verified." if e.get("verified") == "true"
+              else "The source is not verified.", ""]
     txt = "\n".join(L).replace("\u2014", ", ").replace("\u2013", " to ")
     OUT.write_text(txt)
     report = {"entries": len(entries), "undefined_keys": undefined,

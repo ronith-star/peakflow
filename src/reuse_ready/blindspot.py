@@ -319,9 +319,10 @@ def write_markdown(t: pd.DataFrame) -> str:
 
 
 def _describe(rows: pd.DataFrame) -> str:
-    parts = [f"the {ARCH_LABEL[r.architecture].lower()} at {r.it_load_mw} MW (maximum day {sig3(r.peak_day_max_gpd)} gal, "
-             f"highest 30-day average {sig3(r.r30_max_gpd)} gal/d)" for r in rows.itertuples()]
-    return parts[0] if len(parts) == 1 else ", ".join(parts[:-1]) + " and " + parts[-1]
+    """One sentence per configuration, giving its maximum day and highest 30-day average."""
+    return " ".join(f"The {ARCH_LABEL[r.architecture].lower()} at {r.it_load_mw} MW has a maximum day of "
+                    f"{sig3(r.peak_day_max_gpd)} gal and a highest 30-day average of {sig3(r.r30_max_gpd)} gal/d."
+                    for r in rows.itertuples())
 
 
 def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
@@ -332,13 +333,13 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
     strict, loose = t[t.blind_spot_strict], t[t.blind_spot_loose]
     p = load_calibration("primary")
     if len(strict):
-        strict_txt = f"Under this strict test, {len(strict)} of 12 configurations qualify: {_describe(strict)}."
+        strict_txt = f"Under this strict test, {len(strict)} of 12 configurations qualify. {_describe(strict)}"
     else:
         strict_txt = ("Under this strict test, no configuration in the grid qualifies, because every configuration "
                       "that exceeds 100,000 gal on its maximum day also exceeds the threshold on at least one 30-day "
                       "average.")
     loose_txt = (f"Under a looser test that compares the annual mean with 100,000 gal/day, {len(loose)} of 12 would "
-                 "qualify" + (f": {_describe(loose)}." if len(loose) else "."))
+                 "qualify." + (f" {_describe(loose)}" if len(loose) else ""))
     band = c["hybrid_strict_band_mw"]
     band_txt = (f"Because modelled makeup is proportional to IT load, the calibrated hybrid would fall in the "
                 f"averaging blind spot only for IT loads between {sig3(band[0])} MW and {sig3(band[1])} MW, which "
@@ -347,32 +348,39 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
     wet_txt = ""
     if t_wet is not None:
         cw = counts(t_wet)
-        wet_txt = (f" With the wet-share sensitivity calibration (evaporative operation on about 2 % of hours; that "
-                   f"fit cannot reach the 135,000 gal/day average), the averaging blind spot contains "
-                   f"{cw['n_averaging_blind_spot_strict']} of 12 configurations and the purchased-supply blind spot "
-                   f"{cw['n_purchased_supply_blind_spot']} of 12 (results/table_blindspot_wet2pct.csv).")
+        wet_txt = (f" The wet-share sensitivity calibration sets evaporative operation on about 2 % of hours, and that "
+                   f"fit cannot reach the 135,000 gal/day average. Under that calibration, the averaging blind spot "
+                   f"contains {cw['n_averaging_blind_spot_strict']} of 12 configurations and the purchased-supply "
+                   f"blind spot contains {cw['n_purchased_supply_blind_spot']} of 12 "
+                   f"(results/table_blindspot_wet2pct.csv).")
     ratio = p["targets"]["peak_gpd"] / p["targets"]["avg_gpd"]
+    rule_cite = RULE_CITE.replace("; ", " and ")   # captions carry no semicolons
+    keys_txt = ", ".join(KEYS_ALL[:-1]) + " and " + KEYS_ALL[-1]
     txt = f"""# Table A. Two DRBC review blind spots for data center cooling water
 
-**Table A.** {headline(t)}.
+**Table A.**
 
-**Caption.** The table lists modelled daily cooling-water makeup for twelve data center configurations, formed by four IT loads (50, 100, 200 and 400 MW) and three cooling architectures (evaporative tower, calibrated hybrid and air-cooled chiller), together with a reference row for the Falls Township (AWS Keystone) project. It tests two mechanisms by which such demand can escape Delaware River Basin Commission review.
+{headline(t)}.
 
-The first mechanism is an averaging blind spot. A withdrawal is excluded from review when "{RULE_QUOTE}" [drbc_admin_manual] ({RULE_CITE}). Shading would mark configurations that stay below the threshold on every 30-day average but exceed 100,000 gal on at least one day. {strict_txt} {loose_txt} {band_txt}
+**Caption**
 
-The second mechanism is a purchased-supply blind spot. The thresholds apply to a project's own withdrawal, so a data center that buys water from an existing public or authority system is not itself a withdrawal project, and no review is triggered regardless of size. The Commission states: "{DRBC_DC_QUOTE}" [drbc_datacenters_2026]. Of the twelve configurations, {c['n_review_if_self_supplied']} would require review if self-supplied, and none would if the water is purchased, so the purchased-supply blind spot covers all {c['n_purchased_supply_blind_spot']}. The Falls project reports an average of 135,000 gal/day [falls_levittown_2026] and a peak of 4.4 million gal/day [falls_levittown_2026; falls_herald_2026], a peak-to-average ratio of {sig3(ratio)}. Its modelled maximum 30-day average is {sig3(p['diagnostics']['max_30day_avg_gpd'])} gal/day, so it would require review if self-supplied, but it is supplied by the Morrisville Municipal Authority service-water system, whose allocation is reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026].{wet_txt}
+The table lists modelled daily cooling-water makeup for twelve data center configurations and a reference row for the Falls Township (AWS Keystone) project. The configurations combine four IT loads (50, 100, 200 and 400 MW) with three cooling architectures (evaporative tower, calibrated hybrid and air-cooled chiller). The table tests two mechanisms by which such demand can escape Delaware River Basin Commission review.
 
-The flow columns give, among days with makeup above 100,000 gal, the share on which Delaware River flow at Trenton (USGS 01463500) was below its 2005-2024 day-of-year 25th percentile or below the full-record 7Q10 of {q:,.0f} cfs [usgs_nwis_01463500]. All displayed values are rounded to three significant figures; full-precision values are in results/blindspot_raw.csv.
+The first mechanism is an averaging blind spot. A withdrawal is excluded from review when "{RULE_QUOTE}" [drbc_admin_manual] ({rule_cite}). Shading would mark configurations that stay below the threshold on every 30-day average but exceed 100,000 gal on at least one day. {strict_txt} {loose_txt} {band_txt}
 
-**Assumptions.**
+The second mechanism is a purchased-supply blind spot. The thresholds apply to a project's own withdrawal. A data center that buys water from an existing public or authority system is therefore not itself a withdrawal project, and no review is triggered regardless of size. The Commission states: "{DRBC_DC_QUOTE}" [drbc_datacenters_2026]. Of the twelve configurations, {c['n_review_if_self_supplied']} would require review if self-supplied. None would require review if the water is purchased, so the purchased-supply blind spot covers all {c['n_purchased_supply_blind_spot']}. The Falls project reports an average of 135,000 gal/day [falls_levittown_2026] and a peak of 4.4 million gal/day [falls_levittown_2026, falls_herald_2026], a peak-to-average ratio of {sig3(ratio)}. Its modelled maximum 30-day average is {sig3(p['diagnostics']['max_30day_avg_gpd'])} gal/day, so it would require review if self-supplied [calibration.json]. It is instead supplied by the Morrisville Municipal Authority service-water system, whose allocation is reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026].{wet_txt}
 
-1. All gallon values other than the two reported Falls values are model-derived and are not measurements. Makeup equals evaporation multiplied by C/(C-1), with heat rejected equal to IT load multiplied by a PUE of 1.2, a latent heat of 2.43 MJ/kg, 4 cycles of concentration and drift neglected.
-2. The hybrid architecture uses the switchover wet-bulb temperature ({sig3(p['t_sw_c'])} C), part-load exponent ({sig3(p['gamma'])}) and reference wet-bulb temperature ({sig3(p['twb_ref_c'])} C) of the primary (peak-day) calibration in results/calibration.json, which reproduces the reported Falls average, peak day and wet-operation share; with three parameters and three targets the fit is exactly determined, so this agreement is not validation. The IT load is set by the grid rather than by the calibrated value.
-3. Climate is KTTN (Trenton-Mercer Airport) hourly data from 2005 to 2024 [noaa_isd], converted to wet-bulb temperature with Stull (2011) [stull_2011] and relative humidity from the Magnus form [alduchov_1996]. Daily totals use America/New_York calendar days. Days with fewer than 20 valid hours are treated as missing ({c['n_nan_days']} of {len(pd.date_range(START, END)):,} days), and a 30-day average is computed when at least 27 of its 30 days are valid.
+The flow columns give, among days with makeup above 100,000 gal, the share on which Delaware River flow at Trenton (USGS 01463500) was below its 2005 to 2024 day-of-year 25th percentile or below the full-record 7Q10 of {q:,.0f} cfs [usgs_nwis_01463500]. All displayed values are rounded to three significant figures. Full-precision values are in results/blindspot_raw.csv.
+
+**Assumptions**
+
+1. All gallon values other than the two reported Falls values are model-derived and are not measurements. Makeup equals evaporation multiplied by C/(C-1), with 4 cycles of concentration and drift neglected. Heat rejected equals IT load multiplied by a PUE of 1.2, and the conversion to evaporation uses a latent heat of 2.43 MJ/kg.
+2. The hybrid architecture uses the switchover wet-bulb temperature ({sig3(p['t_sw_c'])} C), part-load exponent ({sig3(p['gamma'])}) and reference wet-bulb temperature ({sig3(p['twb_ref_c'])} C) of the primary (peak-day) calibration in results/calibration.json. That calibration reproduces the reported Falls average, peak day and wet-operation share. With three parameters and three targets the fit is exactly determined, so this agreement is not validation. The IT load is set by the grid rather than by the calibrated value.
+3. Climate is KTTN (Trenton-Mercer Airport) hourly data from 2005 to 2024 [noaa_isd]. It is converted to wet-bulb temperature with Stull (2011) [stull_2011], with relative humidity from the Magnus form [alduchov_1996]. Daily totals use America/New_York calendar days. Days with fewer than 20 valid hours are treated as missing ({c['n_nan_days']} of {len(pd.date_range(START, END)):,} days). A 30-day average is computed when at least 27 of its 30 days are valid.
 4. Makeup is treated as gross withdrawal, with no credit for return flow. Whether a configuration is self-supplied or purchased is a scenario, not an observation, for every grid row.
-5. The 7Q10 is a log-Pearson Type III fit by the method of moments to annual minimum 7-day mean flows for 113 complete climatic years (April to March, 1914 to 2026), using the unadjusted sample skew. Day-of-year percentiles use the 2005-2024 daily record.
+5. The 7Q10 is a log-Pearson Type III fit by the method of moments to annual minimum 7-day mean flows for 113 complete climatic years (April to March, 1914 to 2026), using the unadjusted sample skew. Day-of-year percentiles use the 2005 to 2024 daily record.
 
-**Citation keys.** {", ".join(KEYS_ALL)}.
+The citation keys are {keys_txt}.
 """
     (FIGURES / "table_blindspot_caption.md").write_text(txt)
     return txt
