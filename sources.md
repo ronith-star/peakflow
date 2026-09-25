@@ -438,7 +438,7 @@ The source was opened and is verified.
 
 ### reuse_ready_model
 
-PeakFlow project. PeakFlow (this repository). 2026. https://github.com/ (repository URL to be set on publication) (accessed 2026-09-25).
+PeakFlow project. PeakFlow (this repository). 2026. https://github.com/ronith-star/peakflow (accessed 2026-09-25).
 
 **Figure or fact taken**
 
