@@ -52,7 +52,7 @@ table:
 	$(PY) -c "from reuse_ready import flow; flow.run(fetch=False)"
 	$(PY) -m reuse_ready.blindspot
 
-# Site classification (cached URL check, no network), supply screen, map.
+# Site classification (cached URL check, no network), supply screen, interactive HTML map.
 # sites.run also writes the 'sites' rows of results/exclusions.csv (inactive, non-data-center, near-miss).
 map:
 	$(PY) -c "from reuse_ready import sites; sites.run(check=False)"
@@ -64,11 +64,11 @@ map:
 urls:
 	$(PY) -m reuse_ready.urlcheck
 
-# V2 technical figures only (map, bar, Falls/Plymouth detail, site key); needs results from `make map`.
+# Bar chart, Falls/Plymouth detail and site key (figures_v2); needs results from `make map`.
 figures_v2:
 	$(PY) -m reuse_ready.plotting.figures_v2
 
-# V3 supply-screen map only (Helvetica font stack, revised key, outside-basin plants at 40 percent opacity).
+# Supply-screen map, full (supply_screen_map, 180 mm) and brief (supply_screen_map_brief, 120 mm).
 figures_v3:
 	$(PY) -m reuse_ready.plotting.figures_v3
 

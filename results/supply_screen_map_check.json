@@ -1,7 +1,11 @@
 {
  "figure": "figures/supply_screen_map",
  "pass": true,
- "unresolved_labels": [],
- "label_pairs_overlapping": [],
- "labels_over_symbols": []
+ "min_font_pt": 7.0,
+ "required_min_font_pt": 7.0,
+ "text_text": [],
+ "text_outside_figure": [],
+ "label_symbol_or_line": [],
+ "site_number_ambiguous": [],
+ "leader_crossings": []
 }

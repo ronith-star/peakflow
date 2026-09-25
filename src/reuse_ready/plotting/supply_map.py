@@ -495,20 +495,12 @@ def write_captions():
 
 
 def run():
+    """Write the interactive HTML map (figures/supply_screen_map.html). The first static map and bar
+    (render_map, render_bar, write_captions) were superseded by figures_v3 and figures_v2 and are no longer
+    written; the functions are kept for reference and are not called by the build."""
     FIGURES.mkdir(parents=True, exist_ok=True)
-    fig, family, report = render_map()
-    bar = render_bar()
     html = render_html()
-    write_captions()
-    # STANDARDS H1: results/<stem>_check.json. Map: label pairs and labels over symbols of their own axes (the
-    # label placer's own gate). Bar: every pair of visible text boxes and text against the figure edge.
-    from .figures_v2 import text_overlaps
-    bar_chk = {"text_text_or_edge": text_overlaps(bar)}
-    for stem, chk in (("supply_screen_map", report), ("supply_screen_bar", bar_chk)):
-        (RESULTS / f"{stem}_check.json").write_text(json.dumps(
-            {"figure": f"figures/{stem}", "pass": not any(chk.values()), **chk}, indent=1, default=str))
-    plt.close(fig); plt.close(bar)
-    return {"font": family, "collisions": report, "bar": bar_chk, "html": str(html)}
+    return {"html": str(html)}
 
 
 if __name__ == "__main__":

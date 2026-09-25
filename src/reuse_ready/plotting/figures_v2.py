@@ -1,7 +1,7 @@
 """V2 technical figures (style of a USGS Scientific Investigations Report).
 
 Builds, from the latest results (results/supply_screen.csv, results/supply_summary.json, results/calibration.json):
-  figures/supply_screen_map_v2.{png,pdf,svg}, _caption.md, _data.csv   single-panel map, 180 mm wide
+  (the single-panel map is drawn by figures_v3 from render_map_v3; the v2 map is no longer written)
   figures/supply_screen_bar_v2.{png,pdf,svg}, _caption.md, _data.csv   one-bar summary, 85 mm wide
   figures/falls_plymouth_detail_v2.{png,pdf,svg}, _caption.md, _data.csv  two-panel appendix detail
   figures/site_key.csv                                                 number -> site key for the map
@@ -622,7 +622,7 @@ def _fmt_mw(v):
     return "" if pd.isna(v) else f"{v:,.0f}"
 
 
-def write_captions(D, key, out_dir=None):
+def write_captions(D, key, out_dir=None, include_map=True):
     out_dir = out_dir or FIGURES
     ss, summ, cal = D["ss"], D["summ"], D["cal"]
     hi, bins = summ["headline_capacity_independent"], summ["covered_it_bins"]
@@ -664,7 +664,8 @@ def write_captions(D, key, out_dir=None):
         "is the model value described above.", ""] + table + ["",
         "**Citation keys.** epa_echo, noaa_isd, stull_2011, falls_levittown_2026, usgs_wbd, usgs_nhdplus_hr, "
         "census_tiger, natural_earth, trackdatacenters_2026, drbc_admin_manual.", ""])
-    (out_dir / "supply_screen_map_v2_caption.md").write_text(m)
+    if include_map:  # the map caption text is the base for figures_v3; it is not written to figures/
+        (out_dir / "supply_screen_map_v2_caption.md").write_text(m)
     bc = bar_counts(ss)
     b = "\n".join([
         "# Figure 2 (supply_screen_bar_v2)", "",
@@ -701,15 +702,9 @@ def run():
     FIGURES.mkdir(exist_ok=True)
     D = load()
     key = site_key(D["ss"])
-    rep = {"map": render_map(D), "bar": render_bar(D), "detail": render_detail(D)}
-    write_captions(D, key)
-    # map and bar consistency: identical fills and counts from the same table
-    mdat = pd.read_csv(FIGURES / "supply_screen_map_v2_data.csv")
-    ms = mdat[mdat.element == "planned_site"].groupby(["covered_it_class", "fill"]).size().to_dict()
-    bd = pd.read_csv(FIGURES / "supply_screen_bar_v2_data.csv")
-    bs = {(r.covered_it_class, r.fill): int(r.n_sites) for r in bd.itertuples()}
-    rep["map_bar_consistent"] = {str(k): (ms.get(k), bs.get(k)) for k in bs}
-    rep["map_bar_identical"] = all(ms.get(k) == v for k, v in bs.items()) and sum(bs.values()) == len(D["ss"])
+    rep = {"bar": render_bar(D), "detail": render_detail(D)}
+    write_captions(D, key, include_map=False)
+    # map and bar consistency is checked by figures_v3 against the current map (supply_screen_map)
     rep["palette_check"] = S.cvd_check({"accent": S.V2_ACCENT, "half": S.V2_ACCENT_HALF, "open": "#FFFFFF",
                                         "water": S.V2_WATER})
     (RESULTS / "figures_v2_check.json").write_text(json.dumps(rep, indent=1, default=str))
@@ -719,13 +714,7 @@ def run():
 
 def write_stem_checks(rep):
     """STANDARDS H1: one results/<stem>_check.json per figure, with the conflict lists and a pass flag."""
-    m = rep["map"]
-    site_bad = [x for x in m["site_labels"] if x["label_overlaps"] or x["square_overlaps"] or x["outside_axes"]
-                or x.get("plant_circle_overlaps")]
-    city_bad = [x for x in m["city_labels"] if x["label_overlaps"] or x["square_overlaps"]]
-    per = {"supply_screen_map_v2": {"text_text_or_edge": m["text_overlaps"], "site_label_conflicts": site_bad,
-                                    "city_label_conflicts": city_bad},
-           "supply_screen_bar_v2": {"text_text_or_edge": rep["bar"]["text_overlaps"]},
+    per = {"supply_screen_bar_v2": {"text_text_or_edge": rep["bar"]["text_overlaps"]},
            "falls_plymouth_detail_v2": {"text_text_or_edge": rep["detail"]["text_overlaps"]}}
     for stem, chk in per.items():
         ok = not any(chk.values())
@@ -735,10 +724,5 @@ def write_stem_checks(rep):
 
 if __name__ == "__main__":
     r = run()
-    print(json.dumps({"map_overlaps": r["map"]["text_overlaps"], "bar_overlaps": r["bar"]["text_overlaps"],
-                      "detail_overlaps": r["detail"]["text_overlaps"], "identical": r["map_bar_identical"],
-                      "leaders": r["map"]["n_leaders"],
-                      "site_label_issues": [x for x in r["map"]["site_labels"] if x["label_overlaps"] or x["square_overlaps"] or x["outside_axes"]],
-                      "city_label_issues": [x for x in r["map"]["city_labels"] if x["label_overlaps"] or x["square_overlaps"]],
-                      "palette_min_dE": r["palette_check"]["overall_min_delta_e"],
-                      "legend_used_mm": r["map"]["legend_used_mm"]}, indent=1, default=str))
+    print(json.dumps({"bar_overlaps": r["bar"]["text_overlaps"], "detail_overlaps": r["detail"]["text_overlaps"],
+                      "palette_min_dE": r["palette_check"]}, indent=1, default=str))

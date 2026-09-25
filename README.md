@@ -6,7 +6,7 @@ Of the 24 active planned data center sites in the Delaware River Basin, 22 lie w
 
 ## Supply screen map
 
-![Figure 1. Supply screen map (v3)](figures/supply_screen_map_v3.png)
+![Figure 1. Supply screen map](figures/supply_screen_map.png)
 
 **Figure 1.** Map showing the 24 active planned data center sites in the Delaware River Basin and the municipal wastewater treatment plants whose effluent could supply their cooling water. [trackdatacenters_2026; epa_echo; reuse_ready_model] The full caption, the site key and the plotted values are in figures/supply_screen_map_v3_caption.md, figures/site_key.csv and figures/supply_screen_map_v3_data.csv. An interactive version with Esri background tiles is figures/supply_screen_map.html [esri_light_gray].
 

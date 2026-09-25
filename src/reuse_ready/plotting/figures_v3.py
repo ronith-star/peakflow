@@ -6,8 +6,8 @@ outside the basin at 40 percent opacity, scale-bar unit labels moved below the b
 treats label padding, site squares, plant circles, the basin boundary and state lines as obstacles. Colours,
 fills, relief, line weights and symbol styles are taken unchanged from styles.V2_* and figures_v2.
 
-Outputs: figures/supply_screen_map_v3.{png,pdf,svg}, _caption.md, _data.csv; results/figures_v3_check.json; the
-same for supply_screen_map_v3_brief (120 mm); results/supply_screen_map_v3{,_brief}_check.json (STANDARDS H1 gate:
+Outputs: figures/supply_screen_map.{png,pdf,svg}, _caption.md, _data.csv; results/figures_v3_check.json; the
+same for supply_screen_map_brief (120 mm); results/supply_screen_map{,_brief}_check.json (STANDARDS H1 gate:
 text pairs, figure edge, label against symbol and line, site-number ambiguity, leader crossings, minimum font).
 """
 from __future__ import annotations
@@ -563,7 +563,7 @@ def final_check(fig, ax, O, map_labels):
 
 
 # ------------------------------------------------------------------------------------------------ map
-def render_map_v3(D, stem_name="supply_screen_map_v3", map_h_mm=222.0, margins_mm=(8.0, 2.0, 11.0, 2.0),
+def render_map_v3(D, stem_name="supply_screen_map", map_h_mm=222.0, margins_mm=(8.0, 2.0, 11.0, 2.0),
                   sources=None, source_y_mm=1.8, rivers_lw=None):
     S.v2_rc()
     fam = S.register_fonts(); narrow = S.narrow_family()
@@ -662,7 +662,7 @@ def render_brief(D):
         CITY_HALO = True
         SCALE_ROWS = ((50, 25, "KILOMETERS", 1000.0), (30, 10, "MILES", 1609.344))
         src = V2.MAP_SOURCES.replace("NOAA ISD; ", "NOAA ISD;\n")
-        info = render_map_v3(D, stem_name="supply_screen_map_v3_brief", map_h_mm=222.0 * k,
+        info = render_map_v3(D, stem_name="supply_screen_map_brief", map_h_mm=222.0 * k,
                              margins_mm=(8.0 * fk, 2.0 * k, 11.0 * fk + 2.6, 2.0 * k), sources=src,
                              source_y_mm=1.2, rivers_lw=saved_S["V2_LW_SECONDARY"] * k)
     finally:
@@ -680,14 +680,14 @@ def write_caption_v3(D, key, info):
     with tempfile.TemporaryDirectory() as td:
         V2.write_captions(D, key, out_dir=Path(td))
         txt = (Path(td) / "supply_screen_map_v2_caption.md").read_text()
-    txt = txt.replace("# Figure 1 (supply_screen_map_v2)", "# Figure 1 (supply_screen_map_v3)")
+    txt = txt.replace("# Figure 1 (supply_screen_map_v2)", "# Figure 1 (supply_screen_map)")
     txt = txt.replace("Circle area is proportional to the median monthly effluent flow reported from July 2023 to "
                       "June 2026 [epa_echo].",
                       "Circle area is proportional to the median monthly effluent flow reported from July 2023 to "
                       "June 2026 [epa_echo]; plants outside the basin are drawn at 40 percent opacity so that plants "
                       "inside the basin read first. In the key, IT load coverable at peak is the largest IT load, in "
                       "megawatts, whose peak-day makeup the nearest eligible plant's median flow covers.")
-    (FIGURES / "supply_screen_map_v3_caption.md").write_text(txt)
+    (FIGURES / "supply_screen_map_caption.md").write_text(txt)
 
 
 def run():
@@ -696,24 +696,24 @@ def run():
     info = render_map_v3(D)
     write_caption_v3(D, key, info)
     # consistency with the v2 bar: same fills and counts per class
-    m = pd.read_csv(FIGURES / "supply_screen_map_v3_data.csv")
+    m = pd.read_csv(FIGURES / "supply_screen_map_data.csv")
     ms = m[m.element == "planned_site"].groupby(["covered_it_class", "fill"]).size().to_dict()
     bc = V2.bar_counts(D["ss"])
     bs = {(r.covered_it_class, r.fill): int(r.n_sites) for r in bc.itertuples()}
     info["map_bar_identical"] = all(ms.get(k) == v for k, v in bs.items()) and sum(bs.values()) == len(D["ss"])
     (RESULTS / "figures_v3_check.json").write_text(json.dumps(info, indent=1, default=str))
     brief = render_brief(D)
-    cap = (FIGURES / "supply_screen_map_v3_caption.md").read_text()
-    cap = cap.replace("# Figure 1 (supply_screen_map_v3)", "# Figure 1, brief size (supply_screen_map_v3_brief)")
+    cap = (FIGURES / "supply_screen_map_caption.md").read_text()
+    cap = cap.replace("# Figure 1 (supply_screen_map)", "# Figure 1, brief size (supply_screen_map_brief)")
     cap += (f"\n\nBrief-size version: the same design and extent at {BRIEF_W_MM:.0f} mm wide, with symbols and line "
             f"weights scaled by {brief['scale']:.3f} and all text at {brief['font_pt']:.1f} pt or larger. The kilometre "
-            "scale bar is divided at 25 km, and city labels displaced from their point carry a short leader line; city labels carry a white halo and may cross the outline of a plant circle. Plotted values are in figures/supply_screen_map_v3_brief_data.csv.\n")
-    (FIGURES / "supply_screen_map_v3_brief_caption.md").write_text(cap)
+            "scale bar is divided at 25 km, and city labels displaced from their point carry a short leader line; city labels carry a white halo and may cross the outline of a plant circle. Plotted values are in figures/supply_screen_map_brief_data.csv.\n")
+    (FIGURES / "supply_screen_map_brief_caption.md").write_text(cap)
     (RESULTS / "figures_v3_brief_check.json").write_text(json.dumps(brief, indent=1, default=str))
     info["brief"] = {"check": brief["check"], "min_font_pt": brief["min_font_pt"], "leaders": brief["n_leaders"]}
     # STANDARDS H1: results/<stem>_check.json per figure. The haloed-city-over-plant-outline list on the brief map
     # is reported but permitted (see the brief caption), so it does not fail the check.
-    for stem, d, min_pt in (("supply_screen_map_v3", info, S.V2_FONT_SIZE), ("supply_screen_map_v3_brief", brief,
+    for stem, d, min_pt in (("supply_screen_map", info, S.V2_FONT_SIZE), ("supply_screen_map_brief", brief,
                                                                             BRIEF_MIN_FONT_PT)):
         gate = {k: v for k, v in d["check"].items() if k != "haloed_city_label_over_plant_outline"}
         ok = not any(gate.values()) and d["min_font_pt"] >= min_pt - 1e-9
