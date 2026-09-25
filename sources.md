@@ -36,7 +36,7 @@ The 30-day averaging test in 401.35(a)(2) and (a)(3) is the basis of the averagi
 
 ## Planned-site sources
 
-Each of the 24 active mapped sites cites its own source_url in data/sites/planned_sites.csv. 21 sources were opened and name the site; 3 were not confirmed (bot-blocked, forbidden to automated clients, or not naming the site) and are drawn with a dashed outline. 6 sources that were bot-blocked or had expired are cited through a replacement (3 Wayback Machine snapshots, 3 alternate outlets), with the original kept in original_url. 2 sites are held unverified until reconfirmed (verification_note). Per-URL results are in data/processed/site_url_verification.csv and data/processed/site_url_check.csv.
+Each of the 24 active mapped sites cites its own source_url in data/sites/planned_sites.csv. 21 sources were opened and name the site; 3 were not confirmed (bot-blocked, forbidden to automated clients, or not naming the site) and are drawn with a dashed outline. 7 sources that were bot-blocked or had expired are cited through a replacement (5 Wayback Machine snapshots, 2 alternate outlets), with the original kept in original_url. 2 sites are held unverified until reconfirmed (verification_note). Per-URL results are in data/processed/site_url_verification.csv and data/processed/site_url_check.csv.
 
 ## Reference entries
 
@@ -260,7 +260,7 @@ Verified: yes.
 
 Limerick Township. Conditional Use Hearings. 2026. https://limerickpa.org/437/Conditional-Use-Hearings (accessed 2026-09-25).
 
-Figure or fact taken: Lists CU 26-03, Limerick Town Center LLC (Data Center), Rev. 1 Plan, 1301 Main Street (TPN 37-00-02785-00-4); replacement source for site DRB33 (Linfield Data Center), whose original document link has expired.
+Figure or fact taken: Lists CU 26-03, Limerick Town Center LLC (Data Center), Rev. 1 Plan, 1301 Main Street (TPN 37-00-02785-00-4); replacement source for site DRB33 (Linfield Data Center), whose original document link has expired. The limerickpa.org domain returned HTTP 404 on 2026-09-25, so the figure was read from the web.archive.org capture of 2026-07-16.
 
 Verified: yes.
 

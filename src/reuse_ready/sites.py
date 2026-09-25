@@ -52,8 +52,9 @@ FORCE_UNVERIFIED = {
     "DRB07": "the audit's live fetch on 2026-09-25 returned HTTP 403 where the repository had recorded 200; "
              "a later fetch that day returned 200 and names DataOne and Vineland, and the only Wayback capture "
              "is a 404, so the source is held unverified until the author reconfirms it",
-    "DRB33": "original Limerick document URL is session-bound and returns 'Download has expired'; the "
-             "replacement township hearings page was not compared against the original document",
+    "DRB33": "original Limerick document URL is session-bound and returns 'Download has expired'. The Wayback "
+             "capture of the township hearings page (2026-07-16) names the applicant, address and Linfield, but it "
+             "was not compared against the original document, so the source is held unverified pending the author",
 }
 
 # Sources whose content check was done by eye because the page has no machine-readable text (audit G10).

@@ -200,11 +200,16 @@ def monthly_flow(d: pd.DataFrame) -> pd.Series:
 
 
 def chem_medians(d: pd.DataFrame) -> dict:
+    """Median of monthly effluent concentrations (mg/L) per chemistry column in CHEM.
+    Uses the "MO AVG" statistic; for a parameter with no MO AVG values, "DAILY AV" (the monthly average of daily
+    values reported by Delaware permits such as DE0020320) is used instead, as in monthly_flow."""
     out = {}
-    base = d[(d.monitoring_location_desc == "Effluent Gross") & (d.standard_unit_desc == "mg/L")
-             & (d.statistical_base_short_desc == "MO AVG")]
+    base = d[(d.monitoring_location_desc == "Effluent Gross") & (d.standard_unit_desc == "mg/L")]
     for col, codes in CHEM.items():
-        v = base[base.parameter_code.isin(codes)].dropna(subset=["value"])
+        pv = base[base.parameter_code.isin(codes)].dropna(subset=["value"])
+        v = pv[pv.statistical_base_short_desc == "MO AVG"]
+        if v.empty:
+            v = pv[pv.statistical_base_short_desc == "DAILY AV"]
         # one value per monitoring month: mean across external outfalls / parameter variants
         per_month = v.groupby(v.period_end.dt.to_period("M")).value.mean()
         out[col] = float(per_month.median()) if len(per_month) else np.nan

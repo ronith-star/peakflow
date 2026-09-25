@@ -29,8 +29,8 @@
   "active_source_verified": 21,
   "active_unverified_dashed": 10,
   "active_url_check": {
-    "resolves": 18,
-    "resolves_via_replacement": 6
+    "resolves": 17,
+    "resolves_via_replacement": 7
   },
   "active_source_not_verified": [
     {
@@ -68,8 +68,12 @@
       "replacement_kind": "alternate_outlet"
     },
     {
+      "site_id": "DRB27",
+      "replacement_kind": "wayback"
+    },
+    {
       "site_id": "DRB33",
-      "replacement_kind": "alternate_outlet"
+      "replacement_kind": "wayback"
     },
     {
       "site_id": "DRB39",
@@ -78,8 +82,8 @@
   ],
   "near_miss_rows": 23,
   "url_check_main": {
-    "resolves": 30,
-    "resolves_via_replacement": 9,
+    "resolves": 29,
+    "resolves_via_replacement": 10,
     "forbidden_to_automated_client": 1
   },
   "url_check_near_miss": {
