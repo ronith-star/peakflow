@@ -14,7 +14,7 @@ Grid: IT load {50, 100, 200, 400} MW x {evaporative_tower, hybrid, air_cooled_ch
 cycles of concentration 4; the hybrid's T_sw, gamma and Twb_ref are read at run time from
 results/calibration.json (key path CALIBRATIONS[name]); IT load is set by the grid, not by the calibration.
 A Falls Township (AWS Keystone) reference row carries the reported average and peak [falls_levittown_2026;
-falls_herald_2026] and the modelled maximum 30-day average from the primary calibration diagnostics.
+falls_herald_2026] and the modeled maximum 30-day average from the primary calibration diagnostics.
 Climate: KTTN hourly wet-bulb, 2005-2024; daily makeup on America/New_York calendar days via
 cooling_model.daily_makeup; days with < 20 valid hours are NaN. The analysis keeps local days
 2005-01-01..2024-12-31 (the UTC record's ragged local-day edges fall outside or become NaN).
@@ -207,7 +207,7 @@ YN = {True: "Yes", False: "No"}
 
 
 def falls_row() -> dict:
-    """Reference row: reported average and peak (sourced), modelled max 30-day average (primary calibration)."""
+    """Reference row: reported average and peak (sourced), modeled max 30-day average (primary calibration)."""
     p = load_calibration("primary")
     tg, dg = p["targets"], p["diagnostics"]
     vals = ["n/a", FALLS_LABEL, sig3(tg["avg_gpd"]) + FN_FALLS, sig3(dg["max_30day_avg_gpd"]) + FN_MODEL, "n/a",
@@ -250,7 +250,7 @@ def headline(t: pd.DataFrame) -> str:
             "water from an existing system")
 
 
-SUBTITLE = ("Modelled daily cooling makeup compared with the DRBC review threshold of 100,000 gal/day, "
+SUBTITLE = ("Modeled daily cooling makeup compared with the DRBC review threshold of 100,000 gal/day, "
             "averaged over any 30 consecutive days")
 
 
@@ -341,7 +341,7 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
     loose_txt = (f"Under a looser test that compares the annual mean with 100,000 gal/day, {len(loose)} of 12 would "
                  "qualify." + (f" {_describe(loose)}" if len(loose) else ""))
     band = c["hybrid_strict_band_mw"]
-    band_txt = (f"Because modelled makeup is proportional to IT load, the calibrated hybrid would fall in the "
+    band_txt = (f"Because modeled makeup is proportional to IT load, the calibrated hybrid would fall in the "
                 f"averaging blind spot only for IT loads between {sig3(band[0])} MW and {sig3(band[1])} MW, which "
                 "lie below the tabulated grid." if band else
                 "The calibrated hybrid has no IT-load band that falls in the averaging blind spot.")
@@ -364,11 +364,11 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
 
 **Caption**
 
-The table lists modelled daily cooling-water makeup for twelve data center configurations and a reference row for the Falls Township (AWS Keystone) project. The configurations combine four IT loads (50, 100, 200 and 400 MW) with three cooling architectures (evaporative tower, calibrated hybrid and air-cooled chiller). The table tests two mechanisms by which such demand can escape Delaware River Basin Commission review.
+The table lists modeled daily cooling-water makeup for twelve data center configurations and a reference row for the Falls Township (AWS Keystone) project. The configurations combine four IT loads (50, 100, 200 and 400 MW) with three cooling architectures (evaporative tower, calibrated hybrid and air-cooled chiller). The table tests two mechanisms by which such demand can escape Delaware River Basin Commission review.
 
 The first mechanism is an averaging blind spot. A withdrawal is excluded from review when "{RULE_QUOTE}" [drbc_admin_manual] ({rule_cite}). Shading would mark configurations that stay below the threshold on every 30-day average but exceed 100,000 gal on at least one day. {strict_txt} {loose_txt} {band_txt}
 
-The second mechanism is a purchased-supply blind spot. The thresholds apply to a project's own withdrawal. A data center that buys water from an existing public or authority system is therefore not itself a withdrawal project, and no review is triggered regardless of size. The Commission states: "{DRBC_DC_QUOTE}" [drbc_datacenters_2026]. Of the twelve configurations, {c['n_review_if_self_supplied']} would require review if self-supplied. None would require review if the water is purchased, so the purchased-supply blind spot covers all {c['n_purchased_supply_blind_spot']}. The Falls project reports an average of 135,000 gal/day [falls_levittown_2026] and a peak of 4.4 million gal/day [falls_levittown_2026, falls_herald_2026], a peak-to-average ratio of {sig3(ratio)}. Its modelled maximum 30-day average is {sig3(p['diagnostics']['max_30day_avg_gpd'])} gal/day, so it would require review if self-supplied [calibration.json]. It is instead supplied by the Morrisville Municipal Authority service-water system, whose allocation is reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026].{wet_txt}
+The second mechanism is a purchased-supply blind spot. The thresholds apply to a project's own withdrawal. A data center that buys water from an existing public or authority system is therefore not itself a withdrawal project, and no review is triggered regardless of size. The Commission states: "{DRBC_DC_QUOTE}" [drbc_datacenters_2026]. Of the twelve configurations, {c['n_review_if_self_supplied']} would require review if self-supplied. None would require review if the water is purchased, so the purchased-supply blind spot covers all {c['n_purchased_supply_blind_spot']}. The Falls project reports an average of 135,000 gal/day [falls_levittown_2026] and a peak of 4.4 million gal/day [falls_levittown_2026, falls_herald_2026], a peak-to-average ratio of {sig3(ratio)}. Its modeled maximum 30-day average is {sig3(p['diagnostics']['max_30day_avg_gpd'])} gal/day, so it would require review if self-supplied [calibration.json]. It is instead supplied by the Morrisville Municipal Authority service-water system, whose allocation is reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026].{wet_txt}
 
 The flow columns give, among days with makeup above 100,000 gal, the share on which Delaware River flow at Trenton (USGS 01463500) was below its 2005 to 2024 day-of-year 25th percentile or below the full-record 7Q10 of {q:,.0f} cfs [usgs_nwis_01463500]. All displayed values are rounded to three significant figures. Full-precision values are in results/blindspot_raw.csv.
 
@@ -394,7 +394,7 @@ COL_GAP_IN = 0.16    # minimum gap between adjacent columns (inches)
 def _layout(fig, ax, df, cols, sizes) -> list[float]:
     """Measure each column's widest string (header lines and cells) and place columns left to right with
     equal gaps filling the axes width. Returns the anchor x (axes fraction) for each column."""
-    from matplotlib.textpath import TextPath  # noqa: F401  (ensures font machinery is initialised)
+    from matplotlib.textpath import TextPath  # noqa: F401  (ensures font machinery is initialized)
 
     r = fig.canvas.get_renderer()
     ax_w = ax.get_window_extent(r).width
@@ -554,8 +554,8 @@ def write_brief_table():
              f"The {BRIEF_BAND_MW} MW hybrid row is the 100 MW hybrid scaled linearly (makeup is proportional to "
              f"IT load); it lies inside the averaging band of {lo:.2f} to {hi:.1f} MW, where every 30-day average is "
              "below the trigger but the peak day exceeds 100,000 gallons [reuse_ready_model]. "
-             "Modelled values are [reuse_ready_model]; Falls values are reported [falls_levittown_2026; "
-             "falls_herald_2026], except the maximum 30-day average, which is modelled.\n")
+             "Modeled values are [reuse_ready_model]; Falls values are reported [falls_levittown_2026; "
+             "falls_herald_2026], except the maximum 30-day average, which is modeled.\n")
     (RESULTS / "table_blindspot_brief_notes.md").write_text(notes)
     return out
 

@@ -376,7 +376,7 @@ Mytton, David. Data centre water consumption. 2021. https://doi.org/10.1038/s415
 
 **Figure or fact taken**
 
-Fewer than a third of data centre operators measure water consumption. The paper gives no facility WUE range used here.
+Fewer than a third of data center operators measure water consumption. The paper gives no facility WUE range used here.
 
 The source was opened and is verified.
 

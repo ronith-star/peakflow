@@ -2,7 +2,7 @@
 
 The following items need a decision from the repository owner. The rest of the pipeline does not depend on any of them.
 
-1. Git initialisation. The build environment does not permit `git init`, so the repository is not yet under version control. Run `git init && git add -A && git commit -m "PeakFlow"` and set the repository URL in references.bib (key reuse_ready_model) and CITATION.cff.
+1. Git initialization. The build environment does not permit `git init`, so the repository is not yet under version control. Run `git init && git add -A && git commit -m "PeakFlow"` and set the repository URL in references.bib (key reuse_ready_model) and CITATION.cff.
 2. Six datacenterdynamics.com source pages refuse automated requests. The sites they support are marked unverified (dashed outline) until someone opens them by hand.
 3. The v2 source line adds "U.S. Census Bureau" to the wording in the figure instruction, because the v2 and v3 maps draw Census cartographic boundaries. Approve the addition or name an alternative.
 4. The Sierra Club page on the Falls campus returns a redirect loop and was not opened. Its unverified 400 to 500 MW figure is not used.

@@ -1,4 +1,4 @@
-"""Shared figure styling: font selection, palette constants, colour-vision-deficiency check.
+"""Shared figure styling: font selection, palette constants, color-vision-deficiency check.
 
 Font: Helvetica, falling back to Arial, then Liberation Sans, for all figures; Arial Narrow, falling back to
 Liberation Sans Narrow, for site numbers and city labels on maps. These are system fonts and are not
@@ -176,8 +176,8 @@ def v2_source_line(fig, text: str, y_mm: float = 1.5, x_mm: float = 2.0):
                     fontsize=V2_FONT_SIZE, color=V2_BLACK)
 
 
-# Colour-vision check sets for the v2 and v3 maps (colours unchanged since v2; audit G20, 2026-09-25).
-# FILL-ENCODED colours carry meaning by fill alone (the three site-coverage fills and water) and must be at least
+# Color-vision check sets for the v2 and v3 maps (colors unchanged since v2; audit G20, 2026-09-25).
+# FILL-ENCODED colors carry meaning by fill alone (the three site-coverage fills and water) and must be at least
 # MIN_DELTA_E apart. OUTLINE-SEPARATED pairs never meet without a black line between them, so their fill
 # contrast is a redundant cue: the basin interior (white, which is also the "open" site fill) meets the outside
 # fill V2_OUTSIDE only along the basin boundary, drawn in V2_BLACK at V2_LW_PRIMARY, and every site square has a

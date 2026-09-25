@@ -4,7 +4,7 @@ Outputs: results/water_energy_frontier.csv, results/lbnl_fig44_digitized.csv,
 figures/water_energy_frontier.{png,pdf,svg}, _caption.md, _data.csv; results/water_energy_frontier_check.json.
 
 Axes, per MW of IT load and per year (8,760 h):
-  water  (gal per MW-year): modelled architectures from cooling_model on KTTN hourly wet-bulb 2005-2024 (hybrid
+  water  (gal per MW-year): modeled architectures from cooling_model on KTTN hourly wet-bulb 2005-2024 (hybrid
          calibrated by results/calibration.json 'primary'); LBNL-only architectures from Figure 4.4 site WUE,
          gal = WUE (L/kWh) x 8,760,000 kWh / 3.785411784 L/gal.
   energy (kWh per MW-year) = (PUE - 1) x 8,760,000, PUE from LBNL 2024 Figure 4.4 (report p. 46) [shehabi_2024].
@@ -13,7 +13,7 @@ Axes, per MW of IT load and per year (8,760 h):
 
 LBNL Figure 4.4 is a raster image (1002 x 756 px) embedded on PDF page 46. `digitize_fig44` reads it straight
 from data/raw/lbnl_2024.pdf: axes are calibrated on the gridlines (PUE 1.00 to 2.50 at 0.25 steps, 49.6 px per
-0.25; WUE 0 to 4 L/kWh, 73.3 px per 1), boxes are found by fill colour, the median is the dark line inside the
+0.25; WUE 0 to 4 L/kWh, 73.3 px per 1), boxes are found by fill color, the median is the dark line inside the
 box, and the range is the whisker ends as drawn. Resolution is one pixel: 0.005 PUE and 0.014 L/kWh.
 Central value = median; range = whisker ends. LBNL states the lower limits are best-practice efficiency in
 favourable climates and the upper limits poor efficiency in hot, humid climates (p. 44).
@@ -31,7 +31,7 @@ Architecture to LBNL row mapping (hyperscale, i.e. 'Large-scale', rows used wher
                         so the water axis uses the 0.1 to 0.3 L/kWh reported by hyperscale operators for similar
                         systems and the 0.2 L/kWh median LBNL uses for context (p. 47).
 
-Modelled water at a given PUE: heat rejected = P_IT x PUE (cooling_model), so per-MW-IT makeup scales linearly
+Modeled water at a given PUE: heat rejected = P_IT x PUE (cooling_model), so per-MW-IT makeup scales linearly
 with PUE. Central = 20-year mean at the LBNL median PUE; low = lowest calendar-year total at the low-whisker
 PUE; high = highest calendar-year total at the high-whisker PUE. Cycles of concentration fixed at 4.
 """
@@ -54,7 +54,7 @@ FIG44_PAGE_INDEX = 45                      # zero-based; report page 46
 FIG44_PAGE_LABEL = 46
 FALLS_AVG_GPD = 135_000.0                  # [falls_levittown_2026]
 
-# Pixel row bands (top, bottom) of each box in the native 1002 x 756 raster, and the fill colour of its series.
+# Pixel row bands (top, bottom) of each box in the native 1002 x 756 raster, and the fill color of its series.
 FIG44_ROWS = {
     "large_waterside_econ_wcc": ("Large-scale", "Waterside economizer (water-cooled chiller)", 541, 551, "blue"),
     "large_dry_cooler_adiabatic_acc": ("Large-scale", "Dry cooler with adiabatic assist (air-cooled chiller)",
@@ -66,7 +66,7 @@ FIG44_ROWS = {
     "midsize_air_cooled_chiller": ("Midsize", "Air-cooled chiller", 188, 198, "orange"),
     "midsize_water_cooled_chiller": ("Midsize", "Water-cooled chiller", 310, 320, "orange"),
 }
-# Rows whose WUE is drawn as a collapsed box (a dark marker at about 0 L/kWh) rather than a coloured box.
+# Rows whose WUE is drawn as a collapsed box (a dark marker at about 0 L/kWh) rather than a colored box.
 FIG44_WUE_COLLAPSED = {"large_airside_adiabatic_acc", "midsize_air_cooled_chiller"}
 PUE_GRID_PX = np.array([308, 358, 407, 457, 507, 556, 606]); PUE_GRID_V = np.arange(1.0, 2.51, 0.25)
 WUE_GRID_PX = np.array([676, 749, 822, 896, 969]); WUE_GRID_V = np.arange(0.0, 4.01, 1.0)
@@ -433,7 +433,7 @@ def caption(t: pd.DataFrame, model: dict) -> str:
         "**Figure X.**\n\n"
         "The chart shows annual cooling water and non-IT energy per megawatt of IT load for five cooling "
         "architectures at Trenton, New Jersey. Points are central values, and bars span the low and high values "
-        "on each axis. Filled circles are modelled on Trenton hourly wet-bulb temperature for 2005 to 2024 "
+        "on each axis. Filled circles are modeled on Trenton hourly wet-bulb temperature for 2005 to 2024 "
         "[noaa_isd, stull_2011, reuse_ready_model]. Open circles take water from the LBNL simulated or reported "
         "site water usage effectiveness [shehabi_2024]. The open diamond is the Falls Township (AWS Keystone) "
         f"filing of {_g(FALLS_AVG_GPD)} gallons per day [falls_levittown_2026]. That figure is multiplied by 365 and "
@@ -454,13 +454,13 @@ def caption(t: pd.DataFrame, model: dict) -> str:
         f"{aa.pue_low:.3f}, {aa.pue_central:.3f} and {aa.pue_high:.3f} (air-cooled chiller) [shehabi_2024]. "
         "Values were digitized from the figure raster at a resolution of 0.005 in PUE and 0.014 L/kWh "
         "[reuse_ready_model].\n\n"
-        "Modelled water scales with PUE. Its range combines the lowest calendar-year total at the low PUE with the "
+        "Modeled water scales with PUE. Its range combines the lowest calendar-year total at the low PUE with the "
         "highest at the high PUE [reuse_ready_model]. Water for the water-cooled airside row is the Figure 4.4 site "
         f"WUE, {aw.lbnl_wue_low:.2f}, {aw.lbnl_wue_central:.2f} and {aw.lbnl_wue_high:.2f} L/kWh [shehabi_2024]. "
         "It is converted at 8,760,000 kWh per MW-year and 3.785411784 L per gallon [reuse_ready_model]. LBNL "
         "describes the simulated WUE of the air-cooled airside row as likely low. Water for that row is therefore "
         f"the {LBNL_P47_REPORTED_WUE['low']:.1f} to {LBNL_P47_REPORTED_WUE['high']:.1f} L/kWh that hyperscale "
-        f"operators report for similar systems, centred on {LBNL_P47_REPORTED_WUE['central']:.1f} L/kWh (page 47) "
+        f"operators report for similar systems, centered on {LBNL_P47_REPORTED_WUE['central']:.1f} L/kWh (page 47) "
         "[shehabi_2024]. The air-cooled chiller uses no evaporative makeup and is plotted in the separate zero "
         "panel [reuse_ready_model]. The lower end of the water-cooled airside range is also zero and continues into "
         "that panel [shehabi_2024]. Plotted values are in figures/water_energy_frontier_data.csv and "

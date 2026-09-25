@@ -1,4 +1,4 @@
-"""Stull (2011) wet-bulb: published worked example and array/NaN behaviour."""
+"""Stull (2011) wet-bulb: published worked example and array/NaN behavior."""
 import numpy as np
 
 from reuse_ready.wetbulb import rh_from_dewpoint, stull_wetbulb, wetbulb_from_dewpoint

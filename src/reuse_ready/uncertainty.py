@@ -58,7 +58,7 @@ LBNL_PDF = RAW / "lbnl_2024.pdf"
 # ---------------------------------------------------------------- LBNL 2024 Figure 4.4 (p.46), digitized
 # Five-number summaries (lower whisker, Q1, median, Q3, upper whisker) in L/kWh (WUE) and PUE, read from the
 # large-scale boxes by digitize_figure_4_4() at 8x render (1 px = 0.0035 L/kWh; 0.0013 PUE). Values rounded to
-# 0.01 L/kWh and 0.001 PUE. A negative lower whisker (line-width artefact at 0) is clipped to 0.
+# 0.01 L/kWh and 0.001 PUE. A negative lower whisker (line-width artifact at 0) is clipped to 0.
 FIG44_ROWS = [  # row order top to bottom in the figure (17 rows)
     "small_direct_expansion", "small_air_cooled_chiller", "small_water_cooled_chiller",
     "mid_direct_expansion", "mid_air_cooled_chiller", "mid_dry_cooler_acc", "mid_airside_econ_acc",
@@ -85,7 +85,7 @@ WUE_MAP = {"evaporative_tower": "large_waterside_econ_wcc", "hybrid": "large_air
 WUE_MAP_ALT = {"evaporative_tower": "large_waterside_econ_wcc", "hybrid": "large_dry_cooler_adiabatic_acc"}
 
 # ---------------------------------------------------------------- LBNL 2024 Figure 4.2 (p.39), digitized
-# Percent of each bar (2023) by cooling system, read by digitize_figure_4_2() along the bar centre line;
+# Percent of each bar (2023) by cooling system, read by digitize_figure_4_2() along the bar center line;
 # 1 px = 0.065 percentage points; segments under 0.5 percent are near the reading limit.
 FIG42_SHARES = {
     "hyperscale": {

@@ -1,4 +1,4 @@
-"""Synthetic-fixture tests for the supply screen classes and the 10-mile cutoff (EPSG:5070 metres)."""
+"""Synthetic-fixture tests for the supply screen classes and the 10-mile cutoff (EPSG:5070 meters)."""
 from pathlib import Path
 
 import geopandas as gpd

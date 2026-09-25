@@ -86,7 +86,7 @@ def passage_check() -> list[dict]:
 
 
 def cited_keys() -> dict[str, set]:
-    files = [ROOT / "results/results.md", ROOT / "README.md"] + sorted((ROOT / "figures").glob("*_caption.md"))
+    files = [ROOT / "results/results.md", ROOT / "README.md", ROOT / "LICENSES.md"] + sorted((ROOT / "figures").glob("*_caption.md"))
     used = {}
     for f in files:
         if f.exists():

@@ -14,6 +14,11 @@ pytestmark = pytest.mark.skipif(not MD.exists() or not (RESULTS / "supply_summar
                                 reason="results not built")
 
 
+# A sentence may not start with a numeral, so counts that open a sentence are written as words.
+_WORDS = {n: w for n, w in enumerate("Zero One Two Three Four Five Six Seven Eight Nine Ten Eleven Twelve Thirteen "
+                                     "Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen Twenty".split())}
+
+
 def _j(name):
     return json.loads((RESULTS / name).read_text())
 
@@ -34,7 +39,7 @@ def expected_phrases():
     p, a = c["primary"], c["alternative"]
     lo, hi_mw = b["hybrid_strict_band_mw"]
     ph = [
-        f"{hi['n_within_10mi_of_eligible_potw']} lie within 10 miles", f"{hi['n_no_published_capacity']} of the 24 sites do not publish",
+        f"{hi['n_within_10mi_of_eligible_potw']} lie within 10 miles", f"{_WORDS.get(hi['n_no_published_capacity'], hi['n_no_published_capacity'])} of the 24 sites do not publish",
         f"{bins['over 200 MW']} sites exceed 200 MW", f"{bins['50 to 200 MW']} fall between 50 and 200 MW",
         f"{bins['no eligible plant within 10 mi']} have no eligible plant within 10 miles",
         _fmt(s["demand_rates"]["peak_day_gpd_per_mw"]) + " gal/day per MW",
@@ -87,7 +92,7 @@ def test_prose_rules():
 # Verbatim regulatory quotes in sources.md end before the semicolon that closes each CFR item.
 from reuse_ready.paths import ROOT as _ROOT  # noqa: E402
 
-PROSE_FILES = ["README.md", "results/results.md", "sources.md", "results/brief_numbers.md"]
+PROSE_FILES = ["README.md", "LICENSES.md", "results/results.md", "sources.md", "results/brief_numbers.md"]
 
 
 def _prose_files():

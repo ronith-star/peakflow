@@ -7,7 +7,7 @@ Journal of Applied Meteorology and Climatology, 50(11), 2267-2269. doi:10.1175/J
 The Stull fit is empirical at standard sea-level pressure (101.325 kPa) and is valid for
 RH 5-99 % and T -20 to 50 C; its mean absolute error is below 0.3 C over that range.
 Relative humidity is derived from temperature and dew point with the Magnus form of the
-saturation vapour pressure (Alduchov and Eskridge 1996 coefficients) [alduchov_1996].
+saturation vapor pressure (Alduchov and Eskridge 1996 coefficients) [alduchov_1996].
 Station pressure is carried in the processed data but, consistent with the Stull method,
 is not used in the wet-bulb calculation; this is stated as an assumption in results.md.
 """

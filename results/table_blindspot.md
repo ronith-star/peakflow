@@ -1,6 +1,6 @@
 **0 of 12 configurations escape DRBC review by averaging, and all 8 that would trigger it escape if they buy water from an existing system**
 
-Modelled daily cooling makeup compared with the DRBC review threshold of 100,000 gal/day, averaged over any 30 consecutive days.
+Modeled daily cooling makeup compared with the DRBC review threshold of 100,000 gal/day, averaged over any 30 consecutive days.
 
 | IT load (MW) | Configuration | 30-day avg, annual mean (gal/d)¹ | 30-day avg, max (gal/d)¹ | Peak day p99 (gal/d)¹ | Peak day max (gal/d)¹ | Below trigger on 30-day avg² | Days/yr, 30-day avg > 100,000 gal/d² | Days/yr, single day > 100,000 gal (not the trigger test)¹ | Of those, flow < DOY p25³ | Of those, flow < 7Q10³ | Review if self-supplied² | Review if purchased from an existing system⁵ |
 | ---: | :--- | ---: | ---: | ---: | ---: | :---: | ---: | ---: | ---: | ---: | :---: | :---: |

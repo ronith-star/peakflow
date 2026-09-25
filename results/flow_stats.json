@@ -10,7 +10,7 @@
     "first_provisional_date": "2025-03-06"
   },
   "seven_q_ten": {
-    "method": "log-Pearson Type III, method of moments on log10 annual minimum 7-day mean flow, unadjusted sample skew, no regional skew or low-outlier screening; climatic years Apr 1-Mar 31 labelled by ending year; complete years only",
+    "method": "log-Pearson Type III, method of moments on log10 annual minimum 7-day mean flow, unadjusted sample skew, no regional skew or low-outlier screening; climatic years Apr 1-Mar 31 labeled by ending year; complete years only",
     "primary_full_record": {
       "value_cfs": 1794.8505715389547,
       "log10_mean": 3.4419991444473506,

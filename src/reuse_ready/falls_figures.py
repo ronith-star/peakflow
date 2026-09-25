@@ -312,7 +312,7 @@ def render_duration_curve(d: pd.Series, st: dict) -> dict:
     ax.yaxis.set_minor_locator(NullLocator())
     ax.set_xticks([0, 20, 40, 60, 80, 100])
     ax.set_xlabel("Percent of days exceeded", labelpad=2)
-    ax.set_ylabel("Modelled makeup (million gal/d)", labelpad=2)
+    ax.set_ylabel("Modeled makeup (million gal/d)", labelpad=2)
     _style_axes(ax)
     chk = text_boxes_check(fig)
     stem = "falls_duration_curve"
@@ -361,7 +361,7 @@ def render_drought_coincidence(df: pd.DataFrame, cs: dict, pct_equiv: pd.Series)
     ax.yaxis.set_minor_locator(NullLocator())
     ax.set_xticks([0, 25, 50, 75, 100])
     ax.set_xlabel("Same-day Trenton flow, day-of-year percentile", labelpad=2)
-    ax.set_ylabel("Modelled makeup (million gal/d)", labelpad=2)
+    ax.set_ylabel("Modeled makeup (million gal/d)", labelpad=2)
     _style_axes(ax)
     # key in the top margin (two right-aligned rows) so that no line label covers a data point
     fig.canvas.draw()
@@ -410,7 +410,7 @@ def caption_duration(st: dict, cal: dict) -> str:
     return (
         "# Figure 3 (falls_duration_curve)\n\n"
         "**Figure 3.**\n\n"
-        "The duration curve shows modelled daily cooling makeup for the calibrated hybrid system at the Falls "
+        "The duration curve shows modeled daily cooling makeup for the calibrated hybrid system at the Falls "
         "Township (AWS Keystone) campus under KTTN weather for 2005 to 2024 [reuse_ready_model, noaa_isd, "
         f"stull_2011]. The model uses the primary peak-day calibration (switchover wet-bulb {cal['t_sw_c']:.2f} °C, "
         f"part-load exponent {cal['gamma']:.3f}, {cal['p_it_mw']:.1f} MW of IT load, PUE {cal['pue']:.1f}, "
@@ -423,9 +423,9 @@ def caption_duration(st: dict, cal: dict) -> str:
         "is shaded [reuse_ready_model]. Reference lines mark the reported average of 135,000 gal/d "
         "[falls_levittown_2026], the reported peak of 4.4 million gal/d [falls_levittown_2026, falls_herald_2026] "
         "and the 100,000 gal/d DRBC review threshold, which applies to the daily average over any 30 consecutive "
-        f"days [drbc_admin_manual]. The modelled maximum day ({st['max_gpd']:,.0f} gal/d on {st['max_date']}) is "
-        f"{st['peak_to_average_ratio']:.1f} times the modelled mean ({st['mean_gpd']:,.0f} gal/d) "
-        f"[reuse_ready_model]. Modelled makeup exceeds 100,000 gal on {st['pct_days_above_trigger_100000']:.1f} "
+        f"days [drbc_admin_manual]. The modeled maximum day ({st['max_gpd']:,.0f} gal/d on {st['max_date']}) is "
+        f"{st['peak_to_average_ratio']:.1f} times the modeled mean ({st['mean_gpd']:,.0f} gal/d) "
+        f"[reuse_ready_model]. Modeled makeup exceeds 100,000 gal on {st['pct_days_above_trigger_100000']:.1f} "
         f"percent of valid days ({st['n_days_above_trigger_100000']} days) and 135,000 gal on "
         f"{st['pct_days_above_avg_135000']:.1f} percent ({st['n_days_above_avg_135000']} days) "
         "[reuse_ready_model]. No day exceeds 4.4 million gal, which the calibration reproduces on "
@@ -439,7 +439,7 @@ def caption_coincidence(cs: dict, iv: pd.DataFrame) -> str:
     return (
         "# Figure 4 (drought_coincidence)\n\n"
         "**Figure 4.**\n\n"
-        "The scatter plot compares modelled daily cooling makeup for the calibrated Falls Township hybrid with the "
+        "The scatter plot compares modeled daily cooling makeup for the calibrated Falls Township hybrid with the "
         "same-day flow of the Delaware River at Trenton. Flow is expressed as the day-of-year percentile of that "
         "day's flow among the same calendar day in 2005 to 2024 [reuse_ready_model, usgs_nwis_01463500]. Only the "
         f"{cs['n_positive_days_plotted']:,} days with makeup above zero are drawn on the logarithmic axis "

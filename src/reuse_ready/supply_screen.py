@@ -1,6 +1,6 @@
 """Supply screen: can a nearby municipal treatment plant's effluent cover a planned site's peak cooling makeup?
 
-Rule (all distances in EPSG:5070 metres; 10 miles = 16093.44 m):
+Rule (all distances in EPSG:5070 meters; 10 miles = 16093.44 m):
   Sites   : data/sites/planned_sites.csv rows with on_map == True.
   Demand  : peak-day makeup (gal/day) = it_mw * (peak_day_gpd / p_it_mw) from the calibrated hybrid
             (results/calibration.json, key 'primary'); the cooling model is linear in P_IT. The 99th
@@ -81,7 +81,7 @@ def eligible_mask(plants: pd.DataFrame, include_non_potw: bool = False) -> pd.Se
 # ---------------------------------------------------------------- core
 def classify(sites: gpd.GeoDataFrame, plants: gpd.GeoDataFrame, demand_gpd: pd.Series,
              radius_m: float = RADIUS_M) -> pd.DataFrame:
-    """Per-site match against an already-filtered set of eligible plants (both GeoDataFrames in metres)."""
+    """Per-site match against an already-filtered set of eligible plants (both GeoDataFrames in meters)."""
     sx, sy = sites.geometry.x.to_numpy(), sites.geometry.y.to_numpy()
     px, py = plants.geometry.x.to_numpy(), plants.geometry.y.to_numpy()
     dist = np.hypot(sx[:, None] - px[None, :], sy[:, None] - py[None, :]) if len(px) else np.empty((len(sx), 0))

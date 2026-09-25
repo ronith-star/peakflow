@@ -3,7 +3,7 @@
 Relative to v2, only these change: the font (Helvetica, then Arial, then Liberation Sans; Arial Narrow or
 Liberation Sans Narrow for site numbers and city labels), the legend wording and layout, a tighter crop, plants
 outside the basin at 40 percent opacity, scale-bar unit labels moved below the bars, and a label placer that
-treats label padding, site squares, plant circles, the basin boundary and state lines as obstacles. Colours,
+treats label padding, site squares, plant circles, the basin boundary and state lines as obstacles. Colors,
 fills, relief, line weights and symbol styles are taken unchanged from styles.V2_* and figures_v2.
 
 Outputs: figures/supply_screen_map.{png,pdf,svg}, _caption.md, _data.csv; results/figures_v3_check.json; the
@@ -66,7 +66,7 @@ def draw_features_v3(ax, D):
 
 
 def scale_bar_v3(fig, rect_fig, m_per_mm, rows=None, bar_mm=None, north=True):
-    """Two stacked scale bars; numbers above each bar, the unit label centred below it; north arrow at left."""
+    """Two stacked scale bars; numbers above each bar, the unit label centered below it; north arrow at left."""
     rows = SCALE_ROWS if rows is None else rows
     k = TXT_K
     bar_mm = 1.0 * k if bar_mm is None else bar_mm
@@ -225,7 +225,7 @@ AMBIG_RATIO = 1.2   # a site number without a leader must sit >= 1.2 x nearer it
 
 def _ambiguous(bb, own, O):
     """Label-to-symbol association check for a site number. `bb` is the text box (display px), `own` the anchor.
-    Distances run from the text centre to the centre of every site square (and city dot, when O includes them).
+    Distances run from the text center to the center of every site square (and city dot, when O includes them).
     Returns (flag, ratio): flag is True when the nearest other symbol is closer than AMBIG_RATIO times the
     distance to the label's own square, so a reader could attach the number to the wrong site."""
     sq = O["sq"]
@@ -708,7 +708,7 @@ def run():
     cap = cap.replace("# Figure 1 (supply_screen_map)", "# Figure 1, brief size (supply_screen_map_brief)")
     cap += (f"\n\nThe brief-size version has the same design and extent at {BRIEF_W_MM:.0f} mm wide. Its symbols and "
             f"line weights are scaled by {brief['scale']:.3f}, and all text is set at {brief['font_pt']:.1f} pt or "
-            "larger. The kilometre scale bar is divided at 25 km. City labels displaced from their point carry a "
+            "larger. The kilometer scale bar is divided at 25 km. City labels displaced from their point carry a "
             "short leader line. City labels carry a white halo and may cross the outline of a plant circle. Plotted "
             "values are in figures/supply_screen_map_brief_data.csv.\n")
     (FIGURES / "supply_screen_map_brief_caption.md").write_text(cap)

@@ -9,7 +9,7 @@ OLD = ("Reuse-Ready", "Reuse Ready", "ReuseReady")
 
 
 def _docs():
-    fs = [ROOT / p for p in ("README.md", "CITATION.cff", "references.bib", "sources.md", "pyproject.toml",
+    fs = [ROOT / p for p in ("README.md", "LICENSES.md", "CITATION.cff", "references.bib", "sources.md", "pyproject.toml",
                               "Makefile", "results/results.md", "results/brief_numbers.md")]
     return [f for f in fs + sorted((ROOT / "figures").glob("*_caption.md")) if f.exists()]
 

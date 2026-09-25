@@ -229,7 +229,7 @@ def edge_ticks(ax, ext, step_deg, label_edges=("bottom", "left"), tick_len_pt=3.
 
 
 def scale_bar_axes(fig, rect_fig, m_per_mm, km_total, km_step, mi_total, mi_step, bar_mm=1.0, with_north=False):
-    """Scale bar in its own transparent axes (x and y in millimetres): kilometres with labels above, miles with
+    """Scale bar in its own transparent axes (x and y in millimeters): kilometers with labels above, miles with
     labels below, alternating black and white segments; optional north arrow to the left."""
     sa = fig.add_axes(rect_fig)
     w_mm = rect_fig[2] * fig.get_size_inches()[0] * 25.4
@@ -283,7 +283,7 @@ LEADER_FROM = 7.8
 def place_numbers(ax, pts, texts, hard_boxes, symbols, color=S.V2_BLACK, size=S.V2_FONT_SIZE, radii=RADII,
                   leader_from=LEADER_FROM):
     """Place short labels next to points. Hard constraints: inside axes; no overlap with other labels or hard
-    boxes; no overlap with any site square. Plant circles are soft (minimised). Leader lines only when the
+    boxes; no overlap with any site square. Plant circles are soft (minimized). Leader lines only when the
     label must sit beyond `leader_from` points."""
     fig = ax.figure
     fig.canvas.draw()
@@ -365,7 +365,7 @@ def symbols_px(ax, D):
 
 # ------------------------------------------------------------------------------------------------ legend
 def legend_box(ax, D, fig_mm_to_axes, x_mm, y_mm, w_mm, h_mm):
-    """Compact boxed legend in axes coordinates; contents laid out in millimetres from the box's top-left."""
+    """Compact boxed legend in axes coordinates; contents laid out in millimeters from the box's top-left."""
     lg = ax.inset_axes(fig_mm_to_axes(x_mm, y_mm, w_mm, h_mm))
     lg.set_xlim(0, w_mm); lg.set_ylim(h_mm, 0); lg.set_xticks([]); lg.set_yticks([])
     lg.set_facecolor("white"); lg.set_zorder(40)
@@ -425,7 +425,7 @@ def render_map(D):
     tick_txt = edge_ticks(ax, ext, 0.5)
     m_per_mm = wid / aw
 
-    def mm_to_axes(x_mm, y_mm, w_mm, h_mm):   # x from left, y from top, in map-axes millimetres
+    def mm_to_axes(x_mm, y_mm, w_mm, h_mm):   # x from left, y from top, in map-axes millimeters
         return [x_mm / aw, 1 - (y_mm + h_mm) / ah, w_mm / aw, h_mm / ah]
     lw_mm, lh_mm = 57.0, 84.0
     lx_mm, ly_mm = aw - lw_mm - 2.5, ah - lh_mm - 2.5
@@ -642,7 +642,7 @@ def write_captions(D, key, out_dir=None, include_map=True):
         "# Figure 1 (supply_screen_map_v2)", "",
         f"**Figure 1.** The map shows the {n} active planned data center sites in the Delaware River Basin and the "
         f"municipal wastewater treatment plants whose effluent could supply their cooling water. Each site is shaded by "
-        f"the largest information technology (IT) load whose modelled peak-day cooling makeup the median effluent flow "
+        f"the largest information technology (IT) load whose modeled peak-day cooling makeup the median effluent flow "
         f"of the nearest eligible municipal plant within 10 miles could cover. {n_ge50} of {n} sites have such a plant "
         f"able to cover at least 50 megawatts (MW) of IT load. Of these, {bins['over 200 MW']} sites fall over 200 MW "
         f"(solid) and {bins['50 to 200 MW']} sites fall between 50 and 200 MW (half-tone). The remaining "
@@ -676,7 +676,7 @@ def write_captions(D, key, out_dir=None, include_map=True):
     b = "\n".join([
         "# Figure 2 (supply_screen_bar_v2)", "",
         f"**Figure 2.** The bar chart divides the {n} active planned data center sites in the Delaware River Basin "
-        f"[trackdatacenters_2026] by the largest IT load whose modelled peak-day cooling makeup the nearest "
+        f"[trackdatacenters_2026] by the largest IT load whose modeled peak-day cooling makeup the nearest "
         f"eligible municipal plant within 10 miles could cover [epa_echo]. {bins['over 200 MW']} sites fall over "
         f"200 MW (solid), {bins['50 to 200 MW']} between 50 and 200 MW (half-tone), and "
         f"{bins['no eligible plant within 10 mi']} with no eligible plant within 10 miles (open). Fills and counts "

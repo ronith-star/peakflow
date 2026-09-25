@@ -8,7 +8,7 @@ Inputs
 
 Methods
   7Q10: the annual minimum of the 7-day moving-average flow is taken per climatic year (1 April to
-  31 March, labelled by the calendar year in which it ends, USGS convention). 7-day windows lie wholly
+  31 March, labeled by the calendar year in which it ends, USGS convention). 7-day windows lie wholly
   inside the climatic year and require 7 non-missing days. Only complete climatic years (every day
   present) are used. The 10-year recurrence (non-exceedance probability 0.1) is estimated with a
   log-Pearson Type III distribution fitted by the method of moments on log10 annual minima (mean,
@@ -171,7 +171,7 @@ def _iso(date_text: str) -> str:
 def parse_drought_table(html: str) -> pd.DataFrame:
     """Rows carrying a decade label (first cell like '1980s', possibly rowspan) have label + up to 6
     action cells; continuation rows under a rowspan omit the label, so their cells are shifted one
-    column left relative to labelled rows. Several rows in the source HTML also omit trailing empty
+    column left relative to labeled rows. Several rows in the source HTML also omit trailing empty
     cells, so cells are assigned left to right starting at enter_watch and missing trailing cells are
     blank. 'Conditional' annotations are moved to `notes`; '--' is kept in its cell and explained in
     `notes` using the page's footnote 2."""
@@ -181,12 +181,12 @@ def parse_drought_table(html: str) -> pd.DataFrame:
     rows, period = [], None
     for tr in trs[1:]:  # first row is the header
         cells = [_clean(c) for c in re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", tr, re.S | re.I)]
-        labelled = bool(cells) and re.fullmatch(r"\d{4}s", cells[0]) is not None
-        if labelled:
+        labeled = bool(cells) and re.fullmatch(r"\d{4}s", cells[0]) is not None
+        if labeled:
             period, cells = cells[0], cells[1:]
         assert len(cells) <= 6, cells
         cells = cells + [""] * (6 - len(cells))
-        rec = {"period": period, "period_label_in_row": labelled}
+        rec = {"period": period, "period_label_in_row": labeled}
         notes = []
         for col, val in zip(DROUGHT_COLS, cells):
             if "Conditional" in val:
@@ -212,7 +212,7 @@ def run(fetch: bool = True) -> dict:
     mins.to_csv(RESULTS / "flow_annual_7day_minima.csv", index=False)
     primary = seven_q_ten(mins)
     window = seven_q_ten(mins, first=WINDOW[0] + 1, last=WINDOW[1])
-    # Approved data only: drop every climatic year (Apr 1-Mar 31, labelled by ending year) that contains a
+    # Approved data only: drop every climatic year (Apr 1-Mar 31, labeled by ending year) that contains a
     # provisional day. The first provisional day falls in March 2025, so this ends at climatic year 2024.
     first_prov = q.loc[q.provisional, "date"].min()
     last_approved_cy = (first_prov.year if first_prov.month >= 4 else first_prov.year - 1)
@@ -230,7 +230,7 @@ def run(fetch: bool = True) -> dict:
         "seven_q_ten": {
             "method": ("log-Pearson Type III, method of moments on log10 annual minimum 7-day mean flow, "
                        "unadjusted sample skew, no regional skew or low-outlier screening; climatic years "
-                       "Apr 1-Mar 31 labelled by ending year; complete years only"),
+                       "Apr 1-Mar 31 labeled by ending year; complete years only"),
             "primary_full_record": primary,
             "sensitivity_cy2006_2024": window,
             "sensitivity_approved_only": approved,
