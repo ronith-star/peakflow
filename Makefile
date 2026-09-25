@@ -1,4 +1,4 @@
-# Reuse-Ready pipeline. From a clean clone:
+# PeakFlow pipeline. From a clean clone:
 #   conda env create -f environment.lock.yml && conda activate reuse-ready && make all
 # environment.lock.yml pins every package (exported from the development env, no build strings);
 # environment.yml lists only the direct dependencies at the same versions (`make env-lock` rewrites the lock).

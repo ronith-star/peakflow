@@ -1,4 +1,4 @@
-# Locked environment for Reuse-Ready: exact versions of every package in the development env
+# Locked environment for PeakFlow: exact versions of every package in the development env
 # (exported 2026-09-25 with `micromamba env export --no-build` on darwin-arm64).
 # Build strings are omitted, so the file resolves on other platforms where conda-forge carries these versions;
 # platform-specific system libraries may need to be dropped on Linux or Windows.

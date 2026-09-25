@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this software or its outputs, please cite it as below."
 type: software
-title: "Reuse-Ready: a siting screen and water term sheet for data center community benefit agreements in the Delaware River Basin"
+title: "PeakFlow: Probabilistic Peak-Demand Modeling for Data Center Water Policy in the Delaware River Basin"
 version: 0.1.0
 date-released: 2026-09-27
 license: MIT
 authors:
-  - name: "Reuse-Ready authors"
+  - name: "PeakFlow authors"

@@ -1,4 +1,4 @@
-# Conda environment for Reuse-Ready. Versions are those installed in the development env (conda-forge).
+# Conda environment for PeakFlow. Versions are those installed in the development env (conda-forge).
 #   conda env create -f environment.yml && conda activate reuse-ready
 # For the exact solved environment (all transitive packages pinned) use environment.lock.yml instead.
 name: reuse-ready

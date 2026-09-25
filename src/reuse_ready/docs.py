@@ -138,8 +138,10 @@ def run() -> dict:
           "## Reference entries", ""]
     for e in sorted(entries, key=lambda e: e["key"]):
         who = e.get("author", e.get("institution", ""))
+        # The full project title appears only in README.md, CITATION.cff and references.bib.
+        title = "PeakFlow (this repository)" if e["key"] == "reuse_ready_model" else e.get("title", "")
         L += [f"### {e['key']}", "",
-              f"{who}. {e.get('title', '')}. {e.get('year', '')}. {e.get('url', '')} (accessed {e.get('urldate', 'n/a')}).", "",
+              f"{who}. {title}. {e.get('year', '')}. {e.get('url', '')} (accessed {e.get('urldate', 'n/a')}).", "",
               f"Figure or fact taken: {e.get('figure', 'n/a')}", ""]
         if e.get("quote"):
             L += [f"> {e['quote']}", ""]

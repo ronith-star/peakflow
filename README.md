@@ -1,4 +1,4 @@
-# Reuse-Ready: technical appendix
+# PeakFlow: Probabilistic Peak-Demand Modeling for Data Center Water Policy in the Delaware River Basin
 
 ## Findings
 
