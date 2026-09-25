@@ -12,6 +12,14 @@ PY     := PYTHONPATH=src $(PYTHON)
 export SOURCE_DATE_EPOCH ?= 1790000000
 CONDA  ?= conda
 ENV    ?= reuse-ready
+# pyproj needs the PROJ database (proj.db). Unless PROJ_DATA is already set, point it at share/proj of the
+# conda environment that $(PYTHON) belongs to (CONDA_PREFIX when activated, else resolved from the interpreter).
+ifeq ($(origin PROJ_DATA),undefined)
+PROJ_DATA := $(shell $(PYTHON) -c "import os,sys; d=[os.path.join(p,'share','proj') for p in (os.environ.get('CONDA_PREFIX',''), os.path.dirname(os.path.dirname(os.path.realpath(sys.executable))))]; print(next((x for x in d if os.path.isfile(os.path.join(x,'proj.db'))),''))")
+endif
+ifneq ($(PROJ_DATA),)
+export PROJ_DATA
+endif
 
 .PHONY: all data model table map urls figures_v2 figures_v3 falls_figures site_blindspot uncertainty tradeoff cycles wqp docs test clean verify-manifest env-lock
 
