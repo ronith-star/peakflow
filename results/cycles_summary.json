@@ -1,0 +1,82 @@
+{
+  "n_plants": 19,
+  "n_assumed": 19,
+  "n_dmr_chloride": 0,
+  "binding_counts": {
+    "phosphate": 14,
+    "lsi": 4,
+    "chloride": 1
+  },
+  "n_below_model_cycles": 12,
+  "n_not_feasible_above_1": 1,
+  "allowable_cycles_median": 3.0768081537502114,
+  "allowable_cycles_min": 0.8992876772909625,
+  "allowable_cycles_max": 6.9991878510796965,
+  "allowable_cycles_without_phosphate_median": 6.9991878510796965,
+  "allowable_cycles_without_phosphate_min": 4.626113987386527,
+  "allowable_cycles_without_phosphate_max": 6.9991878510796965,
+  "binding_without_phosphate_counts": {
+    "lsi": 15,
+    "chloride": 4
+  },
+  "cycles_lsi_range": [
+    5.745747289855148,
+    6.9991878510796965
+  ],
+  "cycles_lsi_uncapped_ph_range": [
+    2.4095829955756574,
+    2.722562878403147
+  ],
+  "ph_eq_at_model_cycles_range": [
+    9.330695671813128,
+    9.360755067175814
+  ],
+  "n_phosphate_infeasible": 1,
+  "min_return_flow_pct_median": 32.39900884612901,
+  "min_return_flow_pct_without_phosphate_range": [
+    14.287371924811815,
+    21.616415045685873
+  ],
+  "cycles_silica_central": 10.714285714285714,
+  "cycles_silica_range": [
+    3.0,
+    18.072289156626503
+  ],
+  "lsi_at_model_cycles_range": [
+    2.1019950420494995,
+    2.2308339297627455
+  ],
+  "chloride_tds_ratio": {
+    "ratio": 0.3443035304046135,
+    "n": 10,
+    "q25": 0.3108226228253321,
+    "q75": 0.43751399678742364
+  },
+  "ionic_strength_lit": 0.015399719255719162,
+  "hem_logk_at_t_bulk": {
+    "log_kw": -13.683,
+    "log_kh": -1.5705,
+    "log_k1": -6.3125,
+    "log_k2": -10.254999999999999,
+    "log_ks": 1.7610000000000001
+  },
+  "limits": {
+    "silica_mg_l_sio2": 150.0,
+    "chloride_mg_l": 1060.0,
+    "po4_mg_l": 15.0,
+    "lsi_max": 2.5,
+    "t_bulk_c": 35.0,
+    "ph_cap": 8.5,
+    "pco2_atm": 0.0003
+  },
+  "model_cycles": 4.0,
+  "makeup_lit": {
+    "silica": 14.0,
+    "calcium": 60.0,
+    "alkalinity": 131.0,
+    "chloride": 130.0,
+    "tds": 730.0,
+    "po4": 8.0,
+    "ph": 7.5
+  }
+}

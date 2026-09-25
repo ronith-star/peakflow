@@ -1,0 +1,14 @@
+IT load (MW),Configuration,"30-day avg, annual mean (gal/d)¹","30-day avg, max (gal/d)¹",Peak day p99 (gal/d)¹,Peak day max (gal/d)¹,Below trigger on 30-day avg²,"Days/yr, 30-day avg > 100,000 gal/d²","Days/yr, single day > 100,000 gal (not the trigger test)¹","Of those, flow < DOY p25³","Of those, flow < 7Q10³",Review if self-supplied²,Review if purchased from an existing system⁵,Shaded (averaging blind spot)
+50,Evaporative tower,"751,000","751,000","751,000","751,000",No,365,365,24.9%,0%,Yes,No,No
+50,Hybrid (calibrated),"14,000","162,000","375,000","745,000",No,17.0,16.6,23.9%,0%,Yes,No,No
+50,Air-cooled chiller,0,0,0,0,Yes,0,0,n/a,n/a,No,No,No
+100,Evaporative tower,"1,500,000","1,500,000","1,500,000","1,500,000",No,365,365,24.9%,0%,Yes,No,No
+100,Hybrid (calibrated),"28,000","325,000","750,000","1,490,000",No,37.9,21.0,24.4%,0%,Yes,No,No
+100,Air-cooled chiller,0,0,0,0,Yes,0,0,n/a,n/a,No,No,No
+200,Evaporative tower,"3,010,000","3,010,000","3,010,000","3,010,000",No,365,365,24.9%,0%,Yes,No,No
+200,Hybrid (calibrated),"56,100","650,000","1,500,000","2,980,000",No,62.5,24.3,23.8%,0%,Yes,No,No
+200,Air-cooled chiller,0,0,0,0,Yes,0,0,n/a,n/a,No,No,No
+400,Evaporative tower,"6,010,000","6,010,000","6,010,000","6,010,000",No,365,365,24.9%,0%,Yes,No,No
+400,Hybrid (calibrated),"112,000","1,300,000","3,000,000","5,960,000",No,82.3,24.3,23.8%,0%,Yes,No,No
+400,Air-cooled chiller,0,0,0,0,Yes,0,0,n/a,n/a,No,No,No
+n/a,"Falls Twp (AWS Keystone), reported","135,000⁴","1,410,000¹",n/a,"4,400,000⁴",No,n/a,n/a,n/a,n/a,Yes,No,No

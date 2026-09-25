@@ -1,0 +1,40 @@
+{
+ "calibration": "primary",
+ "n_sites": 24,
+ "n_below_trigger_30day": 0,
+ "n_averaging_blind_spot": 0,
+ "n_review_if_self_supplied": 24,
+ "n_assumed_100MW": 16,
+ "blind_spot_band_mw": [
+  7.526954094910211,
+  23.56061116509839
+ ],
+ "min_it_mw": 100.0,
+ "r30_max_gpd_per_mw": 4244.372070794812,
+ "peak_day_max_gpd_per_mw": 13285.5865386001,
+ "days_per_year_30day_over_range": [
+  56.8178103423982,
+  127.94300408623361
+ ],
+ "suppliers": {
+  "status": "joined",
+  "file": "data/sites/site_suppliers.csv",
+  "n_sites": 24,
+  "n_review_if_self_supplied": 24,
+  "n_review_if_self_supplied_and_public_or_authority": 7,
+  "n_review_if_self_supplied_and_self_supplied": 2,
+  "n_review_if_self_supplied_and_unknown": 15,
+  "n_review_if_self_supplied_and_public_or_authority_by_confidence": {
+   "stated_in_source": 6,
+   "inferred_service_area": 1
+  },
+  "n_review_if_self_supplied_and_self_supplied_by_confidence": {
+   "stated_in_source": 2
+  },
+  "n_review_if_self_supplied_and_unknown_by_confidence": {
+   "none": 15
+  },
+  "n_supplier_class_not_in_vocabulary": 0,
+  "n_sites_missing_from_supplier_file": 0
+ }
+}

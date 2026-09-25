@@ -1,0 +1,81 @@
+{
+  "site": "USGS 01463500 Delaware River at Trenton NJ",
+  "source_file": "data/raw/usgs/dv_01463500.rdb",
+  "record": {
+    "first_date": "1912-10-01",
+    "last_date": "2026-09-24",
+    "n_days": 41630,
+    "n_provisional": 566,
+    "n_estimated": 1019,
+    "first_provisional_date": "2025-03-06"
+  },
+  "seven_q_ten": {
+    "method": "log-Pearson Type III, method of moments on log10 annual minimum 7-day mean flow, unadjusted sample skew, no regional skew or low-outlier screening; climatic years Apr 1-Mar 31 labelled by ending year; complete years only",
+    "primary_full_record": {
+      "value_cfs": 1794.8505715389547,
+      "log10_mean": 3.4419991444473506,
+      "log10_sd": 0.14394045504881725,
+      "log10_skew": -0.2568200274029623,
+      "frequency_factor_K": -1.3058930980186565,
+      "n_years": 113,
+      "empirical_weibull_cfs": 1664.2857142857142,
+      "first_climatic_year": 1914,
+      "last_climatic_year": 2026,
+      "provisional_days_in_years_used": 391
+    },
+    "sensitivity_cy2006_2024": {
+      "value_cfs": 2672.9922718319435,
+      "log10_mean": 3.5246170925138927,
+      "log10_sd": 0.0871184107954263,
+      "log10_skew": 1.0352418475654392,
+      "frequency_factor_K": -1.1205368474759991,
+      "n_years": 19,
+      "empirical_weibull_cfs": 2681.4285714285716,
+      "first_climatic_year": 2006,
+      "last_climatic_year": 2024,
+      "provisional_days_in_years_used": 0
+    },
+    "sensitivity_approved_only": {
+      "value_cfs": 1787.3393733888684,
+      "log10_mean": 3.4417791190145084,
+      "log10_sd": 0.14522872898765668,
+      "log10_skew": -0.25007474745246927,
+      "frequency_factor_K": -1.3053346797891532,
+      "n_years": 111,
+      "empirical_weibull_cfs": 1662.857142857143,
+      "first_climatic_year": 1914,
+      "last_climatic_year": 2024,
+      "provisional_days_in_years_used": 0
+    },
+    "n_complete_years": 113,
+    "incomplete_years": [
+      1913,
+      2027
+    ]
+  },
+  "doy_percentiles": {
+    "method": "p10/p25/p50 of daily mean flow by calendar month-day; Feb 29 pooled with Feb 28 and Mar 1",
+    "full_record_years": [
+      1912,
+      2026
+    ],
+    "window_years": [
+      2005,
+      2024
+    ],
+    "annual_median_of_doy_p25_cfs": {
+      "full_record": 5811.25,
+      "window_2005_2024": 6997.5
+    },
+    "min_of_doy_p25_cfs": {
+      "full_record": 2832.5,
+      "window_2005_2024": 3080.0
+    },
+    "blindspot_basis": "window_2005_2024"
+  },
+  "drbc_drought_actions": {
+    "rows": 14,
+    "file": "data/processed/drbc_drought_actions.csv",
+    "source_url": "https://www.nj.gov/drbc/programs/flow/drbc-drought.html"
+  }
+}

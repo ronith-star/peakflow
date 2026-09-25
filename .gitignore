@@ -1,0 +1,30 @@
+# Raw data are re-downloaded by `make data`; only the manifest and author-provided inputs are tracked.
+data/raw/**
+!data/raw/**/
+!data/raw/MANIFEST.md
+!data/raw/trackdatacenters_drb.csv
+!data/raw/trackdatacenters_drb_nearmiss.csv
+
+# Derived data are rebuilt by `make model` / `make map`, except the hand-made content check of site URLs
+# (data/processed/site_url_verification.csv, kept by `make clean`) and the cached HTTP check written by `make urls`.
+data/processed/**
+!data/processed/**/
+!data/processed/site_url_verification.csv
+!data/processed/site_url_check.csv
+# Hand inputs under data/sites (source_url_overrides.csv) and the generated planned_sites.csv stay tracked.
+
+# Working files, previews and caches.
+scratch/
+_view_*.png
+*_preview*.png
+map_preview.png
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+*.part
+*.egg-info/
+build/
+dist/
+.venv/
+.ipynb_checkpoints/

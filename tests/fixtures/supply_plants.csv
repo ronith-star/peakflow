@@ -1,0 +1,7 @@
+npdes_id,name,x,y,is_potw,facility_type,dmr_flow_months,median_flow_mgd,design_flow_mgd,in_drb
+P_BIG,Large POTW 10 km from S_MATCH,10000,0,True,POTW,36,2.0,3.0,True
+P_SMALL,Small POTW 15 km from S_PARTIAL,115000,0,True,POTW,36,0.5,1.5,False
+P_OUTSIDE,Large POTW 16.1 km from S_PARTIAL (outside 10 mi),100000,16100,True,POTW,36,5.0,6.0,True
+P_EDGE,POTW 16.094 km from S_NONE (outside 10 mi),316094,0,True,POTW,36,9.0,10.0,True
+P_IND,Industrial major 5 km from S_NONE,300000,5000,False,NON-POTW,36,4.0,5.0,True
+P_SHORT,POTW with too few DMR months 1 km from S_NONE,301000,0,True,POTW,6,4.0,5.0,True

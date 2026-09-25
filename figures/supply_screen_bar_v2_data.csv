@@ -1,0 +1,4 @@
+covered_it_class,fill,n_sites,n_verified,n_unverified,left,right,hatch_from,hatch_color
+over 200 MW,#1F3A5F,5,4,1,0,5,4.0,white
+50 to 200 MW,#8F9CAF,17,8,9,5,22,13.0,black
+no eligible plant within 10 mi,#FFFFFF,2,2,0,22,24,,

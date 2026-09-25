@@ -1,0 +1,818 @@
+stage,record_id,record_name,reason
+sites,DRB06,Tower Gate Project,inactive status 'rejected'
+sites,DRB08,Millville Energy & Data Center Campus,inactive status 'rejected'
+sites,DRB09,American Tower Mount Royal,inactive status 'withdrawn'
+sites,DRB11,Cumru Titus,not a data center record (record_type 'Site Interest and Advertisement')
+sites,DRB13,Quakertown Data Center Park,not a data center record (record_type 'Site Advertisement')
+sites,DRB17,Penn Forest Township Data Center,not a data center record (record_type 'Zoning Ordinance')
+sites,DRB18,East Brandywine Data Center,not a data center record (record_type 'Zoning Challenge')
+sites,DRB19,North Coventry Mall Data Center,inactive status 'rejected'
+sites,DRB20,North Coventry Township Data Center,inactive status 'withdrawn'
+sites,DRB21,Pennhurst Data Center,inactive status 'rejected'
+sites,DRB26,Former Air Products Headquarters Data Center,inactive status 'withdrawn'
+sites,DRB28,Tobyhanna Township / Blakeslee Data Center,not a data center record (record_type 'Zoning Ordinance')
+sites,DRB29,3200 Horizon Drive Data Center,inactive status 'rejected'
+sites,DRB30,600 River Road Data Center,inactive status 'rejected'
+sites,DRB35,Renaissance Boulevard Data Center Campus,inactive status 'rejected'
+sites,DRB36,Swedeland Discovery Center Data Center Campus,inactive status 'rejected'
+sites,NM01,New Castle Data Center,near-miss list: outside the Delaware River Basin polygon (0.2 km outside)
+sites,NM02,Nebius Butler Township Data Center,near-miss list: outside the Delaware River Basin polygon (1.1 km outside)
+sites,NM03,Linde Clinton Data Center,near-miss list: outside the Delaware River Basin polygon (1.6 km outside)
+sites,NM04,West Hazleton Data Center,near-miss list: outside the Delaware River Basin polygon (2.5 km outside)
+sites,NM05,PNK Valley View Data Center,near-miss list: outside the Delaware River Basin polygon (2.9 km outside)
+sites,NM06,Jessup Sunnyside Data Center,near-miss list: outside the Delaware River Basin polygon (3.3 km outside)
+sites,NM07,Project Triboro,near-miss list: outside the Delaware River Basin polygon (3.6 km outside)
+sites,NM08,Jessup Breaker Street Data Center,near-miss list: outside the Delaware River Basin polygon (4.0 km outside)
+sites,NM09,Project Green Mountain,near-miss list: outside the Delaware River Basin polygon (4.2 km outside)
+sites,NM10,Project Hazelnut,near-miss list: outside the Delaware River Basin polygon (5.3 km outside)
+sites,NM11,Monroe Township Data Center,near-miss list: outside the Delaware River Basin polygon (5.7 km outside)
+sites,NM12,Dorrance Township Data Center Zoning Ordinance Challenge,near-miss list: outside the Delaware River Basin polygon (6.4 km outside)
+sites,NM13,Project Boson,near-miss list: outside the Delaware River Basin polygon (6.8 km outside)
+sites,NM14,Project Gravity,near-miss list: outside the Delaware River Basin polygon (7.3 km outside)
+sites,NM15,Archbald I LLC Data Center Campuses,near-miss list: outside the Delaware River Basin polygon (7.6 km outside)
+sites,NM16,Sugarloaf Township Data Center,near-miss list: outside the Delaware River Basin polygon (7.6 km outside)
+sites,NM17,Blakely AI Data Center,near-miss list: outside the Delaware River Basin polygon (7.8 km outside)
+sites,NM18,Wildcat Ridge AI Data Center,near-miss list: outside the Delaware River Basin polygon (8.5 km outside)
+sites,NM19,Princeton Nurseries Data Center,near-miss list: outside the Delaware River Basin polygon (8.6 km outside)
+sites,NM20,Dickson City Data Centers,near-miss list: outside the Delaware River Basin polygon (10.3 km outside)
+sites,NM21,South Annville Township Data Center,near-miss list: outside the Delaware River Basin polygon (11.9 km outside)
+sites,NM22,Mudiita Ransom Township Data Center,near-miss list: outside the Delaware River Basin polygon (13.7 km outside)
+sites,NM23,Ransom Township Data Center,near-miss list: outside the Delaware River Basin polygon (14.7 km outside)
+weather,72408013739_2025,KPHL 2025,incomplete calendar year in NCEI global-hourly at download (ends Aug 2025); outside 2005-2024 window
+weather,72409514792_2025,KTTN 2025,incomplete calendar year in NCEI global-hourly at download (ends Aug 2025); outside 2005-2024 window
+echo_permittees,DE0000035,"INV PERFORMANCE MATERIALS, LLC",screening flow 1 MGD or less
+echo_permittees,DE0000051,CHEMOURS EDGE MOOR PLANT,"null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,DE0000299,ALLEN HARIM FOODS LLC,screening flow 1 MGD or less
+echo_permittees,DE0000612,FORMOSA PLASTICS CORPORATION,"null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,DE0020249,BRIDGEVILLE WASTEWATER TREATMENT PLANT,"null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,DE0021512,HOWARD SEYMOUR WATER RECLAMATION PLANT,screening flow 1 MGD or less
+echo_permittees,DE0050580,INDIAN RIVER POWER LLC,screening flow 1 MGD or less
+echo_permittees,DE0050601,"DELAWARE CITY REFINING CO., POWER PLANT","null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,DE0051071,NEW CASTLE COUNTY-DELDOT MS4,"null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,NJ0000647,HUDSON GENERATING STATION,county does not intersect the DRB
+echo_permittees,NJ0000663,PSEG FOSSIL LINDEN GENERATING STATION,county does not intersect the DRB
+echo_permittees,NJ0000680,SEWAREN GENERATING STATION,county does not intersect the DRB
+echo_permittees,NJ0000809,CARTER RD OFFICE AND RESEARCH CONDO ASSOC,screening flow 1 MGD or less
+echo_permittees,NJ0001511,PHILLIPS 66 CO,county does not intersect the DRB
+echo_permittees,NJ0002089,IMTT-BAYONNE,county does not intersect the DRB
+echo_permittees,NJ0002348,MERCK SHARP & DOHME CORP,county does not intersect the DRB
+echo_permittees,NJ0002551,CHEMTRADE SOLUTIONS LLC,county does not intersect the DRB
+echo_permittees,NJ0003361,IMTT-BC,county does not intersect the DRB
+echo_permittees,NJ0004049,PHILLIPSBRG COMMERCE PK FORMER INGERSOLL RAND,screening flow 1 MGD or less
+echo_permittees,NJ0004103,SHIELDALLOY METALLURGICAL CORP,screening flow 1 MGD or less
+echo_permittees,NJ0004286,OXYVINYLS LP,screening flow 1 MGD or less
+echo_permittees,NJ0004375,HOEGANAES CORPORATION,screening flow 1 MGD or less
+echo_permittees,NJ0005185,SOLVAY SPECIALTY POLYMERS USA LLC,screening flow 1 MGD or less
+echo_permittees,NJ0005240,BRIDGEPORT DISPOSAL LLC,screening flow 1 MGD or less
+echo_permittees,NJ0005401,SUNOCO PARTNERS MARKETING & TERMINALS LP,screening flow 1 MGD or less
+echo_permittees,NJ0005517,GILBERT GENERATING STATION,screening flow 1 MGD or less
+echo_permittees,NJ0005541,PRINCETON LAND LLC,screening flow 1 MGD or less
+echo_permittees,NJ0020028,BERGEN CNTY UTILITIES AUTHORITY (BCUA),county does not intersect the DRB
+echo_permittees,NJ0020141,MIDDLESEX CNTY UA,county does not intersect the DRB
+echo_permittees,NJ0020427,CALDWELL WASTEWATER TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,NJ0020591,BERGEN COUNTY UTILITIES AUTHORITY,county does not intersect the DRB
+echo_permittees,NJ0021016,PASSAIC VALLEY SEWERAGE COMM,county does not intersect the DRB
+echo_permittees,NJ0021601,CARNEYS POINT STP,screening flow 1 MGD or less
+echo_permittees,NJ0021636,NEW PROVIDENCE WWTP,county does not intersect the DRB
+echo_permittees,NJ0021717,BUENA BOROUGH MUA,screening flow 1 MGD or less
+echo_permittees,NJ0022519,RIVERSIDE SEWERAGE AUTHORITY,screening flow 1 MGD or less
+echo_permittees,NJ0022586,MARLBORO PSYCHIATRIC HOSPITAL,screening flow 1 MGD or less
+echo_permittees,NJ0022845,HARRISON BROOK STP,county does not intersect the DRB
+echo_permittees,NJ0023698,POMPTON LAKES BORO MUA,county does not intersect the DRB
+echo_permittees,NJ0024104,VEOLIA WATER NJ PRINCETON MEADOWS WWTP,county does not intersect the DRB
+echo_permittees,NJ0024490,VERONA TWP WTP,county does not intersect the DRB
+echo_permittees,NJ0024511,LIVINGSTON WATER POLLUTION CONTROL  FACILITY,county does not intersect the DRB
+echo_permittees,NJ0024643,RAHWAY VALLEY SEWERAGE AUTH,county does not intersect the DRB
+echo_permittees,NJ0024741,JOINT MEETING OF ESSEX AND UNION COUNTIES,county does not intersect the DRB
+echo_permittees,NJ0024791,RIDGEWOOD VILLAGE WPC FACILITY,county does not intersect the DRB
+echo_permittees,NJ0024813,NORTHWEST BERGEN CNTY UA,county does not intersect the DRB
+echo_permittees,NJ0024864,SOMERSET RARITAN VALLEY SA,county does not intersect the DRB
+echo_permittees,NJ0024953,LINDEN ROSELLE SA,county does not intersect the DRB
+echo_permittees,NJ0025038,SECAUCUS MUA,county does not intersect the DRB
+echo_permittees,NJ0025321,RIVER ROAD WWTP,county does not intersect the DRB
+echo_permittees,NJ0025330,CEDAR GROVE STP,county does not intersect the DRB
+echo_permittees,NJ0025518,FLORHAM PARK WATER POLLUTION CONTROL FACILITY,screening flow 1 MGD or less
+echo_permittees,NJ0026085,ADAMS STREET WWTP,county does not intersect the DRB
+echo_permittees,NJ0026174,VEOLIA WATER NEW JERSEY CRESCENT PARK WWTP,county does not intersect the DRB
+echo_permittees,NJ0027481,BEVERLY SEWERAGE AUTHORITY,screening flow 1 MGD or less
+echo_permittees,NJ0027961,BERKELEY HEIGHTS WPCF,county does not intersect the DRB
+echo_permittees,NJ0028002,MOUNTAIN VIEW STP,county does not intersect the DRB
+echo_permittees,NJ0029084,WOODCLIFF STP,county does not intersect the DRB
+echo_permittees,NJ0029475,HIGHTSTOWN BORO AWWTP,screening flow 1 MGD or less
+echo_permittees,NJ0029483,URETHANE SYSTEMS USA LLC,county does not intersect the DRB
+echo_permittees,NJ0030333,GREENWICH TOWNSHIP STP,screening flow 1 MGD or less
+echo_permittees,NJ0031445,FIRMENICH INC,county does not intersect the DRB
+echo_permittees,NJ0033995,NJAW EDC WWTP,county does not intersect the DRB
+echo_permittees,NJ0034339,NORTH BERGEN MUA - CENTRAL STP,county does not intersect the DRB
+echo_permittees,NJ0053759,WANAQUE VALLEY REGIONAL SEWERAGE AUTHORITY,county does not intersect the DRB
+echo_permittees,NJ0055395,BURLINGTON CNTY RESOURCE RECOVERY COMPLEX,screening flow 1 MGD or less
+echo_permittees,NJ0247561,SRVSA STORM CONTROL TREATMENT FACILITY,county does not intersect the DRB
+echo_permittees,NY0000078,GARLOCK SEALING TECHNOLOGIES,county does not intersect the DRB
+echo_permittees,NY0000132,ALCOA - EAST,county does not intersect the DRB
+echo_permittees,NY0000191,DUNN PAPER - NATURAL DAM ,county does not intersect the DRB
+echo_permittees,NY0000337,FMC CORP - PEROXYGENS DIV,county does not intersect the DRB
+echo_permittees,NY0000345,FMC - AGRICULTURAL PRODUCTS,county does not intersect the DRB
+echo_permittees,NY0000400,"THERMO FISHER SCIENTIFIC, GRAND ISLAND, NY",county does not intersect the DRB
+echo_permittees,NY0000493,R.E. GINNA NUCLEAR PWR PLT,county does not intersect the DRB
+echo_permittees,NY0000515,FELIX SCHOELLER TECH PAPERS,county does not intersect the DRB
+echo_permittees,NY0000540,GENERAL MOTORS POWERTRAIN,county does not intersect the DRB
+echo_permittees,NY0000558,"GM COMPONENTS HOLDINGS, LLC",county does not intersect the DRB
+echo_permittees,NY0000574,TONAWANDA ENG PLT GM POWERTRAIN ,county does not intersect the DRB
+echo_permittees,NY0000621,"BEEBEE STATION, STATION 3",county does not intersect the DRB
+echo_permittees,NY0000736,NYS NIAGARA POWER PROJECT,county does not intersect the DRB
+echo_permittees,NY0000825,"LAUTER METAL TECHNOLOGIES, LLC",county does not intersect the DRB
+echo_permittees,NY0000906,"NFB CARBON PRODUCTS, LLC",county does not intersect the DRB
+echo_permittees,NY0000957,"KNOWLTON TECHNOLOGIES, LLC",county does not intersect the DRB
+echo_permittees,NY0000973,WEST VALLEY DEMONSTRATION PROJ,county does not intersect the DRB
+echo_permittees,NY0001015,NINE MILE POINT NUCLEAR LLC,county does not intersect the DRB
+echo_permittees,NY0001023,HUNTLEY GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0001198,DUREZ DIVISION,county does not intersect the DRB
+echo_permittees,NY0001201,ISLECHEM BUSINESS CENTER,county does not intersect the DRB
+echo_permittees,NY0001325,GREENIDGE GENERATION LLC ,county does not intersect the DRB
+echo_permittees,NY0001333,"CAYUGA OPERATING COMPANY, LLC",county does not intersect the DRB
+echo_permittees,NY0001368,GREAT LAKES INDUSTRIAL DEVELOPMENT LLC,county does not intersect the DRB
+echo_permittees,NY0001406,EVANS CHEMETICS FACILITY,county does not intersect the DRB
+echo_permittees,NY0001562,US GYPSUM COMPANY - OAKFIELD PLANT,county does not intersect the DRB
+echo_permittees,NY0001635,OLIN CORP CHLOR-ALKALI PRODUCTS,county does not intersect the DRB
+echo_permittees,NY0001643,RED-ROCHESTER LLC @ EASTMAN BUSINESS PARK,county does not intersect the DRB
+echo_permittees,NY0001732,"ARCONIC, INC. - MASSENA OPERATIONS",county does not intersect the DRB
+echo_permittees,NY0001775,DEFERIET PAPER MILL,county does not intersect the DRB
+echo_permittees,NY0001791,BALMAT MINES AND MILL,county does not intersect the DRB
+echo_permittees,NY0001988,FORMER CARBORUNDUM COMPLEX,county does not intersect the DRB
+echo_permittees,NY0002101,LOCKHEED MARTIN-ELECTRONICS PARK ,county does not intersect the DRB
+echo_permittees,NY0002143,NOVELIS CORP,county does not intersect the DRB
+echo_permittees,NY0002186,OSWEGO HARBOR POWER,county does not intersect the DRB
+echo_permittees,NY0002321,DUNKIRK GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0002330,US SALT-WATKINS GLEN REFINERY,county does not intersect the DRB
+echo_permittees,NY0002372,TWIN RIVERS PAPER CO. LLC ,county does not intersect the DRB
+echo_permittees,NY0002399,TONAWANDA COKE CORP,county does not intersect the DRB
+echo_permittees,NY0002470,BUFFALO COLOR CORP,county does not intersect the DRB
+echo_permittees,NY0002488,"SHERRILL MANUFACTURING, INC",county does not intersect the DRB
+echo_permittees,NY0002585,"FLEISCHMANN'S VINEGAR CO, INC",county does not intersect the DRB
+echo_permittees,NY0002755,OMNIAFILTRA LLC,county does not intersect the DRB
+echo_permittees,NY0003042,APC PAPER OF NY,county does not intersect the DRB
+echo_permittees,NY0003328,NIAGARA FALLS PLANT,county does not intersect the DRB
+echo_permittees,NY0003336,OCCIDENTAL CHEMICAL CORP,county does not intersect the DRB
+echo_permittees,NY0003344,ALKEGEN - FULTON PLANT ,county does not intersect the DRB
+echo_permittees,NY0003387,WEBER KNAPP CO MAIN MFG PLT,county does not intersect the DRB
+echo_permittees,NY0003395,"TITANX ENGINE COOLING, INC.",county does not intersect the DRB
+echo_permittees,NY0003433,JAMESTOWN ELECTRO PLATING WORK,county does not intersect the DRB
+echo_permittees,NY0003824,AMPHENOL CORP-AEROSPACE OPERATIONS,screening flow 1 MGD or less
+echo_permittees,NY0003859,HICKLING STATION,county does not intersect the DRB
+echo_permittees,NY0004057,LOCKHEED MARTIN-MST,county does not intersect the DRB
+echo_permittees,NY0004081,"MOTOR COMPONENTS, LLC",county does not intersect the DRB
+echo_permittees,NY0004103,CBS CORPORATION,county does not intersect the DRB
+echo_permittees,NY0004138,"NORWICH PHARMACEUTICALS, INC",screening flow 1 MGD or less
+echo_permittees,NY0004146,CHOBANI CORPORATE CAMPUS,screening flow 1 MGD or less
+echo_permittees,NY0004413,SYLVAMO - TICONDEROGA MILL,county does not intersect the DRB
+echo_permittees,NY0004472,INDIAN POINT ENERGY CENTER,county does not intersect the DRB
+echo_permittees,NY0004880,NORLITE LLC,county does not intersect the DRB
+echo_permittees,NY0005037,RAVENA CEMENT PLANT,county does not intersect the DRB
+echo_permittees,NY0005061,WALLOOMSAC RECYCLING,county does not intersect the DRB
+echo_permittees,NY0005096,ONSEMI EAST FISHKILL FACILITY,county does not intersect the DRB
+echo_permittees,NY0005100,ARTHUR KILL GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0005118,ASTORIA GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0005126,EAST RIVER GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0005134,59TH STREET STEAM STATION,county does not intersect the DRB
+echo_permittees,NY0005177,74TH STREET STEAM STATION,county does not intersect the DRB
+echo_permittees,NY0005193,RAVENSWOOD GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0005321,CIBA-GEIGY CORP,county does not intersect the DRB
+echo_permittees,NY0005525,"FINCH PAPER, LLC",county does not intersect the DRB
+echo_permittees,NY0005541,IBM CORPORATION,county does not intersect the DRB
+echo_permittees,NY0005711,LOVETT GENERATING STATION,county does not intersect the DRB
+echo_permittees,NY0005801,"SI GROUP, INC",county does not intersect the DRB
+echo_permittees,NY0005860,PHILIPS COMPONENTS,screening flow 1 MGD or less
+echo_permittees,NY0005908,E.F. BARRETT POWER STATION,county does not intersect the DRB
+echo_permittees,NY0005916,GLENWOOD COMBUSTION TURBINE FACILITY,county does not intersect the DRB
+echo_permittees,NY0005924,FAR ROCKAWAY POWER STATION,county does not intersect the DRB
+echo_permittees,NY0005941,NORTHPORT POWER STATION,county does not intersect the DRB
+echo_permittees,NY0005959,BETHLEHEM ENERGY CENTER,county does not intersect the DRB
+echo_permittees,NY0006050,FORT EDWARD OPERATIONS,county does not intersect the DRB
+echo_permittees,NY0006157,ANCRAM MILL,county does not intersect the DRB
+echo_permittees,NY0006670,NEPERA DIV RUTHERFORD CHEM LLC,screening flow 1 MGD or less
+echo_permittees,NY0006785,HOLLINGSWORTH  & VOSE  GREENWICH MILL,county does not intersect the DRB
+echo_permittees,NY0006807,H&V EASTON MILL,county does not intersect the DRB
+echo_permittees,NY0006912,"MOHAWK FINE PAPERS, INC",county does not intersect the DRB
+echo_permittees,NY0007013,AMERICAN TISSUE OF GREENWICH,county does not intersect the DRB
+echo_permittees,NY0007048,GENERAL ELECTRIC CO - CAP PROD DIV,county does not intersect the DRB
+echo_permittees,NY0007056,GENERAL ELECTRIC - MAIN PLANT,county does not intersect the DRB
+echo_permittees,NY0007072,"SHPP US, LLC",county does not intersect the DRB
+echo_permittees,NY0007226,ESSITY PROFESSIONAL HYGIENE NORTH AMERICA LLC,county does not intersect the DRB
+echo_permittees,NY0007269,BURROWS PAPER CORP,county does not intersect the DRB
+echo_permittees,NY0007340,CHARLES POLETTI POWER PROJECT,county does not intersect the DRB
+echo_permittees,NY0008010,"BOWLINE GENERATING STATION, LLC",county does not intersect the DRB
+echo_permittees,NY0008605,MPM SILICONES LLC,county does not intersect the DRB
+echo_permittees,NY0020061,RIVERHEAD (T) SD WWTF,county does not intersect the DRB
+echo_permittees,NY0020079,GREENPORT (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0020109,JAMES A. FITZPATRICK NUCLEAR POWER PLT,county does not intersect the DRB
+echo_permittees,NY0020117,GOUVERNEUR (V) WWTF,county does not intersect the DRB
+echo_permittees,NY0020125,LOWVILLE (V) MUNICIPAL PCF,county does not intersect the DRB
+echo_permittees,NY0020141,ROTTERDAM (T) SD #2 STP,county does not intersect the DRB
+echo_permittees,NY0020265,DELHI (V) WWTP,screening flow 1 MGD or less
+echo_permittees,NY0020290,AMSTERDAM (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0020354,LAWRENCE (V) STP,county does not intersect the DRB
+echo_permittees,NY0020419,WILSON (V) STP,county does not intersect the DRB
+echo_permittees,NY0020486,HERKIMER (V) WWTP ,county does not intersect the DRB
+echo_permittees,NY0020494,BOONVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0020508,SALAMANCA (C) STP,county does not intersect the DRB
+echo_permittees,NY0020516,SCHENECTADY WRRF,county does not intersect the DRB
+echo_permittees,NY0020524,WATKINS GLEN (V) STP,county does not intersect the DRB
+echo_permittees,NY0020567,LONG BEACH (C) WPCP,county does not intersect the DRB
+echo_permittees,NY0020621,WELLSVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0020656,SPENCERPORT (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0020664,PHOENIX (V) STP,county does not intersect the DRB
+echo_permittees,NY0020681,ECSD#3 - BLASDELL (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0020818,POTSDAM (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0020958,CAYUGA HEIGHTS (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021334,WESTFIELD (V) WPCF,county does not intersect the DRB
+echo_permittees,NY0021342,HUNTINGTON SEWER DISTRICT STP,county does not intersect the DRB
+echo_permittees,NY0021369,NORWOOD (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021385,CLINTON (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021431,BATH  WWTP,county does not intersect the DRB
+echo_permittees,NY0021474,SPRINGVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021504,WARSAW (V) STP,county does not intersect the DRB
+echo_permittees,NY0021547,GRANVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021610,WALTER W BRADLEY WPCF,county does not intersect the DRB
+echo_permittees,NY0021733,SARANAC LAKE (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0021750,PORT JEFFERSON SD#1 STP,county does not intersect the DRB
+echo_permittees,NY0021822,OYSTER BAY WRRF,county does not intersect the DRB
+echo_permittees,NY0021831,ROUSES POINT (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021849,ATTICA (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021873,MEDINA (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0021903,AUBURN (C) STP,county does not intersect the DRB
+echo_permittees,NY0022039,HUDSON (C) STP,county does not intersect the DRB
+echo_permittees,NY0022128,GREAT NECK (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0022136,ECSD#6 - LACKAWANNA WWTP,county does not intersect the DRB
+echo_permittees,NY0022187,LAKE PLACID (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0022195,DANNEMORA (V) STP,county does not intersect the DRB
+echo_permittees,NY0022225,NOTT ROAD STP,county does not intersect the DRB
+echo_permittees,NY0022357,ALFRED (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0022365,WATERLOO (V) STP,county does not intersect the DRB
+echo_permittees,NY0022403,LITTLE FALLS (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0022411,SILVER CREEK (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0022462,CEDARHURST (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0022543,ERIE CO SD#2 WWTP,county does not intersect the DRB
+echo_permittees,NY0022730,OWEGO (T) SD#1,county does not intersect the DRB
+echo_permittees,NY0022748,SUFFERN (V) STP,county does not intersect the DRB
+echo_permittees,NY0023256,HOLLEY (V) STP,county does not intersect the DRB
+echo_permittees,NY0023311,SCSD#6 - KINGS PARK STP,county does not intersect the DRB
+echo_permittees,NY0023485,CANAJOHARIE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0023523,ATLANTIC BEACH WWTP,county does not intersect the DRB
+echo_permittees,NY0023531,FARMINGTON (T) STP,county does not intersect the DRB
+echo_permittees,NY0023647,HORNELL (C) WPCP,county does not intersect the DRB
+echo_permittees,NY0023680,WARWICK (V) WWTP,screening flow 1 MGD or less
+echo_permittees,NY0023906,ERWIN (T) WWTP,county does not intersect the DRB
+echo_permittees,NY0023973,NISKAYUNA (T) SD#6 WWTP,county does not intersect the DRB
+echo_permittees,NY0024333,ST JOHNSVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0024384,DANSVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0024406,BINGHAMTON (C) CSO'S,screening flow 1 MGD or less
+echo_permittees,NY0024449,AVON (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0024554,DOLGEVILLE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0024821,HOOSICK FALLS (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0024830,CHATEAUGAY (V) STP,county does not intersect the DRB
+echo_permittees,NY0024929,WHITEHALL (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0025151,CARTHAGE/WEST CARTHAGE WPCF,county does not intersect the DRB
+echo_permittees,NY0025437,LIVINGSTON MANOR STP,screening flow 1 MGD or less
+echo_permittees,NY0025704,TOWN OF WALWORTH SD #1 WWTP,county does not intersect the DRB
+echo_permittees,NY0025721,CORNING (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0025739,CEDAR HILL WPCP,county does not intersect the DRB
+echo_permittees,NY0025780,ONEIDA COUNTY WPCP,county does not intersect the DRB
+echo_permittees,NY0025798,OWEGO WPCP #2,county does not intersect the DRB
+echo_permittees,NY0025950,AMHERST (T) WWTF #16,county does not intersect the DRB
+echo_permittees,NY0025968,CANANDAIGUA (C) WRRF,county does not intersect the DRB
+echo_permittees,NY0025976,BEACON (C) WPCP,county does not intersect the DRB
+echo_permittees,NY0025984,WATERTOWN (C) WPCP,county does not intersect the DRB
+echo_permittees,NY0026018,PLATTSBURGH WATER POLLUTION CONTROL PLANT,county does not intersect the DRB
+echo_permittees,NY0026034,EAST GREENBUSH (T) WWTP,county does not intersect the DRB
+echo_permittees,NY0026042,GLOVERSVILLE-JOHNSTOWN JOINT WWTP,county does not intersect the DRB
+echo_permittees,NY0026051,ORANGETOWN (T) SD#2 STP,county does not intersect the DRB
+echo_permittees,NY0026107,NYCDEP - PORT RICHMOND WPCF,county does not intersect the DRB
+echo_permittees,NY0026115,NYCDEP - JAMAICA WWRF,county does not intersect the DRB
+echo_permittees,NY0026131,NYCDEP - WARD'S ISLAND WRRF,county does not intersect the DRB
+echo_permittees,NY0026158,NYCDEP - BOWERY BAY WRRF,county does not intersect the DRB
+echo_permittees,NY0026166,NYCDEP - OWLS HEAD WPCP,county does not intersect the DRB
+echo_permittees,NY0026174,NYCDEP - OAKWOOD BEACH WPCP,county does not intersect the DRB
+echo_permittees,NY0026182,NYCDEP - CONEY ISLAND WRRF,county does not intersect the DRB
+echo_permittees,NY0026191,NYCDEP - HUNT'S POINT WRRF,county does not intersect the DRB
+echo_permittees,NY0026204,NYCDEP - NEWTOWN CREEK WRRF,county does not intersect the DRB
+echo_permittees,NY0026212,NYCDEP - 26TH WARD WPCP,county does not intersect the DRB
+echo_permittees,NY0026221,NYCDEP - ROCKAWAY WRRF,county does not intersect the DRB
+echo_permittees,NY0026239,NYCDEP - TALLMAN ISLAND WPCP,county does not intersect the DRB
+echo_permittees,NY0026247,NYCDEP - NORTH RIVER WPCP,county does not intersect the DRB
+echo_permittees,NY0026255,POUGHKEEPSIE (C) WPCP,county does not intersect the DRB
+echo_permittees,NY0026271,ARLINGTON WWTP,county does not intersect the DRB
+echo_permittees,NY0026280,NORTH TONAWANDA (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0026301,FULTON (C) STP,county does not intersect the DRB
+echo_permittees,NY0026336,NIAGARA FALLS (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0026395,TONAWANDA (T) SD#2 WWTP,county does not intersect the DRB
+echo_permittees,NY0026409,FREDONIA (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0026450,SOUTH SHORE WATER RECLAMATION FACILITY,county does not intersect the DRB
+echo_permittees,NY0026514,BATAVIA (C) STP,county does not intersect the DRB
+echo_permittees,NY0026620,GLEN COVE (C) WWTF,county does not intersect the DRB
+echo_permittees,NY0026638,ITHACA AREA WWTF,county does not intersect the DRB
+echo_permittees,NY0026689,YONKERS JOINT WWTP,county does not intersect the DRB
+echo_permittees,NY0026697,NEW ROCHELLE STP,county does not intersect the DRB
+echo_permittees,NY0026701,MAMARONECK (V) SANITARY SD,county does not intersect the DRB
+echo_permittees,NY0026719,BLIND BROOK SD WWTP,county does not intersect the DRB
+echo_permittees,NY0026743,YORKTOWN HEIGHTS SD WWTP,county does not intersect the DRB
+echo_permittees,NY0026778,PORT WASHINGTON WPCD,county does not intersect the DRB
+echo_permittees,NY0026786,PORT CHESTER STP,county does not intersect the DRB
+echo_permittees,NY0026794,WEBSTER (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0026841,BELGRAVE WPCP,county does not intersect the DRB
+echo_permittees,NY0026859,CEDAR CREEK WPCP,county does not intersect the DRB
+echo_permittees,NY0026867,ALBANY COUNTY WATER PURIFICATION DISTRICT - SOUTH WWTP,county does not intersect the DRB
+echo_permittees,NY0026875,ALBANY COUNTY WATER PURIFICATION DISTRICT - NORTH WASTEWATER TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,NY0026956,ONEIDA (C) STP,county does not intersect the DRB
+echo_permittees,NY0026999,GREAT NECK WPC DISTRICT,county does not intersect the DRB
+echo_permittees,NY0027049,MARSH CREEK WWTP,county does not intersect the DRB
+echo_permittees,NY0027057,LOCKPORT (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0027073,NYCDEP - RED HOOK WRRF,county does not intersect the DRB
+echo_permittees,NY0027081,METROPOLITAN SYRACUSE WWTP,county does not intersect the DRB
+echo_permittees,NY0027162,OLEAN (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0027171,ONTARIO (T) STP,county does not intersect the DRB
+echo_permittees,NY0027545,CLAYTON (V) STP,county does not intersect the DRB
+echo_permittees,NY0027561,LE ROY R SUMMERSON WWTF,county does not intersect the DRB
+echo_permittees,NY0027570,JAMESTOWN  WWTP,county does not intersect the DRB
+echo_permittees,NY0027596,BREWERTON WPCP,county does not intersect the DRB
+echo_permittees,NY0027618,WETZEL ROAD WWTP,county does not intersect the DRB
+echo_permittees,NY0027693,GRAND ISLAND SD#2 WWTP,county does not intersect the DRB
+echo_permittees,NY0027723,MEADOWBROOK-LIMESTONE WWTP,county does not intersect the DRB
+echo_permittees,NY0027758,MOHAWK VIEW WPCP,county does not intersect the DRB
+echo_permittees,NY0027766,LEWISTON MASTER SD,county does not intersect the DRB
+echo_permittees,NY0027774,NEWFANE (T) WWTP,county does not intersect the DRB
+echo_permittees,NY0027961,DUNKIRK (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0027979,NIAGARA CO SD#1 WWTP,county does not intersect the DRB
+echo_permittees,NY0028231,NORTHWEST QUAD PW DIST#1,county does not intersect the DRB
+echo_permittees,NY0028240,SARATOGA CO SD#1 WWTP,county does not intersect the DRB
+echo_permittees,NY0028339,FRANK E VAN LARE STP,county does not intersect the DRB
+echo_permittees,NY0028401,ALBION JOINT MUNICIPAL-INDUSTRIAL CONTROL FACILITY,county does not intersect the DRB
+echo_permittees,NY0028410,BIRD ISLAND WWTF,county does not intersect the DRB
+echo_permittees,NY0028436,EAST AURORA (V) STP,county does not intersect the DRB
+echo_permittees,NY0028533,HAVERSTRAW JOINT REGIONAL STP,county does not intersect the DRB
+echo_permittees,NY0028851,STONY POINT (T) STP,county does not intersect the DRB
+echo_permittees,NY0028991,FRANKLINVILLE (V) WWTF,county does not intersect the DRB
+echo_permittees,NY0029050,GLENS FALLS (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0029106,OSWEGO (C) WEST SIDE WWTF,county does not intersect the DRB
+echo_permittees,NY0029114,OSWEGO (C) EAST SIDE STP,county does not intersect the DRB
+echo_permittees,NY0029173,WATERFORD (T) WWTP,county does not intersect the DRB
+echo_permittees,NY0029262,OWEGO (V) STP,county does not intersect the DRB
+echo_permittees,NY0029475,NEWARK (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0029726,PENN YAN (V) STP,county does not intersect the DRB
+echo_permittees,NY0029769,CHAUTAUQUA UTILITY DIST STP,county does not intersect the DRB
+echo_permittees,NY0029807,CANASTOTA (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0029831,OGDENSBURG SECONDARY WWTP,county does not intersect the DRB
+echo_permittees,NY0029939,TUPPER LAKE (V) WPCP,county does not intersect the DRB
+echo_permittees,NY0030317,OAK ORCHARD WWTP,county does not intersect the DRB
+echo_permittees,NY0030376,MALONE (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0030546,LE ROY (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0030571,BALDWINSVILLE SENECA KNOLLS,county does not intersect the DRB
+echo_permittees,NY0030635,GENESEO (V) STP,county does not intersect the DRB
+echo_permittees,NY0030864,ROME MUNICIPAL STP,county does not intersect the DRB
+echo_permittees,NY0030988,TOWN OF GREENPORT STP,county does not intersect the DRB
+echo_permittees,NY0031151,ONEONTA (C) WWTP,county does not intersect the DRB
+echo_permittees,NY0031194,MASSENA (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0031356,CARMEL (T) SD#2 WWTP,county does not intersect the DRB
+echo_permittees,NY0031895,ROCKLAND CO SD#1 WTP,county does not intersect the DRB
+echo_permittees,NY0032093,GOWANDA (V) STP,county does not intersect the DRB
+echo_permittees,NY0032328,LAKEVILLE WWTP,county does not intersect the DRB
+echo_permittees,NY0032433,FONDA-FULTONVILLE JOINT WWTP,county does not intersect the DRB
+echo_permittees,NY0032468,RIVERVIEW BUSINESS PARK LLC,county does not intersect the DRB
+echo_permittees,NY0033308,SENECA FALLS WWTP,county does not intersect the DRB
+echo_permittees,NY0035742,CHEMUNG CO REGIONAL WWTP,county does not intersect the DRB
+echo_permittees,NY0036528,HERKIMER CO SD WWTP,county does not intersect the DRB
+echo_permittees,NY0036706,TICONDEROGA SD#5 WPCP,county does not intersect the DRB
+echo_permittees,NY0036790,EAST ONEIDA LAKE WPCP,county does not intersect the DRB
+echo_permittees,NY0036986,CHEMUNG CO SD#1 STP,county does not intersect the DRB
+echo_permittees,NY0068225,ARKEMA CHEMICALS INC,county does not intersect the DRB
+echo_permittees,NY0072061,CWM CHEMICAL SERVICES LLC,county does not intersect the DRB
+echo_permittees,NY0072451,KEYMARK CORPORATION,county does not intersect the DRB
+echo_permittees,NY0082333,ADM CORN SWEETENERS,county does not intersect the DRB
+echo_permittees,NY0087971,RENSSELAER COUNTY SD#1 WWTP,county does not intersect the DRB
+echo_permittees,NY0095401,ECSD#3 - SOUTHTOWNS ADVANCED WWTP,county does not intersect the DRB
+echo_permittees,NY0100803,PEEKSKILL SANITARY SD WWTP,county does not intersect the DRB
+echo_permittees,NY0101575,"SUMITOMO RUBBER USA, LLC",county does not intersect the DRB
+echo_permittees,NY0103390,POTSDAM SPECIALTY PAPER INC,county does not intersect the DRB
+echo_permittees,NY0104213,"SOMERSET OPERATING CO, LLC",county does not intersect the DRB
+echo_permittees,NY0104809,BERGEN POINT WWTP,county does not intersect the DRB
+echo_permittees,NY0106895,SOUTH & CTR CHAUTAUQUA LAKE SD WTP,county does not intersect the DRB
+echo_permittees,NY0107565,MONTGOMERY CO SD#1 STP,county does not intersect the DRB
+echo_permittees,NY0108324,OSSINING SANITARY SD WWTP,county does not intersect the DRB
+echo_permittees,NY0149209,TRI-MUNICIPAL WWTP,county does not intersect the DRB
+echo_permittees,NY0183695,WASHINGTON CO SD#2 WWTP,county does not intersect the DRB
+echo_permittees,NY0200867,FRESH KILLS LANDFILL LTP,county does not intersect the DRB
+echo_permittees,NY0206644,SUFFOLK CO SD#21 SUNY,county does not intersect the DRB
+echo_permittees,NY0213781,CHENANGO NORTHGATE WWTP,screening flow 1 MGD or less
+echo_permittees,NY0236586,CANTON (V) WWTP,county does not intersect the DRB
+echo_permittees,NY0261009,"NEW ATHENS GENERATING CO, LLC",screening flow 1 MGD or less
+echo_permittees,NY0267546,EMPIRE POWER PLANT,county does not intersect the DRB
+echo_permittees,NY0270598,WESTERN RAMAPO ADVANCED WWTP,county does not intersect the DRB
+echo_permittees,NY0271942,CATHARINE VALLEY WATER RECLAMATION FACILITY,county does not intersect the DRB
+echo_permittees,NY0272078,STAMP ONSITE WWTF,county does not intersect the DRB
+echo_permittees,NY0272141,WESTERN WAYNE COUNTY REGIONAL WASTEWATER TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,PA0000507,JEFFERSON PLT,county does not intersect the DRB
+echo_permittees,PA0000566,LEETSDALE PLT,county does not intersect the DRB
+echo_permittees,PA0000868,WHEATLAND TUBE COUNCIL AVENUE PLT,county does not intersect the DRB
+echo_permittees,PA0001201,YOUNGWOOD PLT,county does not intersect the DRB
+echo_permittees,PA0001619,PHILLIPS POWER PLANT,county does not intersect the DRB
+echo_permittees,PA0001902,JESSOP STEEL/WASHINGTON PLT,county does not intersect the DRB
+echo_permittees,PA0002054,SEWARD GENERATING STATION,county does not intersect the DRB
+echo_permittees,PA0002062,KEYSTONE GENERATING STA,screening flow 1 MGD or less
+echo_permittees,PA0002135,CALUMET KARNS CITY REF,county does not intersect the DRB
+echo_permittees,PA0002143,DOMTAR JOHNSONBURG MILL,county does not intersect the DRB
+echo_permittees,PA0002208,SHELL CHEMICAL APPALACHIA PETROCHEMICALS COMPLEX,county does not intersect the DRB
+echo_permittees,PA0002372,INTL WAXES PLT,county does not intersect the DRB
+echo_permittees,PA0002666,SONNEBORN INC - PETROLIA PLANT,county does not intersect the DRB
+echo_permittees,PA0002674,AMER REF GROUP BRADFORD,county does not intersect the DRB
+echo_permittees,PA0002976,ZIPPO MFG CO,county does not intersect the DRB
+echo_permittees,PA0003239,KOPPEL FAC,county does not intersect the DRB
+echo_permittees,PA0004073,US STEEL IRVIN PLT,county does not intersect the DRB
+echo_permittees,PA0004472,CLAIRTON PLT,county does not intersect the DRB
+echo_permittees,PA0004979,NEVILLE CHEM CO,county does not intersect the DRB
+echo_permittees,PA0005011,CONEMAUGH GENERATING STA,county does not intersect the DRB
+echo_permittees,PA0005037,HOMER CITY GENERATING STATION,county does not intersect the DRB
+echo_permittees,PA0005061,NEW CASTLE GENERATING STATION,county does not intersect the DRB
+echo_permittees,PA0005304,UNITED REFINING,county does not intersect the DRB
+echo_permittees,PA0005754,MIDLAND FAC,county does not intersect the DRB
+echo_permittees,PA0006254,RACOON CREEK TERM,county does not intersect the DRB
+echo_permittees,PA0006327,W LEECHBURG FAC,county does not intersect the DRB
+echo_permittees,PA0006335,TENARIS AMBRIDGE,county does not intersect the DRB
+echo_permittees,PA0006343,AK STEEL- BUTLER WORKS,county does not intersect the DRB
+echo_permittees,PA0007498,WISE FOODS INC,county does not intersect the DRB
+echo_permittees,PA0008265,APPVION OPR (APPLETON PAPERS),county does not intersect the DRB
+echo_permittees,PA0008281,BRUNNER ISLAND LLC,county does not intersect the DRB
+echo_permittees,PA0008303,CLEVELAND CLIFFS STEELTON,county does not intersect the DRB
+echo_permittees,PA0008419,MERCK/ CHEROKEE PLANT,county does not intersect the DRB
+echo_permittees,PA0008443,MONTOUR STEAM ELECTRIC STATION,county does not intersect the DRB
+echo_permittees,PA0008451,SUNBURY GENERATION LP WW TRMT SYS,county does not intersect the DRB
+echo_permittees,PA0008508,BURLE INDUSTRIES,screening flow 1 MGD or less
+echo_permittees,PA0008869,"PIXELLE SPECIALTY SOLUTIONS, LLC - SPRING GROVE MILL",county does not intersect the DRB
+echo_permittees,PA0008885,PROCTER & GAMBLE PAPER PROD,county does not intersect the DRB
+echo_permittees,PA0008923,CORNING ASAHI VIDEO PROD CO,county does not intersect the DRB
+echo_permittees,PA0009024,GLOBAL TUNGSTEN & POWDERS CORP.,county does not intersect the DRB
+echo_permittees,PA0009164,STANDARD STEEL,county does not intersect the DRB
+echo_permittees,PA0009733,EXELON PEACH BOTTOM ATOMIC POWER STATION,county does not intersect the DRB
+echo_permittees,PA0009920,THREE MILE ISLAND NUCLEAR STATION,county does not intersect the DRB
+echo_permittees,PA0010031,SHAWVILLE GENERATING STATION,county does not intersect the DRB
+echo_permittees,PA0011568,ARCELORMITTAL PLATE COATESVILLE,screening flow 1 MGD or less
+echo_permittees,PA0012475,PORTLAND GENERATING STATION,screening flow 1 MGD or less
+echo_permittees,PA0012751,ZINC CORP OF AMERICA,screening flow 1 MGD or less
+echo_permittees,PA0012963,ROCK-TENN CONVERTING COMPANY STROUDSBURG MILL,screening flow 1 MGD or less
+echo_permittees,PA0013820,BRACKENRIDGE FAC,county does not intersect the DRB
+echo_permittees,PA0020125,MONACA BORO STP,county does not intersect the DRB
+echo_permittees,PA0020141,BROOKVILLE MUNI AUTH,county does not intersect the DRB
+echo_permittees,PA0020214,MT UNION BORO - STP,county does not intersect the DRB
+echo_permittees,PA0020257,GROVE CITY BORO STP,county does not intersect the DRB
+echo_permittees,PA0020273,MILTON REGIONAL SEWER AUTHORITY,county does not intersect the DRB
+echo_permittees,PA0020346,PUNXSUTAWNEY BORO STP,county does not intersect the DRB
+echo_permittees,PA0020401,JOHNSONBURG STP,county does not intersect the DRB
+echo_permittees,PA0020486,BELLEFONTE BORO SS/STP,county does not intersect the DRB
+echo_permittees,PA0020567,NORTHUMBERLAND BORO STP,county does not intersect the DRB
+echo_permittees,PA0020605,UNION CITY BORO MA,county does not intersect the DRB
+echo_permittees,PA0020621,WAYNESBORO STP,county does not intersect the DRB
+echo_permittees,PA0020664,MIDDLETOWN STP,county does not intersect the DRB
+echo_permittees,PA0020826,DOVER TWP STP,county does not intersect the DRB
+echo_permittees,PA0020885,MECHANICSBURG WWTP,county does not intersect the DRB
+echo_permittees,PA0020923,NEW OXFORD MUNICIPAL AUTHORITY WWTP,county does not intersect the DRB
+echo_permittees,PA0021113,GLASSPORT BORO - STP,county does not intersect the DRB
+echo_permittees,PA0021148,MT PLEASANT BORO STP,county does not intersect the DRB
+echo_permittees,PA0021229,LITTLESTOWN STP,county does not intersect the DRB
+echo_permittees,PA0021504,WESTERN BUTLER CNTY AUTH STP,county does not intersect the DRB
+echo_permittees,PA0021563,GETTYSBURG STP,county does not intersect the DRB
+echo_permittees,PA0021598,CONNEAUT LAKE JT MUN AUTH STP,county does not intersect the DRB
+echo_permittees,PA0021610,BLAIRSVILLE MUNI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0021687,WELLSBORO MUNI AUTH,county does not intersect the DRB
+echo_permittees,PA0021768,SOMERSET BORO MAIN STP,county does not intersect the DRB
+echo_permittees,PA0021792,EDINBORO MUN AUTH,county does not intersect the DRB
+echo_permittees,PA0021814,MANSFIELD MUNI SEW AUTH,county does not intersect the DRB
+echo_permittees,PA0022209,BEDFORD STP,county does not intersect the DRB
+echo_permittees,PA0022241,CALIFORNIA BORO STP,county does not intersect the DRB
+echo_permittees,PA0022292,EBENSBURG WWTP,county does not intersect the DRB
+echo_permittees,PA0022331,W ELIZABETH STP,county does not intersect the DRB
+echo_permittees,PA0022411,BLDG 008 STP AT NASJRB,screening flow 1 MGD or less
+echo_permittees,PA0022535,MILLERSBURG STP,county does not intersect the DRB
+echo_permittees,PA0023043,NORTH EAST BORO STP,county does not intersect the DRB
+echo_permittees,PA0023124,ALBION BORO WWTP,county does not intersect the DRB
+echo_permittees,PA0023167,PINE STREET STP KANE,county does not intersect the DRB
+echo_permittees,PA0023175,KINZUA ROAD STP KANE,county does not intersect the DRB
+echo_permittees,PA0023213,RIDGWAY BORO STP,county does not intersect the DRB
+echo_permittees,PA0023248,BERWICK AREA JT SEW AUTH,county does not intersect the DRB
+echo_permittees,PA0023531,DANVILLE BORO STP,county does not intersect the DRB
+echo_permittees,PA0023698,VANPORT WPCP,county does not intersect the DRB
+echo_permittees,PA0023701,MIDLAND BORO STP,county does not intersect the DRB
+echo_permittees,PA0023744,NORTHEASTERN YORK CO STP,county does not intersect the DRB
+echo_permittees,PA0023931,CAMBRIDGE AREA JT AUTH STP,county does not intersect the DRB
+echo_permittees,PA0024040,HIGHSPIRE BORO - STP,county does not intersect the DRB
+echo_permittees,PA0024325,MUNCY BOROUGH MUNICIPAL AUTHORITY WWTF,county does not intersect the DRB
+echo_permittees,PA0024384,NORTH MIDDLETON AUTH STP,county does not intersect the DRB
+echo_permittees,PA0024406,MT CARMEL MUNI SEW COLL SYS & STP,county does not intersect the DRB
+echo_permittees,PA0024431,DILLSBURG STP,county does not intersect the DRB
+echo_permittees,PA0024571,BRUSH CREEK STP,county does not intersect the DRB
+echo_permittees,PA0024694,BEAVER BORO STP,county does not intersect the DRB
+echo_permittees,PA0024732,BUENA VISTA STP,county does not intersect the DRB
+echo_permittees,PA0024899,BOROUGH OF LAKE CITY WASTE WATER TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,PA0024902,UPPER ALLEN TWP STP,county does not intersect the DRB
+echo_permittees,PA0025356,MERCER MUN STP,county does not intersect the DRB
+echo_permittees,PA0025569,SLIPPERY ROCK STP,county does not intersect the DRB
+echo_permittees,PA0025615,FIRSTENERGY BEAVER VALLEY POWER STATION 1,county does not intersect the DRB
+echo_permittees,PA0025674,MEADOWBROOK RD STP,county does not intersect the DRB
+echo_permittees,PA0025933,LOCK HAVEN CITY AUTHORITY,county does not intersect the DRB
+echo_permittees,PA0025941,CANONSBRG HOUSTON JT WWTP,county does not intersect the DRB
+echo_permittees,PA0025950,MONONGAHELA CITY STP,county does not intersect the DRB
+echo_permittees,PA0025968,ALIQUIPPA STP,county does not intersect the DRB
+echo_permittees,PA0025984,ALCOSAN SEW SYS,county does not intersect the DRB
+echo_permittees,PA0025992,MCCANDLESS TWP - LONGVUE NO 1 STP,county does not intersect the DRB
+echo_permittees,PA0026026,NEW BRIGHTON BORO SANI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026034,DORNICK PT WWTP,county does not intersect the DRB
+echo_permittees,PA0026051,CHAMBERSBURG STP,county does not intersect the DRB
+echo_permittees,PA0026069,LATROBE MUNI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026077,CARLISLE STP,county does not intersect the DRB
+echo_permittees,PA0026140,ROCHESTER AREA JT SEW AUTH - STP,county does not intersect the DRB
+echo_permittees,PA0026158,MON VLY SEW AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026174,FRANKLIN CITY STP,county does not intersect the DRB
+echo_permittees,PA0026191,HUNTINGDON STP,county does not intersect the DRB
+echo_permittees,PA0026204,OIL CITY STP,county does not intersect the DRB
+echo_permittees,PA0026212,WASHINGTON E WASHINGTON STP,county does not intersect the DRB
+echo_permittees,PA0026239,UNIV AREA JOINT AUTH SPRING CREEK STP,county does not intersect the DRB
+echo_permittees,PA0026255,ALLEGHENY VLY JT SEW AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026263,YORK CITY STP,county does not intersect the DRB
+echo_permittees,PA0026271,MEADVILLE AREA SEWER AUTHORITY WWTP,county does not intersect the DRB
+echo_permittees,PA0026280,LEWISTOWN STP,county does not intersect the DRB
+echo_permittees,PA0026301,ERIE CITY STP,county does not intersect the DRB
+echo_permittees,PA0026310,CLEARFIELD MUN SEW SYS STP,county does not intersect the DRB
+echo_permittees,PA0026328,RACCOON CREEK STP,county does not intersect the DRB
+echo_permittees,PA0026352,RIVERVIEW SANI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026379,BRADFORD STP,county does not intersect the DRB
+echo_permittees,PA0026387,ST MARYS WWTP,county does not intersect the DRB
+echo_permittees,PA0026417,PLUM CREEK STP,county does not intersect the DRB
+echo_permittees,PA0026484,DERRY TWP CLEARWATER STP,county does not intersect the DRB
+echo_permittees,PA0026506,THOMPSON RUN STP,county does not intersect the DRB
+echo_permittees,PA0026522,NEW ENGLAND STP,county does not intersect the DRB
+echo_permittees,PA0026557,SUNBURY MUNI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026581,SCOTTDALE STP,county does not intersect the DRB
+echo_permittees,PA0026654,NEW CUMBERLAND STP,county does not intersect the DRB
+echo_permittees,PA0026697,BUTLER AREA SEW AUTH,county does not intersect the DRB
+echo_permittees,PA0026727,TYRONE BOROUGH STP,county does not intersect the DRB
+echo_permittees,PA0026735,SWATARA TWP STP,county does not intersect the DRB
+echo_permittees,PA0026751,INDIANA BORO WWTP,county does not intersect the DRB
+echo_permittees,PA0026778,INGLESIDE STP,county does not intersect the DRB
+echo_permittees,PA0026808,SPRINGETTSBURY TWP STP,county does not intersect the DRB
+echo_permittees,PA0026824,CLAIRTON MUN AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026832,ELLWOOD CITY WWTP,county does not intersect the DRB
+echo_permittees,PA0026841,OAKMONT BORO - WWTP,county does not intersect the DRB
+echo_permittees,PA0026875,HANOVER BORO STP,county does not intersect the DRB
+echo_permittees,PA0026883,CITY OF BEAVER FALLS STP,county does not intersect the DRB
+echo_permittees,PA0026891,CHARLEROI BORO AUTH STP,county does not intersect the DRB
+echo_permittees,PA0026905,CONNELLSVILLE STP,county does not intersect the DRB
+echo_permittees,PA0026913,MCKEESPORT STP,county does not intersect the DRB
+echo_permittees,PA0026981,DUQUESNE STP,county does not intersect the DRB
+echo_permittees,PA0027014,ALTOONA EASTERLY STP,county does not intersect the DRB
+echo_permittees,PA0027022,ALTOONA WESTERLY STP,county does not intersect the DRB
+echo_permittees,PA0027049,WILLIAMSPORT SANITARY AUTHORITY - WEST STP,county does not intersect the DRB
+echo_permittees,PA0027057,WILLIAMSPORT SANI AUTH CENTRAL STP,county does not intersect the DRB
+echo_permittees,PA0027111,NEW KENSINGTON STP,county does not intersect the DRB
+echo_permittees,PA0027120,WARREN CITY WWTP,county does not intersect the DRB
+echo_permittees,PA0027138,SHARON STP,county does not intersect the DRB
+echo_permittees,PA0027146,AMBRIDGE BORO STP,county does not intersect the DRB
+echo_permittees,PA0027171,BLOOMSBURG MUNI AUTH,county does not intersect the DRB
+echo_permittees,PA0027189,LOWER ALLEN TWP STP,county does not intersect the DRB
+echo_permittees,PA0027197,HARRISBURG AWTF,county does not intersect the DRB
+echo_permittees,PA0027219,UNIONTOWN STP,county does not intersect the DRB
+echo_permittees,PA0027227,FARRELL MUN SEW,county does not intersect the DRB
+echo_permittees,PA0027243,YOUGHIOGHENY STP,county does not intersect the DRB
+echo_permittees,PA0027324,SHAMOKIN-COAL TWP JT SEW AUTH,county does not intersect the DRB
+echo_permittees,PA0027367,GREENVILLE WASTEWATER TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,PA0027375,CITY OF DUBOIS MUNI SEW,county does not intersect the DRB
+echo_permittees,PA0027383,SWDCMA SEW SYS TO DELCORA,"null design flow and no fallback flow (actual, past-year or DMR)"
+echo_permittees,PA0027391,UPPER ALLEGHENY JT SANI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0027430,JEANNETTE STP,county does not intersect the DRB
+echo_permittees,PA0027456,GREATER GREENSBURG STP,county does not intersect the DRB
+echo_permittees,PA0027464,PLEASANT HILLS AUTH STP,county does not intersect the DRB
+echo_permittees,PA0027481,BRUCE MANSFIELD POWER STA,county does not intersect the DRB
+echo_permittees,PA0027511,NEW CASTLE SAN AUTH/ STP,county does not intersect the DRB
+echo_permittees,PA0027553,PINE CREEK MUNI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0027570,BRUSH CREEK STP,county does not intersect the DRB
+echo_permittees,PA0027618,PINEY FORK STP,county does not intersect the DRB
+echo_permittees,PA0027626,KISKI VLY WPCA STP,county does not intersect the DRB
+echo_permittees,PA0027669,MCCANDLESS TWP SAN AUTH - PINE CREEK STP,county does not intersect the DRB
+echo_permittees,PA0027693,MINERSVILLE SEWER AUTHORITY WWTP,screening flow 1 MGD or less
+echo_permittees,PA0027715,MAX ENV TECH INC YUKON FAC,county does not intersect the DRB
+echo_permittees,PA0028142,FORT INDIANTOWN GAP,screening flow 1 MGD or less
+echo_permittees,PA0028223,CORRY WWTP,county does not intersect the DRB
+echo_permittees,PA0028410,BADEN STP,county does not intersect the DRB
+echo_permittees,PA0028428,BROCKWAY AREA WWTP,county does not intersect the DRB
+echo_permittees,PA0028436,ELIZABETH BORO STP,county does not intersect the DRB
+echo_permittees,PA0028461,MIFFLINBURG WWTP,county does not intersect the DRB
+echo_permittees,PA0028487,HERMITAGE MUNI AUTH STP,county does not intersect the DRB
+echo_permittees,PA0028631,MID-CAMERON AUTHORITY,county does not intersect the DRB
+echo_permittees,PA0028665,JERSEY SHORE BOROUGH,county does not intersect the DRB
+echo_permittees,PA0028681,KELLY TWP MUNI AUTH,county does not intersect the DRB
+echo_permittees,PA0028703,DONALDSONS CROSSRDS STP,county does not intersect the DRB
+echo_permittees,PA0028711,BRUSH RUN WPCP,county does not intersect the DRB
+echo_permittees,PA0028746,HAMPDEN TWP. SAN. AUTH.,county does not intersect the DRB
+echo_permittees,PA0028801,LEONARD L NARY WWTP @ MONTOUR RUN,county does not intersect the DRB
+echo_permittees,PA0029122,SAXONBURG AREA AUTHORITY STP,county does not intersect the DRB
+echo_permittees,PA0029491,CLARION AREA STP,county does not intersect the DRB
+echo_permittees,PA0030643,SHIPPENSBURG STP,county does not intersect the DRB
+echo_permittees,PA0032557,LOGAN TWP STP,county does not intersect the DRB
+echo_permittees,PA0032611,PORTAGE AREA SEW AUTH WWTP,county does not intersect the DRB
+echo_permittees,PA0032883,DUNCANSVILLE STP,county does not intersect the DRB
+echo_permittees,PA0034576,TOWANDA MUNI AUTH,county does not intersect the DRB
+echo_permittees,PA0035360,HOLIDAY PARK STP,county does not intersect the DRB
+echo_permittees,PA0035769,JBS SOUDERTON FACILITY,screening flow 1 MGD or less
+echo_permittees,PA0036293,CAMPBELLS RUN PLT,county does not intersect the DRB
+echo_permittees,PA0036650,TITUSVILLE WWTP,county does not intersect the DRB
+echo_permittees,PA0037044,FORD CITY BORO MUNI SEW DISPOSAL AUTH WWTP,county does not intersect the DRB
+echo_permittees,PA0037150,PENN TWP STP,county does not intersect the DRB
+echo_permittees,PA0037940,ELKHORN RUN STP,county does not intersect the DRB
+echo_permittees,PA0037966,MOSHANNON VALLEY JT SEW AUTH STP,county does not intersect the DRB
+echo_permittees,PA0038181,NEW STANTON STP,county does not intersect the DRB
+echo_permittees,PA0038237,POLLOCK RUN WPCP,county does not intersect the DRB
+echo_permittees,PA0038415,EAST PENNSBORO STP,county does not intersect the DRB
+echo_permittees,PA0040274,VANDERGRIFT FAC,county does not intersect the DRB
+echo_permittees,PA0042170,SCMA DEER LAKE WWTP,screening flow 1 MGD or less
+echo_permittees,PA0042234,KITTANNING BORO STP,county does not intersect the DRB
+echo_permittees,PA0043257,NEW FREEDOM STP,county does not intersect the DRB
+echo_permittees,PA0043273,HOLLIDAYSBURG REGIONAL STP,county does not intersect the DRB
+echo_permittees,PA0043681,VALLEY JT SEW AUTH STP,county does not intersect the DRB
+echo_permittees,PA0043729,ALLISON PARK STP,county does not intersect the DRB
+echo_permittees,PA0044113,SOUTH MIDDLETON STP,county does not intersect the DRB
+echo_permittees,PA0044661,LEWISBURG JT AUTH EAST BUFFALO,county does not intersect the DRB
+echo_permittees,PA0044679,PIGEON CREEK STP,county does not intersect the DRB
+echo_permittees,PA0046426,FRANKLIN TWP SEW AUTH STP,county does not intersect the DRB
+echo_permittees,PA0046906,FLAUGHERTY RUN STP,county does not intersect the DRB
+echo_permittees,PA0052167,WIND GAP MUN SEW AUTH,screening flow 1 MGD or less
+echo_permittees,PA0054712,PHILADELPHIA CITY,screening flow 1 MGD or less
+echo_permittees,PA0060046,CAN DO INC - HUMBOLDT WWTP,screening flow 1 MGD or less
+echo_permittees,PA0060089,MIDDLE SMITHFIELD TWP WWTP,screening flow 1 MGD or less
+echo_permittees,PA0063665,ALLENTOWN CITY,screening flow 1 MGD or less
+echo_permittees,PA0080225,WASHINGTON TWP STP,county does not intersect the DRB
+echo_permittees,PA0080314,HAMPDEN TWP ROTH LANE STP,county does not intersect the DRB
+echo_permittees,PA0080519,ANTRIM TWP MUN AUTH STP,county does not intersect the DRB
+echo_permittees,PA0083011,NEWBERRY TWP GOLDSBORO STP,county does not intersect the DRB
+echo_permittees,PA0083593,SILVER SPRING TWP STP,county does not intersect the DRB
+echo_permittees,PA0088781,"CALPINE MID MERIT II, LLC",county does not intersect the DRB
+echo_permittees,PA0091782,WEST HILLS AREA WPCA STP,county does not intersect the DRB
+echo_permittees,PA0092223,BASF MONACA PLT,county does not intersect the DRB
+echo_permittees,PA0094510,EDGAR THOMSON PLT,county does not intersect the DRB
+echo_permittees,PA0095087,CHIPPEWA TWP STP,county does not intersect the DRB
+echo_permittees,PA0095273,FRS JOSEPHINE FAC,county does not intersect the DRB
+echo_permittees,PA0095443,FRS CREEKSIDE FAC,county does not intersect the DRB
+echo_permittees,PA0096211,DARRAGH STP,county does not intersect the DRB
+echo_permittees,PA0096342,FAIRCHANCE GEORGES STP,county does not intersect the DRB
+echo_permittees,PA0100200,REYNOLDS DISPOSAL,county does not intersect the DRB
+echo_permittees,PA0100277,N & S SHENANGO JOINT STP,county does not intersect the DRB
+echo_permittees,PA0101508,AQUATECH FLUID RECOVERY SERVICES - FRANKLIN FACILITY,county does not intersect the DRB
+echo_permittees,PA0102784,WASTE TRMT CORP,county does not intersect the DRB
+echo_permittees,PA0104442,BREAKNECK CREEK STP,county does not intersect the DRB
+echo_permittees,PA0110582,EASTERN SNYDER CNTY REGIONAL AUTH STP,county does not intersect the DRB
+echo_permittees,PA0110591,JOHNSTOWN FAC,county does not intersect the DRB
+echo_permittees,PA0110663,CRESSON BORO WWTP,county does not intersect the DRB
+echo_permittees,PA0110965,MID-CENTRE CNTY AUTH,county does not intersect the DRB
+echo_permittees,PA0111759,CARGILL,county does not intersect the DRB
+echo_permittees,PA0114821,GREGG TWP MUNICIPAL AUTHORITY STP,county does not intersect the DRB
+echo_permittees,PA0203815,GREATER PGH INTL AIRPORT MIDFIELD TERM,county does not intersect the DRB
+echo_permittees,PA0209228,MONTOURSVILLE REG SEW SYS STP,county does not intersect the DRB
+echo_permittees,PA0216941,S FORK REG WWTP,county does not intersect the DRB
+echo_permittees,PA0217093,JOHNSTOWN PLT,county does not intersect the DRB
+echo_permittees,PA0218413,BIG SEWICKLEY WWTP,county does not intersect the DRB
+echo_permittees,PA0218863,FAYETTE ENERGY FAC,county does not intersect the DRB
+echo_permittees,PA0219134,SPRINGDALE GENERATING FACILITY,county does not intersect the DRB
+echo_permittees,PA0223034,NLMK PA CORP,county does not intersect the DRB
+echo_permittees,PA0228061,NEW WEST SIDE STP,county does not intersect the DRB
+echo_permittees,PA0228818,FIRST QUALITY IWT,county does not intersect the DRB
+echo_permittees,PA0232343,CAMP HOPE RUN LDFL WPCF,county does not intersect the DRB
+echo_permittees,PA0232602,HUMMEL STATION LLC,county does not intersect the DRB
+echo_permittees,PA0233650,TERRAQUA,county does not intersect the DRB
+echo_permittees,PA0233901,TUSCARORA TWP WWT FACILITY,county does not intersect the DRB
+echo_permittees,PA0233951,RUSH TOWNSHIP TREATMENT PLANT,county does not intersect the DRB
+echo_permittees,PA0233960,JERSEY SHORE FACILITY,county does not intersect the DRB
+echo_permittees,PA0234028,WETLAND EXT PROJ,county does not intersect the DRB
+echo_permittees,PA0234079,TIADAGTON VALLEY MUNI AUTH WWTP,county does not intersect the DRB
+echo_permittees,PA0234117,WEST BRANCH REGIONAL AUTHORITY WWTP,county does not intersect the DRB
+echo_permittees,PA0252808,BEECH HOLLOW POWER PROJ,county does not intersect the DRB
+echo_permittees,PA0253359,CAMBRIA SOMERSET AUTH,county does not intersect the DRB
+echo_permittees,PA0253723,RONCO WTP,county does not intersect the DRB
+echo_permittees,PA0253987,SOMERSET REGIONAL WATER RESOURCES INDUSTRIAL WASTE TREATMENT FACILITY,county does not intersect the DRB
+echo_permittees,PA0254771,TENASKA WESTMORELAND GENERATING STA,county does not intersect the DRB
+echo_permittees,PA0255092,HILL TOP ENERGY CTR LLC,county does not intersect the DRB
+echo_permittees,PA0255297,RENAISSANCE ENERGY CENTER,county does not intersect the DRB
+echo_permittees,PA0263516,FLUID RECOVERY SVC ROUSEVILLE FAC,county does not intersect the DRB
+echo_permittees,PA0265951,WILDCAT POINT GENERATION FACILITY,screening flow 1 MGD or less
+echo_permittees,PA0275689,GOOD SPRING NGCC FACILITY - FUTURE POWER PA LLC,screening flow 1 MGD or less
+echo_no_dmr_flow,NJ0004901,OXFORD TEXTILE INC,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NJ0004995,MERCER GENERATING STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NJ0005363,DEEPWATER ENERGY CENTER,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NJ0005444,B L ENGLAND GENERATING STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NJ0025160,HAMMONTON WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0003808,I3 ELECTRONICS HURON CAMPUS INDUSTRIAL WTP ,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0003867,"GMMM JENNISON, LLC","no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0003875,AES WESTOVER,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0006262,DANSKAMMER GENERATING STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0008231,ROSETON GENERATING STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0021423,NORWICH (C) WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0022446,CAESARS LANE WWTF,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0022454,MONTICELLO (V) STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0024201,COBLESKILL (V) WPCP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0024295,LLOYD HIGHLAND SEWER DISTRICT STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0024414,BINGHAMTON-JOHNSON CITY JNT STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0024422,WALLKILL (T) STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0024520,SOUTH FALLSBURG (T) WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0026310,NEWBURGH (C) WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0026328,MIDDLETOWN (C) STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0026522,PORT JERVIS STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0027154,WALTON (V) WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0027669,ENDICOTT (V) WPCP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0029271,SIDNEY (V) WPCP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0030074,LIBERTY (V) WWTF,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0030082,NEW PALTZ (V) WWTF,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0031208,SAUGERTIES (V) DOCK STREET STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,NY0031518,GOSHEN (V) WWTF,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0007919,CASCADE TISSUE GROUP PA INC (FORMERLY POPE & TALBOT),"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0011657,VICINITY ENERGY SCHUYLKILL GENERATING STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0012637,TRAINER REFINERY,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0012815,SUNOCO DOWNINGTOWN PAPER MILL FAC,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0013064,HUNTSMAN P&A AMERICAS LLC,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0024287,PALMYRA BOR STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0026123,COLUMBIA MUNICIPAL AUTHORITY WWTF,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0054186,SCI GRATERFORD STP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0058742,WARMINSTER NAWC WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0245399,MORRISVILLE KTC WWTP,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+echo_no_dmr_flow,PA0261882,BERKS HOLLOW ENERGY STATION,"no monthly-average effluent flow DMR in 2023-07 to 2026-06; kept in permittee list, excluded from supply screen"
+supply_screen,DE0000256,DELAWARE CITY REFINING CO.,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,DE0000469,"PERDUE FOODS, LLC.",non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,DE0000558,CALPINE MID-ATLANTIC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0004006,AVANTOR PERFORMANCE MATERIALS LLC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0004391,RIMTEC CORPORATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0004901,OXFORD TEXTILE INC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0004952,DSM NUTRITIONAL PRODUCTS INC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0004995,MERCER GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005029,PAULSBORO REFINING CO,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005045,POLYMER ADDITIVES INC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005100,CHAMBERS WORKS,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005363,DEEPWATER ENERGY CENTER,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005444,B L ENGLAND GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005550,OYSTER CREEK GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0005622,PSEG NUCLEAR LLC  SALEM GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0025160,HAMMONTON WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NJ0025411,HOPE CREEK GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NJ0028436,RARITAN TWP MUA-FLEMINGTON WW FACILITY,POTW ineligible for supply screen: 10 DMR flow months (< 12) or no median flow
+supply_screen,NJ0171905,WEST DEPTFORD ENERGY STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0003808,I3 ELECTRONICS HURON CAMPUS INDUSTRIAL WTP ,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0003867,"GMMM JENNISON, LLC",non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0003875,AES WESTOVER,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0004243,KERRY BIO-SCIENCE,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0006262,DANSKAMMER GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0008231,ROSETON GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0021423,NORWICH (C) WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0022446,CAESARS LANE WWTF,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0022454,MONTICELLO (V) STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0022586,HIGHLAND FALLS (V) WWTP,POTW ineligible for supply screen: 6 DMR flow months (< 12) or no median flow
+supply_screen,NY0023761,TARGET HILL WWTP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,NY0024201,COBLESKILL (V) WPCP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0024295,LLOYD HIGHLAND SEWER DISTRICT STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0024414,BINGHAMTON-JOHNSON CITY JNT STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0024422,WALLKILL (T) STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0024520,SOUTH FALLSBURG (T) WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0026310,NEWBURGH (C) WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0026328,MIDDLETOWN (C) STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0026522,PORT JERVIS STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0027154,WALTON (V) WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0027669,ENDICOTT (V) WPCP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0029271,SIDNEY (V) WPCP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0030074,LIBERTY (V) WWTF,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0030082,NEW PALTZ (V) WWTF,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0031208,SAUGERTIES (V) DOCK STREET STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,NY0031518,GOSHEN (V) WWTF,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,PA0007919,CASCADE TISSUE GROUP PA INC (FORMERLY POPE & TALBOT),non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0008231,LEAR DYE & FINISHING PLANT,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0011533,GIRARD POINT PROCESSING AREA,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0011657,VICINITY ENERGY SCHUYLKILL GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0012629,"SUNOCO, INC.- POINT BREEZE REFINERY",non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0012637,TRAINER REFINERY,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0012769,ROHM & HAAS BRISTOL FACILITY,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0012815,SUNOCO DOWNINGTOWN PAPER MILL FAC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0012823,TALEN ENERGY,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0013064,HUNTSMAN P&A AMERICAS LLC,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0013129,CARPENTER TECHNOLOGY CORP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0013714,EDDYSTONE GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0024121,AQUA PA MEDIA STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0024287,PALMYRA BOR STP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,PA0026123,COLUMBIA MUNICIPAL AUTHORITY WWTF,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,PA0026492,PA AMERICAN WATER COMPANY SCRANTON WWTP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0026859,COATESVILLE STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0026972,EXETER TWP STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0033430,ROAMINGWOOD WWTP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0047325,SUSQ STEAM ELECT STA,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0050326,CLEVELAND CLIFFS CONSHOHOCKEN PLT,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0051926,LIMERICK GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0051934,KING ROAD STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0054186,SCI GRATERFORD STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0058742,WARMINSTER NAWC WWTP,POTW ineligible for supply screen: 0 DMR flow months (< 12) or no median flow
+supply_screen,PA0060097,PA AMER WATER POCONO COUNTRY PLACE WWTP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0061590,AQUA/ EAGLE ROCK (LITTLE WASHINGTON WASTEWATER CO),non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0070505,GEO SPECIALTY CHEM ALLENTOWN PLT,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0244449,MARCUS HOOK GENERATING STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0245399,MORRISVILLE KTC WWTP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0261262,NORTH LONDONDERRY TWP AUTH STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0261882,BERKS HOLLOW ENERGY STATION,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)
+supply_screen,PA0266345,KEYSTONE PROTEIN STP,non-POTW major (facility_type=NON-POTW); eligible only in sensitivity (a)

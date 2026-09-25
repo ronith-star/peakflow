@@ -1,0 +1,29 @@
+{
+ "figure": "figures/supply_screen_map_v3_brief",
+ "pass": true,
+ "min_font_pt": 6.5,
+ "required_min_font_pt": 6.5,
+ "text_text": [],
+ "text_outside_figure": [],
+ "label_symbol_or_line": [],
+ "site_number_ambiguous": [],
+ "leader_crossings": [],
+ "haloed_city_label_over_plant_outline": [
+  {
+   "label": "Trenton",
+   "plant_outlines": 1
+  },
+  {
+   "label": "Wilmington",
+   "plant_outlines": 1
+  },
+  {
+   "label": "Allentown",
+   "plant_outlines": 1
+  },
+  {
+   "label": "Philadelphia",
+   "plant_outlines": 4
+  }
+ ]
+}

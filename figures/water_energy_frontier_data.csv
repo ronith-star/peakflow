@@ -1,0 +1,7 @@
+arch_key,label,marker,water_low_gal_per_mw_year,water_central_gal_per_mw_year,water_high_gal_per_mw_year,energy_low_kwh_per_mw_year,energy_central_kwh_per_mw_year,energy_high_kwh_per_mw_year,water_source
+evaporative_tower,Evaporative tower,log panel,4.70829e+06,5.11055e+06,5.60423e+06,262800,1.03368e+06,1.97976e+06,model
+hybrid,Hybrid (calibrated),log panel,50985.1,148659,324259,481800,1.74324e+06,3.03972e+06,model
+air_cooled_chiller,Air-cooled chiller,zero panel,0,0,0,3.43392e+06,7.25328e+06,1.15982e+07,model
+airside_adiabatic_wcc,Airside economizer with adiabatic cooling (water-cooled chiller),log panel,0,969628,3.60544e+06,87600,1.25268e+06,2.42652e+06,lbnl_wue
+airside_adiabatic_acc,Airside economizer with adiabatic cooling (air-cooled chiller),log panel,231415,462829,694244,131400,1.47168e+06,2.90832e+06,lbnl_p47_reported
+falls_township,Falls Township (AWS Keystone),log panel,148783,148783,148783,1.752e+06,1.752e+06,1.752e+06,"135,000 gal/day x 365 / calibrated P_IT"

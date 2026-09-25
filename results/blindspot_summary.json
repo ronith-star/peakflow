@@ -1,0 +1,74 @@
+{
+  "primary": {
+    "n_configs": 12,
+    "n_averaging_blind_spot_strict": 0,
+    "n_averaging_blind_spot_loose_annual_mean": 3,
+    "n_review_if_self_supplied": 8,
+    "n_review_if_purchased": 0,
+    "n_purchased_supply_blind_spot": 8,
+    "hybrid_strict_band_mw": [
+      7.52695409491021,
+      23.560611165098383
+    ],
+    "n_nan_days": 101,
+    "calibration_key_path": [
+      "primary"
+    ],
+    "calibration_targets": {
+      "avg_gpd": 135000.0,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.06
+    },
+    "calibration_feasible": true,
+    "infeasibility_note": null,
+    "hybrid_params": {
+      "t_sw_c": 22.376079484950605,
+      "gamma": 0.4294298328088379,
+      "twb_ref_c": 28.59456074552016
+    },
+    "display_file": "results/table_blindspot.csv",
+    "raw_file": "results/blindspot_raw.csv"
+  },
+  "wet_2pct": {
+    "n_configs": 12,
+    "n_averaging_blind_spot_strict": 0,
+    "n_averaging_blind_spot_loose_annual_mean": 3,
+    "n_review_if_self_supplied": 8,
+    "n_review_if_purchased": 0,
+    "n_purchased_supply_blind_spot": 8,
+    "hybrid_strict_band_mw": [
+      6.71084329474615,
+      30.774016397150806
+    ],
+    "n_nan_days": 101,
+    "calibration_key_path": [
+      "sensitivity_wet_2pct",
+      "peak_day"
+    ],
+    "calibration_targets": {
+      "avg_gpd": 135000.0,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.02
+    },
+    "calibration_feasible": false,
+    "infeasibility_note": "Peak-to-average ratio 32.6 unreachable at wet share 0.020; closest fit (gamma at lower bound 0.02) reported, P_IT set to match the average.",
+    "hybrid_params": {
+      "t_sw_c": 23.892538134060587,
+      "gamma": 0.02,
+      "twb_ref_c": 28.59456074552016
+    },
+    "display_file": "results/table_blindspot_wet2pct.csv",
+    "raw_file": "results/blindspot_raw_wet2pct.csv"
+  },
+  "q7q10_cfs": 1794.8505715389547,
+  "trigger_rule": {
+    "quote": "the daily average gross withdrawal during any 30 consecutive day period does not exceed 100,000 gallons",
+    "citation": "DRBC Administrative Manual Part 1, Article 3; 18 CFR 401.35(a)(2)-(3)",
+    "key": "drbc_admin_manual"
+  },
+  "purchased_supply": {
+    "quote": "To date, the DRBC has not received any applications for data center projects because the existing data centers in the Basin purchase water from public water supply systems rather than operate their own withdrawal systems.",
+    "key": "drbc_datacenters_2026",
+    "url": "https://www.nj.gov/drbc/programs/supply/datacenters.html"
+  }
+}

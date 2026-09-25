@@ -1,0 +1,41 @@
+{
+ "text_overlaps": [],
+ "min_font_pt": 7.0,
+ "size_mm": [
+  180.0,
+  80.0
+ ],
+ "legend_to_jja_panel_mm": 2.2569178082191774,
+ "jja_label_clearance_mm": 2.292627669286898,
+ "n_traces": 300,
+ "info": {
+  "seed": 20260926,
+  "plot_selection_seed": 20260927,
+  "n_draws": 2000,
+  "n_plotted_traces": 300,
+  "rng": "numpy.random.default_rng (PCG64)",
+  "trace_definition": "each trace is one parameter draw run over one weather year drawn uniformly from 2005 to 2024 (KTTN hourly wet-bulb, America/New_York calendar days)",
+  "architecture": "calibrated hybrid (results/calibration.json 'primary')",
+  "plot_floor_gpd": 1000.0,
+  "share_zero_makeup_trace_days_all_draws": 0.8660412040156032,
+  "share_zero_makeup_trace_days_plotted": 0.8657463872565325,
+  "share_trace_days_below_floor_plotted": 0.8657463872565325,
+  "n_missing_trace_days_all_draws": 10614,
+  "annual_max_day_gpd": {
+   "p10": 2035471.8574852562,
+   "p50": 2880952.992910997,
+   "p90": 3807229.764867755,
+   "max": 4899472.532779764
+  },
+  "share_draws_max_day_over_trigger": 1.0,
+  "share_draws_max_day_over_4p4mgd": 0.0075,
+  "doy_p50_max_gpd": 1131280.8632904761,
+  "doy_p90_max_gpd": 2782772.9206800503,
+  "n_doy_p50_positive": 39,
+  "n_doy_p90_positive": 124,
+  "reference_lines_gpd": {
+   "drbc_trigger": 100000.0,
+   "reported_peak": 4400000.0
+  }
+ }
+}

@@ -1,0 +1,96 @@
+{
+  "formula": "WUE = avg cooling gal/day x 3.785411784 L/gal / (P_IT MW x 24 h x 1000 kWh/MWh)",
+  "avg_cooling_gpd": 135000.0,
+  "avg_source": "falls_levittown_2026",
+  "potable_gpd_not_cooling": 19000.0,
+  "peak_gpd": 4400000.0,
+  "peak_to_average_ratio": 32.592592592592595,
+  "implied": {
+    "peak_day_fit_primary": {
+      "p_it_mw": 331.18598017604927,
+      "avg_gpd_used": 135000.0,
+      "implied_wue_l_per_kwh": 0.06429300320527234
+    },
+    "design_rate_fit_sensitivity": {
+      "p_it_mw": 292.7780006965159,
+      "avg_gpd_used": 135000.0,
+      "implied_wue_l_per_kwh": 0.0727272583129344
+    },
+    "wet_2pct_peak_day_achieved_avg": {
+      "p_it_mw": 481.9355406924384,
+      "avg_gpd_used": 135000.0,
+      "implied_wue_l_per_kwh": 0.044182135342013984
+    },
+    "wet_2pct_design_rate_achieved_avg": {
+      "p_it_mw": 292.7780006965159,
+      "avg_gpd_used": 82013.10498337728,
+      "implied_wue_l_per_kwh": 0.04418213534201398
+    },
+    "unverified_253MW": {
+      "p_it_mw": 253.0,
+      "avg_gpd_used": 135000.0,
+      "implied_wue_l_per_kwh": 0.08416182326086956
+    }
+  },
+  "ratios": {
+    "peak_day_fit_primary": {
+      "lbnl_avg_over_falls": 5.599365126102528,
+      "microsoft_over_falls": 4.1995238445768965,
+      "adiabatic_low_end_over_falls": 1.5553792016951467,
+      "inside_adiabatic_reported_range": false
+    },
+    "design_rate_fit_sensitivity": {
+      "lbnl_avg_over_falls": 4.950000981076096,
+      "microsoft_over_falls": 3.7125007358070725,
+      "adiabatic_low_end_over_falls": 1.375000272521138,
+      "inside_adiabatic_reported_range": false
+    },
+    "wet_2pct_peak_day_achieved_avg": {
+      "lbnl_avg_over_falls": 8.148089656899545,
+      "microsoft_over_falls": 6.111067242674659,
+      "adiabatic_low_end_over_falls": 2.2633582380276516,
+      "inside_adiabatic_reported_range": false
+    },
+    "wet_2pct_design_rate_achieved_avg": {
+      "lbnl_avg_over_falls": 8.148089656899547,
+      "microsoft_over_falls": 6.11106724267466,
+      "adiabatic_low_end_over_falls": 2.263358238027652,
+      "inside_adiabatic_reported_range": false
+    },
+    "unverified_253MW": {
+      "lbnl_avg_over_falls": 4.2774738717831395,
+      "microsoft_over_falls": 3.208105403837355,
+      "adiabatic_low_end_over_falls": 1.1881871866064277,
+      "inside_adiabatic_reported_range": false
+    }
+  },
+  "comparators": {
+    "lbnl_2024_us_average_site_wue_through_2023": {
+      "value": 0.36,
+      "key": "shehabi_2024",
+      "note": "average site WUE 'stays just over 0.36 L/kWh through 2023' (p.48)"
+    },
+    "lbnl_2024_hyperscale_aggregate_median": {
+      "value": 0.32,
+      "key": "shehabi_2024",
+      "note": "p.47"
+    },
+    "lbnl_2024_airside_econ_adiabatic_reported": {
+      "range": [
+        0.1,
+        0.3
+      ],
+      "key": "shehabi_2024",
+      "note": "hyperscale facilities report 0.1-0.3 L/kWh for systems similar to airside economizer with adiabatic cooling; LBNL's simulated values for that system are lower because it is not used most of the year (p.46-47)"
+    },
+    "microsoft_fy2025_global_wue": {
+      "value": 0.27,
+      "key": "microsoft_datacenters_2025"
+    },
+    "meta_2024_wue_withdrawal_basis": {
+      "value": 0.19,
+      "key": "meta_sustainability_2025",
+      "note": "withdrawal-based, not directly comparable"
+    }
+  }
+}

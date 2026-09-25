@@ -1,0 +1,11 @@
+{
+ "figure": "figures/supply_screen_map_v3",
+ "pass": true,
+ "min_font_pt": 7.0,
+ "required_min_font_pt": 7.0,
+ "text_text": [],
+ "text_outside_figure": [],
+ "label_symbol_or_line": [],
+ "site_number_ambiguous": [],
+ "leader_crossings": []
+}

@@ -1,0 +1,27 @@
+{
+  "n_sites": 24,
+  "by_class": {
+    "public_or_authority": 7,
+    "self_supplied": 2,
+    "unknown": 15
+  },
+  "by_class_confidence": {
+    "public_or_authority|stated_in_source": 6,
+    "public_or_authority|inferred_service_area": 1,
+    "self_supplied|stated_in_source": 2,
+    "unknown|none": 15
+  },
+  "self_supplied_sites": [
+    {
+      "site_id": "DRB23",
+      "name": "Project Gold",
+      "supplier_name": "Project wells (centralized well system); cooling water trucked in"
+    },
+    {
+      "site_id": "DRB39",
+      "name": "Slate Belt Data Centers",
+      "supplier_name": "River Pointe on-site wells (10 wells, planned authority system)"
+    }
+  ],
+  "source": "data/sites/site_suppliers.csv"
+}

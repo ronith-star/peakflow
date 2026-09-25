@@ -1,0 +1,7 @@
+Configuration,Max 30-day average (gal/d),Peak day (gal/d),DRBC review if self-supplied,DRBC review if purchased
+"Falls Twp (AWS Keystone), reported","1,410,000¹","4,400,000⁴",Yes,No
+"Hybrid (calibrated), 15 MW","63,700¹","199,000¹",No,No
+"Hybrid (calibrated), 100 MW","424,000","1,330,000",Yes,No
+"Hybrid (calibrated), 400 MW","1,700,000","5,310,000",Yes,No
+"Evaporative tower, 100 MW","1,500,000","1,500,000",Yes,No
+"Air-cooled chiller, 100 MW",0,0,No,No

@@ -1,0 +1,40 @@
+{
+ "text_overlaps": [],
+ "min_font_pt": 7.0,
+ "size_mm": [
+  180.0,
+  145.3
+ ],
+ "n_p90_above_plant": 21,
+ "sites_p90_above_plant": [
+  "DRB22",
+  "DRB07",
+  "DRB15",
+  "DRB16",
+  "DRB14",
+  "DRB40",
+  "DRB03",
+  "DRB27",
+  "DRB32",
+  "DRB38",
+  "DRB31",
+  "DRB12",
+  "DRB33",
+  "DRB10",
+  "DRB39",
+  "DRB04",
+  "DRB05",
+  "DRB25",
+  "DRB34",
+  "DRB37",
+  "DRB02"
+ ],
+ "zero_share_range": [
+  0.0698,
+  0.0698
+ ],
+ "below_axis_share_range": [
+  0.0704,
+  0.0721
+ ]
+}

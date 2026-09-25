@@ -1,0 +1,85 @@
+{
+  "seed": 20260926,
+  "plot_selection_seed": 20260927,
+  "n_draws": 2000,
+  "n_plotted_traces": 300,
+  "rng": "numpy.random.default_rng (PCG64)",
+  "trace_definition": "each trace is one parameter draw run over one weather year drawn uniformly from 2005 to 2024 (KTTN hourly wet-bulb, America/New_York calendar days)",
+  "architecture": "calibrated hybrid (results/calibration.json 'primary')",
+  "distributions": {
+    "p_it_mw": {
+      "dist": "uniform",
+      "low": 253.0,
+      "high": 331.18598017604927,
+      "source": "253 MW unverified Keystone figure [cleanview_keystone_2026] to the peak-day calibration's fitted 331.19 MW [reuse_ready_model]"
+    },
+    "pue": {
+      "dist": "uniform",
+      "low": 1.15,
+      "high": 1.35,
+      "source": "shehabi_2024 p.48"
+    },
+    "gamma": {
+      "dist": "uniform",
+      "low": 0.3548445966364694,
+      "high": 0.4294298328088379,
+      "source": "design-rate and peak-day calibration readings [reuse_ready_model]"
+    },
+    "t_sw_c": {
+      "dist": "fixed",
+      "value": 22.376079484950605,
+      "source": "identical in both calibration readings (set by the 6 percent wet-hour target)"
+    },
+    "cycles": {
+      "dist": "fixed",
+      "value": 4.0,
+      "source": "model assumption"
+    },
+    "weather_year": {
+      "dist": "discrete uniform",
+      "values": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    }
+  },
+  "plot_floor_gpd": 1000.0,
+  "share_zero_makeup_trace_days_all_draws": 0.8660412040156032,
+  "share_zero_makeup_trace_days_plotted": 0.8657463872565325,
+  "share_trace_days_below_floor_plotted": 0.8657463872565325,
+  "n_missing_trace_days_all_draws": 10614,
+  "annual_max_day_gpd": {
+    "p10": 2035471.8574852562,
+    "p50": 2880952.992910997,
+    "p90": 3807229.764867755,
+    "max": 4899472.532779764
+  },
+  "share_draws_max_day_over_trigger": 1.0,
+  "share_draws_max_day_over_4p4mgd": 0.0075,
+  "doy_p50_max_gpd": 1131280.8632904761,
+  "doy_p90_max_gpd": 2782772.9206800503,
+  "n_doy_p50_positive": 39,
+  "n_doy_p90_positive": 124,
+  "reference_lines_gpd": {
+    "drbc_trigger": 100000.0,
+    "reported_peak": 4400000.0
+  }
+}

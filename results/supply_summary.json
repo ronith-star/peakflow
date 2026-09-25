@@ -1,0 +1,187 @@
+{
+  "n_sites": 24,
+  "n_plants_total": 258,
+  "n_plants_eligible_primary": 180,
+  "n_plants_eligible_sens_a": 214,
+  "radius_m": 16093.44,
+  "min_dmr_flow_months": 12,
+  "demand_rates": {
+    "p_it_mw_calibrated": 331.18598017604927,
+    "peak_day_gpd_calibrated": 4400000.0,
+    "peak_day_gpd_per_mw": 13285.5865386001,
+    "p99_day_gpd_calibrated": 2333587.447128803,
+    "peak_day_gpd_recomputed": 4400000.0,
+    "n_valid_days": 7204,
+    "p99_day_gpd_per_mw": 7046.154085050136
+  },
+  "headline_capacity_independent": {
+    "n_within_10mi_of_eligible_potw": 22,
+    "of": 24,
+    "text": "22 of 24 active planned data center sites sit within 10 miles of an eligible municipal treatment plant",
+    "n_no_published_capacity": 16
+  },
+  "covered_it_bins": {
+    "no eligible plant within 10 mi": 2,
+    "50 to 200 MW": 17,
+    "over 200 MW": 5
+  },
+  "covered_it_bins_note": "covered_it_mw = nearest eligible POTW median flow / calibrated peak-day makeup per MW IT; sites with no eligible POTW within 10 mi are set to 0 and fall in the lowest bin",
+  "n_match_crosses_state_line": 3,
+  "class_counts": {
+    "matchable": 7,
+    "partial": 15,
+    "none": 2
+  },
+  "headline": "7 of 24 planned sites sit within 10 miles of a treatment plant that could cover their peak cooling demand",
+  "sensitivity": {
+    "a_non_potw_eligible": {
+      "matchable": 10,
+      "partial": 14,
+      "none": 0
+    },
+    "b_uniform_100mw_it": {
+      "matchable": 8,
+      "partial": 14,
+      "none": 2
+    },
+    "p99_day_demand": {
+      "matchable": 16,
+      "partial": 6,
+      "none": 2
+    },
+    "any_plant_within_10mi_not_just_nearest": {
+      "matchable": 15,
+      "partial": 7,
+      "none": 2
+    }
+  },
+  "assumed_capacity_sensitivity": {
+    "note": "sites with capacity_basis == 'assumed_100MW_IT' re-run at each IT load; stated-MW sites unchanged; main class (map) uses 100 MW",
+    "n_assumed_sites": 16,
+    "50MW": {
+      "matchable": 15,
+      "partial": 7,
+      "none": 2
+    },
+    "100MW": {
+      "matchable": 7,
+      "partial": 15,
+      "none": 2
+    },
+    "200MW": {
+      "matchable": 5,
+      "partial": 17,
+      "none": 2
+    },
+    "matchable_spread_max_minus_min": 10,
+    "sites_changing_class": {
+      "DRB03": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB05": {
+        "50MW": "matchable",
+        "100MW": "matchable",
+        "200MW": "partial"
+      },
+      "DRB10": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB27": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB31": {
+        "50MW": "matchable",
+        "100MW": "matchable",
+        "200MW": "partial"
+      },
+      "DRB32": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB33": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB38": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB39": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      },
+      "DRB40": {
+        "50MW": "matchable",
+        "100MW": "partial",
+        "200MW": "partial"
+      }
+    }
+  },
+  "n_matched_plant_outside_drb": 1,
+  "by_capacity_basis": {
+    "assumed_100MW_IT": {
+      "matchable": 7,
+      "partial": 8,
+      "none": 1
+    },
+    "stated_campus_MW_div_PUE": {
+      "matchable": 0,
+      "partial": 7,
+      "none": 1
+    }
+  },
+  "by_verified_location": {
+    "False": {
+      "matchable": 2,
+      "partial": 6,
+      "none": 0
+    },
+    "True": {
+      "matchable": 5,
+      "partial": 9,
+      "none": 2
+    }
+  },
+  "sites_by_class": {
+    "matchable": [
+      "DRB04",
+      "DRB05",
+      "DRB12",
+      "DRB14",
+      "DRB16",
+      "DRB24",
+      "DRB31"
+    ],
+    "partial": [
+      "DRB02",
+      "DRB03",
+      "DRB07",
+      "DRB10",
+      "DRB15",
+      "DRB22",
+      "DRB25",
+      "DRB27",
+      "DRB32",
+      "DRB33",
+      "DRB34",
+      "DRB37",
+      "DRB38",
+      "DRB39",
+      "DRB40"
+    ],
+    "none": [
+      "DRB01",
+      "DRB23"
+    ]
+  }
+}

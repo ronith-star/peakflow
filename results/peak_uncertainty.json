@@ -1,0 +1,1504 @@
+{
+  "seed": 20260925,
+  "n_draws": 10000,
+  "rng": "numpy.random.default_rng (PCG64)",
+  "common_random_numbers": "one set of uniforms (architecture, WUE, PUE, per-site capacity) reused in every scenario; architecture, WUE and PUE draws shared across sites",
+  "distributions": {
+    "architecture_weights_primary": {
+      "evaporative_tower": 0.015640665730900342,
+      "hybrid": 0.9140765991578104,
+      "air_cooled_chiller": 0.07028273511128935
+    },
+    "architecture_weights_source": "shehabi_2024 Figure 4.2 p.39 (hyperscale, 2023), digitized; grouping in LBNL_SYSTEM_GROUPS",
+    "fig42_shares_percent": {
+      "hyperscale": {
+        "airside_econ_adiabatic_acc": 42.05,
+        "airside_econ_adiabatic_wcc": 42.89,
+        "airside_econ_acc": 5.45,
+        "airside_econ_wcc": 5.71,
+        "direct_expansion": 1.04,
+        "dry_cooler_acc": 0.52,
+        "dry_cooler_adiabatic_acc": 0.52,
+        "water_cooled_chiller": 0.26,
+        "waterside_econ_wcc": 1.3,
+        "air_cooled_chiller": 0.0
+      },
+      "midsize_colo": {
+        "air_cooled_chiller": 12.98,
+        "airside_econ_adiabatic_acc": 2.86,
+        "airside_econ_adiabatic_wcc": 2.6,
+        "airside_econ_acc": 14.28,
+        "airside_econ_wcc": 14.54,
+        "direct_expansion": 33.03,
+        "dry_cooler_acc": 1.3,
+        "dry_cooler_adiabatic_acc": 1.3,
+        "water_cooled_chiller": 14.28,
+        "waterside_econ_wcc": 2.6
+      }
+    },
+    "lbnl_system_groups": {
+      "water_cooled_chiller": "evaporative_tower",
+      "waterside_econ_wcc": "evaporative_tower",
+      "airside_econ_adiabatic_acc": "hybrid",
+      "airside_econ_adiabatic_wcc": "hybrid",
+      "airside_econ_wcc": "hybrid",
+      "dry_cooler_adiabatic_acc": "hybrid",
+      "air_cooled_chiller": "air_cooled_chiller",
+      "direct_expansion": "air_cooled_chiller",
+      "dry_cooler_acc": "air_cooled_chiller",
+      "airside_econ_acc": "air_cooled_chiller"
+    },
+    "wue_l_per_kwh_five_number": {
+      "large_waterside_econ_wcc": {
+        "lower_whisker": 1.72,
+        "q1": 2.04,
+        "median": 2.18,
+        "q3": 2.31,
+        "upper_whisker": 2.78
+      },
+      "large_airside_econ_adiabatic_wcc": {
+        "lower_whisker": 0.0,
+        "q1": 0.21,
+        "median": 0.42,
+        "q3": 0.72,
+        "upper_whisker": 1.56
+      },
+      "large_dry_cooler_adiabatic_acc": {
+        "lower_whisker": 0.0,
+        "q1": 0.17,
+        "median": 0.23,
+        "q3": 0.31,
+        "upper_whisker": 0.58
+      }
+    },
+    "pue_five_number_same_boxes": {
+      "large_waterside_econ_wcc": {
+        "lower_whisker": 1.029,
+        "q1": 1.098,
+        "median": 1.118,
+        "q3": 1.138,
+        "upper_whisker": 1.228
+      },
+      "large_airside_econ_adiabatic_wcc": {
+        "lower_whisker": 1.008,
+        "q1": 1.114,
+        "median": 1.144,
+        "q3": 1.167,
+        "upper_whisker": 1.279
+      },
+      "large_dry_cooler_adiabatic_acc": {
+        "lower_whisker": 1.053,
+        "q1": 1.169,
+        "median": 1.199,
+        "q3": 1.233,
+        "upper_whisker": 1.35
+      }
+    },
+    "wue_source": "shehabi_2024 Figure 4.4 p.46 (large-scale boxes), digitized; whiskers treated as range ends",
+    "wue_map_primary": {
+      "evaporative_tower": "large_waterside_econ_wcc",
+      "hybrid": "large_airside_econ_adiabatic_wcc"
+    },
+    "wue_labels": {
+      "large_waterside_econ_wcc": "Waterside economizer (water-cooled chiller), large-scale",
+      "large_airside_econ_adiabatic_wcc": "Airside economizer & adiabatic cooling (water-cooled chiller), large-scale",
+      "large_dry_cooler_adiabatic_acc": "Dry cooler with adiabatic assist (air-cooled chiller), large-scale"
+    },
+    "air_cooled_chiller": "zero makeup (cooling_model phi = 0)",
+    "pue": {
+      "dist": "uniform",
+      "low": 1.15,
+      "high": 1.35,
+      "source": "shehabi_2024 p.48 (projected 2028 average PUE 1.15 to 1.35)"
+    },
+    "it_load": {
+      "stated": "it_mw from results/supply_screen.csv (stated campus MW / PUE 1.2)",
+      "unstated": "equal-probability resample of the stated active-site IT loads",
+      "pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "source": "data/sites/planned_sites.csv via results/supply_screen.csv"
+    }
+  },
+  "conversion": {
+    "gpd_per_mw_per_l_per_kwh": 6340.129256595562,
+    "formula": "peak_gpd_per_MW = WUE * 6340.13 * PUE_draw / PUE_ref * R_arch; hybrid capped at full evaporation (evaporative-tower peak day x PUE_draw / 1.2)",
+    "pue_ref": {
+      "large_waterside_econ_wcc": 1.118,
+      "large_airside_econ_adiabatic_wcc": 1.144,
+      "large_dry_cooler_adiabatic_acc": 1.199
+    },
+    "model": {
+      "calibration": {
+        "t_sw_c": 22.376079484950605,
+        "gamma": 0.4294298328088379,
+        "twb_ref_c": 28.59456074552016,
+        "pue": 1.2,
+        "cycles": 4.0
+      },
+      "evaporative_tower": {
+        "mean_gpd_per_mw": 15028.45155555556,
+        "peak_day_gpd_per_mw": 15028.451555555555,
+        "peak_to_average": 0.9999999999999997,
+        "n_valid_days": 7204
+      },
+      "hybrid": {
+        "mean_gpd_per_mw": 407.62595061613945,
+        "peak_day_gpd_per_mw": 13285.5865386001,
+        "peak_to_average": 32.592592592592595,
+        "n_valid_days": 7204
+      },
+      "variable_ratio_lookup": {
+        "t_sw_c": [
+          -15.0,
+          -14.512982463533481,
+          -14.025964927066962,
+          -13.538947390600445,
+          -13.051929854133926,
+          -12.564912317667407,
+          -12.07789478120089,
+          -11.59087724473437,
+          -11.103859708267851,
+          -10.616842171801332,
+          -10.129824635334813,
+          -9.642807098868296,
+          -9.155789562401777,
+          -8.668772025935258,
+          -8.18175448946874,
+          -7.694736953002222,
+          -7.207719416535703,
+          -6.720701880069184,
+          -6.233684343602665,
+          -5.7466668071361475,
+          -5.2596492706696285,
+          -4.7726317342031095,
+          -4.285614197736592,
+          -3.7985966612700732,
+          -3.311579124803554,
+          -2.824561588337035,
+          -2.337544051870516,
+          -1.850526515403999,
+          -1.36350897893748,
+          -0.8764914424709609,
+          -0.38947390600444365,
+          0.09754363046207537,
+          0.5845611669285944,
+          1.0715787033951116,
+          1.5585962398616324,
+          2.0456137763281497,
+          2.5326313127946705,
+          3.0196488492611877,
+          3.506666385727705,
+          3.9936839221942257,
+          4.480701458660743,
+          4.96771899512726,
+          5.454736531593781,
+          5.941754068060298,
+          6.4287716045268155,
+          6.915789140993336,
+          7.4028066774598535,
+          7.889824213926374,
+          8.376841750392892,
+          8.863859286859409,
+          9.35087682332593,
+          9.837894359792447,
+          10.324911896258968,
+          10.811929432725485,
+          11.298946969192002,
+          11.785964505658523,
+          12.27298204212504,
+          12.759999578591557,
+          13.247017115058078,
+          13.734034651524595,
+          14.221052187991113,
+          14.708069724457633,
+          15.19508726092415,
+          15.682104797390672,
+          16.16912233385719,
+          16.656139870323706,
+          17.143157406790223,
+          17.630174943256748,
+          18.117192479723265,
+          18.604210016189782,
+          19.0912275526563,
+          19.578245089122817,
+          20.06526262558934,
+          20.552280162055858,
+          21.039297698522375,
+          21.526315234988893,
+          22.01333277145541,
+          22.500350307921927,
+          22.98736784438845,
+          23.47438538085497,
+          23.961402917321486,
+          24.448420453788003,
+          24.93543799025452,
+          25.422455526721045,
+          25.909473063187562,
+          26.39649059965408,
+          26.883508136120597,
+          27.370525672587114,
+          27.85754320905363,
+          28.34456074552016
+        ],
+        "phi_mean": [
+          0.7596695052737723,
+          0.7557811648529468,
+          0.751761037247095,
+          0.7475548150078407,
+          0.7431919795801032,
+          0.7385937377280934,
+          0.7338158811836663,
+          0.7288482128495479,
+          0.7236567455518418,
+          0.7182868434822496,
+          0.7126524955743517,
+          0.7067758651998447,
+          0.7006178523149236,
+          0.6942362096947914,
+          0.6875533694386151,
+          0.6805825045796476,
+          0.6732666141518675,
+          0.6656392209536962,
+          0.6576583061315904,
+          0.6493152356043096,
+          0.640695003673032,
+          0.6316916544061476,
+          0.6223684782074381,
+          0.6128237823787037,
+          0.602978727186213,
+          0.5929408070620765,
+          0.5826623004384812,
+          0.5721912452800603,
+          0.5614881504881882,
+          0.5506434535543714,
+          0.5395513666781073,
+          0.5284401356547328,
+          0.5174751155696754,
+          0.5065539006303709,
+          0.4955427850562652,
+          0.48459036149973445,
+          0.47373360730539243,
+          0.4630254072307961,
+          0.4522218753178087,
+          0.4414548085896709,
+          0.4306768722959863,
+          0.4198879300077048,
+          0.40917731147169856,
+          0.3985618130810147,
+          0.38798154111175004,
+          0.3773750685780611,
+          0.3667756366375555,
+          0.3562674451249048,
+          0.34585719045951674,
+          0.3353753921932782,
+          0.32506483053407176,
+          0.31478489112722846,
+          0.3043743334231491,
+          0.29391651973778066,
+          0.2833514480313364,
+          0.2726829279259843,
+          0.2618026832613133,
+          0.2507575680025607,
+          0.23952402863563063,
+          0.22804250360483605,
+          0.21640806833524076,
+          0.2049042114455435,
+          0.1931844335536808,
+          0.18150895901931646,
+          0.1698142848467564,
+          0.15787206385230074,
+          0.145868121575358,
+          0.1338683517105132,
+          0.12155996171737826,
+          0.10935138592616633,
+          0.09760624554693127,
+          0.08573091260783228,
+          0.0742836628839723,
+          0.06344814823269408,
+          0.052795460297395284,
+          0.04286569350386414,
+          0.03342814254264399,
+          0.025082717277379183,
+          0.018128801699535076,
+          0.01246177579044451,
+          0.008010303675283752,
+          0.00500394272282005,
+          0.0028958443680481773,
+          0.0015653268122459642,
+          0.0007792758425677357,
+          0.00040707792041235743,
+          0.00019810029566016973,
+          7.446940101426663e-05,
+          2.5358643328599255e-05,
+          9.450815134684665e-06
+        ],
+        "phi_peak": [
+          0.9849780446572063,
+          0.9848059739166839,
+          0.9846299146521672,
+          0.9844497265284794,
+          0.9842652625472494,
+          0.9840763686466013,
+          0.9838828832716241,
+          0.9836846369131057,
+          0.9834814516117572,
+          0.9832731404248789,
+          0.9830595068521044,
+          0.9828403442165116,
+          0.9826154349969967,
+          0.9823845501073761,
+          0.9821474481171862,
+          0.9819038744086042,
+          0.9816535602632922,
+          0.9813962218722733,
+          0.9811315592611577,
+          0.980859255122155,
+          0.9805789735432915,
+          0.9802903586241244,
+          0.9799930329659373,
+          0.9796865960229293,
+          0.9793706222992292,
+          0.9790446593746424,
+          0.9787082257398311,
+          0.9783608084191129,
+          0.9780018603561478,
+          0.9776307975344426,
+          0.9772469958007328,
+          0.9768497873548305,
+          0.9764384568643255,
+          0.9760122371564902,
+          0.9755703044326846,
+          0.9751117729423128,
+          0.9746356890437097,
+          0.9741410245679561,
+          0.973626669388197,
+          0.9730914230811423,
+          0.972533985548559,
+          0.9719529464440814,
+          0.9713467732237745,
+          0.9707137976066241,
+          0.9700522001922568,
+          0.9693599929361788,
+          0.968634999125729,
+          0.9678748304302881,
+          0.9670768605139425,
+          0.9662381945937175,
+          0.9653556341964672,
+          0.964425636205759,
+          0.9634442650877763,
+          0.9624071369307313,
+          0.9613093536100743,
+          0.9601454249812833,
+          0.9589091764754096,
+          0.957593638792079,
+          0.9561909154985607,
+          0.9546920231801503,
+          0.9530866972463319,
+          0.9513631544373211,
+          0.9495078002941205,
+          0.9475048660586067,
+          0.9453359542275718,
+          0.9429794646538275,
+          0.9404098626962308,
+          0.9375967359708934,
+          0.9345035643960098,
+          0.9310860956818442,
+          0.9272901690082855,
+          0.9230487529378751,
+          0.9182778415787531,
+          0.9128706533080387,
+          0.9066892388739406,
+          0.8995520136471169,
+          0.8912146434219754,
+          0.8813396150902518,
+          0.8694454933280285,
+          0.8548171468015863,
+          0.8363338250621792,
+          0.8120998914352567,
+          0.7784851139029061,
+          0.7261891671796958,
+          0.6284407675146547,
+          0.5029697610244656,
+          0.41131916418772413,
+          0.2884163018251216,
+          0.1533881456137873,
+          0.06808367223026833
+        ],
+        "wue_at_phi1_pue1p2_l_per_kwh": 2.3703703703703702
+      }
+    }
+  },
+  "deterministic_peak_day_gpd_per_mw": 13285.5865386001,
+  "scenarios": {
+    "primary": {
+      "scenario": "primary",
+      "note": "LBNL Fig 4.2 hyperscale weights; fixed-ratio conversion; unstated IT load resampled from the 8 stated sites",
+      "weights": {
+        "evaporative_tower": 0.015640665730900342,
+        "hybrid": 0.9140765991578104,
+        "air_cooled_chiller": 0.07028273511128935
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_airside_econ_adiabatic_wcc"
+      },
+      "conversion": "fixed_ratio",
+      "unstated_capacity": "resample_stated",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.0137,
+        "hybrid": 0.9165,
+        "air_cooled_chiller": 0.0698
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 6115.564147237104,
+        "p50": 15445.260481905283,
+        "p90": 16615.406149907725,
+        "mean": 13957.719389852784
+      },
+      "hybrid_draws_capped_share": 0.9200218221494817,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 1,
+      "n_covers_p90": 1,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 21,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    },
+    "weights_lbnl_midsize_colo": {
+      "scenario": "weights_lbnl_midsize_colo",
+      "note": "LBNL Fig 4.2 'Midsize and Colo' bar",
+      "weights": {
+        "evaporative_tower": 0.1691891350105242,
+        "hybrid": 0.21349102936754538,
+        "air_cooled_chiller": 0.6173198356219305
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_airside_econ_adiabatic_wcc"
+      },
+      "conversion": "fixed_ratio",
+      "unstated_capacity": "resample_stated",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.1681,
+        "hybrid": 0.2145,
+        "air_cooled_chiller": 0.6174
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 16284.869680419008,
+        "mean": 5831.321458346707
+      },
+      "hybrid_draws_capped_share": 0.924941724941725,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 22,
+      "n_covers_p90": 1,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 21,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    },
+    "weights_assumed_30_50_20": {
+      "scenario": "weights_assumed_30_50_20",
+      "note": "assumed 0.3 / 0.5 / 0.2",
+      "weights": {
+        "evaporative_tower": 0.3,
+        "hybrid": 0.5,
+        "air_cooled_chiller": 0.2
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_airside_econ_adiabatic_wcc"
+      },
+      "conversion": "fixed_ratio",
+      "unstated_capacity": "resample_stated",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.2957,
+        "hybrid": 0.5039,
+        "air_cooled_chiller": 0.2004
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 0.0,
+        "p50": 15082.238425322786,
+        "p90": 16767.375889275663,
+        "mean": 12156.293817168516
+      },
+      "hybrid_draws_capped_share": 0.9206191704703314,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 3,
+      "n_covers_p90": 1,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 21,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    },
+    "hybrid_wue_dry_cooler_adiabatic": {
+      "scenario": "hybrid_wue_dry_cooler_adiabatic",
+      "note": "hybrid WUE from the large-scale dry cooler with adiabatic assist box",
+      "weights": {
+        "evaporative_tower": 0.015640665730900342,
+        "hybrid": 0.9140765991578104,
+        "air_cooled_chiller": 0.07028273511128935
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_dry_cooler_adiabatic_acc"
+      },
+      "conversion": "fixed_ratio",
+      "unstated_capacity": "resample_stated",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.0137,
+        "hybrid": 0.9165,
+        "air_cooled_chiller": 0.0698
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 4723.598694764176,
+        "p50": 15402.71615828667,
+        "p90": 16607.545100722673,
+        "mean": 13794.490173875245
+      },
+      "hybrid_draws_capped_share": 0.8960174577195854,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 1,
+      "n_covers_p90": 1,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 21,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    },
+    "variable_ratio_conversion": {
+      "scenario": "variable_ratio_conversion",
+      "note": "hybrid T_sw re-solved to each drawn WUE",
+      "weights": {
+        "evaporative_tower": 0.015640665730900342,
+        "hybrid": 0.9140765991578104,
+        "air_cooled_chiller": 0.07028273511128935
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_airside_econ_adiabatic_wcc"
+      },
+      "conversion": "variable_ratio",
+      "unstated_capacity": "resample_stated",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.0137,
+        "hybrid": 0.9165,
+        "air_cooled_chiller": 0.0698
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 12961.197553961762,
+        "p50": 14636.134812523702,
+        "p90": 15858.799853356499,
+        "mean": 13677.524836464381
+      },
+      "hybrid_draws_capped_share": 0.0,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 1,
+      "n_covers_p90": 1,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 21,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown"
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB12",
+          "name": "AWS Keystone Trade Center Campus"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB16",
+          "name": "NorthPoint Spring Mountain Data Center"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB31",
+          "name": "Conshohocken Data Center"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    },
+    "unstated_fixed_100mw": {
+      "scenario": "unstated_fixed_100mw",
+      "note": "unstated sites at the deterministic screen's 100 MW; isolates cooling uncertainty",
+      "weights": {
+        "evaporative_tower": 0.015640665730900342,
+        "hybrid": 0.9140765991578104,
+        "air_cooled_chiller": 0.07028273511128935
+      },
+      "wue_map": {
+        "evaporative_tower": "large_waterside_econ_wcc",
+        "hybrid": "large_airside_econ_adiabatic_wcc"
+      },
+      "conversion": "fixed_ratio",
+      "unstated_capacity": "fixed_100",
+      "drawn_architecture_share": {
+        "evaporative_tower": 0.0137,
+        "hybrid": 0.9165,
+        "air_cooled_chiller": 0.0698
+      },
+      "per_mw_peak_day_gpd": {
+        "p10": 6115.564147237104,
+        "p50": 15445.260481905283,
+        "p90": 16615.406149907725,
+        "mean": 13957.719389852784
+      },
+      "hybrid_draws_capped_share": 0.9200218221494817,
+      "n_sites": 24,
+      "n_with_eligible_plant": 22,
+      "n_covers_p50": 6,
+      "n_covers_p90": 6,
+      "n_deterministic_matchable": 7,
+      "class_changes_at_p90": [
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst",
+          "deterministic_class": "matchable",
+          "class_p90_cap": "partial"
+        }
+      ],
+      "bin_changes_at_p90": [
+        {
+          "site_id": "DRB04",
+          "name": "Comcast Moorestown",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        },
+        {
+          "site_id": "DRB14",
+          "name": "Sellersville / West Rockhill Township Data Center",
+          "covered_it_bin": "over 200 MW",
+          "covered_it_bin_p90": "50 to 200 MW"
+        }
+      ],
+      "stated_it_pool_mw": [
+        241.66666666666669,
+        250.0,
+        291.6666666666667,
+        604.1666666666667,
+        625.0,
+        1000.0,
+        1000.0,
+        1250.0
+      ],
+      "n_p90_above_plant": 16,
+      "sites_p90_above_plant": [
+        {
+          "site_id": "DRB02",
+          "name": "Project Washington"
+        },
+        {
+          "site_id": "DRB03",
+          "name": "St. Georges Business Park Data Center / \"Frightland Project\""
+        },
+        {
+          "site_id": "DRB05",
+          "name": "Joint Base McGuire-Dix-Lakehurst"
+        },
+        {
+          "site_id": "DRB07",
+          "name": "DataOne Vineland"
+        },
+        {
+          "site_id": "DRB10",
+          "name": "Andover Data Center"
+        },
+        {
+          "site_id": "DRB15",
+          "name": "Keel Infrastructure Panther Creek"
+        },
+        {
+          "site_id": "DRB22",
+          "name": "Sentinel Green Fig East Whiteland"
+        },
+        {
+          "site_id": "DRB25",
+          "name": "Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus"
+        },
+        {
+          "site_id": "DRB27",
+          "name": "Smithfield Gateway Project"
+        },
+        {
+          "site_id": "DRB32",
+          "name": "Gravel Pike Data Center"
+        },
+        {
+          "site_id": "DRB33",
+          "name": "Linfield Data Center"
+        },
+        {
+          "site_id": "DRB34",
+          "name": "Project Laurel"
+        },
+        {
+          "site_id": "DRB37",
+          "name": "Lower Mount Bethel Technology Center"
+        },
+        {
+          "site_id": "DRB38",
+          "name": "Prologis Warehouse Data Center"
+        },
+        {
+          "site_id": "DRB39",
+          "name": "Slate Belt Data Centers"
+        },
+        {
+          "site_id": "DRB40",
+          "name": "Kline Township Data Center"
+        }
+      ],
+      "n_no_eligible_plant": 2
+    }
+  },
+  "ridgeline_p90_above_plant": {
+    "n": 21,
+    "site_ids": [
+      "DRB22",
+      "DRB07",
+      "DRB15",
+      "DRB16",
+      "DRB14",
+      "DRB40",
+      "DRB03",
+      "DRB27",
+      "DRB32",
+      "DRB38",
+      "DRB31",
+      "DRB12",
+      "DRB33",
+      "DRB10",
+      "DRB39",
+      "DRB04",
+      "DRB05",
+      "DRB25",
+      "DRB34",
+      "DRB37",
+      "DRB02"
+    ]
+  }
+}

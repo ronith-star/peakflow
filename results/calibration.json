@@ -1,0 +1,256 @@
+{
+  "climate": "KTTN hourly wet-bulb (Stull 2011), 2005-01-01 to 2024-12-31 UTC",
+  "target_sources": {
+    "avg_gpd": "falls_levittown_2026",
+    "peak_gpd": "falls_levittown_2026; falls_herald_2026",
+    "wet_hour_frac": "falls_herald_2026; falls_levittown_2026",
+    "wet_hour_frac_sensitivity": "amazon_falls_campus_2026",
+    "potable_gpd": "falls_levittown_2026"
+  },
+  "potable_demand_gpd": 19000.0,
+  "primary": {
+    "interpretation": "peak_day",
+    "t_sw_c": 22.376079484950605,
+    "gamma": 0.4294298328088379,
+    "p_it_mw": 331.18598017604927,
+    "pue": 1.2,
+    "cycles": 4.0,
+    "twb_ref_c": 28.59456074552016,
+    "targets": {
+      "avg_gpd": 135000.0,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.06
+    },
+    "achieved": {
+      "avg_gpd": 134999.99999999997,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.059444927377710746
+    },
+    "relative_residual": {
+      "avg_gpd": -2.220446049250313e-16,
+      "peak_gpd": 0.0,
+      "wet_hour_frac": -0.009251210371487573
+    },
+    "all_three_feasible_within_1pct": true,
+    "infeasibility_note": null,
+    "peak_to_average_ratio_target": 32.592592592592595,
+    "implied_site_wue_l_per_kwh": 0.06429300320527233,
+    "implied_site_wue_from_target_avg_l_per_kwh": 0.06429300320527234,
+    "diagnostics": {
+      "avg_gpd": 134999.99999999997,
+      "design_rate_gpd": 4977212.458954939,
+      "peak_day_gpd": 4400000.0,
+      "p99_day_gpd": 2333587.447128803,
+      "max_30day_avg_gpd": 1405676.5244980275,
+      "wet_hour_frac": 0.059444927377710746,
+      "wue_l_per_kwh": 0.06482845112278716
+    }
+  },
+  "alternative": {
+    "interpretation": "design_rate",
+    "t_sw_c": 22.376079484950605,
+    "gamma": 0.3548445966364694,
+    "p_it_mw": 292.7780006965159,
+    "pue": 1.2,
+    "cycles": 4.0,
+    "twb_ref_c": 28.59456074552016,
+    "targets": {
+      "avg_gpd": 135000.0,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.06
+    },
+    "achieved": {
+      "avg_gpd": 134999.99999994712,
+      "peak_gpd": 4400000.0,
+      "wet_hour_frac": 0.059444927377710746
+    },
+    "relative_residual": {
+      "avg_gpd": -3.9168668308775523e-13,
+      "peak_gpd": 0.0,
+      "wet_hour_frac": -0.009251210371487573
+    },
+    "all_three_feasible_within_1pct": true,
+    "infeasibility_note": null,
+    "peak_to_average_ratio_target": 32.592592592592595,
+    "implied_site_wue_l_per_kwh": 0.07272725831290591,
+    "implied_site_wue_from_target_avg_l_per_kwh": 0.0727272583129344,
+    "diagnostics": {
+      "avg_gpd": 134999.99999994712,
+      "design_rate_gpd": 4400000.0,
+      "peak_day_gpd": 3972028.2325940095,
+      "p99_day_gpd": 2293226.0679116216,
+      "max_30day_avg_gpd": 1388474.3014588817,
+      "wet_hour_frac": 0.059444927377710746,
+      "wue_l_per_kwh": 0.07331113162460744
+    }
+  },
+  "sensitivity_wet_2pct": {
+    "source": "amazon_falls_campus_2026",
+    "design_rate": {
+      "interpretation": "design_rate",
+      "t_sw_c": 23.892538134060587,
+      "gamma": 0.02,
+      "p_it_mw": 292.7780006965159,
+      "pue": 1.2,
+      "cycles": 4.0,
+      "twb_ref_c": 28.59456074552016,
+      "targets": {
+        "avg_gpd": 135000.0,
+        "peak_gpd": 4400000.0,
+        "wet_hour_frac": 0.02
+      },
+      "achieved": {
+        "avg_gpd": 82013.10498337728,
+        "peak_gpd": 4400000.0,
+        "wet_hour_frac": 0.019694082564318077
+      },
+      "relative_residual": {
+        "avg_gpd": -0.3924955186416498,
+        "peak_gpd": 0.0,
+        "wet_hour_frac": -0.015295871784096193
+      },
+      "all_three_feasible_within_1pct": false,
+      "infeasibility_note": "Average target unreachable: with wet share 0.020 the average cannot exceed about peak x wet share = 88,000 gal/day; closest fit (gamma at lower bound 0.02) reported.",
+      "peak_to_average_ratio_target": 32.592592592592595,
+      "implied_site_wue_l_per_kwh": 0.04418213534201398,
+      "implied_site_wue_from_target_avg_l_per_kwh": 0.0727272583129344,
+      "diagnostics": {
+        "avg_gpd": 82013.10498337728,
+        "design_rate_gpd": 4400000.0,
+        "peak_day_gpd": 4362760.205199975,
+        "p99_day_gpd": 2197273.345638363,
+        "max_30day_avg_gpd": 951380.5312836013,
+        "wet_hour_frac": 0.019694082564318077,
+        "wue_l_per_kwh": 0.044697447412351675
+      }
+    },
+    "peak_day": {
+      "interpretation": "peak_day",
+      "t_sw_c": 23.892538134060587,
+      "gamma": 0.02,
+      "p_it_mw": 481.9355406924384,
+      "pue": 1.2,
+      "cycles": 4.0,
+      "twb_ref_c": 28.59456074552016,
+      "targets": {
+        "avg_gpd": 135000.0,
+        "peak_gpd": 4400000.0,
+        "wet_hour_frac": 0.02
+      },
+      "achieved": {
+        "avg_gpd": 135000.0,
+        "peak_gpd": 7181445.304642126,
+        "wet_hour_frac": 0.019694082564318077
+      },
+      "relative_residual": {
+        "avg_gpd": 0.0,
+        "peak_gpd": 0.6321466601459378,
+        "wet_hour_frac": -0.015295871784096193
+      },
+      "all_three_feasible_within_1pct": false,
+      "infeasibility_note": "Peak-to-average ratio 32.6 unreachable at wet share 0.020; closest fit (gamma at lower bound 0.02) reported, P_IT set to match the average.",
+      "peak_to_average_ratio_target": 32.592592592592595,
+      "implied_site_wue_l_per_kwh": 0.044182135342013984,
+      "implied_site_wue_from_target_avg_l_per_kwh": 0.044182135342013984,
+      "diagnostics": {
+        "avg_gpd": 135000.0,
+        "design_rate_gpd": 7242744.926196783,
+        "peak_day_gpd": 7181445.304642126,
+        "p99_day_gpd": 3616884.176270382,
+        "max_30day_avg_gpd": 1566046.9354174323,
+        "wet_hour_frac": 0.019694082564318077,
+        "wue_l_per_kwh": 0.044697447412351675
+      }
+    }
+  },
+  "sensitivity_fixed_p_it": {
+    "p_it_mw": 253.0,
+    "source": "https://cleanview.co/data-centers/pennsylvania/1861/aws-keystone-trade-center---building-1 ; https://cleanview.co/data-centers/pennsylvania/3439/aws-keystone-trade-center---building-2",
+    "verified": false,
+    "design_rate": {
+      "interpretation": "design_rate",
+      "t_sw_c": 22.373672221192283,
+      "gamma": 0.27192901722886326,
+      "p_it_mw": 253.0,
+      "pue": 1.2,
+      "cycles": 4.0,
+      "twb_ref_c": 28.59456074552016,
+      "targets": {
+        "avg_gpd": 135000.0,
+        "peak_gpd": 4400000.0,
+        "wet_hour_frac": 0.06
+      },
+      "achieved": {
+        "avg_gpd": 134999.99963496963,
+        "peak_gpd": 3802198.243555555,
+        "wet_hour_frac": 0.06025088223272522
+      },
+      "relative_residual": {
+        "avg_gpd": -2.7039286365493354e-09,
+        "peak_gpd": -0.1358640355555557,
+        "wet_hour_frac": 0.004181370545420338
+      },
+      "all_three_feasible_within_1pct": false,
+      "infeasibility_note": "P_IT fixed; two-parameter least-squares fit, residuals as reported.",
+      "peak_to_average_ratio_target": 32.592592592592595,
+      "implied_site_wue_l_per_kwh": 0.084161823033302,
+      "implied_site_wue_from_target_avg_l_per_kwh": 0.08416182326086956,
+      "diagnostics": {
+        "avg_gpd": 134999.99963496963,
+        "design_rate_gpd": 3802198.243555555,
+        "peak_day_gpd": 3514146.4160325024,
+        "p99_day_gpd": 2239275.447709561,
+        "max_30day_avg_gpd": 1368037.5659598978,
+        "wet_hour_frac": 0.06025088223272522,
+        "wue_l_per_kwh": 0.08480682667516766
+      }
+    },
+    "peak_day": {
+      "interpretation": "peak_day",
+      "t_sw_c": 22.411896703918316,
+      "gamma": 0.23915422811829087,
+      "p_it_mw": 253.0,
+      "pue": 1.2,
+      "cycles": 4.0,
+      "twb_ref_c": 28.59456074552016,
+      "targets": {
+        "avg_gpd": 135000.0,
+        "peak_gpd": 4400000.0,
+        "wet_hour_frac": 0.06
+      },
+      "achieved": {
+        "avg_gpd": 139338.04739090023,
+        "peak_gpd": 3545309.6896639457,
+        "wet_hour_frac": 0.05924343866395712
+      },
+      "relative_residual": {
+        "avg_gpd": 0.032133684377038785,
+        "peak_gpd": -0.19424779780364876,
+        "wet_hour_frac": -0.012609355600714633
+      },
+      "all_three_feasible_within_1pct": false,
+      "infeasibility_note": "P_IT fixed; two-parameter least-squares fit, residuals as reported.",
+      "peak_to_average_ratio_target": 32.592592592592595,
+      "implied_site_wue_l_per_kwh": 0.08686625272613047,
+      "implied_site_wue_from_target_avg_l_per_kwh": 0.08416182326086956,
+      "diagnostics": {
+        "avg_gpd": 139338.04739090023,
+        "design_rate_gpd": 3802198.243555555,
+        "peak_day_gpd": 3545309.6896639457,
+        "p99_day_gpd": 2318596.645239343,
+        "max_30day_avg_gpd": 1410806.3310687037,
+        "wet_hour_frac": 0.05924343866395712,
+        "wue_l_per_kwh": 0.08754017451535222
+      }
+    }
+  },
+  "p_it_provenance": "inferred (fitted); no IT or campus capacity located in Falls Township, PECO/PJM (FERC ER25-3492) or Bucks County press sources opened to date",
+  "notes": [
+    "P_IT is a fitted scale parameter, not a filed capacity; only P_IT*PUE*C/(C-1) is identified.",
+    "Feasible means every target is reproduced within 1 percent inside the parameter bounds.",
+    "Three free parameters are fitted to three targets, so the fit is exactly determined; zero residuals show only that a solution exists and are not validation.",
+    "Primary reading: 4.4 MGD is the largest realized calendar-day makeup (peak_day); the design-rate reading (maximum hourly rate x 24) is kept as the 'alternative' sensitivity.",
+    "Wet-hour share depends only on T_sw; small residuals on it are quantile ties in 0.01 C wet-bulb data.",
+    "19,000 gal/day is documented potable demand and is not a cooling target."
+  ]
+}

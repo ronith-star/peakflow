@@ -1,0 +1,11 @@
+{
+ "text_overlaps": [],
+ "min_font_pt": 7.0,
+ "size_mm": [
+  180.0,
+  120.30000000000001
+ ],
+ "n_notes_p90_exceeds": 21,
+ "n_notes_no_plant": 2,
+ "n_notes_plant_covers_p90": 1
+}

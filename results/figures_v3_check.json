@@ -1,0 +1,614 @@
+{
+ "fonts": {
+  "primary": "Helvetica",
+  "narrow": "Arial Narrow"
+ },
+ "check": {
+  "text_text": [],
+  "text_outside_figure": [],
+  "label_symbol_or_line": [],
+  "site_number_ambiguous": [],
+  "leader_crossings": []
+ },
+ "site_labels": [
+  {
+   "label": "1",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    0.0,
+    -4.4
+   ]
+  },
+  {
+   "label": "2",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "3",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    0.0,
+    4.4
+   ]
+  },
+  {
+   "label": "4",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "5",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "6",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    0.0,
+    -4.4
+   ]
+  },
+  {
+   "label": "7",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "8",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "9",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "10",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "11",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    0.0,
+    -4.4
+   ]
+  },
+  {
+   "label": "12",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "13",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "14",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "15",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 2,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    0.0,
+    -4.4
+   ]
+  },
+  {
+   "label": "16",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    3.1,
+    -7.0
+   ]
+  },
+  {
+   "label": "17",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    2.0,
+    4.4
+   ]
+  },
+  {
+   "label": "18",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "19",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "20",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    -2.0
+   ]
+  },
+  {
+   "label": "21",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "22",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "23",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 28,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  },
+  {
+   "label": "24",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    4.4,
+    0.0
+   ]
+  }
+ ],
+ "city_labels": [
+  {
+   "label": "Trenton",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -3.4,
+    -3.4
+   ]
+  },
+  {
+   "label": "Wilmington",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    6.8,
+    -6.8
+   ]
+  },
+  {
+   "label": "Allentown",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -4.5,
+    0.0
+   ]
+  },
+  {
+   "label": "Scranton",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 0,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -3.2,
+    0.0
+   ]
+  },
+  {
+   "label": "Philadelphia",
+   "outside_axes": false,
+   "label_overlaps": 0,
+   "square_overlaps": 0,
+   "boundary_line_hits": 0,
+   "plant_overlaps_inside": 0,
+   "plant_overlaps_outside": 0,
+   "ambiguous": false,
+   "leader": false,
+   "river_hits": 56,
+   "plant_outlines_under_halo": 0,
+   "offset_pt": [
+    -7.5,
+    0.0
+   ]
+  }
+ ],
+ "river_labels": [
+  {
+   "label": "Delaware River",
+   "rotation_deg": 41.3,
+   "anchor_lonlat": [
+    -75.0655,
+    40.8476
+   ],
+   "offset_pt": [
+    5.9,
+    -6.8
+   ]
+  },
+  {
+   "label": "Schuylkill River",
+   "rotation_deg": -49.0,
+   "anchor_lonlat": [
+    -75.9534,
+    40.3684
+   ],
+   "offset_pt": [
+    6.8,
+    5.9
+   ]
+  }
+ ],
+ "legend": {
+  "w_mm": 53.77834375,
+  "h_mm": 81.66543552338531,
+  "rows": [
+   {
+    "kind": "head",
+    "text": "Key",
+    "y_mm": 3.8
+   },
+   {
+    "kind": "group",
+    "text": "Planned site, IT load coverable at peak (MW)",
+    "y_mm": 7.699999999999999
+   },
+   {
+    "kind": "site",
+    "text": "> 200",
+    "y_mm": 11.6
+   },
+   {
+    "kind": "site",
+    "text": "50 to 200",
+    "y_mm": 15.5
+   },
+   {
+    "kind": "site",
+    "text": "No eligible plant within 10 mi",
+    "y_mm": 19.4
+   },
+   {
+    "kind": "site",
+    "text": "Unverified",
+    "y_mm": 23.299999999999997
+   },
+   {
+    "kind": "group",
+    "text": "Treatment plant, median flow (MGD)",
+    "y_mm": 28.799999999999997
+   },
+   {
+    "kind": "plant",
+    "text": "5",
+    "y_mm": 32.699999999999996
+   },
+   {
+    "kind": "plant",
+    "text": "25",
+    "y_mm": 36.727572587230874
+   },
+   {
+    "kind": "plant",
+    "text": "100",
+    "y_mm": 42.41029034892353
+   },
+   {
+    "kind": "radius",
+    "text": "10-mile radius",
+    "y_mm": 49.56543552338531
+   },
+   {
+    "kind": "line",
+    "text": "Basin boundary",
+    "y_mm": 53.46543552338531
+   },
+   {
+    "kind": "line",
+    "text": "State boundary",
+    "y_mm": 57.36543552338531
+   }
+  ]
+ },
+ "n_plants_inside": 111,
+ "n_plants_outside": 69,
+ "n_leaders": 0,
+ "map_h_mm": 222.0,
+ "map_w_mm": 180.0,
+ "min_font_pt": 7.0,
+ "map_bar_identical": true
+}

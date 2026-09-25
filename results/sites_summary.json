@@ -1,0 +1,93 @@
+{
+  "main_rows": 40,
+  "data_center_rows": 35,
+  "non_data_center_rows": 5,
+  "active": 24,
+  "inactive": 11,
+  "inactive_by_status": {
+    "rejected": 8,
+    "withdrawn": 3
+  },
+  "active_outside_polygon": 0,
+  "active_location_confidence": {
+    "exact": 16,
+    "approximate": 6,
+    "uncertain": 2
+  },
+  "active_stated_mw": 8,
+  "active_assumed_mw": 16,
+  "active_near_divide": [
+    {
+      "name": "Project Gold",
+      "dist_to_divide_km": 1.9505425540835295
+    },
+    {
+      "name": "Kline Township Data Center",
+      "dist_to_divide_km": 0.2540214267985126
+    }
+  ],
+  "active_source_verified": 21,
+  "active_unverified_dashed": 10,
+  "active_url_check": {
+    "resolves": 18,
+    "resolves_via_replacement": 6
+  },
+  "active_source_not_verified": [
+    {
+      "name": "DataOne Vineland",
+      "url_check": "resolves"
+    },
+    {
+      "name": "Gravel Pike Data Center",
+      "url_check": "resolves"
+    },
+    {
+      "name": "Linfield Data Center",
+      "url_check": "resolves_via_replacement"
+    }
+  ],
+  "active_forced_unverified": [
+    "DRB07",
+    "DRB33"
+  ],
+  "active_replacement_sources": [
+    {
+      "site_id": "DRB01",
+      "replacement_kind": "wayback"
+    },
+    {
+      "site_id": "DRB04",
+      "replacement_kind": "wayback"
+    },
+    {
+      "site_id": "DRB05",
+      "replacement_kind": "wayback"
+    },
+    {
+      "site_id": "DRB14",
+      "replacement_kind": "alternate_outlet"
+    },
+    {
+      "site_id": "DRB33",
+      "replacement_kind": "alternate_outlet"
+    },
+    {
+      "site_id": "DRB39",
+      "replacement_kind": "alternate_outlet"
+    }
+  ],
+  "near_miss_rows": 23,
+  "url_check_main": {
+    "resolves": 30,
+    "resolves_via_replacement": 9,
+    "forbidden_to_automated_client": 1
+  },
+  "url_check_near_miss": {
+    "resolves": 17,
+    "forbidden_to_automated_client": 5,
+    "resolves_via_replacement": 1
+  },
+  "excluded_rows_logged": 39,
+  "url_check_cache": "cached data/processed/site_url_check.csv",
+  "pue_used": 1.2
+}

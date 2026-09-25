@@ -1,0 +1,51 @@
+{
+  "text_overlaps": [],
+  "label_symbol_hits": [],
+  "edge_margins_mm": {
+    "left": 5.572138888888885,
+    "right": 1.7299999999999676,
+    "bottom": 1.5999999999999999,
+    "top": 4.133958333333328
+  },
+  "model": {
+    "evaporative_tower": {
+      "mean": 4571154.014814813,
+      "year_min": 4571154.014814815,
+      "year_max": 4571154.0148148155,
+      "year_min_year": 2005,
+      "year_max_year": 2011,
+      "n_nan_days": 101,
+      "n_days": 7305
+    },
+    "hybrid": {
+      "mean": 123986.22664574241,
+      "year_min": 48327.0987307737,
+      "year_max": 240727.1064767794,
+      "year_min_year": 2014,
+      "year_max_year": 2018,
+      "n_nan_days": 101,
+      "n_days": 7305
+    },
+    "air_cooled_chiller": {
+      "mean": 0.0,
+      "year_min": 0.0,
+      "year_max": 0.0,
+      "year_min_year": 2005,
+      "year_max_year": 2005,
+      "n_nan_days": 101,
+      "n_days": 7305
+    },
+    "calibration": {
+      "t_sw_c": 22.376079484950605,
+      "gamma": 0.4294298328088379,
+      "p_it_mw": 331.18598017604927,
+      "pue": 1.2,
+      "cycles": 4.0,
+      "twb_ref_c": 28.59456074552016
+    }
+  },
+  "figure_mm": [
+    85.0,
+    78.0
+  ]
+}

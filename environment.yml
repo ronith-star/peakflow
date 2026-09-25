@@ -1,0 +1,29 @@
+# Conda environment for Reuse-Ready. Versions are those installed in the development env (conda-forge).
+#   conda env create -f environment.yml && conda activate reuse-ready
+# For the exact solved environment (all transitive packages pinned) use environment.lock.yml instead.
+name: reuse-ready
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.14
+  - numpy=2.5.3
+  - pandas=3.0.6
+  - scipy=1.18.1
+  - matplotlib=3.11.2
+  - geopandas=1.1.4
+  - pyogrio=0.13.0
+  - shapely=2.1.2
+  - pyproj=3.8.0
+  - contextily=1.7.1
+  - folium=0.20.0
+  - branca=0.8.2
+  - pyarrow=25.0.0
+  - requests=2.34.2
+  - pytest=9.1.1
+  - colorspacious=1.1.2
+  - dataretrieval=1.3.0
+  - xyzservices=2026.9.1
+  - pypdfium2=5.13.0
+  - pillow=12.3.0
+  - fonttools=4.66.0
+  - pip

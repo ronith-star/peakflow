@@ -1,0 +1,362 @@
+{
+ "map": {
+  "text_overlaps": [],
+  "site_labels": [
+   {
+    "label": "1",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "2",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "3",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "4",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "5",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "6",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "7",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "8",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "9",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "10",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "11",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "12",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "13",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "14",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "15",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "16",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "17",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "18",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "19",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "20",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "21",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "22",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "23",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "24",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   }
+  ],
+  "city_labels": [
+   {
+    "label": "Trenton",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "Wilmington",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "Allentown",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "Scranton",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 0,
+    "leader": false
+   },
+   {
+    "label": "Philadelphia",
+    "outside_axes": false,
+    "label_overlaps": 0,
+    "square_overlaps": 0,
+    "plant_circle_overlaps": 1,
+    "leader": false
+   }
+  ],
+  "n_leaders": 0,
+  "legend_used_mm": 61.99999999999999,
+  "legend_h_mm": 84.0
+ },
+ "bar": {
+  "text_overlaps": [],
+  "counts": [
+   {
+    "covered_it_class": "over 200 MW",
+    "fill": "#1F3A5F",
+    "n_sites": 5,
+    "n_verified": 4,
+    "n_unverified": 1
+   },
+   {
+    "covered_it_class": "50 to 200 MW",
+    "fill": "#8F9CAF",
+    "n_sites": 17,
+    "n_verified": 8,
+    "n_unverified": 9
+   },
+   {
+    "covered_it_class": "no eligible plant within 10 mi",
+    "fill": "#FFFFFF",
+    "n_sites": 2,
+    "n_verified": 2,
+    "n_unverified": 0
+   }
+  ]
+ },
+ "detail": {
+  "text_overlaps": [],
+  "A": {
+   "plant_labels": [
+    {
+     "label": "Trenton Sewer Utility",
+     "outside_axes": false,
+     "label_overlaps": 0,
+     "square_overlaps": 0,
+     "plant_circle_overlaps": 0,
+     "leader": false
+    },
+    {
+     "label": "Morrisville Boro. STP",
+     "outside_axes": false,
+     "label_overlaps": 0,
+     "square_overlaps": 0,
+     "plant_circle_overlaps": 0,
+     "leader": false
+    }
+   ],
+   "site_labels": [
+    {
+     "label": "16",
+     "outside_axes": false,
+     "label_overlaps": 0,
+     "square_overlaps": 0,
+     "plant_circle_overlaps": 0,
+     "leader": false
+    }
+   ]
+  },
+  "B": {
+   "plant_labels": [
+    {
+     "label": "Matsunk STP",
+     "outside_axes": false,
+     "label_overlaps": 0,
+     "square_overlaps": 0,
+     "plant_circle_overlaps": 0,
+     "leader": false
+    }
+   ],
+   "site_labels": [
+    {
+     "label": "17",
+     "outside_axes": false,
+     "label_overlaps": 0,
+     "square_overlaps": 0,
+     "plant_circle_overlaps": 0,
+     "leader": false
+    }
+   ]
+  }
+ },
+ "map_bar_consistent": {
+  "('over 200 MW', '#1F3A5F')": [
+   5,
+   5
+  ],
+  "('50 to 200 MW', '#8F9CAF')": [
+   17,
+   17
+  ],
+  "('no eligible plant within 10 mi', '#FFFFFF')": [
+   2,
+   2
+  ]
+ },
+ "map_bar_identical": true,
+ "palette_check": {
+  "normal": {
+   "min_delta_e": 12.260008848190171,
+   "min_pair": "half-water"
+  },
+  "deuteranomaly": {
+   "min_delta_e": 11.99642430856719,
+   "min_pair": "half-water"
+  },
+  "protanomaly": {
+   "min_delta_e": 12.31339338038778,
+   "min_pair": "half-water"
+  },
+  "tritanomaly": {
+   "min_delta_e": 12.201824937537763,
+   "min_pair": "half-water"
+  },
+  "overall_min_delta_e": 11.99642430856719,
+  "threshold": 10.0,
+  "passes": true,
+  "severity": 100
+ }
+}

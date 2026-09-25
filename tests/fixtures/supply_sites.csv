@@ -1,0 +1,4 @@
+site_id,name,x,y,peak_day_gpd
+S_MATCH,Site near large plant,0,0,1000000
+S_PARTIAL,Site near small plant,100000,0,1000000
+S_NONE,Site with plant just beyond 10 mi,300000,0,1000000

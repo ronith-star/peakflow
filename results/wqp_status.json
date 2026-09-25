@@ -1,0 +1,13 @@
+{
+  "service": "https://www.waterqualitydata.us",
+  "radius_mi": 10.0,
+  "since": "01-01-2000",
+  "status": "unavailable",
+  "checked_utc": "2026-09-25T12:39:23Z",
+  "domain": "www.waterqualitydata.us",
+  "error": "ProxyError: HTTPSConnectionPool(host='www.waterqualitydata.us', port=443): Max retries exceeded with url: /data/Station/search?lat=41.05882&long=-74.74789&within=10&siteType=Stream&mimeType=csv&zip=no (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+  "first_failed_url": "https://www.waterqualitydata.us/data/Station/search?lat=41.05882&long=-74.74789&within=10&siteType=Stream&mimeType=csv&zip=no",
+  "note": "Stopped after the first failed request; network access was not requested. reuse_ready.cycles uses the literature makeup quality for every plant.",
+  "n_plants": 19,
+  "n_wqp": 0
+}

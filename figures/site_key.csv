@@ -1,0 +1,25 @@
+number,site_id,name,municipality,county,stated_mw,covered_it_mw,covered_it_class,verified
+1,DRB23,Project Gold,Clifton Township; Covington Township,"Lackawanna County, PA",1500.0,0.0,no eligible plant within 10 mi,yes
+2,DRB10,Andover Data Center,Andover Township,"Sussex County, NJ",,64.0,50 to 200 MW,yes
+3,DRB27,Smithfield Gateway Project,Smithfield Township,"Monroe County, PA",,71.0,50 to 200 MW,no
+4,DRB16,NorthPoint Spring Mountain Data Center,Banks Township; Packer Township,"Carbon County, PA",,556.0,over 200 MW,no
+5,DRB39,Slate Belt Data Centers,Upper Mount Bethel Township,"Northampton County, PA",,88.0,50 to 200 MW,no
+6,DRB40,Kline Township Data Center,Kline Township,"Schuylkill County, PA",,90.0,50 to 200 MW,yes
+7,DRB15,Keel Infrastructure Panther Creek,Nesquehoning Borough,"Carbon County, PA",350.0,90.0,50 to 200 MW,yes
+8,DRB37,Lower Mount Bethel Technology Center,Lower Mount Bethel Township,"Northampton County, PA",1200.0,88.0,50 to 200 MW,no
+9,DRB38,Prologis Warehouse Data Center,Allen Township,"Northampton County, PA",,61.0,50 to 200 MW,yes
+10,DRB25,Atlas Industrial / South Whitehall Township Hyperscale Data Center Campus,South Whitehall Township,"Lehigh County, PA",725.0,84.0,50 to 200 MW,yes
+11,DRB24,Allentown Warehouse Conversion Data Center,Allentown,"Lehigh County, PA",,2427.0,over 200 MW,yes
+12,DRB32,Gravel Pike Data Center,Upper Hanover Township,"Montgomery County, PA",,66.0,50 to 200 MW,no
+13,DRB14,Sellersville / West Rockhill Township Data Center,West Rockhill Township,"Bucks County, PA",,216.0,over 200 MW,yes
+14,DRB34,Project Laurel,Limerick Township,"Montgomery County, PA",750.0,54.0,50 to 200 MW,yes
+15,DRB33,Linfield Data Center,Limerick Township,"Montgomery County, PA",,54.0,50 to 200 MW,no
+16,DRB12,AWS Keystone Trade Center Campus,Falls Township,"Bucks County, PA",,665.0,over 200 MW,yes
+17,DRB31,Conshohocken Data Center,Plymouth Township,"Montgomery County, PA",,193.0,50 to 200 MW,yes
+18,DRB22,Sentinel Green Fig East Whiteland,East Whiteland Township,"Chester County, PA",290.0,57.0,50 to 200 MW,no
+19,DRB05,Joint Base McGuire-Dix-Lakehurst,Fort Dix,"Burlington County, NJ",,110.0,50 to 200 MW,no
+20,DRB04,Comcast Moorestown,Moorestown Township,"Burlington County, NJ",,239.0,over 200 MW,yes
+21,DRB01,Newark White Clay Creek Business Park Data Center,Newark,"New Castle County, DE",,0.0,no eligible plant within 10 mi,yes
+22,DRB02,Project Washington,Delaware City,"New Castle County, DE",1200.0,90.0,50 to 200 MW,yes
+23,DRB03,"St. Georges Business Park Data Center / ""Frightland Project""",St. Georges,"New Castle County, DE",,90.0,50 to 200 MW,no
+24,DRB07,DataOne Vineland,Vineland,"Cumberland County, NJ",300.0,173.0,50 to 200 MW,no

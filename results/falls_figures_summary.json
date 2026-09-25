@@ -1,0 +1,63 @@
+{
+ "calibration": "primary",
+ "p_it_mw": 331.18598017604927,
+ "duration": {
+  "n_days_total": 7305,
+  "n_nan_days": 101,
+  "n_valid_days": 7204,
+  "n_zero_days": 6238,
+  "share_zero_days": 0.8659078289838978,
+  "n_positive_days": 966,
+  "max_pct_exceeded_positive": 13.40735600277585,
+  "mean_gpd": 134999.99999999997,
+  "max_gpd": 4400000.0,
+  "max_date": "2011-07-22",
+  "peak_to_average_ratio": 32.5925925925926,
+  "pct_days_above_trigger_100000": 12.021099389228207,
+  "pct_days_above_avg_135000": 11.660188784008882,
+  "pct_days_above_peak_4400000": 0.0,
+  "n_days_at_or_above_peak_4400000": 1,
+  "n_days_above_trigger_100000": 866,
+  "n_days_above_avg_135000": 840
+ },
+ "coincidence": {
+  "n_valid_days": 7204,
+  "top5_threshold_gpd": 1123852.8352637845,
+  "n_top5_days": 361,
+  "n_top5_days_with_flow": 361,
+  "share_top5_below_flow_p25": 0.23822714681440443,
+  "n_top5_below_flow_p25": 86,
+  "share_top5_below_flow_p25_check_vs_p25_cfs": 0.23822714681440443,
+  "share_top5_below_q7q10": 0.0,
+  "n_top5_in_drought_period": 1,
+  "n_top5_in_table_warning_or_emergency": 0,
+  "n_positive_days_plotted": 966,
+  "n_positive_days_in_drought": 5,
+  "n_valid_days_in_drought": 120,
+  "share_positive_days_below_flow_p25": 0.2494824016563147,
+  "q7q10_cfs": 1794.8505715389547,
+  "min_flow_2005_2024_cfs": 2370.0,
+  "n_days_below_q7q10_2005_2024": 0,
+  "q7q10_pct_equiv_min": 0.0,
+  "q7q10_pct_equiv_max": 0.0,
+  "n_intervals_table": 0,
+  "n_intervals_supplemental": 3
+ },
+ "figure_checks": {
+  "falls_duration_curve": {
+   "text_text": [],
+   "text_outside_figure": [],
+   "text_line": [],
+   "text_symbol": [],
+   "n_text": 16
+  },
+  "drought_coincidence": {
+   "text_text": [],
+   "text_outside_figure": [],
+   "text_line": [],
+   "text_symbol": [],
+   "n_text": 17
+  }
+ },
+ "drought_intervals_file": "results/drought_intervals_2005_2024.csv"
+}

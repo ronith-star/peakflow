@@ -1,0 +1,4 @@
+source,table_row,kind,start,end,description,end_rule,start_clipped,end_clipped
+supplemental_page_text,,warning,2010-09-24,2010-10-31,Lower Basin drought warning (page text),stated,2010-09-24,2010-10-31
+supplemental_page_text,,emergency,2016-11-23,2017-01-18,"Water supply emergency declared 2016, Resolution 2016-07, basin in drought watch (page text)",closed at table end_watch_warning 2017-01-18 (no emergency end date on page),2016-11-23,2017-01-18
+supplemental_page_text,,emergency,2024-12-05,2025-06-11,Water supply emergency December 2024 to June 2025 (page text),start = news release issue date 2024-12-05; end = Resolution 2025-5 approval 2025-06-11,2024-12-05,2024-12-31
