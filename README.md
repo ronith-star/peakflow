@@ -6,11 +6,11 @@ PeakFlow is an open model and geospatial screen that estimates peak-day cooling 
 
 Of the 24 active planned data center sites in the Delaware River Basin, 22 lie within 10 miles of an eligible municipal treatment plant whose median effluent flow could supply cooling water [trackdatacenters_2026, epa_echo, reuse_ready_model]. Whether that plant also covers a site's own peak day depends on the capacity assumed for the 16 sites that publish none: the count falls from 15 to 5 as their assumed IT load rises from 50 to 200 MW [epa_echo, reuse_ready_model]. Under Monte Carlo uncertainty, the nearest plant covers the 90th-percentile peak day at 1 of 24 sites, or 6 of 24 if unstated sites are held at 100 MW [reuse_ready_model, shehabi_2024]. Delaware River Basin Commission review is a weak check on this demand. The 30-day averaging rule hides peak-day demand only for calibrated hybrid designs of 7.53 to 23.6 MW of IT load, but a facility that buys water from a public or authority system needs no review at any size [reuse_ready_model, drbc_admin_manual, drbc_datacenters_2026]. All 24 sites would be reviewed if self-supplied, yet 7 are reported to purchase from a public or authority system, 2 are self-supplied and 15 have no published supplier [reuse_ready_model]. The Falls Township campus shows the gap: its reported cooling demand averages 135,000 gal/day with a peak day of 4.4 million gal/day, above the 100,000 gal/day trigger, and it required no review because the Morrisville Municipal Authority supplies it [falls_levittown_2026, falls_herald_2026, drbc_admin_manual].
 
-## Supply screen map
+## Our Supply screen map
 
 ![Figure 1. Supply screen map](figures/supply_screen_map.png)
 
-**Figure 1.** The map shows the 24 active planned data center sites in the Delaware River Basin and the municipal wastewater treatment plants whose effluent could supply their cooling water [trackdatacenters_2026, epa_echo, reuse_ready_model]. The full caption is in figures/supply_screen_map_caption.md. The site key is in figures/site_key.csv. The plotted values are in figures/supply_screen_map_data.csv. An interactive version with Esri background tiles is figures/supply_screen_map.html [esri_light_gray].
+**Figure 1.** The map we developed shows the 24 active planned data center sites in the Delaware River Basin and the municipal wastewater treatment plants whose effluent could supply their cooling water [trackdatacenters_2026, epa_echo, reuse_ready_model]. The full caption is in figures/supply_screen_map_caption.md. The site key is in figures/site_key.csv. The plotted values are in figures/supply_screen_map_data.csv. An interactive version with Esri background tiles is figures/supply_screen_map.html [esri_light_gray].
 
 ## Regulatory blind spot
 
