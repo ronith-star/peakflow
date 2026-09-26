@@ -32,32 +32,32 @@ z
    <g id="line2d_1">
     <path d="M 25.2 156.078446 
 L 910.8 156.078446 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
    </g>
    <g id="line2d_2">
     <path d="M 25.2 218.653676 
 L 910.8 218.653676 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
    </g>
    <g id="line2d_3">
     <path d="M 25.2 281.228906 
 L 910.8 281.228906 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
    </g>
    <g id="line2d_4">
     <path d="M 25.2 343.804135 
 L 910.8 343.804135 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.5"/>
    </g>
    <g id="line2d_5">
     <path d="M 25.2 53.944163 
 L 910.8 53.944163 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
    </g>
    <g id="line2d_6">
     <path d="M 25.2 93.503217 
 L 910.8 93.503217 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
    </g>
    <g id="text_1">
     <!-- 50 -->
@@ -2722,7 +2722,7 @@ z
    <g id="line2d_7">
     <path d="M 25.2 364.662545 
 L 910.8 364.662545 
-" clip-path="url(#p3901a33ba5)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
+" clip-path="url(#pf32e644068)" style="fill: none; stroke: #c9cdd2; stroke-width: 0.8"/>
    </g>
    <g id="text_170">
     <!-- 0 of 12 configurations escape DRBC review by averaging, and all 8 that would trigger it escape if they buy water from an existing system -->
@@ -5049,7 +5049,7 @@ z
     </g>
    </g>
    <g id="text_199">
-    <!-- ¹ Model-derived: PUE 1.2, 4 cycles of concentration, hybrid parameters from results/calibration.json primary, KTTN hourly wet-bulb 2005-2024 [noaa_isd; stull_2011; alduchov_1996]. Makeup is treated as gross withdrawal. 101 of 7,305 local days are -->
+    <!-- ¹ Model-derived: PUE 1.2, 4 cycles of concentration, hybrid parameters from results/calibration.json primary, KTTN hourly wet-bulb 2005-2024 [noaa_isd, stull_2011, alduchov_1996]. Makeup is treated as gross withdrawal. 101 of 7,305 local days are -->
     <g style="fill: #5f6670" transform="translate(25.2 404.536706) scale(0.07 -0.07)">
      <defs>
       <path id="Helvetica-1d" d="M 709 3303 
@@ -5100,26 +5100,6 @@ L 0 -484
 L 3559 -484 
 L 3559 -800 
 L 0 -800 
-z
-" transform="scale(0.015625)"/>
-      <path id="Helvetica-1e" d="M 709 -653 
-Q 928 -613 1013 -363 
-Q 1056 -231 1056 -75 
-Q 1056 -59 1054 -48 
-Q 1053 -38 1050 0 
-L 709 0 
-L 709 681 
-L 1375 681 
-L 1375 50 
-Q 1375 -284 1278 -509 
-Q 1116 -878 709 -950 
-L 709 -653 
-z
-M 709 3303 
-L 1375 3303 
-L 1375 2622 
-L 709 2622 
-L 709 3303 
 z
 " transform="scale(0.015625)"/>
       <path id="Helvetica-40" d="M 147 -800 
@@ -5284,7 +5264,7 @@ z
      <use xlink:href="#Helvetica-4c" transform="translate(6600.765625 0)"/>
      <use xlink:href="#Helvetica-56" transform="translate(6622.984375 0)"/>
      <use xlink:href="#Helvetica-47" transform="translate(6672.984375 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(6728.59375 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(6728.59375 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(6756.375 0)"/>
      <use xlink:href="#Helvetica-56" transform="translate(6784.15625 0)"/>
      <use xlink:href="#Helvetica-57" transform="translate(6834.15625 0)"/>
@@ -5296,7 +5276,7 @@ z
      <use xlink:href="#Helvetica-13" transform="translate(7073.203125 0)"/>
      <use xlink:href="#Helvetica-14" transform="translate(7128.8125 0)"/>
      <use xlink:href="#Helvetica-14" transform="translate(7177.046875 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(7232.65625 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(7232.65625 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(7260.4375 0)"/>
      <use xlink:href="#Helvetica-44" transform="translate(7288.21875 0)"/>
      <use xlink:href="#Helvetica-4f" transform="translate(7343.828125 0)"/>
@@ -5450,7 +5430,7 @@ z
     </g>
    </g>
    <g id="text_201">
-    <!-- ² A withdrawal is excluded from review when the daily average gross withdrawal during any 30 consecutive day period does not exceed 100,000 gallons [drbc_admin_manual] (DRBC Administrative Manual Part 1, Article 3; 18 CFR 401.35(a)(2)-(3)). Days/yr, -->
+    <!-- ² A withdrawal is excluded from review when the daily average gross withdrawal during any 30 consecutive day period does not exceed 100,000 gallons [drbc_admin_manual] (DRBC Administrative Manual Part 1, Article 3 and 18 CFR 401.35(a)(2)-(3)). -->
     <g style="fill: #5f6670" transform="translate(25.2 426.214268) scale(0.07 -0.07)">
      <use xlink:href="#Helvetica-f2"/>
      <use xlink:href="#Helvetica-3" transform="translate(33.296875 0)"/>
@@ -5665,335 +5645,338 @@ z
      <use xlink:href="#Helvetica-48" transform="translate(9604.671875 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(9660.28125 0)"/>
      <use xlink:href="#Helvetica-16" transform="translate(9688.0625 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(9743.671875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9771.453125 0)"/>
-     <use xlink:href="#Helvetica-14" transform="translate(9799.234375 0)"/>
-     <use xlink:href="#Helvetica-1b" transform="translate(9854.84375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9910.453125 0)"/>
-     <use xlink:href="#Helvetica-26" transform="translate(9938.234375 0)"/>
-     <use xlink:href="#Helvetica-29" transform="translate(10010.453125 0)"/>
-     <use xlink:href="#Helvetica-35" transform="translate(10071.53125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10143.75 0)"/>
-     <use xlink:href="#Helvetica-17" transform="translate(10171.53125 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(10227.140625 0)"/>
-     <use xlink:href="#Helvetica-14" transform="translate(10282.75 0)"/>
-     <use xlink:href="#Helvetica-11" transform="translate(10338.359375 0)"/>
-     <use xlink:href="#Helvetica-16" transform="translate(10366.140625 0)"/>
-     <use xlink:href="#Helvetica-18" transform="translate(10421.75 0)"/>
-     <use xlink:href="#Helvetica-b" transform="translate(10477.359375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(10510.65625 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(10566.265625 0)"/>
-     <use xlink:href="#Helvetica-b" transform="translate(10599.5625 0)"/>
-     <use xlink:href="#Helvetica-15" transform="translate(10632.859375 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(10688.46875 0)"/>
-     <use xlink:href="#Helvetica-10" transform="translate(10721.765625 0)"/>
-     <use xlink:href="#Helvetica-b" transform="translate(10755.0625 0)"/>
-     <use xlink:href="#Helvetica-16" transform="translate(10788.359375 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(10843.96875 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(10877.265625 0)"/>
-     <use xlink:href="#Helvetica-11" transform="translate(10910.5625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10938.34375 0)"/>
-     <use xlink:href="#Helvetica-27" transform="translate(10966.125 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(11038.34375 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(11093.953125 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(11143.953125 0)"/>
-     <use xlink:href="#Helvetica-12" transform="translate(11193.953125 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(11221.734375 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(11271.734375 0)"/>
-     <use xlink:href="#Helvetica-f" transform="translate(11299.5625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9743.671875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(9771.453125 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(9827.0625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(9882.671875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9938.28125 0)"/>
+     <use xlink:href="#Helvetica-14" transform="translate(9966.0625 0)"/>
+     <use xlink:href="#Helvetica-1b" transform="translate(10021.671875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10077.28125 0)"/>
+     <use xlink:href="#Helvetica-26" transform="translate(10105.0625 0)"/>
+     <use xlink:href="#Helvetica-29" transform="translate(10177.28125 0)"/>
+     <use xlink:href="#Helvetica-35" transform="translate(10238.359375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10310.578125 0)"/>
+     <use xlink:href="#Helvetica-17" transform="translate(10338.359375 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(10393.96875 0)"/>
+     <use xlink:href="#Helvetica-14" transform="translate(10449.578125 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(10505.1875 0)"/>
+     <use xlink:href="#Helvetica-16" transform="translate(10532.96875 0)"/>
+     <use xlink:href="#Helvetica-18" transform="translate(10588.578125 0)"/>
+     <use xlink:href="#Helvetica-b" transform="translate(10644.1875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(10677.484375 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(10733.09375 0)"/>
+     <use xlink:href="#Helvetica-b" transform="translate(10766.390625 0)"/>
+     <use xlink:href="#Helvetica-15" transform="translate(10799.6875 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(10855.296875 0)"/>
+     <use xlink:href="#Helvetica-10" transform="translate(10888.59375 0)"/>
+     <use xlink:href="#Helvetica-b" transform="translate(10921.890625 0)"/>
+     <use xlink:href="#Helvetica-16" transform="translate(10955.1875 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(11010.796875 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(11044.09375 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(11077.390625 0)"/>
     </g>
    </g>
    <g id="text_202">
-    <!--    30-day avg counts days whose trailing 30-day average exceeds 100,000 gal/d (the trigger test); Days/yr, single day counts days whose own makeup exceeds 100,000 gal and is not the trigger test. Both are divided by the number of valid years (valid -->
+    <!--    Days/yr, 30-day avg counts days whose trailing 30-day average exceeds 100,000 gal/d (the trigger test). Days/yr, single day counts days whose own makeup exceeds 100,000 gal and is not the trigger test. Both are divided by the number of valid years -->
     <g style="fill: #5f6670" transform="translate(25.2 437.053049) scale(0.07 -0.07)">
      <use xlink:href="#Helvetica-3"/>
      <use xlink:href="#Helvetica-3" transform="translate(27.78125 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(55.5625 0)"/>
-     <use xlink:href="#Helvetica-16" transform="translate(83.34375 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(138.953125 0)"/>
-     <use xlink:href="#Helvetica-10" transform="translate(194.5625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(227.859375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(283.46875 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(339.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(389.078125 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(416.859375 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(472.46875 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(522.46875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(578.078125 0)"/>
-     <use xlink:href="#Helvetica-46" transform="translate(605.859375 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(655.859375 0)"/>
-     <use xlink:href="#Helvetica-58" transform="translate(711.46875 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(767.078125 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(822.6875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(850.46875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(900.46875 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(928.25 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(983.859375 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(1039.46875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(1089.46875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(1139.46875 0)"/>
-     <use xlink:href="#Helvetica-5a" transform="translate(1167.25 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(1239.46875 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(1295.078125 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(1350.6875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(1400.6875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(1456.296875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(1484.078125 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(1511.859375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(1545.15625 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(1600.765625 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(1622.984375 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(1645.203125 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(1667.421875 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(1723.03125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(1778.640625 0)"/>
-     <use xlink:href="#Helvetica-16" transform="translate(1806.421875 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(1862.03125 0)"/>
-     <use xlink:href="#Helvetica-10" transform="translate(1917.640625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(1950.9375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(2006.546875 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(2062.15625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(2112.15625 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(2139.9375 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(2195.546875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(2245.546875 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(2301.15625 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(2334.453125 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(2390.0625 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(2445.671875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(2501.28125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(2529.0625 0)"/>
-     <use xlink:href="#Helvetica-5b" transform="translate(2584.671875 0)"/>
-     <use xlink:href="#Helvetica-46" transform="translate(2634.671875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(2684.671875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(2740.28125 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(2795.890625 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(2851.5 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(2901.5 0)"/>
-     <use xlink:href="#Helvetica-14" transform="translate(2929.28125 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(2984.890625 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(3040.5 0)"/>
-     <use xlink:href="#Helvetica-f" transform="translate(3096.109375 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(3123.890625 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(3179.5 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(3235.109375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(3290.71875 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(3318.5 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(3374.109375 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(3429.71875 0)"/>
-     <use xlink:href="#Helvetica-12" transform="translate(3451.9375 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(3479.71875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(3535.328125 0)"/>
-     <use xlink:href="#Helvetica-b" transform="translate(3563.109375 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(3596.40625 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(3624.1875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(3679.796875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(3735.40625 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(3763.1875 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(3790.96875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(3824.265625 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(3846.484375 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(3902.09375 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(3957.703125 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(4013.3125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(4046.609375 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(4074.390625 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(4102.171875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(4157.78125 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(4207.78125 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(4235.5625 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(4268.859375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(4296.640625 0)"/>
-     <use xlink:href="#Helvetica-27" transform="translate(4324.421875 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(4396.640625 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(4452.25 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(4502.25 0)"/>
-     <use xlink:href="#Helvetica-12" transform="translate(4552.25 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(4580.03125 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(4630.03125 0)"/>
-     <use xlink:href="#Helvetica-f" transform="translate(4657.859375 0)"/>
+     <use xlink:href="#Helvetica-27" transform="translate(83.34375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(155.5625 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(211.171875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(261.171875 0)"/>
+     <use xlink:href="#Helvetica-12" transform="translate(311.171875 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(338.953125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(388.953125 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(416.78125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(444.5625 0)"/>
+     <use xlink:href="#Helvetica-16" transform="translate(472.34375 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(527.953125 0)"/>
+     <use xlink:href="#Helvetica-10" transform="translate(583.5625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(616.859375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(672.46875 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(728.078125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(778.078125 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(805.859375 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(861.46875 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(911.46875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(967.078125 0)"/>
+     <use xlink:href="#Helvetica-46" transform="translate(994.859375 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(1044.859375 0)"/>
+     <use xlink:href="#Helvetica-58" transform="translate(1100.46875 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(1156.078125 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(1211.6875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(1239.46875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(1289.46875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(1317.25 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(1372.859375 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(1428.46875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(1478.46875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(1528.46875 0)"/>
+     <use xlink:href="#Helvetica-5a" transform="translate(1556.25 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(1628.46875 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(1684.078125 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(1739.6875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(1789.6875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(1845.296875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(1873.078125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(1900.859375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(1934.15625 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(1989.765625 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(2011.984375 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(2034.203125 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(2056.421875 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(2112.03125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(2167.640625 0)"/>
+     <use xlink:href="#Helvetica-16" transform="translate(2195.421875 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(2251.03125 0)"/>
+     <use xlink:href="#Helvetica-10" transform="translate(2306.640625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(2339.9375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(2395.546875 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(2451.15625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(2501.15625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(2528.9375 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(2584.546875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(2634.546875 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(2690.15625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(2723.453125 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(2779.0625 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(2834.671875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(2890.28125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(2918.0625 0)"/>
+     <use xlink:href="#Helvetica-5b" transform="translate(2973.671875 0)"/>
+     <use xlink:href="#Helvetica-46" transform="translate(3023.671875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(3073.671875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(3129.28125 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(3184.890625 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(3240.5 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(3290.5 0)"/>
+     <use xlink:href="#Helvetica-14" transform="translate(3318.28125 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(3373.890625 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(3429.5 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(3485.109375 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(3512.890625 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(3568.5 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(3624.109375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(3679.71875 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(3707.5 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(3763.109375 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(3818.71875 0)"/>
+     <use xlink:href="#Helvetica-12" transform="translate(3840.9375 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(3868.71875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(3924.328125 0)"/>
+     <use xlink:href="#Helvetica-b" transform="translate(3952.109375 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(3985.40625 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(4013.1875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(4068.796875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(4124.40625 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(4152.1875 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(4179.96875 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(4213.265625 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(4235.484375 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(4291.09375 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(4346.703125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(4402.3125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(4435.609375 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(4463.390625 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(4491.171875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(4546.78125 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(4596.78125 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(4624.5625 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(4657.859375 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(4685.640625 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(4713.421875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(4763.421875 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(4785.640625 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(4841.25 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(4896.859375 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(4919.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(4974.6875 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(5002.46875 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(5058.078125 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(5113.6875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(5163.6875 0)"/>
-     <use xlink:href="#Helvetica-46" transform="translate(5191.46875 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(5241.46875 0)"/>
-     <use xlink:href="#Helvetica-58" transform="translate(5297.078125 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(5352.6875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(5408.296875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(5436.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(5486.078125 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(5513.859375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(5569.46875 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(5625.078125 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(5675.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(5725.078125 0)"/>
-     <use xlink:href="#Helvetica-5a" transform="translate(5752.859375 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(5825.078125 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(5880.6875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(5936.296875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(5986.296875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(6041.90625 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(6069.6875 0)"/>
-     <use xlink:href="#Helvetica-5a" transform="translate(6125.296875 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(6197.515625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(6253.125 0)"/>
-     <use xlink:href="#Helvetica-50" transform="translate(6280.90625 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(6364.203125 0)"/>
-     <use xlink:href="#Helvetica-4e" transform="translate(6419.8125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(6469.8125 0)"/>
-     <use xlink:href="#Helvetica-58" transform="translate(6525.421875 0)"/>
-     <use xlink:href="#Helvetica-53" transform="translate(6581.03125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(6636.640625 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(6664.421875 0)"/>
-     <use xlink:href="#Helvetica-5b" transform="translate(6720.03125 0)"/>
-     <use xlink:href="#Helvetica-46" transform="translate(6770.03125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(6820.03125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(6875.640625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(6931.25 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(6986.859375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(7036.859375 0)"/>
-     <use xlink:href="#Helvetica-14" transform="translate(7064.640625 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(7120.25 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(7175.859375 0)"/>
-     <use xlink:href="#Helvetica-f" transform="translate(7231.46875 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(7259.25 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(7314.859375 0)"/>
-     <use xlink:href="#Helvetica-13" transform="translate(7370.46875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(7426.078125 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(7453.859375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(7509.46875 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(7565.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(7587.296875 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(7615.078125 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(7670.6875 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(7726.296875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(7781.90625 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(7809.6875 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(7831.90625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(7881.90625 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(7909.6875 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(7965.296875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8020.90625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(8048.6875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8076.46875 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(8104.25 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(8159.859375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(8215.46875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8243.25 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(8271.03125 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(8304.328125 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(8326.546875 0)"/>
-     <use xlink:href="#Helvetica-4a" transform="translate(8382.15625 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(8437.765625 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(8493.375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(8526.671875 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8554.453125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(8582.234375 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(8637.84375 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8687.84375 0)"/>
-     <use xlink:href="#Helvetica-11" transform="translate(8715.625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(8743.40625 0)"/>
-     <use xlink:href="#Helvetica-25" transform="translate(8771.1875 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(8837.890625 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(8893.5 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(8921.28125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(8976.890625 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(9004.671875 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(9060.28125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(9093.578125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9149.1875 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(9176.96875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(9232.578125 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(9254.796875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(9304.796875 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(9327.015625 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(9382.625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(9438.234375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9493.84375 0)"/>
-     <use xlink:href="#Helvetica-45" transform="translate(9521.625 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(9577.234375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9627.234375 0)"/>
-     <use xlink:href="#Helvetica-57" transform="translate(9655.015625 0)"/>
-     <use xlink:href="#Helvetica-4b" transform="translate(9682.796875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(9738.40625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(9794.015625 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(9821.796875 0)"/>
-     <use xlink:href="#Helvetica-58" transform="translate(9877.40625 0)"/>
-     <use xlink:href="#Helvetica-50" transform="translate(9933.015625 0)"/>
-     <use xlink:href="#Helvetica-45" transform="translate(10016.3125 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(10071.921875 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(10127.53125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10160.828125 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(10188.609375 0)"/>
-     <use xlink:href="#Helvetica-49" transform="translate(10244.21875 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10272 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(10299.78125 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(10349.78125 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(10405.390625 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(10427.609375 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(10449.828125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10505.4375 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(10533.21875 0)"/>
-     <use xlink:href="#Helvetica-48" transform="translate(10583.21875 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(10638.828125 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(10694.4375 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(10727.734375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(10777.734375 0)"/>
-     <use xlink:href="#Helvetica-b" transform="translate(10805.515625 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(10838.8125 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(10888.8125 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(10944.421875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(10966.640625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(10988.859375 0)"/>
+     <use xlink:href="#Helvetica-27" transform="translate(4713.421875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(4785.640625 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(4841.25 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(4891.25 0)"/>
+     <use xlink:href="#Helvetica-12" transform="translate(4941.25 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(4969.03125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(5019.03125 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(5046.859375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(5074.640625 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(5102.421875 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(5152.421875 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(5174.640625 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(5230.25 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(5285.859375 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(5308.078125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(5363.6875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(5391.46875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(5447.078125 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(5502.6875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(5552.6875 0)"/>
+     <use xlink:href="#Helvetica-46" transform="translate(5580.46875 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(5630.46875 0)"/>
+     <use xlink:href="#Helvetica-58" transform="translate(5686.078125 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(5741.6875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(5797.296875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(5825.078125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(5875.078125 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(5902.859375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(5958.46875 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(6014.078125 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(6064.078125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(6114.078125 0)"/>
+     <use xlink:href="#Helvetica-5a" transform="translate(6141.859375 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(6214.078125 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(6269.6875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(6325.296875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(6375.296875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(6430.90625 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(6458.6875 0)"/>
+     <use xlink:href="#Helvetica-5a" transform="translate(6514.296875 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(6586.515625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(6642.125 0)"/>
+     <use xlink:href="#Helvetica-50" transform="translate(6669.90625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(6753.203125 0)"/>
+     <use xlink:href="#Helvetica-4e" transform="translate(6808.8125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(6858.8125 0)"/>
+     <use xlink:href="#Helvetica-58" transform="translate(6914.421875 0)"/>
+     <use xlink:href="#Helvetica-53" transform="translate(6970.03125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(7025.640625 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(7053.421875 0)"/>
+     <use xlink:href="#Helvetica-5b" transform="translate(7109.03125 0)"/>
+     <use xlink:href="#Helvetica-46" transform="translate(7159.03125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(7209.03125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(7264.640625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(7320.25 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(7375.859375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(7425.859375 0)"/>
+     <use xlink:href="#Helvetica-14" transform="translate(7453.640625 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(7509.25 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(7564.859375 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(7620.46875 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(7648.25 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(7703.859375 0)"/>
+     <use xlink:href="#Helvetica-13" transform="translate(7759.46875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(7815.078125 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(7842.859375 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(7898.46875 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(7954.078125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(7976.296875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(8004.078125 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(8059.6875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(8115.296875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(8170.90625 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(8198.6875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(8220.90625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(8270.90625 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(8298.6875 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(8354.296875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(8409.90625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(8437.6875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(8465.46875 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(8493.25 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(8548.859375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(8604.46875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(8632.25 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(8660.03125 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(8693.328125 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(8715.546875 0)"/>
+     <use xlink:href="#Helvetica-4a" transform="translate(8771.15625 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(8826.765625 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(8882.375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(8915.671875 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(8943.453125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(8971.234375 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(9026.84375 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(9076.84375 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(9104.625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9132.40625 0)"/>
+     <use xlink:href="#Helvetica-25" transform="translate(9160.1875 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(9226.890625 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(9282.5 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(9310.28125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9365.890625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(9393.671875 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(9449.28125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(9482.578125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9538.1875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(9565.96875 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(9621.578125 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(9643.796875 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(9693.796875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(9716.015625 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(9771.625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(9827.234375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(9882.84375 0)"/>
+     <use xlink:href="#Helvetica-45" transform="translate(9910.625 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(9966.234375 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10016.234375 0)"/>
+     <use xlink:href="#Helvetica-57" transform="translate(10044.015625 0)"/>
+     <use xlink:href="#Helvetica-4b" transform="translate(10071.796875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(10127.40625 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10183.015625 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(10210.796875 0)"/>
+     <use xlink:href="#Helvetica-58" transform="translate(10266.40625 0)"/>
+     <use xlink:href="#Helvetica-50" transform="translate(10322.015625 0)"/>
+     <use xlink:href="#Helvetica-45" transform="translate(10405.3125 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(10460.921875 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(10516.53125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10549.828125 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(10577.609375 0)"/>
+     <use xlink:href="#Helvetica-49" transform="translate(10633.21875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10661 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(10688.78125 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(10738.78125 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(10794.390625 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(10816.609375 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(10838.828125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(10894.4375 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(10922.21875 0)"/>
+     <use xlink:href="#Helvetica-48" transform="translate(10972.21875 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(11027.828125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(11083.4375 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(11116.734375 0)"/>
     </g>
    </g>
    <g id="text_203">
-    <!--    days or valid windows / 365.25). -->
+    <!--    (valid days or valid windows / 365.25). -->
     <g style="fill: #5f6670" transform="translate(25.2 447.89183) scale(0.07 -0.07)">
      <use xlink:href="#Helvetica-3"/>
      <use xlink:href="#Helvetica-3" transform="translate(27.78125 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(55.5625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(83.34375 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(138.953125 0)"/>
-     <use xlink:href="#Helvetica-5c" transform="translate(194.5625 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(244.5625 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(294.5625 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(322.34375 0)"/>
-     <use xlink:href="#Helvetica-55" transform="translate(377.953125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(411.25 0)"/>
-     <use xlink:href="#Helvetica-59" transform="translate(439.03125 0)"/>
-     <use xlink:href="#Helvetica-44" transform="translate(489.03125 0)"/>
-     <use xlink:href="#Helvetica-4f" transform="translate(544.640625 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(566.859375 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(589.078125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(644.6875 0)"/>
-     <use xlink:href="#Helvetica-5a" transform="translate(672.46875 0)"/>
-     <use xlink:href="#Helvetica-4c" transform="translate(744.6875 0)"/>
-     <use xlink:href="#Helvetica-51" transform="translate(766.90625 0)"/>
-     <use xlink:href="#Helvetica-47" transform="translate(822.515625 0)"/>
-     <use xlink:href="#Helvetica-52" transform="translate(878.125 0)"/>
-     <use xlink:href="#Helvetica-5a" transform="translate(933.734375 0)"/>
-     <use xlink:href="#Helvetica-56" transform="translate(1005.953125 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(1055.953125 0)"/>
-     <use xlink:href="#Helvetica-12" transform="translate(1083.734375 0)"/>
-     <use xlink:href="#Helvetica-3" transform="translate(1111.515625 0)"/>
-     <use xlink:href="#Helvetica-16" transform="translate(1139.296875 0)"/>
-     <use xlink:href="#Helvetica-19" transform="translate(1194.90625 0)"/>
-     <use xlink:href="#Helvetica-18" transform="translate(1250.515625 0)"/>
-     <use xlink:href="#Helvetica-11" transform="translate(1306.125 0)"/>
-     <use xlink:href="#Helvetica-15" transform="translate(1333.90625 0)"/>
-     <use xlink:href="#Helvetica-18" transform="translate(1389.515625 0)"/>
-     <use xlink:href="#Helvetica-c" transform="translate(1445.125 0)"/>
-     <use xlink:href="#Helvetica-11" transform="translate(1478.421875 0)"/>
+     <use xlink:href="#Helvetica-b" transform="translate(83.34375 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(116.640625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(166.640625 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(222.25 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(244.46875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(266.6875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(322.296875 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(350.078125 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(405.6875 0)"/>
+     <use xlink:href="#Helvetica-5c" transform="translate(461.296875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(511.296875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(561.296875 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(589.078125 0)"/>
+     <use xlink:href="#Helvetica-55" transform="translate(644.6875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(677.984375 0)"/>
+     <use xlink:href="#Helvetica-59" transform="translate(705.765625 0)"/>
+     <use xlink:href="#Helvetica-44" transform="translate(755.765625 0)"/>
+     <use xlink:href="#Helvetica-4f" transform="translate(811.375 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(833.59375 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(855.8125 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(911.421875 0)"/>
+     <use xlink:href="#Helvetica-5a" transform="translate(939.203125 0)"/>
+     <use xlink:href="#Helvetica-4c" transform="translate(1011.421875 0)"/>
+     <use xlink:href="#Helvetica-51" transform="translate(1033.640625 0)"/>
+     <use xlink:href="#Helvetica-47" transform="translate(1089.25 0)"/>
+     <use xlink:href="#Helvetica-52" transform="translate(1144.859375 0)"/>
+     <use xlink:href="#Helvetica-5a" transform="translate(1200.46875 0)"/>
+     <use xlink:href="#Helvetica-56" transform="translate(1272.6875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(1322.6875 0)"/>
+     <use xlink:href="#Helvetica-12" transform="translate(1350.46875 0)"/>
+     <use xlink:href="#Helvetica-3" transform="translate(1378.25 0)"/>
+     <use xlink:href="#Helvetica-16" transform="translate(1406.03125 0)"/>
+     <use xlink:href="#Helvetica-19" transform="translate(1461.640625 0)"/>
+     <use xlink:href="#Helvetica-18" transform="translate(1517.25 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(1572.859375 0)"/>
+     <use xlink:href="#Helvetica-15" transform="translate(1600.640625 0)"/>
+     <use xlink:href="#Helvetica-18" transform="translate(1656.25 0)"/>
+     <use xlink:href="#Helvetica-c" transform="translate(1711.859375 0)"/>
+     <use xlink:href="#Helvetica-11" transform="translate(1745.15625 0)"/>
     </g>
    </g>
    <g id="text_204">
@@ -6202,7 +6185,7 @@ z
     </g>
    </g>
    <g id="text_205">
-    <!-- ⁴ Reported: average cooling service water 135,000 gal/day [falls_levittown_2026] and peak 4.4 million gal/day [falls_levittown_2026; falls_herald_2026]. -->
+    <!-- ⁴ Reported: average cooling service water 135,000 gal/day [falls_levittown_2026] and peak 4.4 million gal/day [falls_levittown_2026, falls_herald_2026]. -->
     <g style="fill: #5f6670" transform="translate(25.2 469.569392) scale(0.07 -0.07)">
      <use xlink:href="#Helvetica-532"/>
      <use xlink:href="#Helvetica-3" transform="translate(27.78125 0)"/>
@@ -6335,7 +6318,7 @@ z
      <use xlink:href="#Helvetica-13" transform="translate(5625.25 0)"/>
      <use xlink:href="#Helvetica-15" transform="translate(5680.859375 0)"/>
      <use xlink:href="#Helvetica-19" transform="translate(5736.46875 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(5792.078125 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(5792.078125 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(5819.859375 0)"/>
      <use xlink:href="#Helvetica-49" transform="translate(5847.640625 0)"/>
      <use xlink:href="#Helvetica-44" transform="translate(5875.421875 0)"/>
@@ -6359,7 +6342,7 @@ z
     </g>
    </g>
    <g id="text_206">
-    <!-- ⁵ The thresholds apply to a project's own withdrawal, so a data center that buys water from an existing public or authority system is not itself reviewed [drbc_datacenters_2026; drbc_admin_manual]. Falls is supplied by the Morrisville Municipal -->
+    <!-- ⁵ The thresholds apply to a project's own withdrawal, so a data center that buys water from an existing public or authority system is not itself reviewed [drbc_datacenters_2026, drbc_admin_manual]. Falls is supplied by the Morrisville Municipal -->
     <g style="fill: #5f6670" transform="translate(25.2 480.408173) scale(0.07 -0.07)">
      <defs>
       <path id="Helvetica-a" d="M 1056 4591 
@@ -6546,7 +6529,7 @@ z
      <use xlink:href="#Helvetica-13" transform="translate(7526.15625 0)"/>
      <use xlink:href="#Helvetica-15" transform="translate(7581.765625 0)"/>
      <use xlink:href="#Helvetica-19" transform="translate(7637.375 0)"/>
-     <use xlink:href="#Helvetica-1e" transform="translate(7692.984375 0)"/>
+     <use xlink:href="#Helvetica-f" transform="translate(7692.984375 0)"/>
      <use xlink:href="#Helvetica-3" transform="translate(7720.765625 0)"/>
      <use xlink:href="#Helvetica-47" transform="translate(7748.546875 0)"/>
      <use xlink:href="#Helvetica-55" transform="translate(7804.15625 0)"/>
@@ -6735,6 +6718,28 @@ z
   <g id="text_208">
    <!-- Sources: [drbc_admin_manual]; [drbc_datacenters_2026]; [usgs_nwis_01463500]; [falls_levittown_2026]; [falls_herald_2026]; [noaa_isd]; [stull_2011]; [alduchov_1996]. Model parameters: results/calibration.json. -->
    <g style="fill: #5f6670" transform="translate(25.2 519.73125) scale(0.07 -0.07)">
+    <defs>
+     <path id="Helvetica-1e" d="M 709 -653 
+Q 928 -613 1013 -363 
+Q 1056 -231 1056 -75 
+Q 1056 -59 1054 -48 
+Q 1053 -38 1050 0 
+L 709 0 
+L 709 681 
+L 1375 681 
+L 1375 50 
+Q 1375 -284 1278 -509 
+Q 1116 -878 709 -950 
+L 709 -653 
+z
+M 709 3303 
+L 1375 3303 
+L 1375 2622 
+L 709 2622 
+L 709 3303 
+z
+" transform="scale(0.015625)"/>
+    </defs>
     <use xlink:href="#Helvetica-36"/>
     <use xlink:href="#Helvetica-52" transform="translate(66.703125 0)"/>
     <use xlink:href="#Helvetica-58" transform="translate(122.3125 0)"/>
@@ -6947,7 +6952,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3901a33ba5">
+  <clipPath id="pf32e644068">
    <rect x="25.2" y="0" width="885.6" height="531.36"/>
   </clipPath>
  </defs>

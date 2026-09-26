@@ -198,6 +198,7 @@ KEYS_MODEL = ["noaa_isd", "stull_2011", "alduchov_1996"]
 KEYS_ALL = ["drbc_admin_manual", "drbc_datacenters_2026", "usgs_nwis_01463500", "falls_levittown_2026",
             "falls_herald_2026", *KEYS_MODEL]
 RULE_CITE = "DRBC Administrative Manual Part 1, Article 3; 18 CFR 401.35(a)(2)-(3)"
+RULE_CITE_PROSE = RULE_CITE.replace("; ", " and ")   # footnotes and captions carry no semicolons
 RULE_QUOTE = "the daily average gross withdrawal during any 30 consecutive day period does not exceed 100,000 gallons"
 DRBC_DC_QUOTE = ("To date, the DRBC has not received any applications for data center projects because the "
                  "existing data centers in the Basin purchase water from public water supply systems rather than "
@@ -268,19 +269,19 @@ def footnotes(t: pd.DataFrame) -> list[str]:
          f"{c['n_averaging_blind_spot_loose_annual_mean']} of {c['n_configs']} configurations would qualify. "
          "The Falls row is a reference and is not counted."),
         (f"{FN_MODEL} Model-derived: PUE 1.2, 4 cycles of concentration, hybrid parameters from {cal_path}, "
-         f"KTTN hourly wet-bulb 2005-2024 [noaa_isd; stull_2011; alduchov_1996]. Makeup is treated as gross "
+         f"KTTN hourly wet-bulb 2005-2024 [noaa_isd, stull_2011, alduchov_1996]. Makeup is treated as gross "
          f"withdrawal. {c['n_nan_days']} of {n_days:,} local days are missing, and 30-day windows require at "
          "least 27 valid days."),
-        (f"{FN_DRBC} A withdrawal is excluded from review when {RULE_QUOTE} [drbc_admin_manual] ({RULE_CITE}). "
-         "Days/yr, 30-day avg counts days whose trailing 30-day average exceeds 100,000 gal/d (the trigger test); "
+        (f"{FN_DRBC} A withdrawal is excluded from review when {RULE_QUOTE} [drbc_admin_manual] ({RULE_CITE_PROSE}). "
+         "Days/yr, 30-day avg counts days whose trailing 30-day average exceeds 100,000 gal/d (the trigger test). "
          "Days/yr, single day counts days whose own makeup exceeds 100,000 gal and is not the trigger test. Both "
          "are divided by the number of valid years (valid days or valid windows / 365.25)."),
         (f"{FN_USGS} Delaware River at Trenton daily mean flow on days above 100,000 gal, compared with its "
          f"2005-2024 day-of-year 25th percentile and the full-record LP3 7Q10 of {q:,.0f} cfs [usgs_nwis_01463500]."),
         (f"{FN_FALLS} Reported: average cooling service water 135,000 gal/day [falls_levittown_2026] and peak "
-         "4.4 million gal/day [falls_levittown_2026; falls_herald_2026]."),
+         "4.4 million gal/day [falls_levittown_2026, falls_herald_2026]."),
         (f"{FN_BUY} The thresholds apply to a project's own withdrawal, so a data center that buys water from an "
-         "existing public or authority system is not itself reviewed [drbc_datacenters_2026; drbc_admin_manual]. "
+         "existing public or authority system is not itself reviewed [drbc_datacenters_2026, drbc_admin_manual]. "
          "Falls is supplied by the Morrisville Municipal Authority service-water system, whose allocation is "
          f"reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026]."),
     ]
@@ -311,7 +312,7 @@ def write_markdown(t: pd.DataFrame) -> str:
         lines.append("| " + " | ".join(cells) + " |")
     notes = footnotes(t)
     notes[0] = notes[0].replace("Shaded rows are", "Bold rows (shaded in the figure) are")
-    lines += [""] + [n + "  " for n in notes] + ["", "Sources: " + "; ".join(f"[{k}]" for k in KEYS_ALL) + ".", ""]
+    lines += [""] + [n + "  " for n in notes] + ["", "Sources: " + ", ".join(f"[{k}]" for k in KEYS_ALL) + ".", ""]
     txt = "\n".join(lines)
     (RESULTS / "table_blindspot.md").write_text(txt)
     return txt
@@ -360,7 +361,7 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
         wet_check_txt = (" The wet-share sensitivity calibration above tests the table's counts against an "
                          "alternative target set.")
     ratio = p["targets"]["peak_gpd"] / p["targets"]["avg_gpd"]
-    rule_cite = RULE_CITE.replace("; ", " and ")   # captions carry no semicolons
+    rule_cite = RULE_CITE_PROSE
     keys_txt = ", ".join(KEYS_ALL[:-1]) + " and " + KEYS_ALL[-1]
     txt = f"""# Table A. Two DRBC review blind spots for data center cooling water
 

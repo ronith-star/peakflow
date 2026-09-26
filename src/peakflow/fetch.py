@@ -310,7 +310,7 @@ def check_user_inputs() -> None:
         raise SystemExit(
             "fetch: required user-provided input(s) missing: "
             + ", ".join(f"data/raw/{m}" for m in missing)
-            + ". These are hand-built by the author from https://trackdatacenters.com and cannot be "
+            + ". These are compiled by hand from https://trackdatacenters.com and cannot be "
               "downloaded; place them in data/raw/ (they are tracked in git) and re-run."
         )
 
