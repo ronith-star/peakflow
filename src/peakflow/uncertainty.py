@@ -1,4 +1,4 @@
-"""Monte Carlo uncertainty in peak-day cooling makeup for the 24 active planned sites (work order item 14).
+"""Monte Carlo uncertainty in peak-day cooling makeup for the 24 active planned sites.
 
 For every site in results/supply_screen.csv, N_DRAWS draws of peak-day cooling makeup (gal/day) are made and
 compared with the median flow of the site's nearest eligible municipal plant (plant_median_flow_mgd * 1e6).

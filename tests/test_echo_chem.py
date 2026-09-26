@@ -1,4 +1,4 @@
-"""N02: Delaware permits report DAILY AV rather than MO AVG; chemistry must use the same fallback as flow."""
+"""Delaware permits report DAILY AV rather than MO AVG; chemistry must use the same fallback as flow."""
 from pathlib import Path
 
 import pandas as pd

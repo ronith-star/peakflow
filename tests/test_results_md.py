@@ -1,5 +1,5 @@
 """results.md is hand-written prose; this test ties its key numbers to the generated result files so a rerun
-that changes a number fails until the prose is updated (audit G08). It also checks the prose rules: a citation
+that changes a number fails until the prose is updated. It also checks the prose rules: a citation
 key in every sentence that contains a digit, no em or en dashes, no exclamation marks."""
 import json
 import re
@@ -88,7 +88,7 @@ def test_prose_rules():
     assert not unkeyed, unkeyed
 
 
-# Plain-prose rule (2026-09-25): no semicolons, em dashes or en dashes in the written documents and captions.
+# Plain-prose rule: no semicolons, em dashes or en dashes in the written documents and captions.
 # Verbatim regulatory quotes in sources.md end before the semicolon that closes each CFR item.
 from peakflow.paths import ROOT as _ROOT  # noqa: E402
 

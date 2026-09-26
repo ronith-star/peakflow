@@ -34,7 +34,7 @@
   url      = {https://www.nj.gov/drbc/programs/flow/drbc-drought.html},
   urldate  = {2026-09-25},
   verified = {true},
-  figure   = {This note refers to a table of 14 basinwide drought action rows, spanning the 1960s to the 2010s, found in data/processed/drbc_drought_actions.csv. The page text also notes a water supply emergency that began in December 2024 and ended in June 2025.}
+  figure   = {The page's table of basinwide drought actions yields 14 rows, spanning the 1960s to the 2010s, stored in data/processed/drbc_drought_actions.csv. The page text also notes a water supply emergency that began in December 2024 and ended in June 2025.}
 }
 
 @misc{drbc_khalil_2026,
@@ -102,7 +102,7 @@
   url      = {https://cleanview.co/data-centers/pennsylvania/1861/aws-keystone-trade-center---building-1},
   urldate  = {2026-09-24},
   verified = {false},
-  figure   = {The figures 178 MW (Building 1) and 75 MW (Building 2) appear only in search-result text. The opened pages did not render these figures. These values were used only as the unverified 253 MW sensitivity in calibration.json.}
+  figure   = {The figures 178 MW (Building 1) and 75 MW (Building 2) appear only in search-result text, and the opened pages did not render them. The calibration therefore carries their 253 MW total solely as an unverified sensitivity and does not use it in the primary fit.}
 }
 
 % ---------------------------------------------------------------- data sets
@@ -113,7 +113,7 @@
   url      = {https://www.ncei.noaa.gov/data/global-hourly/access/},
   urldate  = {2026-09-24},
   verified = {true},
-  figure   = {The figure shows hourly air temperature, dew point and station pressure. The analysis uses data from 2005 to 2024, since 2025 is incomplete.}
+  figure   = {The figure shows hourly air temperature, dew point and station pressure. The analysis uses data from 2005 to 2024 and excludes 2025, whose files were incomplete at download time.}
 }
 
 @misc{usgs_nwis_01463500,
@@ -189,7 +189,7 @@
 
 @misc{trackdatacenters_2026,
   author   = {{Data Center Proposal Tracker}},
-  title    = {Data Center Proposal Tracker (site list for the Delaware River Basin, hand-built by the author from the public site)},
+  title    = {Data Center Proposal Tracker (site list for the Delaware River Basin, compiled by hand from the public site)},
   year     = {2026},
   url      = {https://trackdatacenters.com},
   urldate  = {2026-09-25},
@@ -210,7 +210,7 @@
   url      = {https://doi.org/10.1175/JAMC-D-11-0143.1},
   urldate  = {2026-09-25},
   verified = {false},
-  figure   = {Valid for relative humidity 5 to 99 percent and air temperature -20 to 50 C. Mean absolute error is below 0.3 C. The abstract was opened, but the full text was not accessible. The equation was implemented from the published form and checked against the paper's worked example in tests.},
+  figure   = {Valid for relative humidity 5 to 99 percent and air temperature -20 to 50 C. Mean absolute error is below 0.3 C. The abstract was opened and the full text was not accessible, so this entry is marked unverified. The implementation follows the published equation and reproduces the paper's worked example in tests/test_wetbulb.py.},
   archive_url = {https://web.archive.org/web/20260915114323/https://journals.ametsoc.org/view/journals/apme/50/11/jamc-d-11-0143.1.xml}
 }
 
@@ -226,7 +226,7 @@
   url      = {https://doi.org/10.1175/1520-0450(1996)035<0601:IMFAOS>2.0.CO;2},
   urldate  = {2026-09-25},
   verified = {false},
-  figure   = {The Magnus coefficients are A = 17.625 and B = 243.04 C. The full text was not accessible in this project.},
+  figure   = {The Magnus coefficients are A = 17.625 and B = 243.04 C. The full text was not accessible, so this entry is marked unverified.},
   archive_url = {https://web.archive.org/web/20260908095650/https://journals.ametsoc.org/view/journals/apme/35/4/1520-0450_1996_035_0601_imfaos_2_0_co_2.xml}
 }
 
@@ -239,7 +239,7 @@
   url      = {https://eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf},
   urldate  = {2026-09-25},
   verified = {true},
-  figure   = {Average site WUE stays just over 0.36 L/kWh through 2023 (p.48). Hyperscale aggregate median is 0.32 L/kWh (p.47). Hyperscale facilities report 0.1 to 0.3 L/kWh for systems similar to airside economizer with adiabatic cooling (p.47). Average PUE is under 1.4 by 2023 for hyperscale and colocation, and 1.15 to 1.35 by 2028 (p.48). A local copy is supplied by the author at data/raw/lbnl_2024.pdf.},
+  figure   = {Average site WUE stays just over 0.36 L/kWh through 2023 (p.48). Hyperscale aggregate median is 0.32 L/kWh (p.47). Hyperscale facilities report 0.1 to 0.3 L/kWh for systems similar to airside economizer with adiabatic cooling (p.47). Average PUE is under 1.4 by 2023 for hyperscale and colocation, and 1.15 to 1.35 by 2028 (p.48). The make data step downloads a local copy to data/raw/lbnl_2024.pdf and checks it against the SHA-256 recorded in data/raw/MANIFEST.md.},
   quote    = {Some hyperscale facilities report WUE values for similar systems of 0.1-0.3 L/kWh, which is much higher than the values simulated here}
 }
 
@@ -320,7 +320,7 @@
   year     = {2026},
   url      = {https://github.com/ronith-star/peakflow},
   urldate  = {2026-09-25},
-  verified = {false},
+  verified = {true},
   figure   = {The model-derived values are stored in results/calibration.json, results/table_blindspot.csv, results/supply_screen.csv, results/supply_summary.json, results/falls_implied_wue.json and results/flow_stats.json. These files are generated by make all.}
 }
 
@@ -331,7 +331,7 @@
   url      = {https://github.com/liberationfonts/liberation-fonts},
   urldate  = {2026-09-25},
   verified = {true},
-  figure   = {This is the figure typeface used for v3 and later figures. It uses system fonts, which are not redistributed in the repository.}
+  figure   = {This is the typeface for all figures. The fonts are system fonts and are not redistributed in the repository.}
 }
 
 @techreport{dzombak_2012,
@@ -354,7 +354,7 @@
   url      = {https://web.archive.org/},
   urldate  = {2026-09-25},
   verified = {true},
-  figure   = {Archived copies of site and reference pages return HTTP 403 or no longer resolve. Each snapshot URL is listed in data/sites/source_url_overrides.csv or scratch/fragments/agentE_bib_urls.csv. Each snapshot was opened and checked for the site or entry name on 2026-09-25.}
+  figure   = {The Wayback Machine supplies archived copies of site and reference pages whose live URLs return HTTP 403 or no longer resolve. Each snapshot URL is listed in data/sites/source_url_overrides.csv or in the archive_url field of the citing entry. Each snapshot was opened and checked for the site or entry name on 2026-09-25.}
 }
 
 @misc{limerick_cu_hearings_2026,
@@ -447,7 +447,7 @@
   urldate  = {2026-09-25},
   archive_url = {https://web.archive.org/web/20260506141259/https://www.chestnuthilllocal.com/stories/ai-data-center-proposals-are-popping-up-along-the-schuylkill-river,39478},
   verified = {true},
-  figure   = {Project Laurel (MCD 7 LLC, Limerick) is described in this note. Attorney Ed Campbell says up to 1.3 million gal/day for an open cooling system would be provided by Pennsylvania American Water. The cooling type has not yet been decided. The live page returned HTTP 403. The text was read from the web.archive.org capture of 2026-05-06.},
+  figure   = {The article describes Project Laurel (MCD 7 LLC, Limerick). Attorney Ed Campbell says up to 1.3 million gal/day for an open cooling system would be provided by Pennsylvania American Water. The cooling type has not yet been decided. The live page returned HTTP 403. The text was read from the web.archive.org capture of 2026-05-06.},
   quote    = {it would be provided by Pennsylvania American Water}
 }
 

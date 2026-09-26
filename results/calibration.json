@@ -244,7 +244,7 @@
       }
     }
   },
-  "p_it_provenance": "inferred (fitted); no IT or campus capacity located in Falls Township, PECO/PJM (FERC ER25-3492) or Bucks County press sources opened to date",
+  "p_it_provenance": "inferred (fitted); no IT or campus capacity is stated in the Falls Township, PECO/PJM (FERC ER25-3492) or Bucks County press sources consulted",
   "notes": [
     "P_IT is a fitted scale parameter, not a filed capacity; only P_IT*PUE*C/(C-1) is identified.",
     "Feasible means every target is reproduced within 1 percent inside the parameter bounds.",

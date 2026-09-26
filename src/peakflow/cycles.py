@@ -1,4 +1,4 @@
-"""Allowable cycles of concentration for municipal-effluent makeup at each matched plant (work order item 13).
+"""Allowable cycles of concentration for municipal-effluent makeup at each matched plant.
 
 For each matched plant (peakflow.wqp.plant_list: the unique plant_npdes_id of results/supply_screen.csv plus
 Morrisville Borough STP) the allowable cycles of concentration C is the minimum over four constraints:
@@ -288,8 +288,9 @@ def _fmt(x, d=1):
 def write_md(t: pd.DataFrame, s: dict, path=OUT_MD):
     lines = ["# Allowable cycles of concentration by matched plant", "",
              "Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -m peakflow.cycles`. "
-             "All rows are marked 'assumed' because the Water Quality Portal was not reachable [wqp_status.json]; "
-             "silica, calcium and alkalinity are literature values [vidic_2009; hem_1985], TDS and phosphate are the "
+             "Every row is marked 'assumed' because Water Quality Portal records were not retrieved for the matched "
+             "plants [wqp_status.json]. "
+             "Silica, calcium and alkalinity are literature values [vidic_2009, hem_1985], TDS and phosphate are the "
              "plant's own DMR medians where reported [epa_echo], and chloride is a TDS-based proxy because no matched "
              "plant reports chloride [epa_echo]. Return flow is defined as blowdown / makeup = 1/C.", "",
              "| Plant | NPDES | Sites | C silica | C chloride | C phosphate | C LSI | Binding | Allowable C "

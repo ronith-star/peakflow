@@ -1,4 +1,4 @@
-"""Tests for peakflow.uncertainty (work order item 14) and its three figures."""
+"""Tests for peakflow.uncertainty and its three figures."""
 import json
 
 import numpy as np
@@ -140,7 +140,7 @@ class TestFigures:
         for ext in ("png", "pdf", "svg"):
             assert (FIGURES / f"{stem}.{ext}").stat().st_size > 1000
         cap = (FIGURES / f"{stem}_caption.md").read_text()
-        assert "**Figure X.**" in cap
+        assert "**Figure" in cap
         assert "\u2014" not in cap and "\u2013" not in cap and "!" not in cap
         assert (FIGURES / f"{stem}_data.csv").exists()
 

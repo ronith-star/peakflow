@@ -6,11 +6,13 @@ PeakFlow is an open model and geospatial screen that estimates peak-day cooling 
 
 Of the 24 active planned data center sites in the Delaware River Basin, 22 lie within 10 miles of an eligible municipal treatment plant whose median effluent flow could supply cooling water [trackdatacenters_2026, epa_echo, peakflow_model]. Whether that plant also covers a site's own peak day depends on the capacity assumed for the 16 sites that publish none: the count falls from 15 to 5 as their assumed IT load rises from 50 to 200 MW [epa_echo, peakflow_model]. Under Monte Carlo uncertainty, the nearest plant covers the 90th-percentile peak day at 1 of 24 sites, or 6 of 24 if unstated sites are held at 100 MW [peakflow_model, shehabi_2024]. Delaware River Basin Commission review is a weak check on this demand. The 30-day averaging rule hides peak-day demand only for calibrated hybrid designs of 7.53 to 23.6 MW of IT load, but a facility that buys water from a public or authority system needs no review at any size [peakflow_model, drbc_admin_manual, drbc_datacenters_2026]. All 24 sites would be reviewed if self-supplied, yet 7 are reported to purchase from a public or authority system, 2 are self-supplied and 15 have no published supplier [peakflow_model]. The Falls Township campus shows the gap: its reported cooling demand averages 135,000 gal/day with a peak day of 4.4 million gal/day, above the 100,000 gal/day trigger, and it required no review because the Morrisville Municipal Authority supplies it [falls_levittown_2026, falls_herald_2026, drbc_admin_manual].
 
-## Our Supply screen map
+Assumptions, sensitivity ranges and data completeness are reported in results/results.md (Data completeness and verification).
+
+## Supply screen map
 
 ![Figure 1. Supply screen map](figures/supply_screen_map.png)
 
-**Figure 1.** The map we developed shows the 24 active planned data center sites in the Delaware River Basin and the municipal wastewater treatment plants whose effluent could supply their cooling water [trackdatacenters_2026, epa_echo, peakflow_model]. The full caption is in figures/supply_screen_map_caption.md. The site key is in figures/site_key.csv. The plotted values are in figures/supply_screen_map_data.csv. An interactive version with Esri background tiles is figures/supply_screen_map.html [esri_light_gray].
+**Figure 1.** The map shows the 24 active planned data center sites in the Delaware River Basin and the municipal wastewater treatment plants whose effluent could supply their cooling water [trackdatacenters_2026, epa_echo, peakflow_model]. The full caption is in figures/supply_screen_map_caption.md. The site key is in figures/site_key.csv. The plotted values are in figures/supply_screen_map_data.csv. An interactive version with Esri background tiles is figures/supply_screen_map.html [esri_light_gray].
 
 ## Regulatory blind spot
 
@@ -27,7 +29,7 @@ Rows and cells are copied from results/table_blindspot_brief.csv. Except for the
 
 ## Key numbers
 
-The items below are copied verbatim from results/brief_numbers.md.
+The items below restate results/brief_numbers.md with one citation per claim.
 
 1. The study maps 24 active planned sites in the Delaware River Basin, matching the Commission's total of 24 [trackdatacenters_2026, drbc_khalil_2026]. Of these, 17 are in Pennsylvania, 4 in New Jersey and 3 in Delaware, against the Commission's 18, 3 and 3 [trackdatacenters_2026, drbc_khalil_2026].
 2. At Falls Township, documented potable demand is 19,000 gal/day and reported cooling demand averages 135,000 gal/day [falls_herald_2026, falls_levittown_2026, peakflow_model]. The reported peak day is 4.4 million gal/day, 32.6 times the average [falls_herald_2026, falls_levittown_2026, peakflow_model].
@@ -43,13 +45,13 @@ The items below are copied verbatim from results/brief_numbers.md.
 
 ### Weather and wet-bulb temperature
 
-Hourly observations for Trenton Mercer Airport (KTTN, station 72409514792) and Philadelphia International (KPHL, station 72408013739) come from the NOAA Integrated Surface Database global-hourly files [noaa_isd]. The analysis window is the 20 complete calendar years 2005 to 2024 [noaa_isd, peakflow_model]. The year 2025 was downloaded for provenance, but it was excluded because the files were incomplete at download time [noaa_isd, peakflow_model]. One whole report is kept per clock hour. The selection prefers reports with valid temperature and dew point, then routine METAR reports over special reports. Values with failing quality codes or missing sentinels are set to missing without interpolation [peakflow_model]. Relative humidity is derived from temperature and dew point with the Magnus form of saturation vapor pressure [alduchov_1996]. Wet-bulb temperature follows Stull [stull_2011]. The fit is valid for relative humidity of 5 to 99 percent and air temperature of minus 20 to 50 °C, with a mean absolute error below 0.3 °C [stull_2011]. Station pressure is not used, consistent with the Stull method [stull_2011]. Trenton weather drives every site [noaa_isd, peakflow_model].
+Hourly observations for Trenton Mercer Airport (KTTN, station 72409514792) and Philadelphia International (KPHL, station 72408013739) come from the NOAA Integrated Surface Database global-hourly files [noaa_isd]. The analysis window is the 20 complete calendar years 2005 to 2024 [noaa_isd, peakflow_model]. The year 2025 is downloaded for provenance and excluded from the analysis because its files were incomplete at download time [noaa_isd, peakflow_model]. One whole report is kept per clock hour. The selection prefers reports with valid temperature and dew point, then routine METAR reports over special reports. Values with failing quality codes or missing sentinels are set to missing without interpolation [peakflow_model]. Relative humidity is derived from temperature and dew point with the Magnus form of saturation vapor pressure [alduchov_1996]. Wet-bulb temperature follows Stull [stull_2011]. The fit is valid for relative humidity of 5 to 99 percent and air temperature of minus 20 to 50 °C, with a mean absolute error below 0.3 °C [stull_2011]. Station pressure is not used, consistent with the Stull method [stull_2011]. Trenton weather drives every site [noaa_isd, peakflow_model].
 
 ### Cooling model and calibration
 
 Heat rejected to the cooling system is approximated by total facility power. Total facility power equals the IT load times a power usage effectiveness (PUE) of 1.2 [shehabi_2024, peakflow_model]. Evaporation removes 2.43 MJ/kg of latent heat [peakflow_model]. Drift is neglected. Makeup equals evaporation times C/(C - 1), where C is cycles of concentration, fixed at 4 [peakflow_model]. Three architectures are modeled [peakflow_model]. An evaporative tower rejects all heat evaporatively in every hour. An air-cooled chiller has zero evaporative makeup. A hybrid architecture runs dry below a switchover wet-bulb temperature. Above that temperature, it raises its evaporative fraction along a part-load curve with exponent gamma. Water use effectiveness follows the Green Grid definition of annual site water per unit of IT energy [greengrid_wue_2011].
 
-The hybrid is calibrated to the Falls Township filing: an annual average cooling demand of 135,000 gal/day, a peak day of 4.4 million gal/day and water cooling in 6 percent of annual hours [falls_levittown_2026, falls_herald_2026]. The separate potable demand of 19,000 gal/day is not used in the fit [falls_levittown_2026]. The primary fit reads the peak as the largest calendar-day makeup and gives a switchover wet-bulb temperature of 22.4 °C, a part-load exponent of 0.429 and 331 MW of IT load [peakflow_model, noaa_isd, stull_2011]. Reading it as the maximum hourly rate over a full day gives 293 MW and 0.355 as a sensitivity [peakflow_model, noaa_isd, stull_2011]. Three parameters are fitted to three targets, so the fit is exactly determined and its near-zero residuals are not validation [peakflow_model]. An unverified 253 MW figure is carried only as a sensitivity [cleanview_keystone_2026]. The calibrated hybrid gives 13,286 gal/day of peak-day makeup per MW of IT load [peakflow_model].
+The hybrid is calibrated to the Falls Township filing: an annual average cooling demand of 135,000 gal/day, a peak day of 4.4 million gal/day and water cooling in 6 percent of annual hours [falls_levittown_2026, falls_herald_2026]. The separate potable demand of 19,000 gal/day is not used in the fit [falls_levittown_2026]. The primary fit reads the peak as the largest calendar-day makeup and gives a switchover wet-bulb temperature of 22.4 °C, a part-load exponent of 0.429 and 331 MW of IT load [peakflow_model, noaa_isd, stull_2011]. Reading it as the maximum hourly rate over a full day gives 293 MW and 0.355 as a sensitivity [peakflow_model, noaa_isd, stull_2011]. Three parameters are fitted to three targets by design, so the fit is exactly determined and its near-zero residuals demonstrate a solution, not validation [peakflow_model]. An unverified 253 MW figure is carried only as a sensitivity [cleanview_keystone_2026]. The design-rate reading, the 253 MW case and the Falls Monte Carlo test the sensitivity of the results to the calibration [peakflow_model, cleanview_keystone_2026]. The calibrated hybrid gives 13,286 gal/day of peak-day makeup per MW of IT load [peakflow_model].
 
 ### Blind-spot test
 
@@ -73,7 +75,7 @@ Water per MW-year of IT load comes from the cooling model on Trenton weather. No
 
 ### Cycles of concentration
 
-The cooling model fixes cycles of concentration at 4, so makeup scales as C/(C - 1) in every per-MW rate [peakflow_model]. A separate screen computes allowable cycles for each of the 19 matched plants as the minimum over silica (150 mg/L as SiO2), chloride, orthophosphate and a Langelier saturation index of 2.5 at 35 C [midkiff_1977, geiger_1993, vidic_2009, hem_1985, cycles_by_plant.csv]. Makeup quality comes from each plant's DMR where reported and from literature secondary-effluent values otherwise. The Water Quality Portal was not reachable, so every row is marked assumed [wqp_status.json]. The chloride and phosphate limits are operating levels demonstrated at one tower under an inhibitor program, not design limits [geiger_1993].
+The cooling model fixes cycles of concentration at 4, so makeup scales as C/(C - 1) in every per-MW rate [peakflow_model]. A separate screen computes allowable cycles for each of the 19 matched plants as the minimum over silica (150 mg/L as SiO2), chloride, orthophosphate and a Langelier saturation index of 2.5 at 35 C [midkiff_1977, geiger_1993, vidic_2009, hem_1985, cycles_by_plant.csv]. Makeup quality comes from each plant's DMR where reported and from literature secondary-effluent values otherwise. No Water Quality Portal records were retrieved for the matched plants, so every row is marked assumed [wqp_status.json]. The chloride and phosphate limits are operating levels demonstrated at one tower under an inhibitor program, not design limits [geiger_1993].
 
 ## Reproduction
 
@@ -90,30 +92,26 @@ PYTHONPATH=src python -m peakflow.fetch --verify
 
 The `make data` target downloads every raw file listed in data/raw/MANIFEST.md. It ends with `fetch --verify`, which exits non-zero unless all 357 manifest rows exist with the recorded SHA-256 [peakflow_model]. The `make all` target repeats the data step idempotently, then fits the model, builds the blind-spot table, runs the supply screen and every figure target, regenerates sources.md and runs the tests. It is offline after `make data`. The `make urls` target is a live HTTP check of site source URLs. It is not part of `make all`. Its results vary by day. Run `make urls map` to refresh the check and rebuild the map. The standalone `fetch --verify` call, also available as `make verify-manifest`, confirms the raw files after any manual change. The planned-site lists in data/raw/trackdatacenters_drb.csv and trackdatacenters_drb_nearmiss.csv are supplied by hand and are not downloaded [trackdatacenters_2026]. The Makefile sets `PROJ_DATA` to the share/proj folder of the environment that runs `python`, so pyproj finds its database without activation. When running Python or pytest outside make, set it yourself with `export PROJ_DATA="$CONDA_PREFIX/share/proj"`.
 
-In the second audit (audit/AUDIT_v2.md), a clean build from a fresh clone, including all downloads, took about 18 minutes. A rebuild from cached data takes about 1 minute.
-
 ## Repository layout
 
 ```
-Makefile                 pipeline targets (data, model, table, map, urls, figures, docs, test, clean)
+Makefile                 pipeline targets (data, model, table, map, urls, supply_figures, docs, test, clean)
 environment.yml          direct dependencies, pinned
 environment.lock.yml     full solved environment, pinned without build strings
 references.bib           citation keys (sources.md is generated from it by `make docs`)
 CITATION.cff, LICENSE    citation metadata and the MIT license for the code
 LICENSES.md              code license and the terms of each data source
-src/peakflow/         pipeline modules: fetch, weather, wetbulb, cooling_model, calibration, wue, flow,
+src/peakflow/            pipeline modules: fetch, weather, wetbulb, cooling_model, calibration, wue, flow,
                          blindspot, sites, urlcheck, echo, supply_screen, suppliers, site_blindspot,
-                         uncertainty, tradeoff, falls_figures, basemap, docs, styles, paths
-src/peakflow/plotting/ figure code: supply_map, figures_v2, figures_v3, peak_uncertainty
+                         uncertainty, tradeoff, wqp, cycles, falls_figures, basemap, docs, styles, paths
+src/peakflow/plotting/   figure code: supply_map, supply_figures, peak_uncertainty, cycles_constraints
 tests/                   pytest suite and fixtures
 data/raw/                raw downloads (ignored by git) and MANIFEST.md
 data/processed/          derived tables (ignored by git except the two URL-check files)
 data/sites/              planned-site list, source overrides and supplier table
-data/sites/research/     research notes from the site search (not read by the pipeline, and IDs differ from DRBnn)
+data/sites/research/     companion site-search list and notes, not read by the pipeline, with row IDs separate from the DRBnn site IDs
 results/                 tables, JSON summaries, results.md, brief_numbers.md, exclusions.csv
 figures/                 figures in PNG, PDF and SVG, each with a caption file and a data file
-audit/                   audit specification and gap list
-scratch/                 working files (ignored by git)
 ```
 
 ## Licenses

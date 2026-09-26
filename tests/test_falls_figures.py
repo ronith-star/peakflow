@@ -1,4 +1,4 @@
-"""Falls duration curve and drought coincidence (work order items 9, 10): statistics, percentile ranks, intervals."""
+"""Falls duration curve and drought coincidence: statistics, percentile ranks, intervals."""
 import json
 
 import numpy as np

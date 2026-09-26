@@ -1,6 +1,6 @@
 """Calibrate the hybrid cooling model to the Falls Township (AWS Keystone Trade Center) water targets.
 
-Targets, all from pages opened on 2026-09-25:
+Targets (all sources accessed 2026-09-25):
   average cooling service-water flow 135,000 gal/day and peak demand 4.4 million gal/day, with about
     40 percent returned to the industrial WWTP [falls_levittown_2026];
   peak 4.4 million gal/day and water cooling for about 6 percent of yearly operations [falls_herald_2026];
@@ -10,7 +10,7 @@ The 19,000 gal/day figure reported in the same LevittownNow article is the facil
 ("equivalent to about 70 residential homes"); it is recorded here but is not a cooling target.
 
 Free parameters: switchover wet-bulb T_sw, part-load exponent gamma, and IT load P_IT (MW); no IT or campus
-capacity for Falls has been located in an opened source. PUE (1.2) and cycles of concentration (4) are
+capacity for Falls is stated in any source consulted. PUE (1.2) and cycles of concentration (4) are
 fixed assumptions; only P_IT * PUE * C/(C-1) is identifiable from water targets. Three parameters, three
 targets: "feasible" means an exact solution exists inside plausible bounds.
 
@@ -148,13 +148,15 @@ def run() -> dict:
         "alternative": fit(w, "design_rate"),
         "sensitivity_wet_2pct": {"source": "amazon_falls_campus_2026",
                                  "design_rate": fit(w, "design_rate", t2), "peak_day": fit(w, "peak_day", t2)},
-        # P_IT fixed at an UNVERIFIED third-party figure (Cleanview: Building 1 = 178 MW, Building 2 = 75 MW;
-        # seen only in search-result text, not rendered on the opened page). Not used downstream.
+        # P_IT fixed at an UNVERIFIED third-party figure (Cleanview: Building 1 = 178 MW, Building 2 = 75 MW,
+        # which appear only in search-result text and were not rendered on the opened pages). The fitted parameters
+        # are reported for comparison; 253 MW is the lower bound of the Falls IT-load range in uncertainty.py, and
+        # wue.py reports the implied WUE at 253 MW.
         "sensitivity_fixed_p_it": {"p_it_mw": SENS_P_IT_MW, "source": SENS_SOURCE, "verified": False,
                                    "design_rate": fit(w, "design_rate", p_it_fixed=SENS_P_IT_MW),
                                    "peak_day": fit(w, "peak_day", p_it_fixed=SENS_P_IT_MW)},
-        "p_it_provenance": "inferred (fitted); no IT or campus capacity located in Falls Township, PECO/PJM "
-                           "(FERC ER25-3492) or Bucks County press sources opened to date",
+        "p_it_provenance": "inferred (fitted); no IT or campus capacity is stated in the Falls Township, PECO/PJM "
+                           "(FERC ER25-3492) or Bucks County press sources consulted",
         "notes": [
             "P_IT is a fitted scale parameter, not a filed capacity; only P_IT*PUE*C/(C-1) is identified.",
             "Feasible means every target is reproduced within 1 percent inside the parameter bounds.",

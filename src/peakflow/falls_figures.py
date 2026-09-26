@@ -1,4 +1,4 @@
-"""Falls Township hybrid: flow-duration style curve of daily makeup and drought coincidence (work order items 9, 10).
+"""Falls Township hybrid: flow-duration style curve of daily makeup (Figure 3) and drought coincidence (Figure 4).
 
 Series: calibrated hybrid (results/calibration.json key 'primary', P_IT = calibrated p_it_mw), KTTN hourly wet-bulb,
 America/New_York local days 2005-01-01..2024-12-31 via blindspot.daily_series; days with < 20 valid hours are NaN
@@ -224,7 +224,7 @@ def _mgd_fmt(y, _pos=None):
 
 
 def text_boxes_check(fig) -> dict:
-    """QA gate H1 in display coordinates: every pair of visible text boxes that overlap, any text outside the
+    """Text-overlap check in display coordinates: every pair of visible text boxes that overlap, any text outside the
     figure, text boxes crossed by a plotted line (Line2D in any axes, sampled densely along the path) and text
     boxes that touch a scatter symbol (disc of the marker radius). Tick marks and spines are not data lines."""
     fig.canvas.draw()
@@ -273,7 +273,7 @@ def _write_check(stem: str, chk: dict):
 
 def _save(fig, stem: str):
     for e in ("png", "pdf", "svg"):
-        fig.savefig(FIGURES / f"{stem}.{e}", dpi=S.V2_DPI)
+        fig.savefig(FIGURES / f"{stem}.{e}", dpi=S.FIG_DPI)
 
 
 def _style_axes(ax):
@@ -283,30 +283,30 @@ def _style_axes(ax):
 
 
 def render_duration_curve(d: pd.Series, st: dict) -> dict:
-    S.v2_rc()
+    S.figure_rc()
     ex = weibull_exceedance(d)
     pos = ex[ex.makeup_gpd > 0]
     h_mm = 62.0
     l_mm, r_mm, b_mm, t_mm = 11.0, 3.2, 10.0, 3.0
-    fig = plt.figure(figsize=(FIG_W_MM * MM, h_mm * MM), dpi=S.V2_DPI)
+    fig = plt.figure(figsize=(FIG_W_MM * MM, h_mm * MM), dpi=S.FIG_DPI)
     ax = fig.add_axes([l_mm / FIG_W_MM, b_mm / h_mm, (FIG_W_MM - l_mm - r_mm) / FIG_W_MM, (h_mm - b_mm - t_mm) / h_mm])
     ax.set_yscale("log")
     ymin, ymax = 1e4, 1e7
     ax.set_xlim(0, 100)
     ax.set_ylim(ymin, ymax)
     x_zero = st["max_pct_exceeded_positive"]
-    ax.axvspan(x_zero, 100, color=S.V2_OUTSIDE, lw=0, zorder=0)
-    ax.text((x_zero + 100) / 2, 1.9e4, "Makeup zero", ha="center", va="center", fontsize=S.V2_FONT_SIZE,
-            color=S.V2_GRAY_DARK)
-    ax.plot(pos.pct_exceeded, pos.makeup_gpd, color=S.V2_ACCENT, lw=S.V2_LW_PRIMARY, zorder=5,
+    ax.axvspan(x_zero, 100, color=S.FIG_OUTSIDE, lw=0, zorder=0)
+    ax.text((x_zero + 100) / 2, 1.9e4, "Makeup zero", ha="center", va="center", fontsize=S.FIG_FONT_SIZE,
+            color=S.FIG_GRAY_DARK)
+    ax.plot(pos.pct_exceeded, pos.makeup_gpd, color=S.FIG_ACCENT, lw=S.FIG_LW_PRIMARY, zorder=5,
             solid_joinstyle="round")
-    refs = [(PEAK_GPD, "Reported peak day, 4.4 million gal/d", "bottom", S.V2_GRAY_DARK, S.V2_DASH),
-            (AVG_GPD, "Reported average, 135,000 gal/d", "bottom", S.V2_GRAY_DARK, S.V2_DASH),
-            (TRIGGER_GPD, "DRBC threshold, 100,000 gal/d", "top", S.V2_BLACK, "solid")]
+    refs = [(PEAK_GPD, "Reported peak day, 4.4 million gal/d", "bottom", S.FIG_GRAY_DARK, S.FIG_DASH),
+            (AVG_GPD, "Reported average, 135,000 gal/d", "bottom", S.FIG_GRAY_DARK, S.FIG_DASH),
+            (TRIGGER_GPD, "DRBC threshold, 100,000 gal/d", "top", S.FIG_BLACK, "solid")]
     for y, lab, va, col, ls in refs:
-        ax.axhline(y, color=col, lw=S.V2_LW_SECONDARY, linestyle=ls, zorder=3)
+        ax.axhline(y, color=col, lw=S.FIG_LW_SECONDARY, linestyle=ls, zorder=3)
         yy = y * (1.06 if va == "bottom" else 1 / 1.06)
-        ax.text(99.3, yy, lab, ha="right", va=va, fontsize=S.V2_FONT_SIZE, color=S.V2_BLACK, zorder=6)
+        ax.text(99.3, yy, lab, ha="right", va=va, fontsize=S.FIG_FONT_SIZE, color=S.FIG_BLACK, zorder=6)
     ax.yaxis.set_major_locator(FixedLocator([1e4, 1e5, 1e6, 1e7]))
     ax.yaxis.set_major_formatter(FuncFormatter(_mgd_fmt))
     ax.yaxis.set_minor_locator(NullLocator())
@@ -333,29 +333,29 @@ def render_duration_curve(d: pd.Series, st: dict) -> dict:
 
 
 def render_drought_coincidence(df: pd.DataFrame, cs: dict, pct_equiv: pd.Series) -> dict:
-    S.v2_rc()
+    S.figure_rc()
     pos = df[(df.makeup_gpd > 0) & df.flow_doy_pct.notna()]
     h_mm = 71.0
     l_mm, r_mm, b_mm, t_mm = 11.0, 3.2, 10.0, 11.5
-    fig = plt.figure(figsize=(FIG_W_MM * MM, h_mm * MM), dpi=S.V2_DPI)
+    fig = plt.figure(figsize=(FIG_W_MM * MM, h_mm * MM), dpi=S.FIG_DPI)
     ax = fig.add_axes([l_mm / FIG_W_MM, b_mm / h_mm, (FIG_W_MM - l_mm - r_mm) / FIG_W_MM, (h_mm - b_mm - t_mm) / h_mm])
     ax.set_yscale("log")
     ax.set_xlim(0, 100)
     ax.set_ylim(1e4, 1e7)
     oth, dro = pos[~pos.in_drought_period], pos[pos.in_drought_period]
-    ax.scatter(oth.flow_doy_pct, oth.makeup_gpd, s=3.0, c=S.V2_GRAY, lw=0, zorder=3, alpha=0.8)
-    ax.scatter(dro.flow_doy_pct, dro.makeup_gpd, s=7.0, c=S.V2_ACCENT, lw=0, zorder=4)
-    ax.axvline(FLOW_PCT_MARK, color=S.V2_BLACK, lw=S.V2_LW_SECONDARY, linestyle=S.V2_DASH, zorder=2)
-    ax.text(FLOW_PCT_MARK + 1.0, 8.0e6, "25th percentile", ha="left", va="center", fontsize=S.V2_FONT_SIZE)
+    ax.scatter(oth.flow_doy_pct, oth.makeup_gpd, s=3.0, c=S.FIG_GRAY, lw=0, zorder=3, alpha=0.8)
+    ax.scatter(dro.flow_doy_pct, dro.makeup_gpd, s=7.0, c=S.FIG_ACCENT, lw=0, zorder=4)
+    ax.axvline(FLOW_PCT_MARK, color=S.FIG_BLACK, lw=S.FIG_LW_SECONDARY, linestyle=S.FIG_DASH, zorder=2)
+    ax.text(FLOW_PCT_MARK + 1.0, 8.0e6, "25th percentile", ha="left", va="center", fontsize=S.FIG_FONT_SIZE)
     thr = cs["top5_threshold_gpd"]
-    ax.axhline(thr, color=S.V2_GRAY_DARK, lw=S.V2_LW_SECONDARY, linestyle=S.V2_DASH, zorder=2)
-    ax.axhline(TRIGGER_GPD, color=S.V2_BLACK, lw=S.V2_LW_SECONDARY, zorder=2)
+    ax.axhline(thr, color=S.FIG_GRAY_DARK, lw=S.FIG_LW_SECONDARY, linestyle=S.FIG_DASH, zorder=2)
+    ax.axhline(TRIGGER_GPD, color=S.FIG_BLACK, lw=S.FIG_LW_SECONDARY, zorder=2)
     # 7Q10: its percentile equivalent is 0 on every calendar day (every 2005-2024 daily flow exceeds it)
     x7 = float(pct_equiv.max())
     ax.annotate("7Q10", xy=(x7, 1.25e4), xytext=(x7 + 4.0, 1.25e4), textcoords="data", ha="left", va="center",
-                fontsize=S.V2_FONT_SIZE,
-                arrowprops=dict(arrowstyle="-|>,head_width=0.15,head_length=0.3", lw=S.V2_LW_SECONDARY,
-                                color=S.V2_BLACK, shrinkA=1, shrinkB=0))
+                fontsize=S.FIG_FONT_SIZE,
+                arrowprops=dict(arrowstyle="-|>,head_width=0.15,head_length=0.3", lw=S.FIG_LW_SECONDARY,
+                                color=S.FIG_BLACK, shrinkA=1, shrinkB=0))
     ax.yaxis.set_major_locator(FixedLocator([1e4, 1e5, 1e6, 1e7]))
     ax.yaxis.set_major_formatter(FuncFormatter(_mgd_fmt))
     ax.yaxis.set_minor_locator(NullLocator())
@@ -367,9 +367,9 @@ def render_drought_coincidence(df: pd.DataFrame, cs: dict, pct_equiv: pd.Series)
     fig.canvas.draw()
     rend = fig.canvas.get_renderer()
     px_mm = fig.dpi / 25.4
-    rows = [[("pt", "DRBC drought warning or emergency", S.V2_ACCENT, 7.0), ("pt", "Other days", S.V2_GRAY, 3.0)],
-            [("ln", "Top 5 percent of days", S.V2_GRAY_DARK, S.V2_DASH),
-             ("ln", "DRBC threshold, 100,000 gal/d", S.V2_BLACK, "solid")]]
+    rows = [[("pt", "DRBC drought warning or emergency", S.FIG_ACCENT, 7.0), ("pt", "Other days", S.FIG_GRAY, 3.0)],
+            [("ln", "Top 5 percent of days", S.FIG_GRAY_DARK, S.FIG_DASH),
+             ("ln", "DRBC threshold, 100,000 gal/d", S.FIG_BLACK, "solid")]]
     kx = fig.add_axes([0, 0, 1, 1], zorder=-1)
     kx.set_axis_off()
     kx.set_xlim(0, FIG_W_MM)
@@ -379,15 +379,15 @@ def render_drought_coincidence(df: pd.DataFrame, cs: dict, pct_equiv: pd.Series)
         y_mm = h_mm - 2.4 - k * 3.6
         xs = FIG_W_MM - r_mm
         for kind, lab, col, sty in reversed(row):
-            t = fig.text(0, 0, lab, fontsize=S.V2_FONT_SIZE)
+            t = fig.text(0, 0, lab, fontsize=S.FIG_FONT_SIZE)
             w = t.get_window_extent(rend).width / px_mm
             t.remove()
             xt = xs - w
-            fig.text(xt / FIG_W_MM, y_mm / h_mm, lab, fontsize=S.V2_FONT_SIZE, va="center", ha="left")
+            fig.text(xt / FIG_W_MM, y_mm / h_mm, lab, fontsize=S.FIG_FONT_SIZE, va="center", ha="left")
             if kind == "pt":
                 kx.scatter([xt - 2.0], [y_mm], s=sty * 1.6, c=col, lw=0)
             else:
-                kx.plot([xt - 1.2 - SW["ln"], xt - 1.2], [y_mm, y_mm], color=col, lw=S.V2_LW_SECONDARY, linestyle=sty)
+                kx.plot([xt - 1.2 - SW["ln"], xt - 1.2], [y_mm, y_mm], color=col, lw=S.FIG_LW_SECONDARY, linestyle=sty)
             xs = xt - SW[kind] - 1.2 - 3.0
     chk = text_boxes_check(fig)
     stem = "drought_coincidence"

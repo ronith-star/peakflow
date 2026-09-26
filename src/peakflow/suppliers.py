@@ -1,4 +1,4 @@
-"""Published water-supplier evidence for the 24 active planned data center sites (work order item 11).
+"""Published water-supplier evidence for the 24 active planned data center sites.
 
 The table data/sites/site_suppliers.csv is compiled by hand from published sources. Each row names the
 likely cooling or process water supplier and classifies it as:

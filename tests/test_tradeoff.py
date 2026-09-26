@@ -1,6 +1,5 @@
 """Water-energy tradeoff: LBNL Figure 4.4 digitization, unit conversions, table invariants, figure checks."""
 import numpy as np
-import pandas as pd
 import pytest
 
 from peakflow import tradeoff as tr

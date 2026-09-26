@@ -61,7 +61,7 @@ def test_verify_fails_on_unrecorded_file(raw):
 
 
 def test_every_pipeline_document_has_a_fetch_step():
-    """The DRBC rule PDF, DRBC data-centers page, press pages and LBNL report are downloadable (audit G01)."""
+    """The DRBC rule PDF, DRBC data-centers page, press pages and LBNL report are downloadable."""
     from peakflow import docs
 
     for key, path in docs.REG_FILES.items():

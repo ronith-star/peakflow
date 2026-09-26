@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "peakflow"
-version = "0.1.0"
+version = "1.0.0"
 description = "PeakFlow cooling-water model and supply screen for data centers in the Delaware River Basin"
 requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "PeakFlow authors" }]
+authors = [{ name = "Ronith Lahoti" }, { name = "Veronica Guo" }]
 dependencies = [
     "numpy",
     "pandas",

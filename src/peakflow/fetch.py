@@ -12,7 +12,7 @@ Rules:
     time. A file already on disk that has no row is recorded with its mtime (UTC) as
     downloaded_utc and the note 'recorded from existing file'. Existing rows are never rewritten
     unless the file is re-downloaded.
-  * User-provided inputs (the two tracker CSVs) cannot be downloaded; missing CSVs are a hard error.
+  * Author-provided inputs (the two tracker CSVs) cannot be downloaded; missing CSVs are a hard error.
   * Documents read by peakflow.docs, calibration and wue (DRBC rule PDF, DRBC data-centers page, four
     press pages, LBNL 2024 report) and the Natural Earth populated places archive are downloaded from the
     URLs recorded in MANIFEST.md (steps 'documents' and 'basemap').
@@ -247,7 +247,7 @@ def fetch_echo(force: bool = False) -> None:
                    echo.majors_url(st) + " -> get_download (qcolumns " + echo.QCOLUMNS + ")")
     boundary = gpd.read_file(PROCESSED / "drb_boundary.geojson")
     counties = gpd.read_file(RAW / "gis" / "counties_pa_nj_de_ny.geojson")
-    # Null-design permittees need DMRs before select_permittees can assign their fallback flow (G05).
+    # Null-design permittees need DMRs before select_permittees can assign their fallback flow.
     nd = echo.null_design_ids(boundary, counties)
     echo.download_dmrs(nd)
     ids = list(dict.fromkeys(nd + list(echo.select_permittees(boundary, counties).npdes_id)))

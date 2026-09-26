@@ -3,18 +3,17 @@
 Selection logic (every excluded record is written to results/exclusions.csv):
   1. ECHO CWA facility search, NPDES individual permits flagged Major, states PA, NJ, DE, NY.
   2. Keep facilities whose county intersects the DRB boundary (WBD HUC6 020401 + 020402).
-  3. Keep publicly owned treatment works (CWPFacilityTypeIndicator == "POTW"); non-POTW majors
-     (power plants, refineries, industrial dischargers) are not municipal effluent sources.
-  4. Keep facilities whose screening flow exceeds 1 MGD. Screening flow is the ECHO design flow; when that is
+  3. Keep facilities whose screening flow exceeds 1 MGD. Screening flow is the ECHO design flow; when that is
      null it falls back to the ECHO actual average flow, then the past-calendar-year average flow, then the
      median monthly DMR flow in the window (flow_basis records which was used). Records with no flow from any
      source are excluded as "null design flow and no fallback flow"; others as "screening flow 1 MGD or less".
-  5. Keep facilities located inside the DRB boundary (reuse from outside would be an inter-basin transfer).
+  4. Flag, without excluding, publicly owned treatment works (is_potw) and facilities inside the DRB boundary
+     (in_drb). The supply screen applies its eligibility rule to is_potw (supply_screen.eligible_mask) and
+     carries in_drb as an inter-basin flag.
 DMR window: 36 monitoring months, 2023-07-01 to 2026-06-30.
 """
 from __future__ import annotations
 
-import datetime as dt
 import time
 from pathlib import Path
 
@@ -33,7 +32,7 @@ DMR_START = "07/01/2023"
 DMR_END = "06/30/2026"
 DMR_WINDOW = ("2023-07-01", "2026-06-30")
 
-# ICIS parameter codes for the chemistry requested (value reported as monthly average concentration)
+# ICIS parameter codes for the effluent chemistry columns (value reported as monthly average concentration)
 CHEM = {
     "tss_mg_l": ["00530"],
     "bod_mg_l": ["00310", "80082"],  # BOD5 or CBOD5

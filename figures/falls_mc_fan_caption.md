@@ -1,6 +1,6 @@
-# Figure X (falls_mc_fan)
+# Figure 7 (falls_mc_fan)
 
-**Figure X.**
+**Figure 7.**
 
 The line chart shows modeled daily cooling makeup at the Falls Township (AWS Keystone) campus by day of year for the calibrated hybrid cooling architecture [peakflow_model, falls_levittown_2026]. Each thin trace is one parameter draw run over one weather year chosen at random from 2005 to 2024 [falls_mc_fan.json]. Each run uses hourly Trenton (KTTN) wet-bulb temperature on local calendar days [noaa_isd, stull_2011]. The chart draws 300 of 2,000 draws (seed 20260926), and the drawn traces were selected with seed 20260927 [falls_mc_fan.json]. The shaded band spans the 10th to the 90th percentile, and the solid line is the 50th percentile across all 2,000 draws for each day of year [peakflow_model].
 

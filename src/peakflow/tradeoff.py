@@ -1,4 +1,4 @@
-"""Water-energy tradeoff by cooling architecture at Trenton (work order Part 5, item 15).
+"""Water-energy tradeoff by cooling architecture at Trenton.
 
 Outputs: results/water_energy_frontier.csv, results/lbnl_fig44_digitized.csv,
 figures/water_energy_frontier.{png,pdf,svg}, _caption.md, _data.csv; results/water_energy_frontier_check.json.
@@ -247,11 +247,11 @@ def render_figure(t: pd.DataFrame, stem: str = "water_energy_frontier", label_ov
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    from matplotlib.ticker import FixedLocator, LogLocator, NullFormatter, FuncFormatter
+    from matplotlib.ticker import FixedLocator, NullFormatter, FuncFormatter
 
     from . import styles as S
 
-    S.v2_rc()
+    S.figure_rc()
     labels = {**LABELS, **(label_overrides or {})}  # falls_township shares the hybrid label
     mm = 1 / 25.4
     fig = plt.figure(figsize=(FIG_W_MM * mm, FIG_H_MM * mm))
@@ -278,14 +278,14 @@ def render_figure(t: pd.DataFrame, stem: str = "water_energy_frontier", label_ov
     az.yaxis.set_major_locator(FixedLocator(np.arange(0, 12.1, 2)))
     az.set_ylabel("Non-IT energy (million kWh per MW-year)")
     # axis-break marks on the shared baseline
-    k = dict(color=S.V2_BLACK, lw=S.V2_LW_SECONDARY, clip_on=False, transform=fig.transFigure)
+    k = dict(color=S.FIG_BLACK, lw=S.FIG_LW_SECONDARY, clip_on=False, transform=fig.transFigure)
     for xm in (L + ZERO_W_MM, L + ZERO_W_MM + gap):
         x = xm / FIG_W_MM; y = B / FIG_H_MM
         fig.add_artist(plt.Line2D([x - 0.5 / FIG_W_MM, x + 0.5 / FIG_W_MM], [y - 0.9 / FIG_H_MM, y + 0.9 / FIG_H_MM], **k))
     fig.text((L + ZERO_W_MM + gap + main_w / 2) / FIG_W_MM, 1.6 / FIG_H_MM,
-             "Cooling water (million gallons per MW-year of IT load)", ha="center", va="bottom", fontsize=S.V2_FONT_SIZE)
+             "Cooling water (million gallons per MW-year of IT load)", ha="center", va="bottom", fontsize=S.FIG_FONT_SIZE)
 
-    bar_kw = dict(color=S.V2_GRAY_DARK, lw=S.V2_LW_SECONDARY, solid_capstyle="butt", zorder=3)
+    bar_kw = dict(color=S.FIG_GRAY_DARK, lw=S.FIG_LW_SECONDARY, solid_capstyle="butt", zorder=3)
     cap_pt = 1.6
     data_rows = []
     texts = {}
@@ -301,10 +301,10 @@ def render_figure(t: pd.DataFrame, stem: str = "water_energy_frontier", label_ov
             a.plot([xc, xc], [e[0], e[2]], **bar_kw)
             for ee in (e[0], e[2]):
                 a.annotate("", (xc, ee), xytext=(-cap_pt, 0), textcoords="offset points",
-                           arrowprops=dict(arrowstyle="-", lw=S.V2_LW_SECONDARY, color=S.V2_GRAY_DARK,
+                           arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_SECONDARY, color=S.FIG_GRAY_DARK,
                                            shrinkA=0, shrinkB=0))
                 a.annotate("", (xc, ee), xytext=(cap_pt, 0), textcoords="offset points",
-                           arrowprops=dict(arrowstyle="-", lw=S.V2_LW_SECONDARY, color=S.V2_GRAY_DARK,
+                           arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_SECONDARY, color=S.FIG_GRAY_DARK,
                                            shrinkA=0, shrinkB=0))
         # horizontal (water) bar; a zero low end continues across the break into the zero panel
         if not on_zero and wh > wl:
@@ -313,39 +313,39 @@ def render_figure(t: pd.DataFrame, stem: str = "water_energy_frontier", label_ov
             ends = [wh] + ([wl] if wl > 0 else [])
             for xx in ends:
                 ax.annotate("", (xx, e[1]), xytext=(0, cap_pt), textcoords="offset points",
-                            arrowprops=dict(arrowstyle="-", lw=S.V2_LW_SECONDARY, color=S.V2_GRAY_DARK,
+                            arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_SECONDARY, color=S.FIG_GRAY_DARK,
                                             shrinkA=0, shrinkB=0))
                 ax.annotate("", (xx, e[1]), xytext=(0, -cap_pt), textcoords="offset points",
-                            arrowprops=dict(arrowstyle="-", lw=S.V2_LW_SECONDARY, color=S.V2_GRAY_DARK,
+                            arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_SECONDARY, color=S.FIG_GRAY_DARK,
                                             shrinkA=0, shrinkB=0))
             if wl <= 0:
                 az.plot([0, 1], [e[1], e[1]], clip_on=False, **bar_kw)
                 for dy in (cap_pt, -cap_pt):
                     az.annotate("", (0, e[1]), xytext=(0, dy), textcoords="offset points",
-                                arrowprops=dict(arrowstyle="-", lw=S.V2_LW_SECONDARY, color=S.V2_GRAY_DARK,
+                                arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_SECONDARY, color=S.FIG_GRAY_DARK,
                                                 shrinkA=0, shrinkB=0))
         if r.arch_key == "falls_township":
-            a.plot([xc], [e[1]], marker="D", ms=7.0, mfc="none", mec=S.V2_BLACK, mew=S.V2_LW_PRIMARY, ls="none",
+            a.plot([xc], [e[1]], marker="D", ms=7.0, mfc="none", mec=S.FIG_BLACK, mew=S.FIG_LW_PRIMARY, ls="none",
                    zorder=6)
         elif r.water_source == "model":
-            a.plot([xc], [e[1]], marker="o", ms=4.0, mfc=S.V2_ACCENT, mec=S.V2_ACCENT, ls="none", zorder=5)
+            a.plot([xc], [e[1]], marker="o", ms=4.0, mfc=S.FIG_ACCENT, mec=S.FIG_ACCENT, ls="none", zorder=5)
         else:
-            a.plot([xc], [e[1]], marker="o", ms=4.0, mfc="white", mec=S.V2_ACCENT, mew=S.V2_LW_PRIMARY,
+            a.plot([xc], [e[1]], marker="o", ms=4.0, mfc="white", mec=S.FIG_ACCENT, mew=S.FIG_LW_PRIMARY,
                    ls="none", zorder=5)
         if r.arch_key in ZERO_LABELS:
             txt, dx, dy, ha, va = ZERO_LABELS[r.arch_key]
             texts[r.arch_key] = a.annotate(txt, (xc, e[1]), xytext=(dx, dy), textcoords="offset points", ha=ha,
-                                           va=va, fontsize=S.V2_FONT_SIZE, zorder=7, annotation_clip=False,
+                                           va=va, fontsize=S.FIG_FONT_SIZE, zorder=7, annotation_clip=False,
                                            linespacing=1.05)
         elif r.arch_key in labels:
             txt, lx, ly, ha, va = labels[r.arch_key]
             lx = xc if lx is None else lx
             # lines align on the side the leader leaves from, so an offset leader stays attached to every line
-            texts[r.arch_key] = a.text(lx, ly, txt, ha=ha, va=va, fontsize=S.V2_FONT_SIZE, zorder=7,
+            texts[r.arch_key] = a.text(lx, ly, txt, ha=ha, va=va, fontsize=S.FIG_FONT_SIZE, zorder=7,
                                        linespacing=1.05, multialignment=ha)
             leaders.append((r.arch_key, a, (xc, e[2]), (lx, ly)))
             a.annotate("", (xc, e[2]), xytext=(lx, ly), textcoords="data",
-                       arrowprops=dict(arrowstyle="-", lw=S.V2_LW_TERTIARY, color=S.V2_GRAY,
+                       arrowprops=dict(arrowstyle="-", lw=S.FIG_LW_TERTIARY, color=S.FIG_GRAY,
                                        shrinkA=LEADER_GAP_PT, shrinkB=LEADER_GAP_PT), zorder=2)
         data_rows.append({"arch_key": r.arch_key, "label": r.label, "marker": "zero panel" if on_zero else "log panel",
                           "water_low_gal_per_mw_year": wl, "water_central_gal_per_mw_year": wc,
@@ -357,7 +357,7 @@ def render_figure(t: pd.DataFrame, stem: str = "water_energy_frontier", label_ov
 
 
 def overlap_report(fig) -> list:
-    from .plotting.figures_v2 import text_overlaps
+    from .plotting.supply_figures import text_overlaps
     return text_overlaps(fig)
 
 
@@ -418,10 +418,6 @@ def _g(x: float) -> str:
     return f"{v:,.0f}" if d >= 2 else f"{v:,.{max(0, 2 - d)}f}"
 
 
-def _m(x: float) -> str:
-    return f"{x / 1e6:.2f} million"
-
-
 def caption(t: pd.DataFrame, model: dict) -> str:
     T = t.set_index("arch_key")
     tw, hy, ac, aw, aa, fa = (T.loc[k] for k in ("evaporative_tower", "hybrid", "air_cooled_chiller",
@@ -430,7 +426,8 @@ def caption(t: pd.DataFrame, model: dict) -> str:
     cal = model["calibration"]
     W = "[water_energy_frontier.csv]"   # per-row values are tabulated in results/water_energy_frontier.csv
     return (
-        "**Figure X.**\n\n"
+        "# Figure 8 (water_energy_frontier)\n\n"
+        "**Figure 8.**\n\n"
         "The chart shows annual cooling water and non-IT energy per megawatt of IT load for five cooling "
         "architectures at Trenton, New Jersey. Points are central values, and bars span the low and high values "
         "on each axis. Filled circles are modeled on Trenton hourly wet-bulb temperature for 2005 to 2024 "
@@ -468,58 +465,6 @@ def caption(t: pd.DataFrame, model: dict) -> str:
     )
 
 
-def results_fragment(t: pd.DataFrame, model: dict) -> str:
-    T = t.set_index("arch_key")
-    tw, hy, ac, aw, aa, tm = (T.loc[k] for k in ("evaporative_tower", "hybrid", "air_cooled_chiller",
-                                                  "airside_adiabatic_wcc", "airside_adiabatic_acc",
-                                                  "evaporative_tower_midsize"))
-    ss = json.loads((RESULTS / "supply_summary.json").read_text())
-    peak_per_mw = ss["demand_rates"]["peak_day_gpd_per_mw"]
-    n_match, n_sites = ss["class_counts"]["matchable"], ss["n_sites"]
-    pen_hyb = ac.energy_central - hy.energy_central
-    pen_like = ac.energy_central - tm.energy_central
-    return (
-        "The cooling-system choice trades water against electricity, which is the first reason developers resist "
-        "reuse-first terms. At Trenton an evaporative tower uses about "
-        f"{_g(tw.water_central)} gallons per MW-year of IT load and the calibrated hybrid about "
-        f"{_g(hy.water_central)} gallons [peakflow_model; water_energy_frontier.csv], while an air-cooled "
-        "chiller uses no evaporative makeup [peakflow_model]. The air-cooled chiller pays for that in energy: "
-        f"its median non-IT load in LBNL 2024 Figure 4.4 is PUE {ac.pue_central:.2f}, or {_m(ac.energy_central)} "
-        f"kWh per MW-year, against PUE {hy.pue_central:.2f} ({_m(hy.energy_central)} kWh) for a Large-scale dry "
-        f"cooler with adiabatic assist and PUE {tw.pue_central:.2f} ({_m(tw.energy_central)} kWh) for a "
-        "Large-scale waterside economizer with a cooling tower [shehabi_2024; water_energy_frontier.csv]. Part "
-        "of that gap reflects facility size, because LBNL draws the air-cooled chiller only for Midsize "
-        f"facilities; within the Midsize class the gap between air-cooled and water-cooled chillers is "
-        f"{_m(pen_like)} kWh per MW-year, compared with {_m(pen_hyb)} kWh between the air-cooled chiller and the "
-        "hybrid [shehabi_2024; water_energy_frontier.csv]. LBNL states the same tradeoff directly: evaporative "
-        "systems are generally more energy efficient, and air-cooled chillers use no water but more energy "
-        "[shehabi_2024, p. 45]. The second reason is treatment. Secondary municipal effluent carries "
-        "biodegradable organic matter, ammonia, carbonate and phosphate that drive biofouling, corrosion and "
-        "scaling, and a Department of Energy study of power plant cooling found tertiary treatment essential for its "
-        "use in recirculating systems [dzombak_2012, PDF p. 3]; it estimated tertiary-treated makeup at $0.91 to $1.32 per thousand gallons in 2009 dollars, above the $0.74 "
-        "for river withdrawal and treatment and below the $2.95 average for city water, and the DRBC raw-water "
-        "rate in the same comparison was $0.08 per thousand gallons [dzombak_2012, PDF pp. 15 and 190]. Supply "
-        f"reliability is a related concern: at the calibrated peak-day rate of {_g(peak_per_mw)} gallons per day per "
-        f"MW of IT load [supply_summary.json], {n_match} of {n_sites} planned sites sit within 10 miles of a "
-        "treatment plant whose median flow could cover their peak demand [supply_summary.json]. The third is "
-        "approval: the basin's data centers buy water from public systems and none has applied to the Commission "
-        "[drbc_datacenters_2026], so a reuse contract replaces a supply that needs no Commission review with a "
-        "new treatment and delivery arrangement, whose state approvals were not reviewed here. Reclaimed water "
-        "changes the tradeoff because it lowers the scarcity cost of the water axis rather than moving any point "
-        "along it. An evaporative tower or the calibrated hybrid supplied from effluent keeps its energy "
-        f"advantage of {_m(ac.energy_central - tw.energy_central)} and {_m(pen_hyb)} kWh per MW-year over the "
-        "air-cooled chiller [water_energy_frontier.csv] while drawing nothing from potable or river supply, so on "
-        "the two quantities a basin regulator weighs, fresh-water withdrawal and electricity, it dominates the "
-        "air-cooled design, provided the energy for tertiary treatment and delivery of the effluent, which is not "
-        "counted here, stays below that margin. The airside economizer with adiabatic cooling reaches a lower median PUE, "
-        f"{aw.pue_central:.2f} with a water-cooled chiller and {aa.pue_central:.2f} with an air-cooled chiller "
-        f"[shehabi_2024], using {_g(aw.water_central)} and {_g(aa.water_central)} gallons per MW-year "
-        "[water_energy_frontier.csv]; these designs are also candidates for effluent supply, although the "
-        "reported water use of the air-cooled variant, 0.1 to 0.3 L/kWh, is well above LBNL's simulated value "
-        "[shehabi_2024, p. 47]."
-    )
-
-
 def main():
     lbnl = digitize_fig44()
     lbnl.to_csv(RESULTS / "lbnl_fig44_digitized.csv")
@@ -536,16 +481,9 @@ def main():
     (RESULTS / "water_energy_frontier_check.json").write_text(json.dumps(
         {"text_overlaps": ov, "label_symbol_hits": hits, "edge_margins_mm": edges, "model": model,
          "figure_mm": [FIG_W_MM, FIG_H_MM]}, indent=2, default=str))
-    frag = ROOT_FRAG / "agentD_results.md"
-    frag.parent.mkdir(parents=True, exist_ok=True)
-    frag.write_text(results_fragment(t, model) + "\n")
     print(json.dumps({"overlaps": ov, "label_symbol_hits": hits, "edge_margins_mm": edges}, default=str))
     return t
 
-
-from .paths import ROOT  # noqa: E402
-
-ROOT_FRAG = ROOT / "scratch" / "fragments"
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,6 @@
-**Figure X.**
+# Figure 8 (water_energy_frontier)
+
+**Figure 8.**
 
 The chart shows annual cooling water and non-IT energy per megawatt of IT load for five cooling architectures at Trenton, New Jersey. Points are central values, and bars span the low and high values on each axis. Filled circles are modeled on Trenton hourly wet-bulb temperature for 2005 to 2024 [noaa_isd, stull_2011, peakflow_model]. Open circles take water from the LBNL simulated or reported site water usage effectiveness [shehabi_2024]. The open diamond is the Falls Township (AWS Keystone) filing of 135,000 gallons per day [falls_levittown_2026]. That figure is multiplied by 365 and divided by the calibrated 331.19 MW of IT load, which gives 149,000 gallons per MW-year [peakflow_model]. The diamond is placed at the assumed power usage effectiveness (PUE) of 1.2 [peakflow_model]. It coincides with the hybrid central value because the hybrid is calibrated to that filing.
 

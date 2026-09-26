@@ -1,4 +1,4 @@
-"""Tests for peakflow.cycles and peakflow.wqp (work order items 12 and 13)."""
+"""Tests for peakflow.cycles and peakflow.wqp."""
 import json
 import math
 

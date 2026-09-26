@@ -1,6 +1,6 @@
-# Figure X (peak_uncertainty)
+# Figure 5 (peak_uncertainty)
 
-**Figure X.**
+**Figure 5.**
 
 The range chart compares the simulated peak-day cooling makeup of each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026] with the median effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. For each site, the dot marks the 50th percentile (P50) of 10,000 Monte Carlo draws [peak_uncertainty.json]. The light bar spans P50 to the 90th percentile (P90), and the tick marks P90 [peakflow_model]. The open square marks the plant's median monthly flow converted to gallons per day [epa_echo]. Rows are sorted by P50 and labeled with the site number of the map key [site_key.csv]. Gray rows are the 2 sites with no eligible plant within 10 miles [supply_screen.csv]. The right-hand notes give each site's status. P90 exceeds the plant's median flow at 21 sites, and the plant's median flow covers P90 at 1 site [peak_uncertainty.csv]. The other 2 sites have no plant within 10 miles [peak_uncertainty.csv]. The horizontal axis is logarithmic.
 

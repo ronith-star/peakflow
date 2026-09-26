@@ -50,7 +50,10 @@ MANIFEST_COLS = ["file", "source_url", "downloaded_utc", "rows", "sha256", "note
 
 
 def read_manifest() -> dict[str, list[str]]:
-    """Rows of data/raw/MANIFEST.md keyed by file (relative to data/raw); older 5-column rows padded."""
+    """Rows of data/raw/MANIFEST.md keyed by file (relative to data/raw).
+
+    Rows with fewer than six columns are padded.
+    """
     rows = {}
     if MANIFEST.exists():
         for ln in MANIFEST.read_text().splitlines():

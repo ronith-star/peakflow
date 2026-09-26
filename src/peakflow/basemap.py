@@ -10,7 +10,6 @@ Layers and sources:
 """
 from __future__ import annotations
 
-import io
 import json
 import time
 import zipfile
@@ -137,7 +136,7 @@ CB_FILES = {k: f"https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_{k}_5
 
 
 def fetch_cartographic(force=False):
-    """Census cartographic boundary files (1:500,000, shoreline-clipped) for the v2 land mask and state lines."""
+    """Census cartographic boundary files (1:500,000, shoreline-clipped) for the map land mask and state lines."""
     from .paths import record_download
     for k, url in CB_FILES.items():
         dst = RAW / "gis" / f"cb_2023_us_{k}_500k.zip"
@@ -145,7 +144,8 @@ def fetch_cartographic(force=False):
             continue
         r = _get(url)
         dst.write_bytes(r.content)
-        record_download(dst, url, note="Census cartographic boundary 1:500k, shoreline-clipped; v2 map")
+        record_download(dst, url,
+                        note="Census cartographic boundary 1:500k, shoreline-clipped; land mask and state lines")
 
 
 def fetch_all(force=False):

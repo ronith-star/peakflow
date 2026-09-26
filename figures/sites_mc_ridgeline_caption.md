@@ -1,6 +1,6 @@
-# Figure X (sites_mc_ridgeline)
+# Figure 6 (sites_mc_ridgeline)
 
-**Figure X.**
+**Figure 6.**
 
 The ridgeline chart shows one density curve for each of the 24 active planned data center sites in the Delaware River Basin [trackdatacenters_2026]. Each curve is a Gaussian kernel density (Scott's bandwidth) of the base-10 logarithm of simulated peak-day cooling makeup from 10,000 Monte Carlo draws [peakflow_model]. Each density is scaled to a common peak height, so the curves compare shape and position, not probability mass. The short colored tick marks each site's 90th percentile (P90) [sites_mc_ridgeline_data.csv]. The black bar marks the median monthly effluent flow of the nearest eligible municipal plant within 10 miles [epa_echo]. Rows are sorted by the median of the draws and labeled with the site number of the map key [site_key.csv]. The 2 gray rows have no eligible plant within 10 miles [supply_screen.csv]. Draws with zero makeup (the air-cooled architecture) make up 7.0 percent of each site's draws and are excluded from the densities [sites_mc_ridgeline_data.csv]. Of each site's draws, 7.0 to 7.2 percent fall below the 100,000 gallon per day left edge of the axis [sites_mc_ridgeline_data.csv]. P90 exceeds the plant's median flow at 21 of the 22 sites with a plant [peak_uncertainty.json]. Only Allentown Warehouse Conversion Data Center is covered at P90 [peak_uncertainty.csv]. The horizontal axis is logarithmic.
 

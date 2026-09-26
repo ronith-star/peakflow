@@ -7,4 +7,9 @@ date-released: 2026-09-27
 license: MIT
 repository-code: "https://github.com/ronith-star/peakflow"
 authors:
-  - name: "PeakFlow authors"
+  - family-names: "Lahoti"
+    given-names: "Ronith"
+    affiliation: "University of Pennsylvania"
+  - family-names: "Guo"
+    given-names: "Veronica"
+    affiliation: "University of Pennsylvania"

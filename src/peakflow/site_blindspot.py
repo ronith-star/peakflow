@@ -1,4 +1,4 @@
-"""Per-site DRBC blind-spot test for the 24 active planned sites (work order item 11, per-site half).
+"""Per-site DRBC blind-spot test for the 24 active planned sites.
 
 For each site in results/supply_screen.csv the calibrated hybrid (results/calibration.json 'primary') is run at the
 site's it_mw (stated campus MW / PUE, or an assumed 100 MW IT; column capacity_basis). At fixed PUE, cycles and
@@ -14,9 +14,10 @@ Columns (same rules as blindspot.summarize):
   averaging_blind_spot      below_trigger_30day and peak_day_max_gpd > 100,000
   review_if_self_supplied   not below_trigger_30day
 
-Supplier join: data/sites/site_suppliers.csv (written by another agent) supplies supplier_class
-(public_or_authority, self_supplied, unknown). A site that purchases from a public or authority system is not
-itself a withdrawal project and needs no DRBC review [drbc_datacenters_2026; drbc_admin_manual].
+Supplier join: data/sites/site_suppliers.csv (compiled by hand from published sources and validated by
+peakflow.suppliers) supplies supplier_class (public_or_authority, self_supplied, unknown). A site that purchases
+from a public or authority system is not itself a withdrawal project and needs no DRBC review
+[drbc_datacenters_2026; drbc_admin_manual].
 """
 from __future__ import annotations
 
@@ -24,7 +25,6 @@ import json
 import time
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 from . import blindspot as B
@@ -67,6 +67,11 @@ def band_mw(d1: pd.Series) -> tuple[float, float]:
 
 
 def wait_for_suppliers(path: Path = SUPPLIERS, timeout_s: float = 1800.0, poll_s: float = 30.0) -> bool:
+    """Optional wait for data/sites/site_suppliers.csv when that file is produced separately.
+
+    Polls every poll_s seconds until the file has rows with site_id and supplier_class, and returns False after
+    timeout_s. The Makefile passes --no-wait, so the build reads the file only if it is present.
+    """
     t0 = time.time()
     while True:
         if path.exists() and path.stat().st_size > 0:
@@ -74,7 +79,7 @@ def wait_for_suppliers(path: Path = SUPPLIERS, timeout_s: float = 1800.0, poll_s
                 s = pd.read_csv(path)
                 if {"site_id", "supplier_class"} <= set(s.columns) and len(s):
                     return True
-            except Exception:  # file mid-write; retry
+            except Exception:  # file incomplete or unreadable; retry
                 pass
         if time.time() - t0 >= timeout_s:
             return False
@@ -122,7 +127,7 @@ def run(wait: bool = True, timeout_s: float = 1800.0) -> dict:
         out["suppliers"] = {"status": "joined", "file": "data/sites/site_suppliers.csv", **c}
     else:
         out["suppliers"] = {"status": "pending", "file": "data/sites/site_suppliers.csv",
-                            "note": "supplier file not present; counts pending"}
+                            "note": "supplier file not present; supplier counts not computed"}
     (RESULTS / "site_blindspot_summary.json").write_text(json.dumps(out, indent=1))
     return out
 

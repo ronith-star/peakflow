@@ -1,4 +1,4 @@
-"""Deliverable A: two DRBC review blind spots for data center cooling water.
+"""Table A: two DRBC review blind spots for data center cooling water.
 
 (a) Averaging blind spot. A withdrawal project is excluded from Commission review when "the daily
     average gross withdrawal during any 30 consecutive day period does not exceed 100,000 gallons"
@@ -260,10 +260,10 @@ def footnotes(t: pd.DataFrame) -> list[str]:
     n_days = len(pd.date_range(START, END))
     cal_path = "results/calibration.json " + "/".join(CALIBRATIONS[t.attrs["calibration"]])
     return [
-        (("Shaded rows are" if c["n_averaging_blind_spot_strict"] else "Shading would mark") +
-         " the averaging blind spot: below the threshold on every 30-day average but above "
-         "100,000 gal on at least one day" +
-         ("." if c["n_averaging_blind_spot_strict"] else "; no configuration in the grid qualifies.") +
+        (("Shaded rows are the averaging blind spot: below the threshold on every 30-day average but above "
+          "100,000 gal on at least one day." if c["n_averaging_blind_spot_strict"] else
+          "No configuration in the grid falls in the averaging blind spot, defined as below the threshold on "
+          "every 30-day average but above 100,000 gal on at least one day.") +
          f" Under a looser annual-mean test, "
          f"{c['n_averaging_blind_spot_loose_annual_mean']} of {c['n_configs']} configurations would qualify. "
          "The Falls row is a reference and is not counted."),
@@ -310,8 +310,7 @@ def write_markdown(t: pd.DataFrame) -> str:
             cells = [f"**{c}**" for c in cells]
         lines.append("| " + " | ".join(cells) + " |")
     notes = footnotes(t)
-    notes[0] = notes[0].replace("Shaded rows are", "Bold rows (shaded in the figure) are").replace(
-        "Shading would mark", "Bold type (shading in the figure) would mark")
+    notes[0] = notes[0].replace("Shaded rows are", "Bold rows (shaded in the figure) are")
     lines += [""] + [n + "  " for n in notes] + ["", "Sources: " + "; ".join(f"[{k}]" for k in KEYS_ALL) + ".", ""]
     txt = "\n".join(lines)
     (RESULTS / "table_blindspot.md").write_text(txt)
@@ -345,14 +344,21 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
                 f"averaging blind spot only for IT loads between {sig3(band[0])} MW and {sig3(band[1])} MW, which "
                 "lie below the tabulated grid." if band else
                 "The calibrated hybrid has no IT-load band that falls in the averaging blind spot.")
-    wet_txt = ""
+    wet_txt = wet_check_txt = ""
     if t_wet is not None:
         cw = counts(t_wet)
-        wet_txt = (f" The wet-share sensitivity calibration sets evaporative operation on about 2 % of hours, and that "
-                   f"fit cannot reach the 135,000 gal/day average. Under that calibration, the averaging blind spot "
+        # "holds" is stated only when both blind-spot counts match the primary calibration's counts
+        same = all(cw[k] == c[k] for k in ("n_averaging_blind_spot_strict", "n_purchased_supply_blind_spot"))
+        wet_txt = ((" The conclusion holds under the wet-share sensitivity calibration, which sets evaporative "
+                    "operation on about 2 % of hours and falls short of the 135,000 gal/day average." if same else
+                    " The wet-share sensitivity calibration sets evaporative operation on about 2 % of hours and "
+                    "falls short of the 135,000 gal/day average.") +
+                   f" Under that calibration, the averaging blind spot "
                    f"contains {cw['n_averaging_blind_spot_strict']} of 12 configurations and the purchased-supply "
                    f"blind spot contains {cw['n_purchased_supply_blind_spot']} of 12 "
                    f"(results/table_blindspot_wet2pct.csv).")
+        wet_check_txt = (" The wet-share sensitivity calibration above tests the table's counts against an "
+                         "alternative target set.")
     ratio = p["targets"]["peak_gpd"] / p["targets"]["avg_gpd"]
     rule_cite = RULE_CITE.replace("; ", " and ")   # captions carry no semicolons
     keys_txt = ", ".join(KEYS_ALL[:-1]) + " and " + KEYS_ALL[-1]
@@ -366,7 +372,7 @@ def write_caption(t: pd.DataFrame, t_wet: pd.DataFrame | None = None) -> str:
 
 The table lists modeled daily cooling-water makeup for twelve data center configurations and a reference row for the Falls Township (AWS Keystone) project. The configurations combine four IT loads (50, 100, 200 and 400 MW) with three cooling architectures (evaporative tower, calibrated hybrid and air-cooled chiller). The table tests two mechanisms by which such demand can escape Delaware River Basin Commission review.
 
-The first mechanism is an averaging blind spot. A withdrawal is excluded from review when "{RULE_QUOTE}" [drbc_admin_manual] ({rule_cite}). Shading would mark configurations that stay below the threshold on every 30-day average but exceed 100,000 gal on at least one day. {strict_txt} {loose_txt} {band_txt}
+The first mechanism is an averaging blind spot. A withdrawal is excluded from review when "{RULE_QUOTE}" [drbc_admin_manual] ({rule_cite}). The averaging blind spot comprises configurations that stay below the threshold on every 30-day average but exceed 100,000 gal on at least one day. {strict_txt} {loose_txt} {band_txt}
 
 The second mechanism is a purchased-supply blind spot. The thresholds apply to a project's own withdrawal. A data center that buys water from an existing public or authority system is therefore not itself a withdrawal project, and no review is triggered regardless of size. The Commission states: "{DRBC_DC_QUOTE}" [drbc_datacenters_2026]. Of the twelve configurations, {c['n_review_if_self_supplied']} would require review if self-supplied. None would require review if the water is purchased, so the purchased-supply blind spot covers all {c['n_purchased_supply_blind_spot']}. The Falls project reports an average of 135,000 gal/day [falls_levittown_2026] and a peak of 4.4 million gal/day [falls_levittown_2026, falls_herald_2026], a peak-to-average ratio of {sig3(ratio)}. Its modeled maximum 30-day average is {sig3(p['diagnostics']['max_30day_avg_gpd'])} gal/day, so it would require review if self-supplied [calibration.json]. It is instead supplied by the Morrisville Municipal Authority service-water system, whose allocation is reported as {MORRISVILLE_ALLOCATION_MGD} million gal/day [falls_levittown_2026].{wet_txt}
 
@@ -375,7 +381,7 @@ The flow columns give, among days with makeup above 100,000 gal, the share on wh
 **Assumptions**
 
 1. All gallon values other than the two reported Falls values are model-derived and are not measurements. Makeup equals evaporation multiplied by C/(C-1), with 4 cycles of concentration and drift neglected. Heat rejected equals IT load multiplied by a PUE of 1.2, and the conversion to evaporation uses a latent heat of 2.43 MJ/kg.
-2. The hybrid architecture uses the switchover wet-bulb temperature ({sig3(p['t_sw_c'])} C), part-load exponent ({sig3(p['gamma'])}) and reference wet-bulb temperature ({sig3(p['twb_ref_c'])} C) of the primary (peak-day) calibration in results/calibration.json. That calibration reproduces the reported Falls average, peak day and wet-operation share. With three parameters and three targets the fit is exactly determined, so this agreement is not validation. The IT load is set by the grid rather than by the calibrated value.
+2. The hybrid architecture uses the switchover wet-bulb temperature ({sig3(p['t_sw_c'])} C), part-load exponent ({sig3(p['gamma'])}) and reference wet-bulb temperature ({sig3(p['twb_ref_c'])} C) of the primary (peak-day) calibration in results/calibration.json. That calibration reproduces the reported Falls average, peak day and wet-operation share. With three parameters and three targets, the fit is exactly determined by design, so this agreement confirms that a consistent parameter set exists and is not a validation.{wet_check_txt} The IT load is set by the grid rather than by the calibrated value.
 3. Climate is KTTN (Trenton-Mercer Airport) hourly data from 2005 to 2024 [noaa_isd]. It is converted to wet-bulb temperature with Stull (2011) [stull_2011], with relative humidity from the Magnus form [alduchov_1996]. Daily totals use America/New_York calendar days. Days with fewer than 20 valid hours are treated as missing ({c['n_nan_days']} of {len(pd.date_range(START, END)):,} days). A 30-day average is computed when at least 27 of its 30 days are valid.
 4. Makeup is treated as gross withdrawal, with no credit for return flow. Whether a configuration is self-supplied or purchased is a scenario, not an observation, for every grid row.
 5. The 7Q10 is a log-Pearson Type III fit by the method of moments to annual minimum 7-day mean flows for 113 complete climatic years (April to March, 1914 to 2026), using the unadjusted sample skew. Day-of-year percentiles use the 2005 to 2024 daily record.
@@ -482,12 +488,12 @@ def render_figure(t: pd.DataFrame, stem: str = "table_blindspot"):
     FIGURES.mkdir(parents=True, exist_ok=True)
     from .falls_figures import text_boxes_check  # lazy: falls_figures imports this module
 
-    chk = text_boxes_check(fig)  # QA gate H1: text-text, text-edge, text-line and text-symbol overlaps
+    chk = text_boxes_check(fig)  # Overlap check: text-text, text-edge, text-line and text-symbol overlaps
     chk["pass"] = not any(chk[k] for k in ("text_text", "text_outside_figure", "text_line", "text_symbol"))
     if stem == "table_blindspot":
         (RESULTS / f"{stem}_check.json").write_text(json.dumps({"figure": f"figures/{stem}", **chk}, indent=1,
                                                                default=str))
-    # G5 outputs png/pdf/svg for the published stem; test stems write png/pdf only (the test removes those two)
+    # The published stem is written as png, pdf and svg; test stems write png and pdf, which the test deletes.
     for ext in ("png", "pdf", "svg") if stem == "table_blindspot" else ("png", "pdf"):
         fig.savefig(FIGURES / f"{stem}.{ext}", dpi=300, facecolor="white")
     fig._drawn_cells = drawn
@@ -547,15 +553,17 @@ def write_brief_table():
     } for r in rows])
     assert out.shape[0] <= 6 and out.shape[1] <= 5
     out.to_csv(RESULTS / "table_blindspot_brief.csv", index=False)
-    notes = ("Notes for results/table_blindspot_brief.csv. Except for the 15 MW hybrid row, rows and cells are copied from results/table_blindspot.csv "
-             "(primary calibration); footnote marks are kept. The review trigger is a daily average gross withdrawal "
-             "above 100,000 gallons over any 30 consecutive days [drbc_admin_manual]; a project that buys water "
-             "from an existing public or authority system is not itself reviewed [drbc_datacenters_2026]. "
-             f"The {BRIEF_BAND_MW} MW hybrid row is the 100 MW hybrid scaled linearly (makeup is proportional to "
-             f"IT load); it lies inside the averaging band of {lo:.2f} to {hi:.1f} MW, where every 30-day average is "
-             "below the trigger but the peak day exceeds 100,000 gallons [peakflow_model]. "
-             "Modeled values are [peakflow_model]; Falls values are reported [falls_levittown_2026; "
-             "falls_herald_2026], except the maximum 30-day average, which is modeled.\n")
+    notes = ("Notes for results/table_blindspot_brief.csv. Every row except the "
+             f"{BRIEF_BAND_MW} MW hybrid row takes its values and footnote marks from results/table_blindspot.csv "
+             "(primary calibration). DRBC review is triggered when the daily average gross withdrawal over any 30 "
+             "consecutive days exceeds 100,000 gallons [drbc_admin_manual]. A project that buys water from an "
+             "existing public or authority system is not itself reviewed [drbc_datacenters_2026]. "
+             f"The {BRIEF_BAND_MW} MW hybrid row scales the 100 MW hybrid row linearly, because modeled makeup is "
+             f"proportional to IT load [peakflow_model]. It lies inside the averaging band of {lo:.2f} to {hi:.1f} "
+             "MW, where every 30-day average is below the trigger but the peak day exceeds 100,000 gallons "
+             "[peakflow_model]. The Falls average and peak day are reported values [falls_levittown_2026, "
+             "falls_herald_2026]. Every other value, including the Falls maximum 30-day average, is modeled "
+             "[peakflow_model].\n")
     (RESULTS / "table_blindspot_brief_notes.md").write_text(notes)
     return out
 

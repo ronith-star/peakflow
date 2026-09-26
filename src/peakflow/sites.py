@@ -3,7 +3,7 @@
 Primary list: a hand-built export of the trackdatacenters.com DRB records supplied by the author
 (data/raw/trackdatacenters_drb.csv, 40 rows; data/raw/trackdatacenters_drb_nearmiss.csv, 23 rows
 outside the basin). The tracker is cited once as the site list [trackdatacenters_2026]; each row's
-source_url is that site's primary citation. The tracker's API was NOT scraped.
+source_url is that site's primary citation. The tracker's API was not scraped.
 
 Rules (applied in this order):
   1. Map and counts use record_type == "Data Center" only; zoning ordinances, site advertisements and
@@ -24,7 +24,8 @@ Source verification (source_verified; dashed outline when False):
   * The hand content check in data/processed/site_url_verification.csv records whether the page names the site.
   * data/sites/source_url_overrides.csv replaces dead or bot-blocked sources with a Wayback snapshot or an
     alternate outlet (original kept in original_url).
-  * FORCE_UNVERIFIED lists sites held unverified until reconfirmed, whatever the checks above say.
+  * FORCE_UNVERIFIED lists sites classed as unverified regardless of the checks above, with the reason written
+    to verification_note.
 Every row not drawn on the map is logged to results/exclusions.csv with stage 'sites' and its reason.
 """
 from __future__ import annotations
@@ -47,24 +48,24 @@ ASSUMED_IT_MW = 100.0
 NEAR_DIVIDE_KM = 2.0
 BOT_BLOCK_DOMAINS = urlcheck.BOT_BLOCK_DOMAINS
 EXCLUSION_STAGE = "sites"
-# Sites whose source is held unverified until reconfirmed by the author (audit G10, 2026-09-25).
+# Sites whose source is classed as unverified regardless of the URL and content checks; the note states why.
 FORCE_UNVERIFIED = {
-    "DRB07": "the audit's live fetch on 2026-09-25 returned HTTP 403 where the repository had recorded 200; "
-             "a later fetch that day returned 200 and names DataOne and Vineland, and the only Wayback capture "
-             "is a 404, so the source is held unverified until the author reconfirms it",
-    "DRB33": "original Limerick document URL is session-bound and returns 'Download has expired'. The Wayback "
+    "DRB07": "a live fetch on 2026-09-25 returned HTTP 403 where the cached check had recorded 200; a later fetch "
+             "that day returned 200 and the page names DataOne and Vineland, but the only Wayback capture is a 404, "
+             "so the source is classed as unverified",
+    "DRB33": "the original Limerick document URL is session-bound and returns 'Download has expired'; the Wayback "
              "capture of the township hearings page (2026-07-16) names the applicant, address and Linfield, but it "
-             "was not compared against the original document, so the source is held unverified pending the author",
+             "was not compared against the original document, so the source is classed as unverified",
 }
 
-# Sources whose content check was done by eye because the page has no machine-readable text (audit G10).
+# Sources whose content check was done by eye because the page has no machine-readable text.
 MANUAL_CHECK = {
     "DRB10": "manual check: source is a scanned 5-page PDF without a text layer (Andover Ordinance #2026-13), "
              "read visually",
     "DRB22": "manual check: source is a YouTube video; only the title and description were checked",
 }
 
-# Backward-compatible aliases (the live check now lives in peakflow.urlcheck).
+# Aliases for peakflow.urlcheck.check_url and check_urls.
 check_url = urlcheck.check_url
 check_urls = urlcheck.check_urls
 

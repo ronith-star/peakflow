@@ -1,4 +1,4 @@
-"""Per-site blind-spot test (work order item 11): linear scaling, agreement with the grid, supplier join."""
+"""Per-site blind-spot test: linear scaling, agreement with the grid, supplier join."""
 import pandas as pd
 import pytest
 

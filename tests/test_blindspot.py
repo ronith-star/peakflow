@@ -104,7 +104,6 @@ def test_two_mechanisms():
     assert falls["Configuration"] == bs.FALLS_LABEL
     assert falls[bs.DISPLAY_COLUMNS[2][0]] == "135,000" + bs.FN_FALLS
     assert falls[bs.DISPLAY_COLUMNS[5][0]] == "4,400,000" + bs.FN_FALLS
-    col = {c[0].split("{")[0]: c[0] for c in bs.DISPLAY_COLUMNS}
     self_col = next(c[0] for c in bs.DISPLAY_COLUMNS if c[0].startswith("Review if self-supplied"))
     buy_col = next(c[0] for c in bs.DISPLAY_COLUMNS if c[0].startswith("Review if purchased"))
     assert falls[self_col] == "Yes" and falls[buy_col] == "No"
@@ -131,7 +130,7 @@ def pd_read(path):
 
 def test_days_column_uses_30day_window_and_valid_years():
     """The trigger-test days column counts days whose trailing 30-day average exceeds the trigger, divided by
-    valid window-years; the single-day count is a separate column (audit G06)."""
+    valid window-years; the single-day count is a separate column."""
     import pandas as pd
 
     t = pd.read_csv(RESULTS / "blindspot_raw.csv")

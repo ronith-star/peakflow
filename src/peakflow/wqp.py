@@ -1,4 +1,4 @@
-"""Water Quality Portal (WQP) retrieval of makeup-water chemistry near each matched plant (work order item 12).
+"""Water Quality Portal (WQP) retrieval of makeup-water chemistry near each matched plant.
 
 For every matched municipal plant (the unique ``plant_npdes_id`` values of results/supply_screen.csv plus the
 Falls same-state option Morrisville Borough STP, PA0026701) the module queries the WQP REST ``Station`` and
@@ -8,10 +8,11 @@ median, sample count and date range of dissolved silica, calcium, alkalinity, pH
 phosphorus at that station.
 
 Every raw download is written under data/raw/wqp/ and recorded in data/raw/MANIFEST.md with
-``paths.record_download``; a cached file is reused on rerun, so reruns are offline. If the portal is unreachable
-(for example blocked by a network allowlist), the module stops after the first failed request, writes the failure
-to results/wqp_status.json, and writes results/wqp_makeup.csv with ``source = 'wqp_unavailable'`` for every
-plant, so that peakflow.cycles falls back to the literature makeup quality and marks every row 'assumed'.
+``paths.record_download``; a cached file is reused on rerun, so reruns are offline. If the portal cannot be
+reached (network restriction, proxy refusal or outage), or ``--offline`` is set and no cached file exists, the
+module stops after the first failed request, writes the failure to results/wqp_status.json, and writes
+results/wqp_makeup.csv with ``source = 'wqp_unavailable'`` for every plant, so that peakflow.cycles falls back
+to the literature makeup quality and marks every row 'assumed'.
 
 Run: ``PYTHONPATH=src python -m peakflow.wqp [--offline]``.
 """
@@ -114,7 +115,7 @@ def fetch_csv(url: str, params: dict, path: Path, offline: bool = False, getter=
     if path.exists() and path.stat().st_size > 0:
         return pd.read_csv(path, low_memory=False)
     if offline:
-        raise WQPUnavailable(f"offline and no cached file {path}")
+        raise WQPUnavailable(f"offline and no cached file {path.name}")
     getter = getter or (lambda u, p: requests.get(u, params=p, headers=HEADERS, timeout=TIMEOUT_S))
     try:
         r = getter(url, params)
@@ -198,7 +199,7 @@ def run(offline: bool = False, getter=None, plants: pd.DataFrame | None = None,
         except WQPUnavailable as e:
             status.update(status="unavailable", domain=WQP_HOST, error=str(e),
                           first_failed_url=_full_url(STATION_URL, station_params(p.lat, p.lon)),
-                          note="Stopped after the first failed request; network access was not requested. "
+                          note="Stopped after the first failed request. "
                                "peakflow.cycles uses the literature makeup quality for every plant.")
             rows.append({**base, "source": "wqp_unavailable"})
     out = pd.DataFrame(rows)
