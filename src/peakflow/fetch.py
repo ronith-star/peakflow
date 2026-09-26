@@ -1,10 +1,10 @@
 """Idempotent download of every raw dataset into data/raw/, with a MANIFEST.md row for each file.
 
 Usage:
-    PYTHONPATH=src python -m reuse_ready.fetch            # download what is missing, record provenance
-    PYTHONPATH=src python -m reuse_ready.fetch --force    # re-download everything downloadable
-    PYTHONPATH=src python -m reuse_ready.fetch --only isd usgs
-    PYTHONPATH=src python -m reuse_ready.fetch --verify   # check every MANIFEST row: file exists, SHA-256 matches
+    PYTHONPATH=src python -m peakflow.fetch            # download what is missing, record provenance
+    PYTHONPATH=src python -m peakflow.fetch --force    # re-download everything downloadable
+    PYTHONPATH=src python -m peakflow.fetch --only isd usgs
+    PYTHONPATH=src python -m peakflow.fetch --verify   # check every MANIFEST row: file exists, SHA-256 matches
 
 Rules:
   * A file is downloaded only if it is missing (or empty), or when ``force=True``.
@@ -13,13 +13,13 @@ Rules:
     downloaded_utc and the note 'recorded from existing file'. Existing rows are never rewritten
     unless the file is re-downloaded.
   * User-provided inputs (the two tracker CSVs) cannot be downloaded; missing CSVs are a hard error.
-  * Documents read by reuse_ready.docs, calibration and wue (DRBC rule PDF, DRBC data-centers page, four
+  * Documents read by peakflow.docs, calibration and wue (DRBC rule PDF, DRBC data-centers page, four
     press pages, LBNL 2024 report) and the Natural Earth populated places archive are downloaded from the
     URLs recorded in MANIFEST.md (steps 'documents' and 'basemap').
   * Web pages carry per-request markup (bot-protection tokens, nonces), so a re-download of an HTML page
     usually has a different SHA-256 from the recorded copy. The new file is recorded with a note naming the
     previous hash, and the step prints a drift list; the page text used downstream is re-checked by
-    reuse_ready.docs (verbatim passages).
+    peakflow.docs (verbatim passages).
   * --verify fails (exit 1) unless every MANIFEST row names a file that exists with the recorded SHA-256
     and every raw file has a row.
 """
@@ -80,7 +80,7 @@ USER_INPUTS = {
     "trackdatacenters_drb_nearmiss.csv": (TRACKER_SOURCE, True),
 }
 
-# Documents read by reuse_ready.docs (verbatim regulatory passages), calibration (press figures) and wue
+# Documents read by peakflow.docs (verbatim regulatory passages), calibration (press figures) and wue
 # (LBNL comparators). file under data/raw -> (URL, MANIFEST note).
 DOCUMENTS = {
     "drbc/admin_manualCFR.pdf": ("https://www.nj.gov/drbc/library/documents/admin_manualCFR.pdf",
@@ -287,7 +287,7 @@ def fetch_documents(force: bool = False) -> None:
 
 def fetch_basemap(force: bool = False) -> None:
     """Natural Earth populated places, then Natural Earth relief / NHD waterbodies / city geocodes /
-    cartographic boundaries via reuse_ready.basemap.fetch_all()."""
+    cartographic boundaries via peakflow.basemap.fetch_all()."""
     import importlib
 
     _download(RAW / "natural_earth" / "ne_10m_populated_places_simple.zip", NE_PLACES_URL, force)
@@ -363,7 +363,7 @@ def verify_manifest(manifest: Path = MANIFEST, raw: Path | None = None) -> int:
         lines = [f"  {f['file']}: {f['problem']}" + (f" [{f['source_url']}]" if f["source_url"] else "")
                  for f in fails]
         raise SystemExit(f"fetch --verify: {len(fails)} failure(s) among {n} MANIFEST rows:\n" + "\n".join(lines)
-                         + "\nRun `make data` (python -m reuse_ready.fetch) to download missing files.")
+                         + "\nRun `make data` (python -m peakflow.fetch) to download missing files.")
     print(f"fetch --verify: all {n} MANIFEST rows present with matching SHA-256; no unrecorded raw files")
     return n
 
@@ -395,7 +395,7 @@ def fetch_all(force: bool = False, only: list[str] | None = None) -> None:
 
 
 def main(argv: list[str] | None = None) -> None:
-    ap = argparse.ArgumentParser(prog="python -m reuse_ready.fetch", description=__doc__.splitlines()[0])
+    ap = argparse.ArgumentParser(prog="python -m peakflow.fetch", description=__doc__.splitlines()[0])
     ap.add_argument("--force", action="store_true", help="re-download files that already exist")
     ap.add_argument("--only", nargs="+", choices=list(STEPS), help="run only these steps")
     ap.add_argument("--verify", action="store_true",

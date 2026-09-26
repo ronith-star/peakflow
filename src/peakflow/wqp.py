@@ -11,9 +11,9 @@ Every raw download is written under data/raw/wqp/ and recorded in data/raw/MANIF
 ``paths.record_download``; a cached file is reused on rerun, so reruns are offline. If the portal is unreachable
 (for example blocked by a network allowlist), the module stops after the first failed request, writes the failure
 to results/wqp_status.json, and writes results/wqp_makeup.csv with ``source = 'wqp_unavailable'`` for every
-plant, so that reuse_ready.cycles falls back to the literature makeup quality and marks every row 'assumed'.
+plant, so that peakflow.cycles falls back to the literature makeup quality and marks every row 'assumed'.
 
-Run: ``PYTHONPATH=src python -m reuse_ready.wqp [--offline]``.
+Run: ``PYTHONPATH=src python -m peakflow.wqp [--offline]``.
 """
 from __future__ import annotations
 
@@ -199,7 +199,7 @@ def run(offline: bool = False, getter=None, plants: pd.DataFrame | None = None,
             status.update(status="unavailable", domain=WQP_HOST, error=str(e),
                           first_failed_url=_full_url(STATION_URL, station_params(p.lat, p.lon)),
                           note="Stopped after the first failed request; network access was not requested. "
-                               "reuse_ready.cycles uses the literature makeup quality for every plant.")
+                               "peakflow.cycles uses the literature makeup quality for every plant.")
             rows.append({**base, "source": "wqp_unavailable"})
     out = pd.DataFrame(rows)
     makeup_csv.parent.mkdir(parents=True, exist_ok=True)

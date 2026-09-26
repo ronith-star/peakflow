@@ -124,7 +124,7 @@
    "plant_overlaps_outside": 0,
    "ambiguous": false,
    "leader": false,
-   "river_hits": 32,
+   "river_hits": 33,
    "plant_outlines_under_halo": 0,
    "offset_pt": [
     0.0,
@@ -518,7 +518,7 @@
    "ambiguous": false,
    "leader": false,
    "river_hits": 60,
-   "plant_outlines_under_halo": 4,
+   "plant_outlines_under_halo": 5,
    "offset_pt": [
     -2.4,
     -2.4
@@ -552,7 +552,7 @@
   }
  ],
  "legend": {
-  "w_mm": 50.899455357142855,
+  "w_mm": 50.13679389880952,
   "h_mm": 73.99495547071093,
   "rows": [
    {

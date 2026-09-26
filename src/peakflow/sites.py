@@ -20,7 +20,7 @@ Near-miss rows are kept out of the map and every headline count.
 
 Source verification (source_verified; dashed outline when False):
   * The cached HTTP check in data/processed/site_url_check.csv is written only by `make urls`
-    (reuse_ready.urlcheck); run(check=False), used by `make map`, never touches the network.
+    (peakflow.urlcheck); run(check=False), used by `make map`, never touches the network.
   * The hand content check in data/processed/site_url_verification.csv records whether the page names the site.
   * data/sites/source_url_overrides.csv replaces dead or bot-blocked sources with a Wayback snapshot or an
     alternate outlet (original kept in original_url).
@@ -64,7 +64,7 @@ MANUAL_CHECK = {
     "DRB22": "manual check: source is a YouTube video; only the title and description were checked",
 }
 
-# Backward-compatible aliases (the live check now lives in reuse_ready.urlcheck).
+# Backward-compatible aliases (the live check now lives in peakflow.urlcheck).
 check_url = urlcheck.check_url
 check_urls = urlcheck.check_urls
 

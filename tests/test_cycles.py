@@ -1,4 +1,4 @@
-"""Tests for reuse_ready.cycles and reuse_ready.wqp (work order items 12 and 13)."""
+"""Tests for peakflow.cycles and peakflow.wqp (work order items 12 and 13)."""
 import json
 import math
 
@@ -7,8 +7,8 @@ import pandas as pd
 import pytest
 import requests
 
-from reuse_ready import cycles as C
-from reuse_ready import wqp as W
+from peakflow import cycles as C
+from peakflow import wqp as W
 
 
 def test_hem_constants_interpolate_table33():

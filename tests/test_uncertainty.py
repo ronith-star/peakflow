@@ -1,12 +1,12 @@
-"""Tests for reuse_ready.uncertainty (work order item 14) and its three figures."""
+"""Tests for peakflow.uncertainty (work order item 14) and its three figures."""
 import json
 
 import numpy as np
 import pandas as pd
 import pytest
 
-from reuse_ready import uncertainty as U
-from reuse_ready.paths import FIGURES, RESULTS
+from peakflow import uncertainty as U
+from peakflow.paths import FIGURES, RESULTS
 
 BUILT = (RESULTS / "peak_uncertainty.csv").exists() and (RESULTS / "peak_uncertainty.json").exists()
 built = pytest.mark.skipif(not BUILT, reason="uncertainty results not built")
@@ -116,7 +116,7 @@ def test_digitized_constants_match_pdf():
 
 @built
 def test_fan_daily_matches_cooling_model():
-    from reuse_ready import blindspot as B
+    from peakflow import blindspot as B
     x, _ = U._falls_weather()
     cal = json.loads((RESULTS / "calibration.json").read_text())
     P = U.fan_parameters(cal, n=2, seed=5)

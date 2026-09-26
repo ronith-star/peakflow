@@ -1,7 +1,7 @@
 """Stull (2011) wet-bulb: published worked example and array/NaN behavior."""
 import numpy as np
 
-from reuse_ready.wetbulb import rh_from_dewpoint, stull_wetbulb, wetbulb_from_dewpoint
+from peakflow.wetbulb import rh_from_dewpoint, stull_wetbulb, wetbulb_from_dewpoint
 
 
 def test_stull_worked_example():

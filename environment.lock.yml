@@ -4,11 +4,10 @@
 # platform-specific system libraries may need to be dropped on Linux or Windows.
 #   conda env create -f environment.lock.yml   (or: micromamba create -f environment.lock.yml)
 # environment.yml lists only the direct dependencies, pinned to the same versions.
-name: reuse-ready
+name: peakflow
 channels:
   - conda-forge
 dependencies:
-  - conda-forge
   - _openmp_mutex=4.5
   - affine=3.0.1
   - anyio=4.15.1

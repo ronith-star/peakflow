@@ -1,12 +1,12 @@
 """The primary (peak-day) calibration in results/calibration.json reproduces its recorded targets,
-and those targets match the ones currently defined in reuse_ready.calibration (staleness check)."""
+and those targets match the ones currently defined in peakflow.calibration (staleness check)."""
 import json
 
 import numpy as np
 import pytest
 
-from reuse_ready.calibration import TARGETS, load_kttn, model_stats
-from reuse_ready.paths import PROCESSED, RESULTS
+from peakflow.calibration import TARGETS, load_kttn, model_stats
+from peakflow.paths import PROCESSED, RESULTS
 
 pytestmark = pytest.mark.skipif(not (RESULTS / "calibration.json").exists()
                                 or not (PROCESSED / "weather_hourly.parquet").exists(),

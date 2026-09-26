@@ -374,7 +374,7 @@ def place(ax, anchors, texts, hard, O, family, color, size, radii, leader_from, 
         if plants_soft:
             import matplotlib.patheffects as pe
             best.set_path_effects([pe.withStroke(linewidth=1.6, foreground="white")])
-            best._reuse_ready_plants_soft = True
+            best._peakflow_plants_soft = True
         rep.append({"label": txt, "outside_axes": bool(bscore[0]), "label_overlaps": int(bscore[1]),
                     "square_overlaps": int(bscore[2]), "boundary_line_hits": int(bscore[3]),
                     "plant_overlaps_inside": int(bscore[4]), "plant_overlaps_outside": int(bscore[5]),
@@ -491,7 +491,7 @@ def label_rivers(ax, D, hard, O, family, size):
         c, u, v, hw, hh = rect
         corners = np.array([c + su * hw * u + sv * hh * v for su in (-1, 1) for sv in (-1, 1)])
         placed.append(Bbox.from_extents(*corners.min(0), *corners.max(0)))
-        t._reuse_ready_rect = rect
+        t._peakflow_rect = rect
         out.append(t)
         rep.append({"label": txt, "rotation_deg": round(ang, 1),
                     "anchor_lonlat": [round(v_, 4) for v_ in V2.TO_LL.transform(*t.xy)],
@@ -506,7 +506,7 @@ def final_check(fig, ax, O, map_labels):
     ts = [t for t in fig.findobj(mtext.Text) if t.get_visible() and t.get_text().strip()]
     boxes = [(t, V2._tbb(t, r)) for t in ts]
     def _pair_overlap(a, ba, b, bb):
-        ra, rb = getattr(a, "_reuse_ready_rect", None), getattr(b, "_reuse_ready_rect", None)
+        ra, rb = getattr(a, "_peakflow_rect", None), getattr(b, "_peakflow_rect", None)
         if ra is None and rb is None:
             return ba.overlaps(bb)
         if ra is not None and rb is not None:
@@ -519,7 +519,7 @@ def final_check(fig, ax, O, map_labels):
     edge = [t.get_text() for t, b in boxes if b.x0 < fb.x0 or b.x1 > fb.x1 or b.y0 < fb.y0 or b.y1 > fb.y1]
     sym, halo = [], []
     for t in map_labels:
-        if getattr(t, "_reuse_ready_rect", None) is not None:
+        if getattr(t, "_peakflow_rect", None) is not None:
             n_sq, n_pl, n_ln, _, _ = _rot_hits(_rot_rect(t, r), O, [])
             if n_sq or n_pl or n_ln:
                 sym.append({"label": t.get_text(), "squares": n_sq, "plants": n_pl, "boundary_or_state_line": n_ln})
@@ -533,7 +533,7 @@ def final_check(fig, ax, O, map_labels):
         own_sq = any(np.hypot(*(sqs - own).T) < 0.5)
         if own_sq and (bb.x0 - h < own[0] < bb.x1 + h and bb.y0 - h < own[1] < bb.y1 + h):
             n_sq -= 1
-        if getattr(t, "_reuse_ready_plants_soft", False):
+        if getattr(t, "_peakflow_plants_soft", False):
             halo.append({"label": t.get_text(), "plant_outlines": int(n_pli + n_plo)}) if (n_pli or n_plo) else None
             n_pli = n_plo = 0
         if n_sq > 0 or n_pli or n_plo or n_ln:

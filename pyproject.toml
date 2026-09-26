@@ -3,7 +3,7 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "reuse_ready"
+name = "peakflow"
 version = "0.1.0"
 description = "PeakFlow cooling-water model and supply screen for data centers in the Delaware River Basin"
 requires-python = ">=3.12"

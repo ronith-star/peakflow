@@ -18,7 +18,7 @@ EXCLUSIONS = RESULTS / "exclusions.csv"
 for _p in (RAW, PROCESSED, SITES, RESULTS, FIGURES):
     _p.mkdir(parents=True, exist_ok=True)
 
-USER_AGENT = "reuse-ready-research/0.1 (reproducible research repository)"
+USER_AGENT = "peakflow-research/0.1 (reproducible research repository)"
 
 
 def sha256(path: Path) -> str:

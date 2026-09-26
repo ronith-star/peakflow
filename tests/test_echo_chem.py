@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from reuse_ready import echo
+from peakflow import echo
 
 FIX = Path(__file__).parent / "fixtures" / "dmr_DE0020320_chem.csv"
 

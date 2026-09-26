@@ -428,11 +428,11 @@ def falls_fan(seed: int = FAN_SEED, n: int = FAN_N_DRAWS, n_plot: int = FAN_N_PL
         "distributions": {
             "p_it_mw": {"dist": "uniform", "low": FAN_P_IT_RANGE[0], "high": cal_all["primary"]["p_it_mw"],
                         "source": "253 MW unverified Keystone figure [cleanview_keystone_2026] to the peak-day "
-                                  "calibration's fitted 331.19 MW [reuse_ready_model]"},
+                                  "calibration's fitted 331.19 MW [peakflow_model]"},
             "pue": {"dist": "uniform", "low": PUE_RANGE[0], "high": PUE_RANGE[1], "source": "shehabi_2024 p.48"},
             "gamma": {"dist": "uniform", "low": float(min(cal_all[k]["gamma"] for k in FAN_GAMMA_KEYS)),
                       "high": float(max(cal_all[k]["gamma"] for k in FAN_GAMMA_KEYS)),
-                      "source": "design-rate and peak-day calibration readings [reuse_ready_model]"},
+                      "source": "design-rate and peak-day calibration readings [peakflow_model]"},
             "t_sw_c": {"dist": "fixed", "value": cal_all["primary"]["t_sw_c"],
                        "source": "identical in both calibration readings (set by the 6 percent wet-hour target)"},
             "cycles": {"dist": "fixed", "value": cal_all["primary"]["cycles"], "source": "model assumption"},

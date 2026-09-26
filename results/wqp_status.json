@@ -3,11 +3,11 @@
   "radius_mi": 10.0,
   "since": "01-01-2000",
   "status": "unavailable",
-  "checked_utc": "2026-09-25T14:31:31Z",
+  "checked_utc": "2026-09-26T15:52:52Z",
   "domain": "www.waterqualitydata.us",
-  "error": "offline and no cached file /Users/ronithlahoti/Desktop/reuse-ready/data/raw/wqp/station_NJ0020184.csv",
+  "error": "offline and no cached file /Users/ronithlahoti/Desktop/peakflow/data/raw/wqp/station_NJ0020184.csv",
   "first_failed_url": "https://www.waterqualitydata.us/data/Station/search?lat=41.05882&long=-74.74789&within=10&siteType=Stream&mimeType=csv&zip=no",
-  "note": "Stopped after the first failed request; network access was not requested. reuse_ready.cycles uses the literature makeup quality for every plant.",
+  "note": "Stopped after the first failed request; network access was not requested. peakflow.cycles uses the literature makeup quality for every plant.",
   "n_plants": 19,
   "n_wqp": 0
 }

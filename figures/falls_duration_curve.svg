@@ -43,18 +43,18 @@ L 231.874016 147.401575
 L 231.874016 8.503937 
 L 58.088716 8.503937 
 z
-" clip-path="url(#p2997aff8ef)" style="fill: #e8e8e8"/>
+" clip-path="url(#pc900df01c4)" style="fill: #e8e8e8"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="mf51e84824a" d="M 0 0 
+       <path id="mb3955c5899" d="M 0 0 
 L 0 2.5 
 " style="stroke: #000000; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#mf51e84824a" x="31.181102" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="31.181102" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_1">
@@ -64,7 +64,7 @@ L 0 2.5
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#mf51e84824a" x="71.319685" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="71.319685" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_2">
@@ -74,7 +74,7 @@ L 0 2.5
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#mf51e84824a" x="111.458268" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="111.458268" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_3">
@@ -84,7 +84,7 @@ L 0 2.5
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#mf51e84824a" x="151.59685" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="151.59685" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_4">
@@ -94,7 +94,7 @@ L 0 2.5
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#mf51e84824a" x="191.735433" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="191.735433" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_5">
@@ -104,7 +104,7 @@ L 0 2.5
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#mf51e84824a" x="231.874016" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#mb3955c5899" x="231.874016" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_6">
@@ -119,12 +119,12 @@ L 0 2.5
     <g id="ytick_1">
      <g id="line2d_7">
       <defs>
-       <path id="m066150442f" d="M 0 0 
+       <path id="m1f08e08d7e" d="M 0 0 
 L -2.5 0 
 " style="stroke: #000000; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#m066150442f" x="31.181102" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m1f08e08d7e" x="31.181102" y="147.401575" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_8">
@@ -134,7 +134,7 @@ L -2.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m066150442f" x="31.181102" y="101.102362" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m1f08e08d7e" x="31.181102" y="101.102362" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_9">
@@ -144,7 +144,7 @@ L -2.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m066150442f" x="31.181102" y="54.80315" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m1f08e08d7e" x="31.181102" y="54.80315" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_10">
@@ -154,7 +154,7 @@ L -2.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m066150442f" x="31.181102" y="8.503937" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m1f08e08d7e" x="31.181102" y="8.503937" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_11">
@@ -181,17 +181,17 @@ L 231.874016 147.401575
    <g id="line2d_11">
     <path d="M 31.181102 25.011797 
 L 231.874016 25.011797 
-" clip-path="url(#p2997aff8ef)" style="fill: none; stroke-dasharray: 1.1,0.7; stroke-dashoffset: 0; stroke: #4d4d4d; stroke-width: 0.5"/>
+" clip-path="url(#pc900df01c4)" style="fill: none; stroke-dasharray: 1.1,0.7; stroke-dashoffset: 0; stroke: #4d4d4d; stroke-width: 0.5"/>
    </g>
    <g id="line2d_12">
     <path d="M 31.181102 95.068011 
 L 231.874016 95.068011 
-" clip-path="url(#p2997aff8ef)" style="fill: none; stroke-dasharray: 1.1,0.7; stroke-dashoffset: 0; stroke: #4d4d4d; stroke-width: 0.5"/>
+" clip-path="url(#pc900df01c4)" style="fill: none; stroke-dasharray: 1.1,0.7; stroke-dashoffset: 0; stroke: #4d4d4d; stroke-width: 0.5"/>
    </g>
    <g id="line2d_13">
     <path d="M 31.181102 101.102362 
 L 231.874016 101.102362 
-" clip-path="url(#p2997aff8ef)" style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#pc900df01c4)" style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_14">
     <path d="M 31.208957 25.011797 
@@ -319,7 +319,7 @@ L 57.865878 130.964097
 L 58.060861 130.964097 
 L 58.088716 135.539031 
 L 58.088716 135.539031 
-" clip-path="url(#p2997aff8ef)" style="fill: none; stroke: #1f3a5f; stroke-width: 0.8; stroke-linecap: square"/>
+" clip-path="url(#pc900df01c4)" style="fill: none; stroke: #1f3a5f; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="text_14">
     <text style="font-size: 7px; font-family: 'Helvetica', 'Arial', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="230.469165" y="22.291406" transform="rotate(-0 230.469165 22.291406)">Reported peak day, 4.4 million gal/d</text>
@@ -333,7 +333,7 @@ L 58.088716 135.539031
   </g>
  </g>
  <defs>
-  <clipPath id="p2997aff8ef">
+  <clipPath id="pc900df01c4">
    <rect x="31.181102" y="8.503937" width="200.692913" height="138.897638"/>
   </clipPath>
  </defs>

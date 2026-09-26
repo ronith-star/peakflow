@@ -1,9 +1,9 @@
 """Live HTTP check of every planned-site source URL (the only networked step outside `make data`).
 
 Usage:
-    PYTHONPATH=src python -m reuse_ready.urlcheck        # writes data/processed/site_url_check.csv
+    PYTHONPATH=src python -m peakflow.urlcheck        # writes data/processed/site_url_check.csv
 
-`make map` does not run this module: reuse_ready.sites.run(check=False) reads the cached CSV, so the map
+`make map` does not run this module: peakflow.sites.run(check=False) reads the cached CSV, so the map
 build is offline and deterministic. Run `make urls` to refresh the cache; results depend on the day and on
 the network (publishers that refuse automated clients return 403, which is recorded, not retried).
 

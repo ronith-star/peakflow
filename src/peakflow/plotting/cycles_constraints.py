@@ -1,7 +1,7 @@
 """Allowable cycles of concentration by constraint, one row per matched plant (v3 house style, 180 mm wide).
 
   figures/cycles_constraints.{png,pdf,svg}, _caption.md, _data.csv; checks in results/cycles_figure_check.json.
-Input: results/cycles_by_plant.csv (reuse_ready.cycles). Run: PYTHONPATH=src python -m reuse_ready.plotting.cycles_constraints
+Input: results/cycles_by_plant.csv (peakflow.cycles). Run: PYTHONPATH=src python -m peakflow.plotting.cycles_constraints
 """
 from __future__ import annotations
 
@@ -135,7 +135,7 @@ def write_caption(t: pd.DataFrame, s: dict, path=None):
         f"at {L['ph_cap']:.1f} [vidic_2009, PDF p. 167] [hem_1985, pp. 15, 19, 253]. The filled accent marker is "
         f"the binding constraint, which is phosphate at {nb.get('phosphate', 0)} plants, the saturation index at "
         f"{nb.get('lsi', 0)} and chloride at {nb.get('chloride', 0)} [cycles_by_plant.csv]. The dashed line marks "
-        f"the {s['model_cycles']:.0f} cycles assumed by the cooling model [reuse_ready_model]. The shaded band marks "
+        f"the {s['model_cycles']:.0f} cycles assumed by the cooling model [peakflow_model]. The shaded band marks "
         "makeup that already exceeds a limit. The right-hand columns give the allowable cycles C and the implied "
         "minimum return flow, 100/C percent [cycles_by_plant.csv]. Return flow is defined as blowdown divided by "
         "makeup.\n\n"
@@ -145,7 +145,7 @@ def write_caption(t: pd.DataFrame, s: dict, path=None):
         f"{s['chloride_tds_ratio']['ratio']:.2f} [epa_echo, cycles_summary.json]. Phosphate and dissolved solids are "
         "each plant's DMR median where reported [epa_echo].\n\n"
         "The citation keys are epa_echo, vidic_2009, hem_1985, geiger_1993, midkiff_1977, dogra_2023 and "
-        f"reuse_ready_model. Plotted values are in figures/{STEM}_data.csv.\n")
+        f"peakflow_model. Plotted values are in figures/{STEM}_data.csv.\n")
     path.write_text(txt)
 
 

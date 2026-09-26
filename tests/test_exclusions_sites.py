@@ -2,7 +2,7 @@
 import pandas as pd
 import pytest
 
-from reuse_ready import paths, sites
+from peakflow import paths, sites
 
 
 def _rows():

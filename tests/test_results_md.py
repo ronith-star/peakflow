@@ -7,7 +7,7 @@ import re
 import pandas as pd
 import pytest
 
-from reuse_ready.paths import RESULTS
+from peakflow.paths import RESULTS
 
 MD = RESULTS / "results.md"
 pytestmark = pytest.mark.skipif(not MD.exists() or not (RESULTS / "supply_summary.json").exists(),
@@ -90,7 +90,7 @@ def test_prose_rules():
 
 # Plain-prose rule (2026-09-25): no semicolons, em dashes or en dashes in the written documents and captions.
 # Verbatim regulatory quotes in sources.md end before the semicolon that closes each CFR item.
-from reuse_ready.paths import ROOT as _ROOT  # noqa: E402
+from peakflow.paths import ROOT as _ROOT  # noqa: E402
 
 PROSE_FILES = ["README.md", "LICENSES.md", "results/results.md", "sources.md", "results/brief_numbers.md"]
 

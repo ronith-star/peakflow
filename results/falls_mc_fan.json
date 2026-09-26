@@ -11,7 +11,7 @@
       "dist": "uniform",
       "low": 253.0,
       "high": 331.18598017604927,
-      "source": "253 MW unverified Keystone figure [cleanview_keystone_2026] to the peak-day calibration's fitted 331.19 MW [reuse_ready_model]"
+      "source": "253 MW unverified Keystone figure [cleanview_keystone_2026] to the peak-day calibration's fitted 331.19 MW [peakflow_model]"
     },
     "pue": {
       "dist": "uniform",
@@ -23,7 +23,7 @@
       "dist": "uniform",
       "low": 0.3548445966364694,
       "high": 0.4294298328088379,
-      "source": "design-rate and peak-day calibration readings [reuse_ready_model]"
+      "source": "design-rate and peak-day calibration readings [peakflow_model]"
     },
     "t_sw_c": {
       "dist": "fixed",

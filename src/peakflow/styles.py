@@ -155,7 +155,7 @@ MM_PER_IN = 25.4
 def v2_rc():
     """Matplotlib rcParams for the v2 technical style; returns the registered font family."""
     import matplotlib as mpl
-    mpl.rcParams["svg.hashsalt"] = "reuse-ready"  # deterministic SVG ids
+    mpl.rcParams["svg.hashsalt"] = "peakflow"  # deterministic SVG ids
     fam = register_fonts()
     mpl.rcParams.update({
         "font.size": V2_FONT_SIZE, "axes.labelsize": V2_FONT_SIZE, "xtick.labelsize": V2_FONT_SIZE,

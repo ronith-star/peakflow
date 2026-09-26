@@ -553,8 +553,8 @@ def write_brief_table():
              "from an existing public or authority system is not itself reviewed [drbc_datacenters_2026]. "
              f"The {BRIEF_BAND_MW} MW hybrid row is the 100 MW hybrid scaled linearly (makeup is proportional to "
              f"IT load); it lies inside the averaging band of {lo:.2f} to {hi:.1f} MW, where every 30-day average is "
-             "below the trigger but the peak day exceeds 100,000 gallons [reuse_ready_model]. "
-             "Modeled values are [reuse_ready_model]; Falls values are reported [falls_levittown_2026; "
+             "below the trigger but the peak day exceeds 100,000 gallons [peakflow_model]. "
+             "Modeled values are [peakflow_model]; Falls values are reported [falls_levittown_2026; "
              "falls_herald_2026], except the maximum 30-day average, which is modeled.\n")
     (RESULTS / "table_blindspot_brief_notes.md").write_text(notes)
     return out

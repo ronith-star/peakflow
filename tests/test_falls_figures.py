@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from reuse_ready import falls_figures as F
-from reuse_ready.paths import FIGURES, PROCESSED, RESULTS
+from peakflow import falls_figures as F
+from peakflow.paths import FIGURES, PROCESSED, RESULTS
 
 pytestmark = pytest.mark.skipif(not (PROCESSED / "flow_daily.parquet").exists()
                                 or not (RESULTS / "calibration.json").exists(),

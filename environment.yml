@@ -1,7 +1,7 @@
 # Conda environment for PeakFlow. Versions are those installed in the development env (conda-forge).
-#   conda env create -f environment.yml && conda activate reuse-ready
+#   conda env create -f environment.yml && conda activate peakflow
 # For the exact solved environment (all transitive packages pinned) use environment.lock.yml instead.
-name: reuse-ready
+name: peakflow
 channels:
   - conda-forge
 dependencies:

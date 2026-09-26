@@ -2,7 +2,7 @@
 import pandas as pd
 import pytest
 
-from reuse_ready.suppliers import CLASSES, COLUMNS, CSV, load_suppliers, summarize, validate
+from peakflow.suppliers import CLASSES, COLUMNS, CSV, load_suppliers, summarize, validate
 
 
 def _row(i, cls="public_or_authority", conf="stated_in_source", sup="Some Authority", key=None, url="https://x.org"):

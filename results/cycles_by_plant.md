@@ -1,6 +1,6 @@
 # Allowable cycles of concentration by matched plant
 
-Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -m reuse_ready.cycles`. All rows are marked 'assumed' because the Water Quality Portal was not reachable [wqp_status.json]; silica, calcium and alkalinity are literature values [vidic_2009; hem_1985], TDS and phosphate are the plant's own DMR medians where reported [epa_echo], and chloride is a TDS-based proxy because no matched plant reports chloride [epa_echo]. Return flow is defined as blowdown / makeup = 1/C.
+Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -m peakflow.cycles`. All rows are marked 'assumed' because the Water Quality Portal was not reachable [wqp_status.json]; silica, calcium and alkalinity are literature values [vidic_2009; hem_1985], TDS and phosphate are the plant's own DMR medians where reported [epa_echo], and chloride is a TDS-based proxy because no matched plant reports chloride [epa_echo]. Return flow is defined as blowdown / makeup = 1/C.
 
 | Plant | NPDES | Sites | C silica | C chloride | C phosphate | C LSI | Binding | Allowable C (range) | Makeup/E | Blowdown/E | Min return flow % | C without phosphate | Status |
 |---|---|---|---:|---:|---:|---:|---|---|---:|---:|---:|---:|---|
@@ -24,4 +24,4 @@ Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -
 | Upper Montgomery Joint Authority Stp | PA0020532 | DRB32 | 10.7 | 8.2 | 15.7 | 7.0 | LSI | 7.0 (2.4 to 8.2) | 1.17 | 0.17 | 14 | 7.0 (LSI) | assumed |
 | West Chester Taylor Run Stp | PA0026018 | DRB22 | 10.7 | 8.2 | 16.3 | 7.0 | LSI | 7.0 (2.4 to 8.2) | 1.17 | 0.17 | 14 | 7.0 (LSI) | assumed |
 
-The model assumes 4 cycles [reuse_ready_model], which implies makeup of 1.33 times evaporation and a minimum return flow of 25 percent [reuse_ready_model]. Blank makeup and blowdown cells mark plants whose makeup already exceeds a tower limit (allowable C at or below 1), which require treatment before use. The range brackets the favourable and adverse literature silica, calcium and alkalinity [vidic_2009, PDF p. 30].
+The model assumes 4 cycles [peakflow_model], which implies makeup of 1.33 times evaporation and a minimum return flow of 25 percent [peakflow_model]. Blank makeup and blowdown cells mark plants whose makeup already exceeds a tower limit (allowable C at or below 1), which require treatment before use. The range brackets the favourable and adverse literature silica, calcium and alkalinity [vidic_2009, PDF p. 30].

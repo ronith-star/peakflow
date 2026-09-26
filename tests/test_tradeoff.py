@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from reuse_ready import tradeoff as tr
-from reuse_ready.paths import PROCESSED, RESULTS
+from peakflow import tradeoff as tr
+from peakflow.paths import PROCESSED, RESULTS
 
 needs_pdf = pytest.mark.skipif(not tr.LBNL_PDF.exists(), reason="data/raw/lbnl_2024.pdf not present")
 needs_model = pytest.mark.skipif(not (PROCESSED / "weather_hourly.parquet").exists()

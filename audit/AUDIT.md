@@ -1,4 +1,4 @@
-# Audit of the Reuse-Ready repository
+# Audit of the PeakFlow repository
 
 Audit date: 2026-09-25. Specification: audit/SPEC.md, including every follow-up message, with later instructions superseding earlier ones (135,000 gal/day recalibration, v2 and v3 figure redesigns, the Msg 16 font rule). The auditor wrote only this report and audit/gaps.csv and modified no other file in the repository.
 
@@ -101,7 +101,7 @@ Gaps are ordered by how much they weaken the brief, blockers first. The same row
 
 **Finding.** 7 of the 30 references.bib URLs do not resolve to the cited content, and one entry marked verified is a placeholder.
 
-**Evidence.** HTTP 403: amazon_falls_campus_2026, microsoft_datacenters_2025, alduchov_1996. epa_echo: redirect loop (more than 30 redirects). stull_2011 (journals.ametsoc.org) and mytton_2021 (nature.com) are blocked by this audit's network sandbox and remain unchecked. reuse_ready_model is 'https://github.com/ (repository URL to be set ...)' returning 404, yet it is marked Verified: yes. The cited figure is not on the fetched page for cleanview_keystone_2026 (178 MW absent; the page renders by script) or trackdatacenters_2026 (326 characters). Confirmed on the page: DRBC rule and datacenters passages, Levittown and Herald figures, LBNL 0.36 / 0.32 / 0.1 to 0.3 / PUE 1.15 to 1.35, Meta 0.19, Google 7,787, Uptime 47%.
+**Evidence.** HTTP 403: amazon_falls_campus_2026, microsoft_datacenters_2025, alduchov_1996. epa_echo: redirect loop (more than 30 redirects). stull_2011 (journals.ametsoc.org) and mytton_2021 (nature.com) are blocked by this audit's network sandbox and remain unchecked. peakflow_model is 'https://github.com/ (repository URL to be set ...)' returning 404, yet it is marked Verified: yes. The cited figure is not on the fetched page for cleanview_keystone_2026 (178 MW absent; the page renders by script) or trackdatacenters_2026 (326 characters). Confirmed on the page: DRBC rule and datacenters passages, Levittown and Herald figures, LBNL 0.36 / 0.32 / 0.1 to 0.3 / PUE 1.15 to 1.35, Meta 0.19, Google 7,787, Uptime 47%.
 
 **Proposed fix.** Set the repository URL or mark the entry unverified. Point epa_echo at a stable ECHO page. Archive every 403 page and cite the Wayback URL in the note field.
 
@@ -173,7 +173,7 @@ Gaps are ordered by how much they weaken the brief, blockers first. The same row
 
 **Evidence.** Informal phrasing: results.md:11 'times lower' twice and 'a very large peak'; results.md:23 'just outside'. Numbers without a key: results.md:9 'Both fits meet all three targets within 1 percent.' and results.md:23 'Eleven inactive sites and 23 sites just outside the basin are excluded'. No em dashes, en dashes or exclamation marks in results.md, README.md or any caption file.
 
-**Proposed fix.** Rewrite as ratios ('about one fifth of'), remove the intensifiers, and add [reuse_ready_model] or [trackdatacenters_2026].
+**Proposed fix.** Rewrite as ratios ('about one fifth of'), remove the intensifiers, and add [peakflow_model] or [trackdatacenters_2026].
 
 **Effort.** 30 min
 
@@ -181,7 +181,7 @@ Gaps are ordered by how much they weaken the brief, blockers first. The same row
 
 **Finding.** Nine bib keys are unused, including sources the spec named. Model constants in results.md lack sources.
 
-**Evidence.** docs.py unused_keys: drbc_drought_page, drbc_khalil_2026, falls_keystone_2026, google_env_2025, helvetica_font, inter_font, meta_sustainability_2025, mytton_2021, uptime_survey_2025. Cycles of concentration = 4 is cited only to [reuse_ready_model]. Latent heat 2.43 MJ/kg, drift neglected and the use of KTTN rates for every site in the basin are not stated in results.md.
+**Evidence.** docs.py unused_keys: drbc_drought_page, drbc_khalil_2026, falls_keystone_2026, google_env_2025, helvetica_font, inter_font, meta_sustainability_2025, mytton_2021, uptime_survey_2025. Cycles of concentration = 4 is cited only to [peakflow_model]. Latent heat 2.43 MJ/kg, drift neglected and the use of KTTN rates for every site in the basin are not stated in results.md.
 
 **Proposed fix.** Cite or remove each unused key. Source the value of 4 cycles or present it as an assumption with a range. Add the model constants to the assumptions paragraph.
 

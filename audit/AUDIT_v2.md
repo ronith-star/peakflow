@@ -1,4 +1,4 @@
-# Reuse-Ready second audit (work order item 20)
+# PeakFlow second audit (work order item 20)
 
 Auditor: independent session with no memory of the build. Date: 2026-09-25. Specification: audit/SPEC.md, including "Later instructions (2026-09-25, after the first audit)"; figure rules from scratch/standards/STANDARDS.md. Machine-readable list: audit/gaps_v2.csv. The first audit (audit/AUDIT.md, audit/gaps.csv) is unchanged.
 
@@ -17,7 +17,7 @@ The remaining items are minor presentation and hygiene issues. Fixing all open i
 
 | Check | Result |
 |---|---|
-| Environment | Existing conda env `reuse-ready` in clean workspace clones (rsync excluding scratch/ and .git). No new env was created. |
+| Environment | Existing conda env `peakflow` in clean workspace clones (rsync excluding scratch/ and .git). No new env was created. |
 | Build 1: clone, `make clean && make all`, cached raw data | EXIT 0, 72.75 s wall. Only notice: "Matplotlib is building the font cache; this may take a moment." |
 | Build 2: clone with data/raw and data/processed emptied (kept MANIFEST.md, two tracker CSVs, two URL CSVs) | EXIT 0, 1,058.15 s wall (gis 599.5 s, echo 328.9 s, isd 51.9 s). Both `fetch --verify` runs: "all 357 MANIFEST rows present with matching SHA-256; no unrecorded raw files". |
 | Warnings or errors (both logs, verbatim) | Build 2 line 8: "fetch: 6 re-downloaded file(s) differ from the previously recorded SHA-256 (new hash recorded): ['usgs/dv_01463500.rdb', 'drbc/datacenters.html', 'press/amazon_falls_campus_2026.html', 'press/falls_herald_2026.html', 'press/falls_keystone_2026.html', 'press/falls_levittown_2026.html']". No warning, error or traceback lines. The colorspacious SyntaxWarning and fontTools messages are suppressed in code (G23). |
@@ -126,7 +126,7 @@ The stored DRBC Administrative Manual (data/raw/drbc/admin_manualCFR.pdf) contai
   - 56 of 71 return 200.
   - Not checkable here (sandbox proxy): stull_2011, mytton_2021.
   - Broken or refusing:
-    - reuse_ready_model: placeholder, 404.
+    - peakflow_model: placeholder, 404.
     - limerick_cu_hearings_2026 and DRB33: 404, domain down.
     - amazon_falls_campus_2026, alduchov_1996, limerick_laurel_chestnuthill_2026 and DRB07: 403.
     - DRB27: 406.

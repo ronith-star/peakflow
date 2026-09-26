@@ -1,8 +1,8 @@
 """Blind-spot grid sanity: air-cooled uses no makeup; tower > hybrid at every IT load."""
 import pytest
 
-from reuse_ready import blindspot as bs
-from reuse_ready.paths import PROCESSED, RESULTS
+from peakflow import blindspot as bs
+from peakflow.paths import PROCESSED, RESULTS
 
 pytestmark = pytest.mark.skipif(not (PROCESSED / "flow_daily.parquet").exists()
                                 or not (RESULTS / "calibration.json").exists(),
@@ -54,7 +54,7 @@ def test_displayed_values_identical():
     """results CSV, figure data CSV, Markdown table and the drawn PNG cells carry the same strings."""
     import pandas as pd
 
-    from reuse_ready.paths import FIGURES
+    from peakflow.paths import FIGURES
 
     a = pd.read_csv(RESULTS / "table_blindspot.csv", dtype=str, keep_default_na=False)
     b = pd.read_csv(FIGURES / "table_blindspot_data.csv", dtype=str, keep_default_na=False)
@@ -77,7 +77,7 @@ def test_figure_draws_display_strings():
     t = bs.run()
     fig, _ = bs.render_figure(t, stem="_test_table_blindspot")
     assert len(fig._drawn_cells) == 13
-    from reuse_ready.paths import FIGURES
+    from peakflow.paths import FIGURES
 
     for ext in ("png", "pdf"):
         (FIGURES / f"_test_table_blindspot.{ext}").unlink()

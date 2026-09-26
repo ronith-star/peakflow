@@ -5,7 +5,7 @@ import geopandas as gpd
 import pandas as pd
 import pytest
 
-from reuse_ready.supply_screen import RADIUS_M, classify, eligible_mask
+from peakflow.supply_screen import RADIUS_M, classify, eligible_mask
 
 FIX = Path(__file__).parent / "fixtures"
 

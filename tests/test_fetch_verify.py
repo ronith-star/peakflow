@@ -3,7 +3,7 @@ import hashlib
 
 import pytest
 
-from reuse_ready import fetch
+from peakflow import fetch
 
 
 def _manifest(raw, files):
@@ -62,7 +62,7 @@ def test_verify_fails_on_unrecorded_file(raw):
 
 def test_every_pipeline_document_has_a_fetch_step():
     """The DRBC rule PDF, DRBC data-centers page, press pages and LBNL report are downloadable (audit G01)."""
-    from reuse_ready import docs
+    from peakflow import docs
 
     for key, path in docs.REG_FILES.items():
         rel = path.relative_to(fetch.RAW).as_posix()

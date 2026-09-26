@@ -1,6 +1,6 @@
 """Allowable cycles of concentration for municipal-effluent makeup at each matched plant (work order item 13).
 
-For each matched plant (reuse_ready.wqp.plant_list: the unique plant_npdes_id of results/supply_screen.csv plus
+For each matched plant (peakflow.wqp.plant_list: the unique plant_npdes_id of results/supply_screen.csv plus
 Morrisville Borough STP) the allowable cycles of concentration C is the minimum over four constraints:
 
   silica     C_Si  = SIO2_LIMIT / SiO2_makeup
@@ -20,7 +20,7 @@ PCO2 of 0.0003 atm, Hem 1985 p. 92), capped at PH_CAP, the upper end of the pH r
 wastewater open to air (Vidic and Dzombak 2009, PDF p. 167). Bicarbonate is taken equal to total alkalinity
 (valid below pH 8.3; at the pH cap carbonate is under 2 percent of bicarbonate by Hem Table 33 K2).
 
-Makeup quality: the Water Quality Portal is queried by reuse_ready.wqp. When it has no data for a plant (or is
+Makeup quality: the Water Quality Portal is queried by peakflow.wqp. When it has no data for a plant (or is
 unavailable), the literature secondary-effluent values are used and the row is marked 'assumed'. The plant's
 own DMR values (wwtp_majors.csv) are preferred where they exist: chloride_mg_l (none of the matched plants report
 it), tds_mg_l, and total_p_mg_l (converted to phosphate as PO4 and treated conservatively as orthophosphate).
@@ -31,7 +31,7 @@ Water balance per unit evaporation E: makeup M = C/(C-1), blowdown B = 1/(C-1). 
 return-flow percentage for a term sheet is defined as blowdown / makeup = 1/C (the share of the delivered
 effluent that the tower returns as blowdown).
 
-Run: ``PYTHONPATH=src python -m reuse_ready.cycles`` (reads results/wqp_makeup.csv written by reuse_ready.wqp).
+Run: ``PYTHONPATH=src python -m peakflow.cycles`` (reads results/wqp_makeup.csv written by peakflow.wqp).
 """
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ OUT_CSV = RESULTS / "cycles_by_plant.csv"
 OUT_MD = RESULTS / "cycles_by_plant.md"
 OUT_JSON = RESULTS / "cycles_summary.json"
 
-MODEL_CYCLES = 4.0                          # results/calibration.json primary.cycles [reuse_ready_model]
+MODEL_CYCLES = 4.0                          # results/calibration.json primary.cycles [peakflow_model]
 PEAK_DAY_GPD_PER_MW = 13285.5865386001      # results/supply_summary.json demand_rates.peak_day_gpd_per_mw
 
 # ------------------------------------------------------------------------------------------ tower limits
@@ -58,7 +58,7 @@ CL_LIMIT = 1060.0      # mg/L chloride carried without localized corrosion, mixe
                        # copper/nickel and copper metallurgy [geiger_1993, PDF pp. 2, 4, 7 (Table 1)]
 PO4_LIMIT = 15.0       # mg/L orthophosphate as PO4 held without calcium phosphate precipitation [geiger_1993, PDF p. 5]
 LSI_MAX = 2.5          # treated with a phosphonate/copolymer program at 20 cycles [geiger_1993, PDF p. 3]
-T_BULK_C = 35.0        # bulk tower water temperature, stated assumption [reuse_ready_model]
+T_BULK_C = 35.0        # bulk tower water temperature, stated assumption [peakflow_model]
 PH_CAP = 8.5           # upper end of pH computed for MWW open to air [vidic_2009, PDF p. 167]
 PCO2_ATM = 0.0003      # normal air [hem_1985, p. 92]
 
@@ -287,7 +287,7 @@ def _fmt(x, d=1):
 
 def write_md(t: pd.DataFrame, s: dict, path=OUT_MD):
     lines = ["# Allowable cycles of concentration by matched plant", "",
-             "Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -m reuse_ready.cycles`. "
+             "Source: results/cycles_by_plant.csv [cycles_by_plant.csv], produced by `python -m peakflow.cycles`. "
              "All rows are marked 'assumed' because the Water Quality Portal was not reachable [wqp_status.json]; "
              "silica, calcium and alkalinity are literature values [vidic_2009; hem_1985], TDS and phosphate are the "
              "plant's own DMR medians where reported [epa_echo], and chloride is a TDS-based proxy because no matched "
@@ -303,9 +303,9 @@ def write_md(t: pd.DataFrame, s: dict, path=OUT_MD):
             f"{_fmt(r.allowable_cycles)} ({_fmt(r.allowable_cycles_low)} to {_fmt(r.allowable_cycles_high)}) | "
             f"{_fmt(r.makeup_per_evap, 2)} | {_fmt(r.blowdown_per_evap, 2)} | {_fmt(r.min_return_flow_pct, 0)} | "
             f"{_fmt(r.allowable_cycles_without_phosphate)} ({LABELS[r.binding_without_phosphate]}) | {r.status} |")
-    lines += ["", f"The model assumes {MODEL_CYCLES:g} cycles [reuse_ready_model], which implies makeup of "
+    lines += ["", f"The model assumes {MODEL_CYCLES:g} cycles [peakflow_model], which implies makeup of "
               f"{MODEL_CYCLES / (MODEL_CYCLES - 1):.2f} times evaporation and a minimum return flow of "
-              f"{100 / MODEL_CYCLES:.0f} percent [reuse_ready_model]. Blank makeup and blowdown cells mark plants whose "
+              f"{100 / MODEL_CYCLES:.0f} percent [peakflow_model]. Blank makeup and blowdown cells mark plants whose "
               "makeup already exceeds a tower limit (allowable C at or below 1), which require treatment before "
               "use. The range brackets the favourable and adverse literature silica, calcium and alkalinity "
               "[vidic_2009, PDF p. 30]."]

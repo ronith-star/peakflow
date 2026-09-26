@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-from reuse_ready.paths import FIGURES
+from peakflow.paths import FIGURES
 
 PDFS = sorted(FIGURES.glob("*.pdf"))
 ALLOWED = ("Helvetica", "Arial", "ArialNarrow", "ArialMT", "Arial-Narrow", "LiberationSans", "LiberationSansNarrow")

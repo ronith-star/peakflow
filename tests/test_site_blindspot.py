@@ -2,9 +2,9 @@
 import pandas as pd
 import pytest
 
-from reuse_ready import blindspot as B
-from reuse_ready import site_blindspot as SB
-from reuse_ready.paths import PROCESSED, RESULTS
+from peakflow import blindspot as B
+from peakflow import site_blindspot as SB
+from peakflow.paths import PROCESSED, RESULTS
 
 pytestmark = pytest.mark.skipif(not (PROCESSED / "flow_daily.parquet").exists()
                                 or not (RESULTS / "supply_screen.csv").exists(),
