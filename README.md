@@ -75,18 +75,6 @@ Water per MW-year of IT load comes from the cooling model on Trenton weather. No
 
 The cooling model fixes cycles of concentration at 4, so makeup scales as C/(C - 1) in every per-MW rate [reuse_ready_model]. A separate screen computes allowable cycles for each of the 19 matched plants as the minimum over silica (150 mg/L as SiO2), chloride, orthophosphate and a Langelier saturation index of 2.5 at 35 C [midkiff_1977, geiger_1993, vidic_2009, hem_1985, cycles_by_plant.csv]. Makeup quality comes from each plant's DMR where reported and from literature secondary-effluent values otherwise. The Water Quality Portal was not reachable, so every row is marked assumed [wqp_status.json]. The chloride and phosphate limits are operating levels demonstrated at one tower under an inhibitor program, not design limits [geiger_1993].
 
-## Limitations
-
-1. One weather station, Trenton, drives every site from 2005 to 2024 [noaa_isd, reuse_ready_model].
-2. The calibration is exactly determined, so it demonstrates a solution rather than validating the model. The Falls IT load of 331 MW is inferred rather than sourced [reuse_ready_model]. With Amazon's statement that water cooling runs less than 2 percent of the year, the three Falls targets cannot be met together [amazon_falls_campus_2026, reuse_ready_model].
-3. Sixteen of the 24 sites publish no capacity [trackdatacenters_2026, reuse_ready_model]. The count of sites whose plant covers their own peak day moves by 10 sites across the assumed range [trackdatacenters_2026, reuse_ready_model].
-4. Ten of 24 sites are unverified, with a source that could not be confirmed or an approximate or uncertain location [trackdatacenters_2026, reuse_ready_model].
-5. Monthly DMR flows understate daily variability, so coverage of a peak day is approximate. 39 of 258 retained permittees report no flow [epa_echo].
-6. Effluent quality for the cycles screen is from literature values for every plant because the Water Quality Portal was unreachable [wqp_status.json, cycles_summary.json, reuse_ready_model]. The cooling model keeps 4 cycles although 12 of 19 plants allow fewer [wqp_status.json, cycles_summary.json, reuse_ready_model]. The energy for tertiary treatment and delivery is not counted [wqp_status.json, cycles_summary.json, reuse_ready_model].
-7. The 7Q10 includes 391 provisional days [usgs_nwis_01463500, reuse_ready_model]. Approved data alone give 1,787 cfs [usgs_nwis_01463500, reuse_ready_model].
-8. The state split of sites, 17, 4 and 3, differs from the Commission's 18, 3 and 3, although both total 24 [trackdatacenters_2026, drbc_khalil_2026].
-9. State reuse approvals and the supply status of the 15 sites with no published supplier were not reviewed [reuse_ready_model].
-
 ## Reproduction
 
 Create the environment from the lock file. The lock file pins every package. Then download the data and run the pipeline.
