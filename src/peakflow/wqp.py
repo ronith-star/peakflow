@@ -119,8 +119,7 @@ def fetch_csv(url: str, params: dict, path: Path, offline: bool = False, getter=
     getter = getter or (lambda u, p: requests.get(u, params=p, headers=HEADERS, timeout=TIMEOUT_S))
     try:
         r = getter(url, params)
-    except (requests.exceptions.ProxyError, requests.exceptions.ConnectionError,
-            requests.exceptions.Timeout) as e:
+    except requests.exceptions.RequestException as e:
         raise WQPUnavailable(f"{type(e).__name__}: {e}") from e
     blocked = r.headers.get("X-Proxy-Error", "")
     if r.status_code != 200 or blocked:
