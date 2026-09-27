@@ -127,9 +127,6 @@ def load_cities() -> gpd.GeoDataFrame:
     return g
 
 
-def load_relief():
-    d = np.load(RELIEF_NPZ)
-    return d["relief"], tuple(d["extent"])
 
 
 CB_FILES = {k: f"https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_{k}_500k.zip" for k in ("state", "county")}
