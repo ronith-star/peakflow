@@ -29,7 +29,6 @@ from ..paths import FIGURES, RESULTS
 from .supply_figures import MM, text_overlaps
 
 W_MM = 180.0
-NO_PLANT = "no eligible plant within 10 mi"
 GRAY_ROW = "#EDEDED"
 SRC_SITES = "Sources: LBNL 2024; U.S. EPA ECHO; NOAA ISD; trackdatacenters.com."
 SRC_FALLS = "Sources: LBNL 2024; NOAA ISD; Falls Township filings."
